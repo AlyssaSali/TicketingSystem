@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TicketingSystem.DAL\TicketingSystem.DAL.csproj" />
+    <ProjectReference Include="..\TicketingSystem.ViewModel\TicketingSystem.ViewModel.csproj" />
+  </ItemGroup>
+
+</Project>

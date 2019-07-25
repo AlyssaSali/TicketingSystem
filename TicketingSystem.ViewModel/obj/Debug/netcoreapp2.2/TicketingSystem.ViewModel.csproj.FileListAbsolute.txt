@@ -1,0 +1,17 @@
+C:\Users\Dis Moore\source\repos\TicketingSystem.ViewModel\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.deps.json
+C:\Users\Dis Moore\source\repos\TicketingSystem.ViewModel\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.dll
+C:\Users\Dis Moore\source\repos\TicketingSystem.ViewModel\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.pdb
+C:\Users\Dis Moore\source\repos\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.csprojAssemblyReference.cache
+C:\Users\Dis Moore\source\repos\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.csproj.CoreCompileInputs.cache
+C:\Users\Dis Moore\source\repos\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.AssemblyInfoInputs.cache
+C:\Users\Dis Moore\source\repos\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.AssemblyInfo.cs
+C:\Users\Dis Moore\source\repos\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.dll
+C:\Users\Dis Moore\source\repos\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.pdb
+C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.deps.json
+C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.dll
+C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.pdb
+C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.csproj.CoreCompileInputs.cache
+C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.AssemblyInfoInputs.cache
+C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.AssemblyInfo.cs
+C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.dll
+C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.pdb

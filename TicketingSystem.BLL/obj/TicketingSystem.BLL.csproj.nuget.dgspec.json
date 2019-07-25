@@ -1,0 +1,189 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.BLL\\TicketingSystem.BLL.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.BLL\\TicketingSystem.BLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.BLL\\TicketingSystem.BLL.csproj",
+        "projectName": "TicketingSystem.BLL",
+        "projectPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.BLL\\TicketingSystem.BLL.csproj",
+        "packagesPath": "C:\\Users\\Dis Moore\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.BLL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dis Moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj": {
+                "projectPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj"
+              },
+              "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj": {
+                "projectPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj",
+        "projectName": "TicketingSystem.DAL",
+        "projectPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj",
+        "packagesPath": "C:\\Users\\Dis Moore\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dis Moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "microsoft.entityframeworkcore.design": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "microsoft.entityframeworkcore.sqlserver": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "microsoft.entityframeworkcore.tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.6, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj",
+        "projectName": "TicketingSystem.ViewModel",
+        "projectPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj",
+        "packagesPath": "C:\\Users\\Dis Moore\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dis Moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
