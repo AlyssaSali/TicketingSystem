@@ -10,6 +10,10 @@ import { HomeComponent } from './views/home/home.component';
 import { FetchDataComponent } from './views/fetch-data/fetch-data.component';
 import { CounterComponent } from './views/counter/counter.component';
 import { NavMenuComponent } from './views/layouts/nav-menu/nav-menu.component';
+import { OfficeComponent } from './views/office/office.component';
+import { OfficeAddFormComponent } from './views/office/office-add-form/office-add-form.component';
+import { OfficeUpdateFormComponent } from './views/office/office-update-form/office-update-form.component';
+import { MatDialogModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,10 @@ import { NavMenuComponent } from './views/layouts/nav-menu/nav-menu.component';
     HomeComponent,
     FetchDataComponent,
     CounterComponent,
-    NavMenuComponent
+    NavMenuComponent,
+    OfficeComponent,
+    OfficeAddFormComponent,
+    OfficeUpdateFormComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -26,7 +33,9 @@ import { NavMenuComponent } from './views/layouts/nav-menu/nav-menu.component';
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatDialogModule,
   ],
+  entryComponents:[OfficeUpdateFormComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
