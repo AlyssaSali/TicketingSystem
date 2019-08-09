@@ -13,7 +13,7 @@
 </thead>
 <tbody> 
     <tr *ngFor="let office of offices"> 
-        <td style="width: 30%;">{{office.officeID}}</td>
+        <td style="width: 30%;">{{office.officeid}}</td>
         <td style="width: 30%;">{{office.officeCode}}</td>
         <td style="width: 30%;">{{office.officeDesc}}</td>
         <td style="width: 20%;">
@@ -21,7 +21,7 @@
                <button class="col-md-5 btn btn-success m-1"(click)="update(office)" data-toggle="tooltip" data-placement="bottom" title="Edit office">
                     <i class="material-icons">update</i>
                </button>
-               <button class="col-md-5 btn btn-danger m-1"(click)="delete(office.officeID)" data-toggle="tooltip" data-placement="bottom" title="Delete office">
+               <button class="col-md-5 btn btn-danger m-1"(click)="delete(office.officeid)" data-toggle="tooltip" data-placement="bottom" title="Delete office">
                     <i class="material-icons">delete </i>
                </button>
            </div> 
