@@ -24,10 +24,20 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
+=======
+<<<<<<< HEAD
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+=======
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+>>>>>>> 6d2d6532e882551e73784511ee1ca6b02e942cb4
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+>>>>>>> d03904ae63c76b400a8493dbaf62e20d91bc2e2f
             ],
             "scripts": []
           },
@@ -87,7 +97,15 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+=======
+<<<<<<< HEAD
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+=======
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+>>>>>>> 6d2d6532e882551e73784511ee1ca6b02e942cb4
+>>>>>>> d03904ae63c76b400a8493dbaf62e20d91bc2e2f
               "src/styles.css"
             ],
             "scripts": []

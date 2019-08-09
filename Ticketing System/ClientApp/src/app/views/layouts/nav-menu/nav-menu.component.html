@@ -1,5 +1,6 @@
 
 <header>
+<<<<<<< HEAD
           <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
               <!-- <div class="container"> -->
                 <a class="navbar-brand " [routerLink]='["/"]'><img src="logo.png" style="width: 40px; height: 35px;"> iTicketing System</a>
@@ -37,6 +38,37 @@
                 </div>
               <!-- </div> -->
             </nav>
+=======
+  <nav class='navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3'>
+    <div class="container">
+      <a class="navbar-brand" [routerLink]='["/"]'>Ticketing_System</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Toggle navigation"
+        [attr.aria-expanded]="isExpanded" (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngClass]='{"show": isExpanded}'>
+        <ul class="navbar-nav flex-grow">
+          <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+            <a class="nav-link text-dark" [routerLink]='["/"]'>Home</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]='["link-active"]'>
+            <a class="nav-link text-dark" [routerLink]='["/counter"]'>Counter</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]='["link-active"]'>
+            <a class="nav-link text-dark" [routerLink]='["/fetch-data"]'>Fetch data</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]='["link-active"]'>
+<<<<<<< HEAD
+            <a class="nav-link text-dark" [routerLink]='["/employee"]'>Employees</a>
+=======
+            <a class="nav-link text-dark" [routerLink]='["/office"]'>Office</a>
+>>>>>>> 6d2d6532e882551e73784511ee1ca6b02e942cb4
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+>>>>>>> d03904ae63c76b400a8493dbaf62e20d91bc2e2f
 </header>
   
   <!-- Copyright 2018 Google Inc. All Rights Reserved.
