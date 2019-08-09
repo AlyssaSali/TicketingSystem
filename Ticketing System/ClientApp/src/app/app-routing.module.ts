@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { HomeComponent } from './views/home/home.component';
-import { CounterComponent } from './views/counter/counter.component';
-import { FetchDataComponent } from './views/fetch-data/fetch-data.component';
-import { OfficeComponent } from './views/office/office.component';
-
+import { RouterModule, Routes } from '@angular/router';
+import { SeverityComponent } from './views/severity/severity.component';
+import { TicketComponent } from './views/ticket/ticket.component';
+import { TicketAddFormComponent } from './views/ticket/ticket-add-form/ticket-add-form.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full'},
-  { path: 'counter', component: CounterComponent},
-  { path: 'fetch-data', component: FetchDataComponent},
-  { path: 'office', component: OfficeComponent},
-  
+  {path: '', component: HomeComponent, pathMatch: 'full'},
+  {path: 'severity', component: SeverityComponent},
+  {path: 'ticket', component: TicketComponent},
+  {path: 'ticketAdd', component: TicketAddFormComponent}
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports:[RouterModule.forRoot(routes)],
   exports: [RouterModule]
-
 })
 export class AppRoutingModule { }

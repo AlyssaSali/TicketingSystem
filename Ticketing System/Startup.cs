@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TicketingSystem.BLL.Services;
 using TicketingSystem.DAL.Models;
 
 namespace Ticketing_System
@@ -34,6 +35,8 @@ namespace Ticketing_System
                   options.UseSqlServer
                   (Configuration.GetConnectionString
                   ("TicketingSystemContext")));
+
+            services.AddScoped<SeverityService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

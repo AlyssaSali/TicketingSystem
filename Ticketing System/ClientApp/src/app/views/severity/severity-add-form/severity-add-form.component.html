@@ -1,0 +1,47 @@
+
+<div class="panel">
+    <div class="panel-heading">
+        <h1 style="display: inline">New Severity</h1>
+        <!-- <button class="btn btn-outline-danger float-right" (click)="close()"><i class="material-icons">close</i></button> -->
+    </div>
+    <div class="panel-body">
+        <div class="jumbotron">
+            <div class="form-group has-success">
+                <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="severityCreateForm">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label for="severityCode">Severity Code: <span style="color: red">*</span></label><br />
+                            <input type="text" class="form-control is-valid" id="severityCode" formControlName="severityCode"><br>
+                            <div *ngIf="f.severityCode.touched && f.severityCode.errors" class="invalid-feedback">  
+                                <div *ngIf="f.severityCode.errors.required">
+                                    <span class="error-msg">This field is required</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="error-msg" *ngFor="let error of nameBackEndErrors">{{error}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label for="severityDesc">Severity Description: <span style="color: red">*</span></label><br />
+                            <input type="text" class="form-control is-valid" id="severityDesc" formControlName="severityDesc"><br>
+                            <div *ngIf="f.severityDesc.touched && f.severityDesc.errors" class="invalid-feedback">  
+                                <div *ngIf="f.severityDesc.errors.required">
+                                    <span class="error-msg">This field is required</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="error-msg" *ngFor="let error of nameBackEndErrors">{{error}}</span>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-md-2">
+                            <br>
+                            <button type="submit" [disabled]="!severityCreateForm.valid || isSubmit" class="btn btn-primary" style="margin-top: 10px;">Create</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

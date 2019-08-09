@@ -1,0 +1,149 @@
+<ul class="nav nav-tabs" style="margin-top: 20px">
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" [routerLink]='["/"]'>My Dashboard</a>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" [routerLink]='["/ticketAdd"]'>Encode Ticket</a>
+        </li>
+</ul>
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade active show" style="margin-left: 20px">
+        <div class="panel">
+            <div class="panel-body" style="margin-top: 10px">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="card border-secondary mb-3" style="max-width: 60rem;">
+                            <div class="card-header">Service Request Form
+                                    <div class="custom-control custom-switch" style="float:right">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch" checked="checked">
+                                            <label class="custom-control-label">Emergency?</label>
+                                    </div>
+                            </div>
+                            <div class="card-body">
+                                    <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="ticketCreateForm" class="form-group">
+                                        <div class="card border-light mb-3">
+                                            <div class="row mm" >
+                                                <div class="col-md-3">
+                                                            <label class="col-form-label col-form-label-sm font">Office <span style="color: red">*</span></label>
+                                                            <select class="form-control form-control-sm" formControlName="office">
+                                                              <option selected="selected"></option>
+                                                              <option>COE</option>
+                                                              <option>CMO</option>
+                                                              <option>CSC</option>
+                                                              <option>GSO</option>
+                                                            </select>
+                                                </div>
+                                                <div class="col-md-5">
+                                                        <label class="col-form-label col-form-label-sm font">Requested By</label>
+                                                        <input type="text" class="form-control form-control-sm" formControlName="requestedBy" aria-describedby="emailHelp" placeholder="Name">
+                                                        <div *ngIf="f.requestedBy.touched && f.requestedBy.errors" class="form-group has-danger">  
+                                                                <div *ngIf="f.requestedBy.errors.required" class="invalid-feedback">This field is required</div>
+                                                        </div>
+                                                 </div>
+                                                 <div class="col-md-4" style="margin-top: 28px">
+                                                        <button type="button" class="btn btn-primary font" >Register Requester >></button>
+                                                </div> 
+                                            </div>
+                                            <div class="row mm">
+                                                    <div class="col-md-6">
+                                                            <label class="col-form-label col-form-label-sm font">Desired form of Communication</label>
+                                                            <select class="form-control form-control-sm" formControlName="formOfCommu">
+                                                              <option selected="selected"></option>
+                                                              <option>Call/Text</option>
+                                                              <option>Gmail</option>
+                                                            </select>
+                                                    </div>
+                                                <div class="col-md-6">
+                                                    <label class="col-form-label col-form-label-sm font" for="inputSmall">Contact Info</label>
+                                                    <input class="form-control form-control-sm" type="text" formControlName="formOfCommu">
+                                                </div>
+                                            </div>
+                                            <div class="row mm">
+                                                    <div class="col-md-12">
+                                                            <label class="col-form-label" for="inputSmall">Request</label><br>
+                                                            <input class="form-control form-control-sm" placeholder="Title" type="text" formControlName="requestTitle">
+                                                        </div>
+                                                    <div class="col-md-12" style="margin-top:5px">
+                                                            <textarea class="form-control form-control-sm" id="exampleTextarea" rows="3" placeholder="Description" formControlName="requestDesc"></textarea>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        <div class="card border-light mb-3">
+                                            <div class="row mm">
+                                                    <div class="col-md-6">
+                                                            <label class="col-form-label col-form-label-sm font">Request Category</label>
+                                                            <select class="form-control form-control-sm" formControlName="requestCategory">
+                                                              <option selected="selected"></option>
+                                                              <option>Request for Repair</option>
+                                                              <option>Request for Preventive Maintenance</option>
+                                                              <option>Bug</option>
+                                                              <option>Database Problem</option>
+                                                            </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                            <label class="col-form-label col-form-label-sm font">Request SubCategory</label>
+                                                            <select class="form-control form-control-sm" formControlName="requestSubCategory"> 
+                                                              <option selected="selected"></option>
+                                                              <option>CCTV-City Hall</option>
+                                                              <option>CCTV-Command Center</option>
+                                                            </select>
+                                                    </div><br>
+                                            </div>
+                                            <div class="row mm">
+                                                <div class="col-md-2">
+                                                        <label class="col-form-label col-form-label-sm font" for="inputSmall">Severity</label>
+                                                        <select class="form-control form-control-sm" formControlName="severity"> 
+                                                                <option selected="selected"></option>
+                                                                <option>1</option>
+                                                                <option>2</option>
+                                                                <option>3</option>
+                                                                <option>4</option>
+                                                                <option>5</option>
+                                                        </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                        <label class="col-form-label col-form-label-sm font" for="inputSmall">Response Time</label>
+                                                        <input class="form-control form-control-sm" type="text"  formControlName="responseTime" disabled>
+                                                </div>
+                                                <div class="col-md-3">
+                                                        <label class="col-form-label col-form-label-sm font" for="inputSmall">Resolve Time</label>
+                                                        <input class="form-control form-control-sm" type="text" formControlName="resolveTime" disabled>
+                                                </div>
+                                                <div class="col-md-4">
+                                                        <label class="col-form-label col-form-label-sm font" for="inputSmall">IT Group</label>
+                                                        <input class="form-control form-control-sm" type="text" formControlName="technician" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" [disabled]="!ticketCreateForm.valid || isSubmit" class="btn btn-primary" style="margin-top: 10px">Save</button>
+                                    </form>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                            <table class="table table-hover">
+                                    <thead>
+                                      <tr class="table-light">
+                                        <th style="width:10%;">TicketNo.</th>
+                                        <th style="width:5%;">Severity</th>
+                                        <th style="width:22%;">Category</th>
+                                        <th style="width:10%">RequestedBy</th>
+                                        <th style="width:5%">Status</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th style="width:10%; font-weight:lighter; font-size: 12px"><a [routerLink]='["/"]'>Ticket No.</a></th>
+                                        <th style="width:5%; font-weight:lighter; font-size: 12px">Severity</th>
+                                        <th style="width:22%; font-weight:lighter; font-size: 12px">Category</th>
+                                        <th style="width:10%; font-weight:lighter; font-size: 12px">Requested By</th>
+                                        <th style="width:5%; font-weight:lighter; font-size: 12px">Status</th>
+                                      </tr>
+                                    </tbody>
+                                </table> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

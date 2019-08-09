@@ -1,0 +1,35 @@
+
+<div class="row" style="margin-top:20px">
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
+        <app-severity-add-form></app-severity-add-form>
+    </div>
+    <div class="col-md-6">
+        <h4>List of Severities</h4>
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <td style="width: 30%">Severity Code</td>
+                    <td style="width: 50%">Severity Description</td>
+                    <td style="width: 20%"></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let severity of severities">
+                        <td style="width: 30%">{{severity.severityCode}}</td>
+                        <td style="width: 50%">{{severity.severityDesc}}</td>
+                        <td style="width: 20%">
+                            <div class="row">
+                                <button class="col-md-5 btn btn-success m-1" (click)="update(severity)" data-toogle="tooltip" data-placement="bottom" title="Update Genre">
+                                    <i class="material-icons">update</i>
+                                </button>
+                                <button class="col-md-5 btn btn-danger m-1" (click)="delete(severity.id)" data-toogle="tooltip" data-placement="bottom" title="Delete Genre">
+                                    <i class="material-icons">delete</i>
+                                </button>
+                            </div>
+                        </td>  
+                </tr>
+            </tbody>
+        </table>   
+    </div>
+</div>             

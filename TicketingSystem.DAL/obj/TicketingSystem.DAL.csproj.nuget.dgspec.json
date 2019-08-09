@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj": {}
+    "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj": {
+    "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj",
         "projectName": "TicketingSystem.DAL",
-        "projectPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj",
-        "packagesPath": "C:\\Users\\Dis Moore\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\obj\\",
+        "projectPath": "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj",
+        "packagesPath": "C:\\Users\\ridz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dis Moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ridz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

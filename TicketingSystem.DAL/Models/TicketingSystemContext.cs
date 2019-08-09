@@ -11,6 +11,6 @@ namespace TicketingSystem.DAL.Models
         {
 
         }
-        public DbSet<Department> Departments { get; set; }
+        public DbSet<Severity> Severities { get; set; }
     }
 }
