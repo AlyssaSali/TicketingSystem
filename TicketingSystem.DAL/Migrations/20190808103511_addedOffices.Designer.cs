@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TicketingSystem.DAL.Models;
 
 namespace TicketingSystem.DAL.Migrations
 {
     [DbContext(typeof(TicketingSystemContext))]
-    partial class TicketingSystemContextModelSnapshot : ModelSnapshot
+    [Migration("20190808103511_addedOffices")]
+    partial class addedOffices
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

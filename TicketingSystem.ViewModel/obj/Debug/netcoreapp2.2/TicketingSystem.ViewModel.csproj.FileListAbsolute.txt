@@ -15,3 +15,4 @@ C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\De
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.AssemblyInfo.cs
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.dll
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.pdb
+C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.csprojAssemblyReference.cache

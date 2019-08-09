@@ -8,24 +8,24 @@ namespace TicketingSystem.DAL.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Departments",
+                name: "Offices",
                 columns: table => new
                 {
-                    ID = table.Column<long>(nullable: false)
+                    Officeid = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    DepCode = table.Column<string>(nullable: true),
-                    DepDesc = table.Column<string>(nullable: true)
+                    OfficeCode = table.Column<string>(nullable: true),
+                    OfficeDesc = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Departments", x => x.ID);
+                    table.PrimaryKey("PK_Offices", x => x.Officeid);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Departments");
+                name: "Offices");
         }
     }
 }

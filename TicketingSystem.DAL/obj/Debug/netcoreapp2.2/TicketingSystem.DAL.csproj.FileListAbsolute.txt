@@ -17,3 +17,4 @@ C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\ne
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.pdb
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.runtimeconfig.json
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.runtimeconfig.dev.json
+C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.csprojAssemblyReference.cache

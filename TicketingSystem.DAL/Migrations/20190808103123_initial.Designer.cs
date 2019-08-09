@@ -9,7 +9,7 @@ using TicketingSystem.DAL.Models;
 namespace TicketingSystem.DAL.Migrations
 {
     [DbContext(typeof(TicketingSystemContext))]
-    [Migration("20190725024418_initial")]
+    [Migration("20190808103123_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,19 +20,19 @@ namespace TicketingSystem.DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("TicketingSystem.DAL.Models.Department", b =>
+            modelBuilder.Entity("TicketingSystem.DAL.Models.Office", b =>
                 {
-                    b.Property<long>("ID")
+                    b.Property<long>("Officeid")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("DepCode");
+                    b.Property<string>("OfficeCode");
 
-                    b.Property<string>("DepDesc");
+                    b.Property<string>("OfficeDesc");
 
-                    b.HasKey("ID");
+                    b.HasKey("Officeid");
 
-                    b.ToTable("Departments");
+                    b.ToTable("Offices");
                 });
 #pragma warning restore 612, 618
         }
