@@ -9,8 +9,8 @@ using TicketingSystem.DAL.Models;
 namespace TicketingSystem.DAL.Migrations
 {
     [DbContext(typeof(TicketingSystemContext))]
-    [Migration("20190725024418_initial")]
-    partial class initial
+    [Migration("20190808032011_addedoffice")]
+    partial class addedoffice
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,6 +33,25 @@ namespace TicketingSystem.DAL.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Departments");
+                });
+
+            modelBuilder.Entity("TicketingSystem.DAL.Models.Employee", b =>
+                {
+                    b.Property<long>("EmployeeID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("EmailAddress");
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
+                    b.Property<string>("Office");
+
+                    b.HasKey("EmployeeID");
+
+                    b.ToTable("Employees");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,0 +1,22 @@
+<app-employee-add-form></app-employee-add-form>
+<app-employee-update-form></app-employee-update-form>
+
+<h1></h1>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email Address</td>
+            <td>Office</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.FirstName}}</td>
+            <td>{{employee.LastName}}</td>
+            <td>{{employee.EmailAddress}}</td>
+            <td>{{employee.Office}}</td>
+        </tr>
+    </tbody>
+</table>
