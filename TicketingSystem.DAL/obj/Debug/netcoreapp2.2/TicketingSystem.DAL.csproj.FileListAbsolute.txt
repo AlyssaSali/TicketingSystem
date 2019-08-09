@@ -17,4 +17,18 @@ C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\ne
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.pdb
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.runtimeconfig.json
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.runtimeconfig.dev.json
+<<<<<<< HEAD
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.csprojAssemblyReference.cache
+=======
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.deps.json
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.runtimeconfig.json
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.runtimeconfig.dev.json
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.dll
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.pdb
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.csprojAssemblyReference.cache
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.AssemblyInfoInputs.cache
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.AssemblyInfo.cs
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.dll
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.pdb
+>>>>>>> 46c58e86a322ff5f84c1b927d6a1c93aafe67234

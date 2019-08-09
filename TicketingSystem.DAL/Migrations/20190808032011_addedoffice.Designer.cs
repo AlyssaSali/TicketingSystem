@@ -9,12 +9,8 @@ using TicketingSystem.DAL.Models;
 namespace TicketingSystem.DAL.Migrations
 {
     [DbContext(typeof(TicketingSystemContext))]
-<<<<<<< HEAD:TicketingSystem.DAL/Migrations/20190808103123_initial.Designer.cs
-    [Migration("20190808103123_initial")]
-=======
-    [Migration("20190808030438_initial")]
->>>>>>> 46c58e86a322ff5f84c1b927d6a1c93aafe67234:TicketingSystem.DAL/Migrations/20190808030438_initial.Designer.cs
-    partial class initial
+    [Migration("20190808032011_addedoffice")]
+    partial class addedoffice
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,19 +20,19 @@ namespace TicketingSystem.DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("TicketingSystem.DAL.Models.Office", b =>
+            modelBuilder.Entity("TicketingSystem.DAL.Models.Department", b =>
                 {
-                    b.Property<long>("Officeid")
+                    b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("OfficeCode");
+                    b.Property<string>("DepCode");
 
-                    b.Property<string>("OfficeDesc");
+                    b.Property<string>("DepDesc");
 
-                    b.HasKey("Officeid");
+                    b.HasKey("ID");
 
-                    b.ToTable("Offices");
+                    b.ToTable("Departments");
                 });
 
             modelBuilder.Entity("TicketingSystem.DAL.Models.Employee", b =>
@@ -50,6 +46,8 @@ namespace TicketingSystem.DAL.Migrations
                     b.Property<string>("FirstName");
 
                     b.Property<string>("LastName");
+
+                    b.Property<string>("Office");
 
                     b.HasKey("EmployeeID");
 
