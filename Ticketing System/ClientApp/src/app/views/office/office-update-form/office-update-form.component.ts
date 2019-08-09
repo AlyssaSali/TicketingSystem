@@ -31,7 +31,7 @@ export class OfficeUpdateFormComponent implements OnInit {
 
   ) {
     this .officeUpdateform = new FormGroup({
-      officeID: new FormControl(),
+      officeid: new FormControl(),
       officeCode: new FormControl('',[Validators.required,Validators.maxLength(50)]),
       officeDesc: new FormControl('',[Validators.required,Validators.maxLength(50)]),
       

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TicketingSystem.ViewModel.ViewModels
+namespace TicketingSystem.DAL.Models
 {
-    class DepartmentVM
+    class EmployeeType
     {
     }
 }
