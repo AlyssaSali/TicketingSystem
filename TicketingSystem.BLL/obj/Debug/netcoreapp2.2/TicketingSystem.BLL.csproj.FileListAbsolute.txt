@@ -26,3 +26,17 @@ C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\ne
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.pdb
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.csprojAssemblyReference.cache
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.csproj.CopyComplete
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.BLL.deps.json
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.BLL.dll
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.BLL.pdb
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.dll
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.dll
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.pdb
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.pdb
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.csprojAssemblyReference.cache
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.AssemblyInfoInputs.cache
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.AssemblyInfo.cs
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.csproj.CopyComplete
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.dll
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.pdb

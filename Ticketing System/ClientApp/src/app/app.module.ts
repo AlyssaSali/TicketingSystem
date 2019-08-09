@@ -10,6 +10,10 @@ import { HomeComponent } from './views/home/home.component';
 import { FetchDataComponent } from './views/fetch-data/fetch-data.component';
 import { CounterComponent } from './views/counter/counter.component';
 import { NavMenuComponent } from './views/layouts/nav-menu/nav-menu.component';
+import { EmployeeComponent } from './views/employee/employee.component';
+import { EmployeeAddFormComponent } from './views/employee/employee-add-form/employee-add-form.component';
+import { EmployeeUpdateFormComponent } from './views/employee/employee-update-form/employee-update-form.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +21,10 @@ import { NavMenuComponent } from './views/layouts/nav-menu/nav-menu.component';
     HomeComponent,
     FetchDataComponent,
     CounterComponent,
-    NavMenuComponent
+    NavMenuComponent,
+    EmployeeComponent,
+    EmployeeAddFormComponent,
+    EmployeeUpdateFormComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -32,6 +32,25 @@ namespace TicketingSystem.DAL.Migrations
 
                     b.ToTable("Departments");
                 });
+
+            modelBuilder.Entity("TicketingSystem.DAL.Models.Employee", b =>
+                {
+                    b.Property<long>("EmployeeID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("EmailAddress");
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
+                    b.Property<string>("Office");
+
+                    b.HasKey("EmployeeID");
+
+                    b.ToTable("Employees");
+                });
 #pragma warning restore 612, 618
         }
     }
