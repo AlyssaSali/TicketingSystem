@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OfficeAddFormComponent } from './office-add-form.component';
+import { ItgroupComponent } from './itgroup.component';
 
-describe('OfficeAddFormComponent', () => {
-  let component: OfficeAddFormComponent;
-  let fixture: ComponentFixture<OfficeAddFormComponent>;
+describe('ItgroupComponent', () => {
+  let component: ItgroupComponent;
+  let fixture: ComponentFixture<ItgroupComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OfficeAddFormComponent ]
+      declarations: [ ItgroupComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OfficeAddFormComponent);
+    fixture = TestBed.createComponent(ItgroupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { OfficeUpdateFormComponent } from './office-update-form/office-update-form.component';
 import { Office } from 'src/app/models/office.model';
 import { OfficeService } from 'src/app/services/office.service';
 import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
-import { MatDialog, MatDialogConfig } from '@angular/material';
-import { OfficeUpdateFormComponent } from './office-update-form/office-update-form.component';
 
 @Component({
   selector: 'app-office',

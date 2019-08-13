@@ -101,7 +101,7 @@ export class EmployeeAddFormComponent implements OnInit {
           this.emailAddressBackEndErrors = errs.errors.emailaddress;//shows data annotations error message
         }
         if('firstname' in errs.errors){
-          this.officeBackEndErrors = errs.errors.office;//shows data annotations error message
+          this.officeBackEndErrors = errs.errors.itgroup;//shows data annotations error message
         }
       }
 

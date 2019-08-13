@@ -1,0 +1,27 @@
+<div class="card border-secondary mb-3">
+    <div class="card-header">Update Category
+        <!-- <button class="btn btn-secondary btn-sm float-right"(click)="close()"><i class="material-icons">close</i></button> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()"><i class="material-icons">close</i></button>
+    </div>
+        <div class="card-body">
+          <div class="form-group has-success">
+            <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="categoryUpdateform">
+                <div class="row">
+                    <div class="col-md-5">
+                        <label for="CategoryName">Name: <span style="color: red">*</span></label><br />
+                        <input type="text" class="form-control" id="categoryName" formControlName="categoryName" placeholder="Name" [ngClass]="{'is-invalid': (f.categoryName.touched && f.categoryName.errors) || categoryNameBackEndErrors}"><br>
+                       <div *ngIf="f.categoryName.touched && f.categoryName.errors"  class="invalid-feedback">  
+                            <div *ngIf="f.categoryName.errors.required"><span class="error-msg">This field is required</span></div>
+                        </div>
+                        <div>
+                            <span class="error-msg" *ngFor="let error of categoryNameBackEndErrors">{{error}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="float: right;">
+                        <button type="submit" [disabled]="!categoryUpdateform.valid || isSubmit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

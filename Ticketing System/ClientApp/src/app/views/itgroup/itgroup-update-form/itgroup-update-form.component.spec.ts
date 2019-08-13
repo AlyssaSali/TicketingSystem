@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OfficeUpdateFormComponent } from './office-update-form.component';
+import { ItgroupUpdateFormComponent } from './itgroup-update-form.component';
 
-describe('OfficeUpdateFormComponent', () => {
-  let component: OfficeUpdateFormComponent;
-  let fixture: ComponentFixture<OfficeUpdateFormComponent>;
+describe('ItgroupUpdateFormComponent', () => {
+  let component: ItgroupUpdateFormComponent;
+  let fixture: ComponentFixture<ItgroupUpdateFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OfficeUpdateFormComponent ]
+      declarations: [ ItgroupUpdateFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OfficeUpdateFormComponent);
+    fixture = TestBed.createComponent(ItgroupUpdateFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

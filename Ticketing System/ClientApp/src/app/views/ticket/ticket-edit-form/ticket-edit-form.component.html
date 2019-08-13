@@ -1,0 +1,55 @@
+<div class="main">
+    <div class="row">
+         <div class="card border-light mb-3" style="width:100%">
+           <div class="card-header"><h4>Update Ticket</h4>
+              <label class="col-form-label col-form-label-sm" style="float: left">Ticket Number: <span style="font-size: 20px">000001</span></label>
+              <button style="float: right; font-size: 10px" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="" data-original-title="Tooltip on right"><i class="material-icons">refresh</i><br>PIR</button>
+              <button style="float: right; font-size: 10px" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="" data-original-title="Tooltip on right"><i class="material-icons">close</i><br>Closure</button>
+              <button style="float: right; font-size: 10px" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="" data-original-title="Tooltip on right"><i class="material-icons">settings</i><br>Actions</button>
+              <button (click)="ticketApproval(ticket)" style="float: right; font-size: 10px" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="" data-original-title="Tooltip on right"><i class="material-icons">edit</i><br>Approval</button>
+              <button (click)="ticketSLA(ticket)" style="float: right; font-size: 10px" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="" data-original-title="Tooltip on right"><i class="material-icons">alarm</i><br>SLA</button>
+           </div>
+           <div class="card-body">
+                <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="ticketCreateForm" class="form-group">
+                  <div class="card border-light mb-3">
+                  <div class="card-header f2">Request Section
+                      <label class="col-form-label col-form-label-sm mg f1" style="float: right">Status:  <span style="font-weight: bold; font-size: 12px">Request for Approval</span></label>
+                  </div>
+                  <div class="card-body">
+                   <div class="row">
+                    <div class="col-md-6">
+                          <label class="col-form-label col-form-label-sm mg f1">Requested By: </label>
+                          <label class="col-form-label col-form-label-sm mg">Employee Name Here</label>                               
+                          <br>
+                          <label class="col-form-label col-form-label-sm mg f1">Division/Office: </label>
+                          <label class="col-form-label col-form-label-sm" style="margin-left: 45px">Office Here</label>
+                          <br>
+                          <label class="col-form-label col-form-label-sm f1 mg">Desired form of Communication: </label>
+                          <label class="col-form-label col-form-label-sm" style="margin-left: 20px">Via Email</label> 
+                    </div>
+                    <div class="col-md-6">
+                          <label class="col-form-label col-form-label-sm f1 mg">Date of Request: </label>
+                          <label class="col-form-label col-form-label-sm mg">Date Here</label>
+                          <br>
+                          <label class="col-form-label col-form-label-sm f1 mg">Time of Request: </label>
+                          <label class="col-form-label col-form-label-sm mg">Time Here</label>
+                          <br>
+                          <label class="col-form-label col-form-label-sm f1 mg">Contact Info: </label>
+                          <label class="col-form-label col-form-label-sm" style="margin-left: 70px">Contacts Here</label>
+                    </div>
+                   </div>
+                  <div class="row mm">
+                  <label class="col-md-12 col-form-label col-form-label-sm f1 mg">Request Title:                         
+                  <label class="col-form-label col-form-label-sm mg">Title Here</label></label>
+                  <label class="col-md-12 col-form-label col-form-label-sm f1 mg">Request Description: 
+                          <label class="col-form-label col-form-label-sm" style="margin-left: 12px">Description Here</label>
+                  </label>
+                  </div>
+                  </div>
+                  </div>
+                </form>
+            </div>
+         </div>
+    </div>
+</div>
+        

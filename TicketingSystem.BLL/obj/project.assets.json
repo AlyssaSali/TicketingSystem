@@ -950,6 +950,11 @@
       "TicketingSystem.ViewModel/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.2.6",
+          "microsoft.entityframeworkcore.design": "2.2.6",
+          "microsoft.entityframeworkcore.sqlserver": "2.2.6"
+        },
         "compile": {
           "bin/placeholder/TicketingSystem.ViewModel.dll": {}
         },
@@ -2750,7 +2755,6 @@
       "path": "system.reflection.emit/4.0.1",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2958,7 +2962,6 @@
       "path": "system.reflection.typeextensions/4.1.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3614,27 +3617,44 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Moore\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+=======
+    "C:\\Users\\ridz\\.nuget\\packages\\": {},
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.BLL\\TicketingSystem.BLL.csproj",
       "projectName": "TicketingSystem.BLL",
       "projectPath": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.BLL\\TicketingSystem.BLL.csproj",
       "packagesPath": "C:\\Users\\Moore\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.BLL\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.BLL\\TicketingSystem.BLL.csproj",
+      "projectName": "TicketingSystem.BLL",
+      "projectPath": "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.BLL\\TicketingSystem.BLL.csproj",
+      "packagesPath": "C:\\Users\\ridz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.BLL\\obj\\",
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\Moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+=======
+        "C:\\Users\\ridz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
@@ -3646,11 +3666,19 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj": {
               "projectPath": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj"
             },
             "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj": {
               "projectPath": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj"
+=======
+            "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj": {
+              "projectPath": "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj"
+            },
+            "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj": {
+              "projectPath": "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj"
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
             }
           }
         }
