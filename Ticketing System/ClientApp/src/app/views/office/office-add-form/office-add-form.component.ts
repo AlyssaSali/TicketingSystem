@@ -25,7 +25,6 @@ export class OfficeAddFormComponent implements OnInit {
      
    ) {
      this .officeCreateForm = new FormGroup({
-      
        officecode: new FormControl('',[Validators.required,Validators.maxLength(50)]),
        officedesc: new FormControl('',[Validators.required,Validators.maxLength(50)]),
      })

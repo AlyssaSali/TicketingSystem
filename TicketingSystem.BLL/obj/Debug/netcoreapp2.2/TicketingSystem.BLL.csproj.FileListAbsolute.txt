@@ -1,32 +1,3 @@
-C:\Users\Dis Moore\source\repos\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.BLL.deps.json
-C:\Users\Dis Moore\source\repos\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.BLL.dll
-C:\Users\Dis Moore\source\repos\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.BLL.pdb
-C:\Users\Dis Moore\source\repos\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.csprojAssemblyReference.cache
-C:\Users\Dis Moore\source\repos\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.csproj.CoreCompileInputs.cache
-C:\Users\Dis Moore\source\repos\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.AssemblyInfoInputs.cache
-C:\Users\Dis Moore\source\repos\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.AssemblyInfo.cs
-C:\Users\Dis Moore\source\repos\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.dll
-C:\Users\Dis Moore\source\repos\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.pdb
-C:\Users\Dis Moore\source\repos\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.dll
-C:\Users\Dis Moore\source\repos\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.dll
-C:\Users\Dis Moore\source\repos\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.pdb
-C:\Users\Dis Moore\source\repos\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.pdb
-C:\Users\Dis Moore\source\repos\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.csproj.CopyComplete
-C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.BLL.deps.json
-C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.BLL.dll
-C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.BLL.pdb
-C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.csproj.CoreCompileInputs.cache
-C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.AssemblyInfoInputs.cache
-C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.AssemblyInfo.cs
-C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.dll
-C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.pdb
-C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.dll
-C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.dll
-C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.pdb
-C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.pdb
-C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.csprojAssemblyReference.cache
-C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.csproj.CopyComplete
-<<<<<<< HEAD
 C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.BLL.deps.json
 C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.BLL.dll
 C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.BLL.pdb
@@ -41,19 +12,3 @@ C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcorea
 C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.csproj.CopyComplete
 C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.dll
 C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.pdb
-=======
-C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.BLL.deps.json
-C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.BLL.dll
-C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.BLL.pdb
-C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.dll
-C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.dll
-C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.pdb
-C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.pdb
-C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.csprojAssemblyReference.cache
-C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.csproj.CoreCompileInputs.cache
-C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.AssemblyInfoInputs.cache
-C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.AssemblyInfo.cs
-C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.csproj.CopyComplete
-C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.dll
-C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.BLL\obj\Debug\netcoreapp2.2\TicketingSystem.BLL.pdb
->>>>>>> d03904ae63c76b400a8493dbaf62e20d91bc2e2f

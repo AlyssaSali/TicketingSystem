@@ -8,16 +8,6 @@ namespace TicketingSystem.BLL.Helpers
 {
     public class ToModel
     {
-<<<<<<< HEAD
-        public Severity Severity(SeverityVM severityVM)
-        {
-            return new Severity
-            {
-                ID = severityVM.ID,
-                SeverityCode = severityVM.SeverityCode,
-                SeverityDesc = severityVM.SeverityDesc
-=======
-<<<<<<< HEAD
         public Office Office(OfficeVM officeVM)
         {
             return new Office
@@ -25,20 +15,42 @@ namespace TicketingSystem.BLL.Helpers
                 Officeid = officeVM.Officeid,
                 OfficeCode = officeVM.OfficeCode,
                 OfficeDesc = officeVM.OfficeDesc,
-
-=======
-        public Employee Employee(EmployeeVM employeeVM)
-        {
-            return new Employee
-            {
-                EmployeeID = employeeVM.EmployeeID,                
-                FirstName = employeeVM.FirstName,
-                LastName = employeeVM.LastName,
-                EmailAddress = employeeVM.EmailAddress,
-                Office = employeeVM.Office
->>>>>>> 46c58e86a322ff5f84c1b927d6a1c93aafe67234
->>>>>>> d03904ae63c76b400a8493dbaf62e20d91bc2e2f
             };
         }
+
+        public Category Category(CategoryVM categoryVM)
+        {
+            return new Category
+            {
+                categoryid = categoryVM.categoryid,
+                CategoryName = categoryVM.CategoryName,
+            };
+        }
+
+        public Severity Severity(SeverityVM severityVM)
+        {
+            return new Severity
+            {
+                severityid = severityVM.severityid,
+                SeverityName = severityVM.SeverityName,
+                SeverityCode = severityVM.SeverityCode,
+                SeverityDesc = severityVM.SeverityDesc
+            };
+        }
+
+        public CategoryList CategoryList(CategoryListVM categorylistVM)
+        {
+            return new CategoryList
+            {
+                CategoryListid = categorylistVM.CategoryListid,
+                CategoryListName = categorylistVM.CategoryListName,
+                SlaResponseTime = categorylistVM.SlaResponseTime,
+                SlaResolvedTime = categorylistVM.SlaResolvedTime,
+                ItGroup = categorylistVM.ItGroup,
+                categoryid = categorylistVM.categoryid,
+                severityid = categorylistVM.severityid
+            };
+        }
+
     }
 }

@@ -4,59 +4,68 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
-import { MatDialogModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './views/layouts/nav-menu/nav-menu.component';
-<<<<<<< HEAD
 import { HomeComponent } from './views/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SeverityComponent } from './views/severity/severity.component';
 import { SeverityAddFormComponent } from './views/severity/severity-add-form/severity-add-form.component';
-import { SeverityEditFormComponent } from './views/severity/severity-edit-form/severity-edit-form.component';
 import { TicketComponent } from './views/ticket/ticket.component';
 import { TicketAddFormComponent } from './views/ticket/ticket-add-form/ticket-add-form.component';
 import { TicketEditFormComponent } from './views/ticket/ticket-edit-form/ticket-edit-form.component';
-=======
-<<<<<<< HEAD
 import { EmployeeComponent } from './views/employee/employee.component';
 import { EmployeeAddFormComponent } from './views/employee/employee-add-form/employee-add-form.component';
 import { EmployeeUpdateFormComponent } from './views/employee/employee-update-form/employee-update-form.component';
-
-=======
 import { OfficeComponent } from './views/office/office.component';
 import { OfficeAddFormComponent } from './views/office/office-add-form/office-add-form.component';
 import { OfficeUpdateFormComponent } from './views/office/office-update-form/office-update-form.component';
 import { MatDialogModule } from '@angular/material';
->>>>>>> 6d2d6532e882551e73784511ee1ca6b02e942cb4
->>>>>>> d03904ae63c76b400a8493dbaf62e20d91bc2e2f
+import { CommonModule } from '@angular/common';
+import { SidenavComponent } from './views/layouts/sidenav/sidenav.component';
+import { SeverityUpdateFormComponent } from './views/severity/severity-update-form/severity-update-form.component';
+import { DashboardComponent } from './views/layouts/dashboard/dashboard.component';
+import { TicketMinorComponent } from './views/ticket-minor/ticket-minor.component';
+import { TicketApprovalComponent } from './views/ticket-approval/ticket-approval.component';
+import { TicketSLAComponent } from './views/ticket-SLA/ticket-SLA.component';
+import { CategoryComponent } from './views/category/category.component';
+import { CategoryAddFormComponent } from './views/category/category-add-form/category-add-form.component';
+import { CategoryUpdateFormComponent } from './views/category/category-update-form/category-update-form.component';
+import { CategoryListUpdateFormComponent } from './views/categoryList/categoryList-update-form/categoryList-update-form.component';
+import { CategoryListAddFormComponent } from './views/categoryList/categoryList-add-form/categoryList-add-form.component';
+import { CategoryListComponent } from './views/categoryList/categoryList.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
-<<<<<<< HEAD
     HomeComponent,
     SeverityComponent,
     SeverityAddFormComponent,
-    SeverityEditFormComponent,
+    SeverityUpdateFormComponent,
     TicketComponent,
     TicketAddFormComponent,
-    TicketEditFormComponent
-],
-=======
-<<<<<<< HEAD
+    TicketEditFormComponent,
+    TicketMinorComponent,
+    TicketApprovalComponent,
     EmployeeComponent,
     EmployeeAddFormComponent,
-    EmployeeUpdateFormComponent
-=======
+    EmployeeUpdateFormComponent,
     OfficeComponent,
     OfficeAddFormComponent,
-    OfficeUpdateFormComponent
->>>>>>> 6d2d6532e882551e73784511ee1ca6b02e942cb4
-  ],
->>>>>>> d03904ae63c76b400a8493dbaf62e20d91bc2e2f
+    OfficeUpdateFormComponent,
+    SidenavComponent,
+    DashboardComponent,
+    TicketSLAComponent,
+    CategoryComponent,
+    CategoryAddFormComponent,
+    CategoryUpdateFormComponent,
+    CategoryListComponent,
+    CategoryListAddFormComponent,
+    CategoryListUpdateFormComponent,
+],
+    
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
@@ -65,9 +74,18 @@ import { MatDialogModule } from '@angular/material';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    CommonModule
   ],
-  entryComponents:[SeverityEditFormComponent, TicketAddFormComponent],
+  entryComponents:[
+    TicketAddFormComponent, 
+    OfficeUpdateFormComponent, 
+    SeverityUpdateFormComponent, 
+    TicketSLAComponent,
+    TicketApprovalComponent,
+    CategoryUpdateFormComponent,
+    CategoryListUpdateFormComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

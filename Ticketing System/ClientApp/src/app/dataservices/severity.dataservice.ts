@@ -2,29 +2,22 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Severity } from '../models/severity.model';
 
-
 @Injectable({
-    providedIn: 'root'
+    providedIn:'root'
 })
-
-export class SeverityDataservice implements 
-    OnDestroy {
-
-    severitySource = new BehaviorSubject<Severity[]>([]);
-    severitys = this.severitySource.asObservable();
-
-    /**
-     *
-     */
-    constructor() {
-    }
-
-    refreshBooks() {
-        this.severitySource.next(null);
-    }
+export class SeverityDataService implements
+OnDestroy{
     
-    ngOnDestroy() {
-        this.severitySource.unsubscribe();
+    severitySource=new BehaviorSubject<Severity[]>([]);
+    severities =this.severitySource.asObservable();
+    
+    constructor(){
     }
-
-    }
+        refreshSeverities(){
+            this.severitySource.next(null);
+        }
+        ngOnDestroy(){
+            this.severitySource.unsubscribe();
+        }
+   
+}

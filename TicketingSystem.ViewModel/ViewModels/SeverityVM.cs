@@ -7,10 +7,14 @@ namespace TicketingSystem.ViewModel.ViewModels
 {
     public class SeverityVM
     {
-        public Guid ID { get; set; }
+        
+            public Guid severityid { get; set; }
 
-        [Required]
-        public string SeverityCode { get; set; }
-        public string SeverityDesc { get; set; }
+            [Required]
+            public string SeverityCode { get; set; }
+            public string SeverityName { get; set; }
+            public string SeverityDesc { get; set; }
+        
+
     }
 }

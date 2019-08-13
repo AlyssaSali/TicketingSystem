@@ -1,22 +1,13 @@
-      
-                <ul class="nav nav-tabs" style="margin-top: 20px">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" [routerLink]='["/ticket"]'>My Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" [routerLink]='["/ticketAdd"]' href="#ticket">Encode Ticket</a>
-                            </li>
-                </ul>
-                <div id="myTabContent" class="tab-content">
-                        <div class="tab-pane fade active show">
-                            <app-ticket></app-ticket>
-                        </div>
-                        <div class="tab-pane fade" id="ticket">
-                            <app-ticket-add-form></app-ticket-add-form>
-                        </div>
-                </div>
+<div class="main">
+<div class="jumbotron">
+        <h1 class="display-3">Hello, user!</h1>
+        <p class="lead">This is a simple Ticketing System web application that deliver value to customers by achieving customer’s desired results while working within given constraints.​
+                .</p>
+        <hr class="my-4">
+        <p>Our objective is to provide services to our End Users.</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" [routerLink]="[ '/dashboard']" role="button">Let start</a>
+        </p>
+</div>
 
-       
-
-      
-
+</div>

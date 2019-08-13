@@ -1,19 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
-<<<<<<< HEAD
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~material-design-icons/iconfont/material-icons.css";
 
-=======
-<<<<<<< HEAD
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-=======
-@import"~@angular/material/prebuilt-themes/pink-bluegrey.css";
-@import'~material-design-icons/iconfont/material-icons.css';
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
->>>>>>> d03904ae63c76b400a8493dbaf62e20d91bc2e2f
 
 .error-msg {
     color:  red;
@@ -25,11 +16,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color:red;
     font-size: 10pt;
 }
-<<<<<<< HEAD
 
-.font
+.f3 {
+  font-size: 10px;
+}
+
+.f1
 {
     font-size: 12px;
+    font-style: inherit;
+}
+
+.f2
+{
+    font-size: 15px;
     font-style: inherit;
 }
 
@@ -38,6 +38,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin-top:10px;
     margin-right: 10px;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .error-msg {
@@ -46,10 +47,59 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin: 0;
 }
 
+/* Main content */
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 80px 0px;
+  }
 
+  .tbl-hr {
+    width:10%; 
+    font-weight:normal; 
+    font-size: 15px;
+  }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-=======
->>>>>>> 6d2d6532e882551e73784511ee1ca6b02e942cb4
->>>>>>> d03904ae63c76b400a8493dbaf62e20d91bc2e2f
+  .tbl-bd {
+    font-weight:lighter; 
+    font-size: 15px
+  }
+  
+  .rw-tbl  {
+    margin-top: 10px;
+    margin-left:10px; 
+    width:100%;
+  }
+
+  .ico-s {
+    width: 100%; 
+    height: 100px;
+  }
+
+  .ico1 {
+    width:53px; 
+    height: 55px; 
+    margin-top: 10px;
+  }
+
+  .ico2{
+    width:65px; 
+    height: 60px;
+  }
+
+  .mg {
+      margin-left: 50px;
+  }
+
+  .mt {
+    margin-top: 30px;
+}
+
+.mt1 {
+  margin-top:10px;
+}
+
+.mt2 {
+  margin-top:20px;
+}
+

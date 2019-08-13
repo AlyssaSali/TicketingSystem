@@ -8,8 +8,12 @@ namespace TicketingSystem.DAL.Models
     public class Severity
     {
         [Key]
-        public Guid ID { get; set; }
+        public Guid severityid { get; set; }
         public string SeverityCode { get; set; }
+        public string SeverityName { get; set; }
         public string SeverityDesc { get; set; }
+
+        public virtual ICollection<Category> Categories { get; set; }
+
     }
 }

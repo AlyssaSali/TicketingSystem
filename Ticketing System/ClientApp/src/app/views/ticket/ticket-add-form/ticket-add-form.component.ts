@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ThrowStmt } from '@angular/compiler';
-import { MatDialogRef, MatDialog } from '@angular/material';
-import { TicketDataservice } from 'src/app/dataservices/ticket.dataservice';
+import { MatDialogRef, MatDialog, MatDialogConfig, MAT_DIALOG_DATA } from '@angular/material';
 import { TicketEditFormComponent } from '../ticket-edit-form/ticket-edit-form.component';
 import { TicketService } from 'src/app/services/ticket.service';
+import { TicketDataService } from 'src/app/dataservices/ticket.dataservice';
+
 
 @Component({
   selector: 'app-ticket-add-form',
@@ -15,18 +16,15 @@ export class TicketAddFormComponent implements OnInit {
   ticketCreateForm: FormGroup;
   isSubmit = false;
 
-  nameBackEndErrors: string[];
-
   constructor(
     private ticketService: TicketService,
-    private ticketDataService: TicketDataservice,
-    // public dialogRef: MatDialogRef<TicketEditFormComponent>
+    private ticketDataService: TicketDataService
   ) { 
     this.ticketCreateForm = new FormGroup({
       date: new FormControl(),
       time: new FormControl(),
-      emailAddress: new FormControl('', [Validators.required, Validators.maxLength(50)]),
-      formOfCommu: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      contactInfo: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      contactVia: new FormControl('', [Validators.required, Validators.maxLength(50)]),
       requestedBy: new FormControl('', [Validators.maxLength(50)]),
       office: new FormControl('', [Validators.required, Validators.maxLength(50)]),
       requestCategory: new FormControl('', [Validators.required, Validators.maxLength(50)]),
@@ -58,12 +56,11 @@ export class TicketAddFormComponent implements OnInit {
 
      try {
        this.isSubmit = true;
-       this.nameBackEndErrors = null;
        let result = await this.ticketService.create(this.ticketCreateForm.value).toPromise();
       if (result.isSuccess) {
         alert(result.message);
         this.ticketCreateForm.reset();
-        this.ticketDataService.refreshBooks();
+        this.ticketDataService.refreshTickets();
       }
       else {
         alert(result.message);
@@ -77,11 +74,6 @@ export class TicketAddFormComponent implements OnInit {
         return;   
       }
       
-      if(errs.error){
-        if('name' in errs.errors) {
-          this.nameBackEndErrors = errs.errors.name;
-        }
-        }
 
         this.isSubmit = false;
      }  finally{
@@ -89,7 +81,4 @@ export class TicketAddFormComponent implements OnInit {
      }
   }
 
-  // close(){
-  //     this.dialogRef.close();
-  //   }
 }

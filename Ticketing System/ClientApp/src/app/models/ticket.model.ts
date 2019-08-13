@@ -1,20 +1,19 @@
 
 
 export interface Ticket {
-    id: number,
-    myGuid: number,
-    assistById: number,
-    policyId: number,
+    ticketid: number,
+    assistByid: number,
+    categoryid: number,
     date: string,
     time: number,
     formOfCommu: string,
-    emailAddress: string,
+    contactInfo: string,
     requestTitle: string,
     requestDesc: string,
     severity: string,
     responseTime: string,
     resolveTime: string,
-    technician: string,
+    itGroup: string,
     isUrgent: boolean,
     isOpen: boolean,
     trackingStatus: string,
@@ -22,6 +21,4 @@ export interface Ticket {
     //dummyinputs
     requestedBy: string,
     office: string,
-    requestCategory: string,
-    requestSubCategory: string,
 }

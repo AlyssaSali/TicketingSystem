@@ -1,0 +1,37 @@
+<div class="main">
+        <div class="row">
+          <div class="col-md-4">
+              <div class="card bg-light mb-3 f1">
+                  <div class="card-header">Sort By</div>
+                    <div class="list-group">
+                          <a href="#" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">Emergency Request 
+                            <span class="badge badge-primary badge-pill" style="font-size: 12px;">2</span>
+                          </a>
+                          <a href="#" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">Normal Request
+                            <span class="badge badge-primary badge-pill" style="font-size: 12px;">14</span>
+                          </a>
+                          <a href="#" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">Critical Request
+                            <span class="badge badge-primary badge-pill" style="font-size: 12px;">1</span>
+                          </a>
+                        </div>
+              </div>
+          </div>
+          <div class="col-md-8">
+              <div class="card border-light mb-3">
+                  <div class="card-header f2">Create Ticket</div>
+                  <div class="row">
+                  <div class="col-md-6">
+                      <button type="button" class="btn btn-outline-info ico-s" [routerLink]="[ '/ticketMinor']">
+                        <img src="rf.png" class="ico2">Minor Request
+                      </button>
+                  </div>
+                  <div class="col-md-6">
+                      <button type="button" class="btn btn-outline-info ico-s" [routerLink]="[ '/ticketAdd']">
+                          <img src="cm.png" class="ico1">Major Request
+                        </button>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <app-ticket></app-ticket>

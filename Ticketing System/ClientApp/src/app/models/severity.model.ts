@@ -1,5 +1,6 @@
 export interface Severity {
-    id: number;
+    severityid:number;
     severityCode: string;
+    severityName: string;
     severityDesc: string;
 }

@@ -3,15 +3,5 @@ export interface MyResponse {
     message: string;
     identifier: string;
     exceptionError: any;
-<<<<<<< HEAD
     errors: any;
 }
-=======
-<<<<<<< HEAD
-    errors: any;
-}
-=======
-    error:any;
-}
->>>>>>> 6d2d6532e882551e73784511ee1ca6b02e942cb4
->>>>>>> d03904ae63c76b400a8493dbaf62e20d91bc2e2f

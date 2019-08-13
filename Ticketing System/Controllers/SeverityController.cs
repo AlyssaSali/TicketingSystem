@@ -10,6 +10,7 @@ using TicketingSystem.ViewModel.ViewModels;
 
 namespace Ticketing_System.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class SeverityController : Controller
@@ -20,59 +21,46 @@ namespace Ticketing_System.Controllers
         {
             severityService = _severityService;
         }
-
-        //api/Severity/Create
-
         [HttpPost("[action]")]
-        public ActionResult<ResponseVM> Create([FromBody]SeverityVM severityVM)
+        public ActionResult<ResponseVM> Create
+            ([FromBody] SeverityVM severityVM)
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest("Something went wrong!");
-
+                return BadRequest("something went wrong");
             }
             return severityService.Create(severityVM);
         }
-
-        //api/Severity/Delete
-
         [HttpDelete("[action]/{id}")]
         public ActionResult<ResponseVM> Delete(Guid id)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("something went wrong");
+            }
             return severityService.Delete(id);
         }
-
-        //api/Severity/GetAll
-
         [HttpGet("[action]")]
         public IEnumerable<SeverityVM> GetAll()
         {
             return severityService.GetAll();
-
         }
-
-
-        //api/Severity/GetSingleBy
-
         [HttpGet("[action]/{id}")]
         public SeverityVM GetSingleBy(Guid id)
         {
             return severityService.GetSingleBy(id);
-
         }
-
-        //api/Severity/Update
-
         [HttpPut("[action]")]
-        public ActionResult<ResponseVM> Update([FromBody] SeverityVM severityVM)
+        public ActionResult<ResponseVM> Update
+            ([FromBody] SeverityVM severityVM)
+
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest("Something went wrong!");
-
+                return BadRequest("something went wrong");
             }
             return severityService.Update(severityVM);
         }
-
     }
+
 }

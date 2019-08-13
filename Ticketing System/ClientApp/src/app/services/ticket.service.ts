@@ -22,8 +22,8 @@ export class TicketService {
     return this.http.get<Ticket[]>(this.ticketApi + 'GetAll');
   }
 
-  getSingleBy(id): Observable<Ticket> {
-    return this.http.get<Ticket>(this.ticketApi + 'GetSingleby/' + String(id));
+  getSingleBy(ticketid): Observable<Ticket> {
+    return this.http.get<Ticket>(this.ticketApi + 'GetSingleby/' + String(ticketid));
   }
 
   create(ticket: Ticket) : Observable<MyResponse>{
@@ -34,8 +34,8 @@ export class TicketService {
     return this.http.put<MyResponse>(this.ticketApi + 'Update', ticket);
   }
 
-  delete(id) : Observable<MyResponse>{
-    return this.http.delete<MyResponse>(this.ticketApi + 'Delete/' + String(id));
+  delete(ticketid) : Observable<MyResponse>{
+    return this.http.delete<MyResponse>(this.ticketApi + 'Delete/' + String(ticketid));
   }
 
 }

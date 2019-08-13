@@ -19,53 +19,104 @@ namespace TicketingSystem.DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-<<<<<<< HEAD
+            modelBuilder.Entity("TicketingSystem.DAL.Models.Category", b =>
+                {
+                    b.Property<Guid>("categoryid")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CategoryName");
+
+                    b.Property<Guid?>("categoryid1");
+
+                    b.Property<Guid?>("severityid");
+
+                    b.HasKey("categoryid");
+
+                    b.HasIndex("categoryid1");
+
+                    b.HasIndex("severityid");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("TicketingSystem.DAL.Models.CategoryList", b =>
+                {
+                    b.Property<Guid>("CategoryListid")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CategoryListName");
+
+                    b.Property<string>("ItGroup");
+
+                    b.Property<int>("SlaResolvedTime");
+
+                    b.Property<int>("SlaResponseTime");
+
+                    b.Property<Guid>("categoryid");
+
+                    b.Property<Guid>("severityid");
+
+                    b.HasKey("CategoryListid");
+
+                    b.HasIndex("categoryid");
+
+                    b.HasIndex("severityid");
+
+                    b.ToTable("CategoryLists");
+                });
+
+            modelBuilder.Entity("TicketingSystem.DAL.Models.Office", b =>
+                {
+                    b.Property<Guid>("Officeid")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("OfficeCode");
+
+                    b.Property<string>("OfficeDesc");
+
+                    b.HasKey("Officeid");
+
+                    b.ToTable("Offices");
+                });
+
             modelBuilder.Entity("TicketingSystem.DAL.Models.Severity", b =>
                 {
-                    b.Property<Guid>("ID")
+                    b.Property<Guid>("severityid")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("SeverityCode");
 
                     b.Property<string>("SeverityDesc");
-=======
-            modelBuilder.Entity("TicketingSystem.DAL.Models.Office", b =>
-                {
-                    b.Property<long>("Officeid")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("OfficeCode");
+                    b.Property<string>("SeverityName");
 
-                    b.Property<string>("OfficeDesc");
->>>>>>> d03904ae63c76b400a8493dbaf62e20d91bc2e2f
+                    b.HasKey("severityid");
 
-                    b.HasKey("Officeid");
-
-<<<<<<< HEAD
                     b.ToTable("Severities");
-=======
-                    b.ToTable("Offices");
                 });
 
-            modelBuilder.Entity("TicketingSystem.DAL.Models.Employee", b =>
+            modelBuilder.Entity("TicketingSystem.DAL.Models.Category", b =>
                 {
-                    b.Property<long>("EmployeeID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.HasOne("TicketingSystem.DAL.Models.Category")
+                        .WithMany("Categories")
+                        .HasForeignKey("categoryid1");
 
-                    b.Property<string>("EmailAddress");
+                    b.HasOne("TicketingSystem.DAL.Models.Severity")
+                        .WithMany("Categories")
+                        .HasForeignKey("severityid");
+                });
 
-                    b.Property<string>("FirstName");
+            modelBuilder.Entity("TicketingSystem.DAL.Models.CategoryList", b =>
+                {
+                    b.HasOne("TicketingSystem.DAL.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("categoryid")
+                        .OnDelete(DeleteBehavior.Cascade);
 
-                    b.Property<string>("LastName");
-
-                    b.Property<string>("Office");
-
-                    b.HasKey("EmployeeID");
-
-                    b.ToTable("Employees");
->>>>>>> d03904ae63c76b400a8493dbaf62e20d91bc2e2f
+                    b.HasOne("TicketingSystem.DAL.Models.Severity", "Severity")
+                        .WithMany()
+                        .HasForeignKey("severityid")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

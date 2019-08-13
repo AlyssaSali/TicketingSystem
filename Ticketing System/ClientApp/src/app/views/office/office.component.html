@@ -1,31 +1,39 @@
-<app-office-add-form></app-office-add-form>
-
-
-<h1>Offices</h1>
-<table class="table table-hover table-dark">
-<thead>
-    <tr>
-        <td style="width: 30%;">ID</td>
-        <td style="width: 30%;">Code</td>
-        <td style="width: 30%;">Description</td>
-        <td style="width: 20%;"></td>
-    </tr>
-</thead>
-<tbody> 
-    <tr *ngFor="let office of offices"> 
-        <td style="width: 30%;">{{office.officeid}}</td>
-        <td style="width: 30%;">{{office.officeCode}}</td>
-        <td style="width: 30%;">{{office.officeDesc}}</td>
-        <td style="width: 20%;">
-           <div class="row">
-               <button class="col-md-5 btn btn-success m-1"(click)="update(office)" data-toggle="tooltip" data-placement="bottom" title="Edit office">
-                    <i class="material-icons">update</i>
-               </button>
-               <button class="col-md-5 btn btn-danger m-1"(click)="delete(office.officeid)" data-toggle="tooltip" data-placement="bottom" title="Delete office">
-                    <i class="material-icons">delete </i>
-               </button>
-           </div> 
-        </td>
-    </tr>
-</tbody>
-</table>
+<div class="main">
+        <div class="card bg-light mb-3">
+            <div class="card-header">New Office</div>
+                <div class="card-body">
+                    <app-office-add-form></app-office-add-form>
+                </div>
+        </div>
+        <div class="card border-light mb-3">
+                <div class="card-header">List of Offices</div>
+                <div class="card-body">
+                    <table class="table table-hover table-light" style="width: 100%;">
+                    <thead>
+                        <tr class="tbl-hr">
+                            <td style="width: 30%;">Code</td>
+                            <td style="width: 50%;">Description</td>
+                            <td style="width: 20%;"></td>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <tr *ngFor="let office of offices" class="tbl-bd">  
+                            <!-- <td style="width: 30%;">{{office.officeid}}</td> -->
+                            <td style="width: 30%;">{{office.officeCode}}</td>
+                            <td style="width: 50%;">{{office.officeDesc}}</td>
+                            <td style="width: 20%;">
+                            <div class="row">
+                                <button class="btn btn-success m-1"(click)="update(office)" data-toggle="tooltip" data-placement="bottom" title="Edit office">
+                                        <i class="material-icons">update</i>
+                                </button>
+                                <button class="btn btn-danger m-1"(click)="delete(office.officeid)" data-toggle="tooltip" data-placement="bottom" title="Delete office">
+                                        <i class="material-icons">delete </i>
+                                </button>
+                            </div> 
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+</div>
