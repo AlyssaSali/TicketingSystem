@@ -1,1 +1,72 @@
-<p>employee-add-form works!</p>
+<div class="panel">
+    <div class="panel-heading">
+        <h1>New Employee</h1>
+    </div>
+    <div class="panel-body">
+        <div class="jumbotron">
+            <form (ngSubmit)="onFormSubmit()" method="POST" [formGroup]="employeeCreateForm">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="FirstName">FirstName: <span style="color: red;">*</span></label>
+                        <input type="text" class="form-control" id="FirstName" formControlName="firstname" [ngClass]="{'is-invalid': (f.firstname.touched && f.firstname.errors) || firstNameBackEndErrors}"/>
+                        <div *ngIf="f.firstname.touched && f.firstname.errors" class="invalid-feedback">
+                            <div *ngIf="f.firstname.errors.required">
+                                <span style="color: red; font-size: 10pt;">This field is required</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="LastName">LastName: <span style="color: red;">*</span></label>
+                        <input type="text" class="form-control" id="LastName" formControlName="lastname" [ngClass]="{'is-invalid': (f.lastname.touched && f.lastname.errors) || lastNameBackEndErrors}"/>
+                        <div *ngIf="f.lastname.touched && f.lastname.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastname.errors.required">
+                                <span style="color: red; font-size: 10pt;">This field is required</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="EmailAddress">Email Address: <span style="color: red;">*</span></label>
+                        <input type="text" class="form-control" id="EmailAddress" formControlName="emailaddress" [ngClass]="{'is-invalid': (f.emailaddress.touched && f.emailaddress.errors) || firstNameBackEndErrors}"/>
+                        <div *ngIf="f.emailaddress.touched && f.emailaddress.errors" class="invalid-feedback">
+                            <div *ngIf="f.emailaddress.errors.required">
+                                <span style="color: red; font-size: 10pt;">This field is required</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="officeid">Office: <span style="color: red">*</span></label> <br />
+                                <input type="text" id="officeid" formControlName="officeID" hidden/>
+                                <div>
+                                    <input type="text" class="form-control" formControlName="officeSelect" (keyup)="selectOffice($event)" (click)="$event.target.select()" list="officesListss">
+                                    <datalist class="ui-datalist-data" height="100px" id="officesListss" >
+                                        <option [ngValue]="null" disabled="true" [selected]="true">Select Office
+                                        <option id="{{office.officeid}}" *ngFor="let office of officesList" [value]="office.officeCode">
+                                    </datalist>
+                                    <div *ngIf="f.officeSelect.touched && f.officeSelect.errors" class="invalid-feedback">
+                                        <div *ngIf="f.officeSelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <br>
+                                <button type="button" class="btn btn-info btn-trans" (click)="openOfficeDialog()" data-toggle="tooltip" data-placement="bottom" title="Add new office"><i class="material-icons">add</i></button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                            <button type="submit" class="btn btn-primary" style="margin-top: 5px;" [disabled]="!employeeCreateForm.valid || isSubmit">Create</button>
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

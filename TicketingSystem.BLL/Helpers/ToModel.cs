@@ -9,9 +9,13 @@ namespace TicketingSystem.BLL.Helpers
     public class ToModel
     {
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
 =======
 
 >>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
         public Office Office(OfficeVM officeVM)
         {
             return new Office
@@ -21,6 +25,8 @@ namespace TicketingSystem.BLL.Helpers
                 OfficeDesc = officeVM.OfficeDesc,
             };
         }
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 
         public Category Category(CategoryVM categoryVM)
@@ -34,6 +40,7 @@ namespace TicketingSystem.BLL.Helpers
 
         public Severity Severity(SeverityVM severityVM)
 =======
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
         public Employee Employee(EmployeeVM employeeVM)
 >>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
         {
@@ -49,7 +56,29 @@ namespace TicketingSystem.BLL.Helpers
                 FirstName = employeeVM.FirstName,
                 LastName = employeeVM.LastName,
                 EmailAddress = employeeVM.EmailAddress,
+<<<<<<< HEAD
+                Officeid = Guid.Parse(employeeVM.Officeid)
+            };
+        }
+
+        public Ticket Ticket(TicketVM ticketVM)
+        {
+            return new Ticket
+            {
+                Ticketid = ticketVM.Ticketid,
+                DateOfRequest = ticketVM.DateOfRequest,
+                FormOfCommu = ticketVM.FormOfCommu,
+                ContactInfo = ticketVM.ContactInfo,
+                RequestTitle = ticketVM.RequestTitle,
+                RequestDesc = ticketVM.RequestDesc,
+                TrackingSatus = ticketVM.TrackingSatus,
+                ResponseTime = ticketVM.ResponseTime,
+                ResolveTime = ticketVM.ResolveTime,
+                IsUrgent = ticketVM.IsUrgent,
+                IsOpen = ticketVM.IsOpen
+=======
                 Office = employeeVM.Office
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
             };
         }
         public ITGroup ITGroup(ITGroupVM itgroupVM)

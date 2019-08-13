@@ -13,6 +13,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './views/layouts/nav-menu/nav-menu.component';
 <<<<<<< HEAD
+import { EmployeeComponent } from './views/employee/employee.component';
+import { EmployeeAddFormComponent } from './views/employee/employee-add-form/employee-add-form.component';
+import { EmployeeUpdateFormComponent } from './views/employee/employee-update-form/employee-update-form.component';
+import { MatDialogModule } from '@angular/material';
+import { OfficeUpdateFormComponent } from './views/office/office-update-form/office-update-form.component';
+import { OfficeComponent } from './views/office/office.component';
+import { OfficeAddFormComponent } from './views/office/office-add-form/office-add-form.component';
+
+=======
+<<<<<<< HEAD
 import { HomeComponent } from './views/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SeverityComponent } from './views/severity/severity.component';
@@ -50,11 +60,14 @@ import { ItgroupUpdateFormComponent } from './views/itgroup/itgroup-update-form/
 import { ItgroupDataService } from './dataservices/itgroup.dataservice';
 
 >>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
     HomeComponent,
     SeverityComponent,
@@ -67,11 +80,15 @@ import { ItgroupDataService } from './dataservices/itgroup.dataservice';
     TicketApprovalComponent,
 =======
 >>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
     EmployeeComponent,
     EmployeeAddFormComponent,
     EmployeeUpdateFormComponent,
     OfficeComponent,
     OfficeAddFormComponent,
+<<<<<<< HEAD
+    OfficeUpdateFormComponent
+=======
     OfficeUpdateFormComponent,
 <<<<<<< HEAD
     SidenavComponent,
@@ -89,6 +106,7 @@ import { ItgroupDataService } from './dataservices/itgroup.dataservice';
     ItgroupComponent,
     ItgroupAddFormComponent,
     ItgroupUpdateFormComponent
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
   ],
 >>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
   imports: [
@@ -98,6 +116,11 @@ import { ItgroupDataService } from './dataservices/itgroup.dataservice';
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+<<<<<<< HEAD
+    MatDialogModule
+  ],
+  entryComponents:[EmployeeUpdateFormComponent, OfficeUpdateFormComponent],
+=======
     MatDialogModule,
     ToastrModule.forRoot(),
     CommonModule
@@ -112,6 +135,7 @@ import { ItgroupDataService } from './dataservices/itgroup.dataservice';
     CategoryListUpdateFormComponent
   ],
 <<<<<<< HEAD
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
   providers: [],
 =======
   entryComponents:[OfficeUpdateFormComponent, ItgroupUpdateFormComponent],

@@ -10,8 +10,11 @@ namespace TicketingSystem.BLL.Helpers
     {
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
 >>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
         public OfficeVM Office(Office office)
         {
             return new OfficeVM
@@ -20,6 +23,10 @@ namespace TicketingSystem.BLL.Helpers
                 OfficeCode = office.OfficeCode,
                 OfficeDesc = office.OfficeDesc,
             };
+<<<<<<< HEAD
+        }
+
+=======
 <<<<<<< HEAD
         }
 
@@ -36,6 +43,7 @@ namespace TicketingSystem.BLL.Helpers
 =======
 
         }
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
         public EmployeeVM Employee(Employee employee)
 >>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
         {
@@ -51,8 +59,32 @@ namespace TicketingSystem.BLL.Helpers
                 FirstName = employee.FirstName,
                 LastName = employee.LastName,
                 EmailAddress = employee.EmailAddress,
+<<<<<<< HEAD
+                Officeid = employee.Officeid.ToString(),
+                Office = Office(employee.Office)
+
+            };
+        }
+
+        public TicketVM Ticket(Ticket ticket)
+        {
+            return new TicketVM
+            {
+                Ticketid = ticket.Ticketid,
+                DateOfRequest = ticket.DateOfRequest,
+                FormOfCommu = ticket.FormOfCommu,
+                ContactInfo = ticket.ContactInfo,
+                RequestTitle = ticket.RequestTitle,
+                RequestDesc = ticket.RequestDesc,
+                TrackingSatus = ticket.TrackingSatus,
+                ResponseTime = ticket.ResponseTime,
+                ResolveTime = ticket.ResolveTime,
+                IsUrgent = ticket.IsUrgent,
+                IsOpen = ticket.IsOpen
+=======
                 Office = employee.Office
 >>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
             };
 
          }

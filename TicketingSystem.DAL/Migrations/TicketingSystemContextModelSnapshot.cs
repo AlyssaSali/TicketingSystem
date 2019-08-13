@@ -20,6 +20,26 @@ namespace TicketingSystem.DAL.Migrations
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
 <<<<<<< HEAD
+            modelBuilder.Entity("TicketingSystem.DAL.Models.Employee", b =>
+                {
+                    b.Property<Guid>("EmployeeID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("EmailAddress");
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
+                    b.Property<Guid>("Officeid");
+
+                    b.HasKey("EmployeeID");
+
+                    b.HasIndex("Officeid");
+
+                    b.ToTable("Employees");
+=======
+<<<<<<< HEAD
             modelBuilder.Entity("TicketingSystem.DAL.Models.Category", b =>
                 {
                     b.Property<Guid>("categoryid")
@@ -64,6 +84,7 @@ namespace TicketingSystem.DAL.Migrations
                     b.HasIndex("severityid");
 
                     b.ToTable("CategoryLists");
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
                 });
 
             modelBuilder.Entity("TicketingSystem.DAL.Models.Office", b =>
@@ -86,6 +107,12 @@ namespace TicketingSystem.DAL.Migrations
 =======
             modelBuilder.Entity("TicketingSystem.DAL.Models.Employee", b =>
                 {
+<<<<<<< HEAD
+                    b.HasOne("TicketingSystem.DAL.Models.Office", "Office")
+                        .WithMany("Employees")
+                        .HasForeignKey("Officeid")
+                        .OnDelete(DeleteBehavior.Cascade);
+=======
                     b.Property<Guid>("EmployeeID")
 >>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
                         .ValueGeneratedOnAdd();
@@ -151,6 +178,7 @@ namespace TicketingSystem.DAL.Migrations
                     b.HasKey("Officeid");
 
                     b.ToTable("Offices");
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
                 });
 #pragma warning restore 612, 618
         }

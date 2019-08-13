@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './views/home/home.component';
+<<<<<<< HEAD
+import { CounterComponent } from './views/counter/counter.component';
+import { FetchDataComponent } from './views/fetch-data/fetch-data.component';
+import { EmployeeComponent } from './views/employee/employee.component';
+=======
 import { RouterModule, Routes } from '@angular/router';
 import { SeverityComponent } from './views/severity/severity.component';
 import { TicketComponent } from './views/ticket/ticket.component';
 import { TicketAddFormComponent } from './views/ticket/ticket-add-form/ticket-add-form.component';
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
 import { OfficeComponent } from './views/office/office.component';
 import { EmployeeComponent } from './views/employee/employee.component';
 <<<<<<< HEAD
@@ -40,11 +46,16 @@ const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
   { path: 'counter', component: CounterComponent},
   { path: 'fetch-data', component: FetchDataComponent},
+<<<<<<< HEAD
+  { path: 'employee', component: EmployeeComponent},
+  { path: 'office', component: OfficeComponent}
+=======
   { path: 'office', component: OfficeComponent},
   { path: 'employee', component: EmployeeComponent},
   { path: 'itgroup', component: ItgroupComponent}
   
 >>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
 ]
 
 @NgModule({

@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 <<<<<<< HEAD
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~material-design-icons/iconfont/material-icons.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+=======
+<<<<<<< HEAD
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~material-design-icons/iconfont/material-icons.css";
@@ -113,3 +119,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 =======
 >>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86

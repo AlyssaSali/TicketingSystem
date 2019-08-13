@@ -11,8 +11,11 @@ namespace TicketingSystem.DAL.Models
         {
 
         }
-<<<<<<< HEAD
         public DbSet<Office> Offices { get; set; }
+<<<<<<< HEAD
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
+=======
         public DbSet<Category> Categories { get; set; }
         public DbSet<Severity> Severities { get; set; }
         public DbSet<CategoryList> CategoryLists { get; set; }
@@ -24,5 +27,6 @@ namespace TicketingSystem.DAL.Models
 
         public DbSet<ITGroup> ITGroups { get; set; }
 >>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
     }
 }
