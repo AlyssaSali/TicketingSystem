@@ -8,7 +8,7 @@ namespace TicketingSystem.ViewModel.ViewModels
     public class EmployeeVM
     {
         [Required]
-        public long EmployeeID { get; set; }
+        public Guid EmployeeID { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]

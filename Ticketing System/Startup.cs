@@ -6,11 +6,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-<<<<<<< HEAD
 using TicketingSystem.BLL.Services;
-=======
 using TicketingSystem.BLL.Contracts;
->>>>>>> 46c58e86a322ff5f84c1b927d6a1c93aafe67234
 using TicketingSystem.DAL.Models;
 
 namespace Ticketing_System
@@ -40,11 +37,12 @@ namespace Ticketing_System
                   (Configuration.GetConnectionString
                   ("TicketingSystemContext")));
 
-<<<<<<< HEAD
+
             services.AddScoped<OfficeService>();
-=======
             services.AddScoped<EmployeeService>();
->>>>>>> 46c58e86a322ff5f84c1b927d6a1c93aafe67234
+            services.AddScoped<ITGroupService>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,9 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-
-<<<<<<< HEAD
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-=======
 @import"~@angular/material/prebuilt-themes/pink-bluegrey.css";
 @import'~material-design-icons/iconfont/material-icons.css';
 html, body { height: 100%; }
@@ -17,4 +14,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: red;
     font-size: 10pt;
 }
->>>>>>> 6d2d6532e882551e73784511ee1ca6b02e942cb4
+

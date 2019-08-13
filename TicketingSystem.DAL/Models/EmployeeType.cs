@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TicketingSystem.DAL.Models
 {
-    class EmployeeType
+    public class EmployeeType
     {
     }
 }

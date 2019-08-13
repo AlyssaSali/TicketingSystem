@@ -9,7 +9,7 @@ using TicketingSystem.ViewModel.ViewModels;
 
 namespace TicketingSystem.BLL.Contracts
 {
-    public class EmployeeService : IGenericService<EmployeeVM, long>
+    public class EmployeeService : IGenericService<EmployeeVM>
     {
         private ToViewModel toViewModel = new ToViewModel();
         private ToModel toModel = new ToModel();
@@ -79,7 +79,7 @@ namespace TicketingSystem.BLL.Contracts
                 }
             }
         }
-        public ResponseVM Delete(long id)
+        public ResponseVM Delete(Guid id)
         {
             using (context)
             {
@@ -130,7 +130,7 @@ namespace TicketingSystem.BLL.Contracts
                 }
             }
         }
-        public EmployeeVM GetSingleBy(long id)
+        public EmployeeVM GetSingleBy(Guid id)
         {
             using (context)
             {
