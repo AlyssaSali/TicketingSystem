@@ -3617,24 +3617,44 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dis Moore\\.nuget\\packages\\": {},
+<<<<<<< HEAD
+    "C:\\Users\\Moore\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+=======
+    "C:\\Users\\ridz\\.nuget\\packages\\": {},
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj",
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj",
       "projectName": "TicketingSystem.ViewModel",
-      "projectPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj",
-      "packagesPath": "C:\\Users\\Dis Moore\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\obj\\",
+      "projectPath": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj",
+      "packagesPath": "C:\\Users\\Moore\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj",
+      "projectName": "TicketingSystem.ViewModel",
+      "projectPath": "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj",
+      "packagesPath": "C:\\Users\\ridz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.ViewModel\\obj\\",
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Dis Moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< HEAD
+        "C:\\Users\\Moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+=======
+        "C:\\Users\\ridz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"

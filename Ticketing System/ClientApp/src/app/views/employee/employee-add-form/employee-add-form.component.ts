@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { EmployeeDataService } from 'src/app/dataservices/employee.dataservice';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { OfficeService } from 'src/app/services/office.service';
+import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
+import { Office } from 'src/app/models/office.model';
+import { OfficeComponent } from '../../office/office.component';
 
 @Component({
   selector: 'app-employee-add-form',
@@ -10,27 +15,41 @@ import { EmployeeDataService } from 'src/app/dataservices/employee.dataservice';
 })
 export class EmployeeAddFormComponent implements OnInit {
   employeeCreateForm: FormGroup;
-  isSubmit= false;
+  isSubmit = false;
 
   firstNameBackEndErrors: string[];
   lastNameBackEndErrors: string[];
   emailAddressBackEndErrors: string[];
   officeBackEndErrors: string[];
+//added during employee-office relationship
+  officesList : Office[];
 
+  dialogOpen = false;
+//added during employee-office relationship
   constructor(
     private employeeService: EmployeeService,
-    private employeeDataService: EmployeeDataService
+    private employeeDataService: EmployeeDataService,
+    private officeService: OfficeService,//added during employee-office relationship
+    private officeDataService: OfficeDataService,//added during employee-office relationship
+    private dialog: MatDialog//added during employee-office relationship
   ) { 
     //sets front-end max length
     this.employeeCreateForm = new FormGroup({
       firstname: new FormControl('', [Validators.required, Validators.maxLength(50)]),
       lastname: new FormControl('', [Validators.required, Validators.maxLength(50)]),
       emailaddress: new FormControl('', [Validators.required, Validators.maxLength(50)]),
-      office: new FormControl('', [Validators.required, Validators.maxLength(50)])
+      //office: new FormControl('', [Validators.required, Validators.maxLength(50)])
+      officeID: new FormControl('', Validators.required),//added during employee-office relationship
+      officeSelect: new FormControl('', Validators.required)//added during employee-office relationship
     })
   }
 
   ngOnInit() {
+    //added during employee-office relationship
+    this.officeDataService.officeSource.subscribe( data => {
+      this.getOfficeLists();
+    });
+    //added during employee-office relationship
   }
 
   get f() { return this.employeeCreateForm.controls; }
@@ -93,4 +112,30 @@ export class EmployeeAddFormComponent implements OnInit {
     }
   }
 
+  async getOfficeLists(){//added during employee-office relationship
+    try {
+      this.officesList = await this.officeService.getAll().toPromise();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  selectOffice($event){//added during employee-office relationship
+    let office = this.employeeCreateForm.value.officeSelect;
+    if (office.length > 2) {
+      if ($event.timeStamp > 200) {
+        let selectedOffice = this.officesList.find(data => data.officeCode == office);
+        if (selectedOffice) {
+          this.employeeCreateForm.controls['officeID'].setValue(selectedOffice.officeid);
+        }
+      }      
+    }
+  }
+
+  openOfficeDialog(){//added during employee-office relationship
+    const dialogConfig = new MatDialogConfig;
+    dialogConfig.width = '600px';
+    dialogConfig.height = '600px';
+    this.dialog.open(OfficeComponent, dialogConfig);
+  }
 }

@@ -1,17 +1,122 @@
 /* You can add global styles to this file, and also import other style files */
+<<<<<<< HEAD
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~material-design-icons/iconfont/material-icons.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+=======
+<<<<<<< HEAD
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~material-design-icons/iconfont/material-icons.css";
+
+=======
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @import"~@angular/material/prebuilt-themes/pink-bluegrey.css";
 @import'~material-design-icons/iconfont/material-icons.css';
+>>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.rounded-btn{
-    border-radius: 10px;
+.error-msg {
+    color:  red;
+    font-size: 10pt;
+    margin: 0;
 }
 
-.error-msge{
-    color: red;
+.rounded-btn {
+    color:red;
     font-size: 10pt;
 }
 
+.f3 {
+  font-size: 10px;
+}
+
+.f1
+{
+    font-size: 12px;
+    font-style: inherit;
+}
+
+.f2
+{
+    font-size: 15px;
+    font-style: inherit;
+}
+
+.mm {
+    margin-left:10px;
+    margin-top:10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.error-msg {
+    color:  red;
+    font-size: 10pt;
+    margin: 0;
+}
+
+<<<<<<< HEAD
+/* Main content */
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 80px 0px;
+  }
+
+  .tbl-hr {
+    width:10%; 
+    font-weight:normal; 
+    font-size: 15px;
+  }
+
+  .tbl-bd {
+    font-weight:lighter; 
+    font-size: 15px
+  }
+  
+  .rw-tbl  {
+    margin-top: 10px;
+    margin-left:10px; 
+    width:100%;
+  }
+
+  .ico-s {
+    width: 100%; 
+    height: 100px;
+  }
+
+  .ico1 {
+    width:53px; 
+    height: 55px; 
+    margin-top: 10px;
+  }
+
+  .ico2{
+    width:65px; 
+    height: 60px;
+  }
+
+  .mg {
+      margin-left: 50px;
+  }
+
+  .mt {
+    margin-top: 30px;
+}
+
+.mt1 {
+  margin-top:10px;
+}
+
+.mt2 {
+  margin-top:20px;
+}
+
+=======
+>>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86

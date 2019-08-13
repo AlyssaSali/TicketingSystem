@@ -1,5 +1,5 @@
 export interface MyResponse {
-    isSuccess: boolean;
+    isSuccess:boolean;
     message: string;
     identifier: string;
     exceptionError: any;

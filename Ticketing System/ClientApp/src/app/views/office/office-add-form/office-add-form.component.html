@@ -1,15 +1,10 @@
-<div class="panel">
-    <div class="panel-heading">
-        <h1>New Office</h1>
-        
-    </div>
-    <div class="panel-body">
+
         <div class="form-group has-success">
             <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="officeCreateForm">
-                <div class="row">
+                <div class="row font">
                     <div class="col-md-4">
                         <label for="OfficeCode">Code: <span style="color: #ff0000">*</span></label><br />
-                        <input type="text" class="form-control is-valid" id="officecode" formControlName="officecode" placeholder="Code" [ngClass]="{'is-invalid': (f.officecode.touched && f.officecode.errors) || officecodeBackEndErrors}"><br>
+                        <input type="text" class="form-control" id="officecode" formControlName="officecode" placeholder="Code" [ngClass]="{'is-invalid': (f.officecode.touched && f.officecode.errors) || officecodeBackEndErrors}"><br>
                        <div *ngIf="f.officecode.touched && f.officecode.errors"  class="invalid-feedback">  
                             <div *ngIf="f.officecode.errors.required"><span class="error-msg">This field is required</span></div>
                         </div>
@@ -17,9 +12,9 @@
                             <span class="error-msg" *ngFor="let error of officecodeBackEndErrors">{{error}}</span>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <label for="OfficeDesc">Description: <span style="color: red">*</span></label><br />
-                        <input type="text" class="form-control is-valid" id="officedesc" formControlName="officedesc" placeholder="Description" [ngClass]="{'is-invalid': (f.officedesc.touched && f.officedesc.errors) || officedescBackEndErrors}"><br>
+                        <input type="text" class="form-control" id="officedesc" formControlName="officedesc" placeholder="Description" [ngClass]="{'is-invalid': (f.officedesc.touched && f.officedesc.errors) || officedescBackEndErrors}"><br>
                        <div *ngIf="f.officedesc.touched && f.officedesc.errors"  class="invalid-feedback">  
                             <div *ngIf="f.officedesc.errors.required"><span class="error-msg">This field is required</span></div>
                         </div>
@@ -29,11 +24,9 @@
                     </div>
                     <div class="col-md-2">
                         <br>
-                        <button type="submit" [disabled]="!officeCreateForm.valid || isSubmit" class="btn btn-success">create</button>
+                        <button type="submit" [disabled]="!officeCreateForm.valid || isSubmit" class="btn btn-primary m-1">Save</button>
                     </div>
                 </div>
             </form>
         </div>
-    </div>
-</div>
 

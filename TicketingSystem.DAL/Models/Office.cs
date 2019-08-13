@@ -12,5 +12,7 @@ namespace TicketingSystem.DAL.Models
         public string OfficeCode { get; set; }
         public string OfficeDesc { get; set; }
 
+        public virtual ICollection<Employee> Employees { get; set; }
+
     }
 }

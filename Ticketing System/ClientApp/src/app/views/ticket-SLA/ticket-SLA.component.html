@@ -1,0 +1,63 @@
+<div class="card bg-light mb-3">
+        <div class="card-header f2">Service Level Agreement Section
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()"><i class="material-icons">close</i></button>
+        </div>
+         <div class="card-body">
+          <div class="form-group has-success">
+             <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="officeUpdateform">
+                <div class="row mm">
+                                <label class="col-md-2 col-form-label col-form-label-sm ml mg" for="inputSmall">Emergency?</label>
+                                <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label f1" for="customCheck1">Yes</label>
+                                </div>    
+                                <div class="custom-control custom-checkbox" style="margin-left: 20px">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                                <label class="custom-control-label f1" for="customCheck2">No</label>
+                                        </div>
+                </div>
+                 <div class="row mm">
+                     <div class="col-md-4 mg">
+                         <label class="col-form-label col-form-label-sm">Request Category:<span style="color: red">*</span></label>
+                         <select class="form-control form-control-sm" formControlName="contactVia">
+                                         <option selected="selected"></option>
+                                         <option>Request Fulfillment</option>
+                                         <option>Incident Ticketing</option>
+                         </select>
+                      </div>
+                      <div class="col-sm-7">
+                                 <label class="col-form-label col-form-label-sm font">Category List</label>
+                                 <form>
+                                     <input class="form-control-sm" type="text" placeholder="Search" style="width: 100%">
+                                     <button class="btn btn-secondary my-2 my-sm-0" type="submit" hidden>Search</button>
+                                 </form>
+                              </div>
+                 </div>
+         <div class="row mm">
+                 <div class="col-md-2 mg">
+                   <label class="col-form-label col-form-label-sm font" for="inputSmall">Severity</label>
+                   <input class="form-control form-control-sm" type="text"  formControlName="responseTime" disabled>
+                 </div>
+                 <div class="col-md-3">
+                         <label class="col-form-label col-form-label-sm font" for="inputSmall">SLA Resolve Time</label>
+                         <input class="form-control form-control-sm" type="text"  formControlName="responseTime" disabled>
+                 </div>
+                 <div class="col-md-3">
+                         <label class="col-form-label col-form-label-sm font" for="inputSmall">SLA Resolve Time</label>
+                         <input class="form-control form-control-sm" type="text" formControlName="resolveTime" disabled>
+                 </div>
+                 <div class="col-md-3">
+                         <label class="col-form-label col-form-label-sm font" for="inputSmall">Responsible Group</label>
+                         <input class="form-control form-control-sm" type="text" formControlName="technician" disabled>
+                 </div>
+         </div>    
+         <div class="row mm">
+                 <div class="col-md-3 mg" style="margin-left: 80%">
+                 <button type="submit" [disabled]="!ticketCreateForm.valid || isSubmit" class="btn btn-primary m-1"><i class="material-icons m-1">save</i>
+                 <label class="m-1">Save</label></button>
+                 </div>
+         </div>
+         </form>
+         </div>
+         </div>
+     </div>

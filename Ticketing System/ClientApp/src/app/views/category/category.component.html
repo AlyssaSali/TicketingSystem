@@ -1,0 +1,39 @@
+<div class="main">
+        <div class="card bg-light mb-3">
+            <div class="card-header">New Category</div>
+                <div class="card-body">
+                    <app-category-add-form></app-category-add-form>
+                </div>
+        </div>
+        <div class="card border-light mb-3">
+                <div class="card-header">List of Categories</div>
+                <div class="card-body">
+                    <table class="table table-hover table-light" style="width: 100%;">
+                    <thead>
+                        <tr class="tbl-hr">
+                            <td style="width: 30%;">MyGuid</td>
+                            <td style="width: 50%;">Category</td>
+                            <td style="width: 20%;"></td>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <tr *ngFor="let category of categories" class="tbl-bd">  
+                            <!-- <td style="width: 30%;">{{category.categoryid}}</td> -->
+                            <td style="width: 30%;">{{category.categoryid}}</td>
+                            <td style="width: 50%;">{{category.categoryName}}</td>
+                            <td style="width: 20%;">
+                            <div class="row">
+                                <button class="btn btn-success m-1"(click)="update(category)" data-toggle="tooltip" data-placement="bottom" title="Edit category">
+                                        <i class="material-icons">update</i>
+                                </button>
+                                <button class="btn btn-danger m-1"(click)="delete(category.categoryid)" data-toggle="tooltip" data-placement="bottom" title="Delete category">
+                                        <i class="material-icons">delete </i>
+                                </button>
+                            </div> 
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+</div>
