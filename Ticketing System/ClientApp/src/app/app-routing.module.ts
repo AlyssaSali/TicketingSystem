@@ -7,6 +7,7 @@ import { TicketComponent } from './views/ticket/ticket.component';
 import { TicketAddFormComponent } from './views/ticket/ticket-add-form/ticket-add-form.component';
 import { OfficeComponent } from './views/office/office.component';
 import { EmployeeComponent } from './views/employee/employee.component';
+<<<<<<< HEAD
 import { SidenavComponent } from './views/layouts/sidenav/sidenav.component';
 import { DashboardComponent } from './views/layouts/dashboard/dashboard.component';
 import { TicketMinorComponent } from './views/ticket-minor/ticket-minor.component';
@@ -31,6 +32,19 @@ const routes: Routes = [
   {path: 'ticketSLA', component: TicketSLAComponent},
   {path: 'category', component: CategoryComponent},
   {path: 'categoryList', component: CategoryListComponent},
+=======
+import { ItgroupComponent } from './views/itgroup/itgroup.component';
+
+
+const routes: Routes = [
+  { path: '', component: HomeComponent, pathMatch: 'full'},
+  { path: 'counter', component: CounterComponent},
+  { path: 'fetch-data', component: FetchDataComponent},
+  { path: 'office', component: OfficeComponent},
+  { path: 'employee', component: EmployeeComponent},
+  { path: 'itgroup', component: ItgroupComponent}
+  
+>>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
 ]
 
 @NgModule({

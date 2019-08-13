@@ -8,6 +8,10 @@ namespace TicketingSystem.BLL.Helpers
 {
     public class ToViewModel
     {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
         public OfficeVM Office(Office office)
         {
             return new OfficeVM
@@ -16,6 +20,7 @@ namespace TicketingSystem.BLL.Helpers
                 OfficeCode = office.OfficeCode,
                 OfficeDesc = office.OfficeDesc,
             };
+<<<<<<< HEAD
         }
 
         public CategoryVM Category(Category category)
@@ -28,16 +33,41 @@ namespace TicketingSystem.BLL.Helpers
         }
 
         public SeverityVM Severity(Severity severity)
+=======
+
+        }
+        public EmployeeVM Employee(Employee employee)
+>>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
         {
             return new SeverityVM
             {
+<<<<<<< HEAD
                 severityid = severity.severityid,
                 SeverityCode = severity.SeverityCode,
                 SeverityName = severity.SeverityName,
                 SeverityDesc = severity.SeverityDesc,
+=======
+                EmployeeID = employee.EmployeeID,
+                FirstName = employee.FirstName,
+                LastName = employee.LastName,
+                EmailAddress = employee.EmailAddress,
+                Office = employee.Office
+>>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
             };
+
+         }
+        public ITGroupVM ITGroup(ITGroup itgroup)
+        {
+            return new ITGroupVM
+            {
+                ITGroupid = itgroup.ITGroupid,
+                ITGroupCode = itgroup.ITGroupCode,
+                ITGroupName = itgroup.ITGroupName,
+            };
+
         }
 
+<<<<<<< HEAD
         public CategoryListVM CategoryList(CategoryList categoryList)
         {
             return new CategoryListVM
@@ -54,5 +84,7 @@ namespace TicketingSystem.BLL.Helpers
             };
         }
 
+=======
+>>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
     }
 }

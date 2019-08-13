@@ -19,6 +19,7 @@ namespace TicketingSystem.DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+<<<<<<< HEAD
             modelBuilder.Entity("TicketingSystem.DAL.Models.Category", b =>
                 {
                     b.Property<Guid>("categoryid")
@@ -82,6 +83,11 @@ namespace TicketingSystem.DAL.Migrations
             modelBuilder.Entity("TicketingSystem.DAL.Models.Severity", b =>
                 {
                     b.Property<Guid>("severityid")
+=======
+            modelBuilder.Entity("TicketingSystem.DAL.Models.Employee", b =>
+                {
+                    b.Property<Guid>("EmployeeID")
+>>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("SeverityCode");
@@ -117,6 +123,34 @@ namespace TicketingSystem.DAL.Migrations
                         .WithMany()
                         .HasForeignKey("severityid")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("TicketingSystem.DAL.Models.ITGroup", b =>
+                {
+                    b.Property<Guid>("ITGroupid")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ITGroupCode");
+
+                    b.Property<string>("ITGroupName");
+
+                    b.HasKey("ITGroupid");
+
+                    b.ToTable("ITGroups");
+                });
+
+            modelBuilder.Entity("TicketingSystem.DAL.Models.Office", b =>
+                {
+                    b.Property<Guid>("Officeid")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("OfficeCode");
+
+                    b.Property<string>("OfficeDesc");
+
+                    b.HasKey("Officeid");
+
+                    b.ToTable("Offices");
                 });
 #pragma warning restore 612, 618
         }

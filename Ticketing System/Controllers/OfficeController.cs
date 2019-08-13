@@ -32,7 +32,12 @@ namespace Ticketing_System.Controllers
             return officeService.Create(officeVM);
         }
         [HttpDelete("[action]/{id}")]
+<<<<<<< HEAD
         public ActionResult<ResponseVM> Delete(Guid id)
+=======
+        public ActionResult<ResponseVM> Delete
+            (Guid id)
+>>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
         {
             if (!ModelState.IsValid)
             {

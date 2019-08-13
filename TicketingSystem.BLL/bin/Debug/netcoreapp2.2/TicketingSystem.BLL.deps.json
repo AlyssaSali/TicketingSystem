@@ -525,6 +525,11 @@
         }
       },
       "TicketingSystem.ViewModel/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.2.6",
+          "Microsoft.EntityFrameworkCore.Design": "2.2.6",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.6"
+        },
         "runtime": {
           "TicketingSystem.ViewModel.dll": {}
         }
