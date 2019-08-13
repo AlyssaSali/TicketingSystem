@@ -1,0 +1,34 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-sidenav',
+  templateUrl: './sidenav.component.html',
+  styleUrls: ['./sidenav.component.css']
+})
+export class SidenavComponent implements OnInit {
+  dropdown = document.getElementsByClassName("dropdown-btn");
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+  //* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+
+  dropdownlist()
+  {
+    var i;
+    for (i = 0; i < this.dropdown.length; i++) {
+      this.dropdown[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+    });
+    }
+  }
+  
+
+}

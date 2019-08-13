@@ -1,0 +1,31 @@
+
+                
+        <div class="card bg-light mb-3">
+                <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="ticketCreateForm" class="form-group">
+                     <div class="card-header f2">Approval Section
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()"><i class="material-icons">close</i></button>
+                     </div>
+                      <div class="card-body">
+                            <div class="row">
+                                <label class="col-md-2 col-form-label col-form-label-sm ml" for="inputSmall">Approval</label>
+                                    <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="custom-control-label f1" for="customCheck1">Approve</label>
+                                    </div>    
+                                    <div class="custom-control custom-checkbox" style="margin-left: 20px">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                                <label class="custom-control-label f1" for="customCheck2">Reject</label>
+                                        </div>
+                                    <label class="col-md-11 col-form-label col-form-label-sm ml" for="inputSmall">Action/Remarks</label>
+                                    <div class="col-md-11 ml">
+                                      <textarea class="form-control form-control-sm" id="exampleTextarea" rows="7" placeholder="" formControlName="requestDesc"></textarea>
+                                    </div>
+                              </div>
+                      <div class="row">
+                              <div class="col-md-3 ml" style="margin-left: 80%">
+                              <button type="submit" [disabled]="!ticketCreateForm.valid || isSubmit" class="btn btn-primary m-1"><i class="material-icons">save</i>Save</button>
+                              </div>
+                      </div>
+              </div>
+          </form>
+   </div>

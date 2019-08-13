@@ -1,16 +1,15 @@
-
-<div class="panel">
-    <div class="panel-heading">
-        <h1 style="display: inline"> Update Office</h1>
-        <button class="btn btn-danger btn-sm float-right"(click)="close()"><i class="material-icons">close</i></button>
+<div class="card border-secondary mb-3">
+    <div class="card-header">Update Office
+        <!-- <button class="btn btn-secondary btn-sm float-right"(click)="close()"><i class="material-icons">close</i></button> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()"><i class="material-icons">close</i></button>
     </div>
-    <div class="panel-body">
-        <div class="form-group has-success">
+        <div class="card-body">
+          <div class="form-group has-success">
             <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="officeUpdateform">
                 <div class="row">
                     <div class="col-md-5">
                         <label for="OfficeCode">Code: <span style="color: red">*</span></label><br />
-                        <input type="text" class="form-control is-valid" id="officeCode" formControlName="officeCode" placeholder="Code" [ngClass]="{'is-invalid': (f.officeCode.touched && f.officeCode.errors) || officecodeBackEndErrors}"><br>
+                        <input type="text" class="form-control" id="officeCode" formControlName="officeCode" placeholder="Code" [ngClass]="{'is-invalid': (f.officeCode.touched && f.officeCode.errors) || officecodeBackEndErrors}"><br>
                        <div *ngIf="f.officeCode.touched && f.officeCode.errors"  class="invalid-feedback">  
                             <div *ngIf="f.officeCode.errors.required"><span class="error-msg">This field is required</span></div>
                         </div>
@@ -18,9 +17,9 @@
                             <span class="error-msg" *ngFor="let error of officecodeBackEndErrors">{{error}}</span>
                         </div>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-7">
                         <label for="OfficeDesc">Description: <span style="color: red">*</span></label><br />
-                        <input type="text" class="form-control is-valid" id="officeDesc" formControlName="officeDesc" placeholder="Description" [ngClass]="{'is-invalid': (f.officeDesc.touched && f.officeDesc.errors) || officedescBackEndErrors}"><br>
+                        <input type="text" class="form-control" id="officeDesc" formControlName="officeDesc" placeholder="Description" [ngClass]="{'is-invalid': (f.officeDesc.touched && f.officeDesc.errors) || officedescBackEndErrors}"><br>
                        <div *ngIf="f.officeDesc.touched && f.officeDesc.errors"  class="invalid-feedback">  
                             <div *ngIf="f.officeDesc.errors.required"><span class="error-msg">This field is required</span></div>
                         </div>
@@ -28,20 +27,11 @@
                             <span class="error-msg" *ngFor="let error of officedescBackEndErrors">{{error}}</span>
                         </div>
                     </div>
-                    <div class="row">
-                        <br>
-                        <button type="submit" [disabled]="!officeUpdateform.valid || isSubmit" class="btn btn-success">Update
-
-                        </button>
-                        <br>
-                        <button type="button" (click) = "close()" class="btn btn-danger">Close
-                            
-                        </button>
-                    </div>
+                </div>
+                <div style="float: right;">
+                        <button type="submit" [disabled]="!officeUpdateform.valid || isSubmit" class="btn btn-primary">Save Changes</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
-
