@@ -8,7 +8,6 @@ namespace TicketingSystem.BLL.Helpers
 {
     public class ToViewModel
     {
-<<<<<<< HEAD
         public OfficeVM Office(Office office)
         {
             return new OfficeVM
@@ -16,8 +15,9 @@ namespace TicketingSystem.BLL.Helpers
                 Officeid = office.Officeid,
                 OfficeCode = office.OfficeCode,
                 OfficeDesc = office.OfficeDesc,
+            };
+        }
 
-=======
         public EmployeeVM Employee(Employee employee)
         {
             return new EmployeeVM
@@ -26,8 +26,27 @@ namespace TicketingSystem.BLL.Helpers
                 FirstName = employee.FirstName,
                 LastName = employee.LastName,
                 EmailAddress = employee.EmailAddress,
-                Office = employee.Office
->>>>>>> 46c58e86a322ff5f84c1b927d6a1c93aafe67234
+                Officeid = employee.Officeid.ToString(),
+                Office = Office(employee.Office)
+
+            };
+        }
+
+        public TicketVM Ticket(Ticket ticket)
+        {
+            return new TicketVM
+            {
+                Ticketid = ticket.Ticketid,
+                DateOfRequest = ticket.DateOfRequest,
+                FormOfCommu = ticket.FormOfCommu,
+                ContactInfo = ticket.ContactInfo,
+                RequestTitle = ticket.RequestTitle,
+                RequestDesc = ticket.RequestDesc,
+                TrackingSatus = ticket.TrackingSatus,
+                ResponseTime = ticket.ResponseTime,
+                ResolveTime = ticket.ResolveTime,
+                IsUrgent = ticket.IsUrgent,
+                IsOpen = ticket.IsOpen
             };
         }
     }

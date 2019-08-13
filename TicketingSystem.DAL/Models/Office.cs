@@ -8,9 +8,11 @@ namespace TicketingSystem.DAL.Models
     public class Office
     {
         [Key]
-        public long Officeid { get; set; }
+        public Guid Officeid { get; set; }
         public string OfficeCode { get; set; }
         public string OfficeDesc { get; set; }
+
+        public virtual ICollection<Employee> Employees { get; set; }
 
     }
 }

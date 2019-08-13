@@ -11,7 +11,7 @@ using TicketingSystem.ViewModel.ViewModels;
 
 namespace TicketingSystem.BLL.Services
 {
-    public class OfficeService : IGenericService<OfficeVM, long>
+    public class OfficeService : IGenericService<OfficeVM>
     {
         private ToViewModel toViewModel = new ToViewModel();
         private ToModel toModel = new ToModel();
@@ -29,7 +29,7 @@ namespace TicketingSystem.BLL.Services
                 {
                     try
                     {
-                        
+                        officeVM.Officeid = Guid.NewGuid();
                         context.Offices.Add(toModel.Office(officeVM));
                         context.SaveChanges();
 
@@ -44,7 +44,7 @@ namespace TicketingSystem.BLL.Services
                 }
             }
         }
-        public ResponseVM Delete(long id)
+        public ResponseVM Delete(Guid id)
         {
             using (context)
             {
@@ -87,7 +87,7 @@ namespace TicketingSystem.BLL.Services
             }
         }
 
-        public OfficeVM GetSingleBy(long id)
+        public OfficeVM GetSingleBy(Guid id)
         {
             using (context)
             {

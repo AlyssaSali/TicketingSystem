@@ -13,6 +13,10 @@ import { NavMenuComponent } from './views/layouts/nav-menu/nav-menu.component';
 import { EmployeeComponent } from './views/employee/employee.component';
 import { EmployeeAddFormComponent } from './views/employee/employee-add-form/employee-add-form.component';
 import { EmployeeUpdateFormComponent } from './views/employee/employee-update-form/employee-update-form.component';
+import { MatDialogModule } from '@angular/material';
+import { OfficeUpdateFormComponent } from './views/office/office-update-form/office-update-form.component';
+import { OfficeComponent } from './views/office/office.component';
+import { OfficeAddFormComponent } from './views/office/office-add-form/office-add-form.component';
 
 
 @NgModule({
@@ -24,7 +28,10 @@ import { EmployeeUpdateFormComponent } from './views/employee/employee-update-fo
     NavMenuComponent,
     EmployeeComponent,
     EmployeeAddFormComponent,
-    EmployeeUpdateFormComponent
+    EmployeeUpdateFormComponent,
+    OfficeComponent,
+    OfficeAddFormComponent,
+    OfficeUpdateFormComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -33,8 +40,9 @@ import { EmployeeUpdateFormComponent } from './views/employee/employee-update-fo
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatDialogModule
   ],
-  entryComponents:[],
+  entryComponents:[EmployeeUpdateFormComponent, OfficeUpdateFormComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

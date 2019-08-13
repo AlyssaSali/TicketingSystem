@@ -11,12 +11,8 @@ namespace TicketingSystem.DAL.Models
         {
 
         }
-<<<<<<< HEAD
         public DbSet<Office> Offices { get; set; }
-=======
-        public DbSet<Department> Departments { get; set; }
-
         public DbSet<Employee> Employees { get; set; }
->>>>>>> 46c58e86a322ff5f84c1b927d6a1c93aafe67234
+        public DbSet<Ticket> Tickets { get; set; }
     }
 }

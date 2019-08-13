@@ -15,7 +15,7 @@ namespace Ticketing_System.Controllers
     [ApiController]
     public class OfficeController : Controller
     {
-        private readonly IGenericService<OfficeVM, long> officeService;
+        private readonly IGenericService<OfficeVM> officeService;
 
         public OfficeController(OfficeService _officeService)
         {
@@ -32,8 +32,7 @@ namespace Ticketing_System.Controllers
             return officeService.Create(officeVM);
         }
         [HttpDelete("[action]/{id}")]
-        public ActionResult<ResponseVM> Delete
-            (long id)
+        public ActionResult<ResponseVM> Delete(Guid id)
         {
             if (!ModelState.IsValid)
             {
@@ -47,7 +46,7 @@ namespace Ticketing_System.Controllers
             return officeService.GetAll();
         }
         [HttpGet("[action]/{id}")]
-        public OfficeVM GetSingleBy(long id)
+        public OfficeVM GetSingleBy(Guid id)
         {
             return officeService.GetSingleBy(id);
         }

@@ -1,8 +1,11 @@
+import { Office } from './office.model';
+
 export interface Employee {
-    EmployeeId: number;
-    FirstName: string;
-    LastName: string;
-    EmailAddress: string;
-    Office: string;
+    employeeID: string;
+    firstName: string;
+    lastName: string;
+    emailAddress: string;
+    officeid: number;
+    office: Office
 
 }

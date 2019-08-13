@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ using TicketingSystem.ViewModel.ViewModels;
 
 namespace TicketingSystem.BLL.Contracts
 {
-    public class EmployeeService : IGenericService<EmployeeVM, long>
+    public class EmployeeService : IGenericService<EmployeeVM>
     {
         private ToViewModel toViewModel = new ToViewModel();
         private ToModel toModel = new ToModel();
@@ -27,6 +28,7 @@ namespace TicketingSystem.BLL.Contracts
                 {
                     try
                     {
+                        employeeVM.EmployeeID = Guid.NewGuid();
                         //converts to book type then save to context
                         context.Employees.Add(toModel.Employee(employeeVM));
                         context.SaveChanges();
@@ -64,7 +66,7 @@ namespace TicketingSystem.BLL.Contracts
                         employeeToBeUpdated.FirstName = employeeVM.FirstName;
                         employeeToBeUpdated.LastName = employeeVM.LastName;
                         employeeToBeUpdated.EmailAddress = employeeVM.EmailAddress;
-                        employeeToBeUpdated.Office = employeeVM.Office;
+                        employeeToBeUpdated.Officeid = Guid.Parse(employeeVM.Officeid);
                         context.SaveChanges();
 
                         //commit changes to db
@@ -79,7 +81,7 @@ namespace TicketingSystem.BLL.Contracts
                 }
             }
         }
-        public ResponseVM Delete(long id)
+        public ResponseVM Delete(Guid id)
         {
             using (context)
             {
@@ -119,7 +121,10 @@ namespace TicketingSystem.BLL.Contracts
                     try
                     {
                         //gets all employees and order the from last to first
-                        var employees = context.Employees.ToList().OrderByDescending(x => x.EmployeeID);
+                        var employees = context.Employees
+                            .Include(x => x.Office)
+                            .ToList()
+                            .OrderByDescending(x => x.EmployeeID);
                         var employeesVm = employees.Select(x=>toViewModel.Employee(x));
                         return employeesVm;
                     }
@@ -130,7 +135,7 @@ namespace TicketingSystem.BLL.Contracts
                 }
             }
         }
-        public EmployeeVM GetSingleBy(long id)
+        public EmployeeVM GetSingleBy(Guid id)
         {
             using (context)
             {
@@ -138,7 +143,10 @@ namespace TicketingSystem.BLL.Contracts
                 {
                     try
                     {
-                        var employee = context.Employees.Find(id);
+                        var employee = context.Employees
+                            .Include(x=>x.Office)
+                            .Where(x => x.EmployeeID == id)
+                            .FirstOrDefault();
                         EmployeeVM employeeVm = null;
                         if (employee != null)
                         {

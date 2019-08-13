@@ -1,5 +1,4 @@
 <app-employee-add-form></app-employee-add-form>
-<app-employee-update-form></app-employee-update-form>
 
 <h1></h1>
 <table class="table table-hover table-dark">
@@ -13,10 +12,20 @@
     </thead>
     <tbody>
         <tr *ngFor="let employee of employees">
-            <td>{{employee.FirstName}}</td>
-            <td>{{employee.LastName}}</td>
-            <td>{{employee.EmailAddress}}</td>
-            <td>{{employee.Office}}</td>
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.emailAddress}}</td>
+            <td>{{employee.office.officeCode}}</td>
+            <td>
+                <div class="row">
+                    <button class="col-md-5 btn-success m-1" (click)="update(employee)" data-toggle="tooltip" data-placement="bottom" title="Update Employee">
+                        <i class="material-icons">update</i>
+                    </button>
+                    <button class="col-md-5 btn-danger m-1" (click)="delete(employee.employeeID)" data-toggle="tooltip" data-placement="bottom" title="DeleteEmployee">
+                        <i class="material-icons">delete</i>
+                    </button>
+                </div>
+            </td>
         </tr>
     </tbody>
 </table>

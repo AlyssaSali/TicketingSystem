@@ -16,7 +16,7 @@ namespace Ticketing_System.Controllers
     [ApiController]
     public class EmployeeController : Controller
     {
-        private readonly IGenericService<EmployeeVM, long> employeeService;
+        private readonly IGenericService<EmployeeVM> employeeService;
 
         public EmployeeController(EmployeeService _employeeService)
         {
@@ -26,7 +26,7 @@ namespace Ticketing_System.Controllers
         //finds specific employee/s
         //api/Book/FindEmployee/id
         [HttpGet("[action]/{id}")]
-        public EmployeeVM FindEmployee(long id) {
+        public EmployeeVM FindEmployee(Guid id) {
             return employeeService.GetSingleBy(id);
         }
 
@@ -61,7 +61,7 @@ namespace Ticketing_System.Controllers
 
 
         [HttpDelete("[action]/{id}")]
-        public ActionResult<ResponseVM> DeleteEmployee(long id)
+        public ActionResult<ResponseVM> DeleteEmployee(Guid id)
         {
             if (!ModelState.IsValid)
             {
