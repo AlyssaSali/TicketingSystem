@@ -5,21 +5,13 @@ using TicketingSystem.ViewModel.ViewModel;
 
 namespace TicketingSystem.BLL.Contracts
 {
-    public interface IGenericService<TVM, TType> where TVM : class where TType : IConvertible
+    public interface IGenericService<TVM> where TVM : class
     {
         IEnumerable<TVM> GetAll();
-        TVM GetSingleBy(long id);
-<<<<<<< HEAD
+        TVM GetSingleBy(Guid id);
 
         ResponseVM Create(TVM entity);
-        ResponseVM Delete(TType guid);
-
+        ResponseVM Delete(Guid id);
         ResponseVM Update(TVM entity);
-
-=======
-        ResponseVM Create(TVM entity);
-        ResponseVM Delete(long id);
-        ResponseVM Update(TVM entity);
->>>>>>> 46c58e86a322ff5f84c1b927d6a1c93aafe67234
     }
 }

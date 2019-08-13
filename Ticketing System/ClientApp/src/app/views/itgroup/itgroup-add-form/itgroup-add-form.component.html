@@ -1,0 +1,41 @@
+<div class="panel">
+    <div class="panel-heading">
+        <h1>New ITGroup</h1>
+        
+    </div>
+    <div class="panel-body">
+        <div class="form-group has-success">
+            <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="itgroupCreateForm">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="ITGroupCode">Code: <span style="color: #ff0000">*</span></label><br />
+                        <input type="text" class="form-control is-valid" id="itgroupcode" formControlName="itgroupcode" placeholder="Code" [ngClass]="{'is-invalid': (f.itgroupcode.touched && f.itgroupcode.errors) || itgroupcodeBackEndErrors}"><br>
+                       <div *ngIf="f.itgroupcode.touched && f.itgroupcode.errors"  class="invalid-feedback">  
+                            <div *ngIf="f.itgroupcode.errors.required"><span class="error-msg">This field is required</span></div>
+                        </div>
+                        <div>
+                            <span class="error-msg" *ngFor="let error of itgroupcodeBackEndErrors">{{error}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="ITGroupName">Name: <span style="color: red">*</span></label><br />
+                        <input type="text" class="form-control is-valid" id="itgroupname" formControlName="itgroupname" placeholder="Name" [ngClass]="{'is-invalid': (f.itgroupname.touched && f.itgroupname.errors) || itgroupnameBackEndErrors}"><br>
+                       <div *ngIf="f.itgroupname.touched && f.itgroupname.errors"  class="invalid-feedback">  
+                            <div *ngIf="f.itgroupname.errors.required"><span class="error-msg">This field is required</span></div>
+                        </div>
+                        <div>
+                            <span class="error-msg" *ngFor="let error of itgroupnameBackEndErrors">{{error}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <br>
+                        <button type="submit" [disabled]="!itgroupCreateForm.valid || isSubmit" class="btn btn-success">create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
