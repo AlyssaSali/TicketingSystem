@@ -1,18 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-<<<<<<< HEAD
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-=======
 import { AppComponent } from './app.component';
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
-
-import { AppComponent } from './app.component';
 import { NavMenuComponent } from './views/layouts/nav-menu/nav-menu.component';
-<<<<<<< HEAD
 import { EmployeeComponent } from './views/employee/employee.component';
 import { EmployeeAddFormComponent } from './views/employee/employee-add-form/employee-add-form.component';
 import { EmployeeUpdateFormComponent } from './views/employee/employee-update-form/employee-update-form.component';
@@ -20,9 +13,6 @@ import { MatDialogModule } from '@angular/material';
 import { OfficeUpdateFormComponent } from './views/office/office-update-form/office-update-form.component';
 import { OfficeComponent } from './views/office/office.component';
 import { OfficeAddFormComponent } from './views/office/office-add-form/office-add-form.component';
-
-=======
-<<<<<<< HEAD
 import { HomeComponent } from './views/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SeverityComponent } from './views/severity/severity.component';
@@ -30,16 +20,6 @@ import { SeverityAddFormComponent } from './views/severity/severity-add-form/sev
 import { TicketComponent } from './views/ticket/ticket.component';
 import { TicketAddFormComponent } from './views/ticket/ticket-add-form/ticket-add-form.component';
 import { TicketEditFormComponent } from './views/ticket/ticket-edit-form/ticket-edit-form.component';
-=======
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
-import { EmployeeComponent } from './views/employee/employee.component';
-import { EmployeeAddFormComponent } from './views/employee/employee-add-form/employee-add-form.component';
-import { EmployeeUpdateFormComponent } from './views/employee/employee-update-form/employee-update-form.component';
-import { OfficeComponent } from './views/office/office.component';
-import { OfficeAddFormComponent } from './views/office/office-add-form/office-add-form.component';
-import { OfficeUpdateFormComponent } from './views/office/office-update-form/office-update-form.component';
-import { MatDialogModule } from '@angular/material';
-<<<<<<< HEAD
 import { CommonModule } from '@angular/common';
 import { SidenavComponent } from './views/layouts/sidenav/sidenav.component';
 import { SeverityUpdateFormComponent } from './views/severity/severity-update-form/severity-update-form.component';
@@ -53,22 +33,18 @@ import { CategoryUpdateFormComponent } from './views/category/category-update-fo
 import { CategoryListUpdateFormComponent } from './views/categoryList/categoryList-update-form/categoryList-update-form.component';
 import { CategoryListAddFormComponent } from './views/categoryList/categoryList-add-form/categoryList-add-form.component';
 import { CategoryListComponent } from './views/categoryList/categoryList.component';
-=======
 import { ItgroupComponent } from './views/itgroup/itgroup.component';
 import { ItgroupAddFormComponent } from './views/itgroup/itgroup-add-form/itgroup-add-form.component';
 import { ItgroupUpdateFormComponent } from './views/itgroup/itgroup-update-form/itgroup-update-form.component';
 import { ItgroupDataService } from './dataservices/itgroup.dataservice';
+import { ToastrModule } from 'ngx-toastr';
 
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
->>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     HomeComponent,
     SeverityComponent,
     SeverityAddFormComponent,
@@ -78,19 +54,12 @@ import { ItgroupDataService } from './dataservices/itgroup.dataservice';
     TicketEditFormComponent,
     TicketMinorComponent,
     TicketApprovalComponent,
-=======
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
->>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
     EmployeeComponent,
     EmployeeAddFormComponent,
     EmployeeUpdateFormComponent,
     OfficeComponent,
     OfficeAddFormComponent,
-<<<<<<< HEAD
-    OfficeUpdateFormComponent
-=======
     OfficeUpdateFormComponent,
-<<<<<<< HEAD
     SidenavComponent,
     DashboardComponent,
     TicketSLAComponent,
@@ -100,15 +69,11 @@ import { ItgroupDataService } from './dataservices/itgroup.dataservice';
     CategoryListComponent,
     CategoryListAddFormComponent,
     CategoryListUpdateFormComponent,
-],
-    
-=======
     ItgroupComponent,
     ItgroupAddFormComponent,
     ItgroupUpdateFormComponent
->>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
-  ],
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
+
+],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
@@ -116,32 +81,16 @@ import { ItgroupDataService } from './dataservices/itgroup.dataservice';
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-<<<<<<< HEAD
-    MatDialogModule
-  ],
-  entryComponents:[EmployeeUpdateFormComponent, OfficeUpdateFormComponent],
-=======
     MatDialogModule,
-    ToastrModule.forRoot(),
-    CommonModule
+    CommonModule,
+    ToastrModule.forRoot()
   ],
-  entryComponents:[
-    TicketAddFormComponent, 
-    OfficeUpdateFormComponent, 
-    SeverityUpdateFormComponent, 
+  entryComponents: [EmployeeUpdateFormComponent, OfficeUpdateFormComponent, ItgroupUpdateFormComponent, TicketAddFormComponent,
+    SeverityUpdateFormComponent,
     TicketSLAComponent,
     TicketApprovalComponent,
     CategoryUpdateFormComponent,
-    CategoryListUpdateFormComponent
-  ],
-<<<<<<< HEAD
->>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
-  providers: [],
-=======
-  entryComponents:[OfficeUpdateFormComponent, ItgroupUpdateFormComponent],
-  providers: [
-  ],
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
-  bootstrap: [AppComponent]
+    CategoryListUpdateFormComponent],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

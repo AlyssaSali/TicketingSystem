@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <div class="main">
         <div class="card bg-light mb-3">
             <div class="card-header">New Office</div>
@@ -19,7 +19,6 @@
                     </thead>
                     <tbody> 
                         <tr *ngFor="let office of offices" class="tbl-bd">  
-                            <!-- <td style="width: 30%;">{{office.officeid}}</td> -->
                             <td style="width: 30%;">{{office.officeCode}}</td>
                             <td style="width: 50%;">{{office.officeDesc}}</td>
                             <td style="width: 20%;">
@@ -38,34 +37,6 @@
                 </div>
             </div>
 </div>
-=======
-<app-office-add-form></app-office-add-form>
 
 
-<h1>Offices</h1>
-<table class="table table-hover table-dark">
-<thead>
-    <tr>
-        <td style="width: 30%;">Code</td>
-        <td style="width: 30%;">Description</td>
-        <td style="width: 20%;"></td>
-    </tr>
-</thead>
-<tbody> 
-    <tr *ngFor="let office of offices"> 
-        <td style="width: 30%;">{{office.officeCode}}</td>
-        <td style="width: 30%;">{{office.officeDesc}}</td>
-        <td style="width: 20%;">
-           <div class="row">
-               <button class="col-md-5 btn btn-success m-1"(click)="update(office)" data-toggle="tooltip" data-placement="bottom" title="Edit office">
-                    <i class="material-icons">update</i>
-               </button>
-               <button class="col-md-5 btn btn-danger m-1"(click)="delete(office.officeid)" data-toggle="tooltip" data-placement="bottom" title="Delete office">
-                    <i class="material-icons">delete </i>
-               </button>
-           </div> 
-        </td>
-    </tr>
-</tbody>
-</table>
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
+
