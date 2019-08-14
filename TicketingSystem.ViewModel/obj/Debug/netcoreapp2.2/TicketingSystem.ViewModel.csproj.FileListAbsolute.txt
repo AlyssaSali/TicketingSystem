@@ -1,3 +1,25 @@
+<<<<<<< HEAD
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.deps.json
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.dll
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.pdb
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.csproj.CoreCompileInputs.cache
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.AssemblyInfoInputs.cache
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.AssemblyInfo.cs
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.dll
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.pdb
+C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.csprojAssemblyReference.cache
+=======
+<<<<<<< HEAD
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.ViewModel\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.deps.json
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.ViewModel\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.dll
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.ViewModel\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.pdb
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.csproj.CoreCompileInputs.cache
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.AssemblyInfoInputs.cache
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.AssemblyInfo.cs
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.dll
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.pdb
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.csprojAssemblyReference.cache
+=======
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.deps.json
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.runtimeconfig.json
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\bin\Debug\netcoreapp2.2\TicketingSystem.ViewModel.runtimeconfig.dev.json
@@ -8,3 +30,5 @@ C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\De
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.AssemblyInfo.cs
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.dll
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.ViewModel\obj\Debug\netcoreapp2.2\TicketingSystem.ViewModel.pdb
+>>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
+>>>>>>> af8a36911860fc01eb54fa1355606495cc985b86

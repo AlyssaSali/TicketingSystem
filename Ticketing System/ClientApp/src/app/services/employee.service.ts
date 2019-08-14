@@ -24,21 +24,21 @@ export class EmployeeService {
 
   //getSingleBy
   FindEmployee(id) : Observable<Employee> {
-    return this.http.get<Employee>(this.employeeApi + 'ListEmployees/' + String(id));
+    return this.http.get<Employee>(this.employeeApi + 'FindEmployee/' + String(id));
   }
 
   //create
   CreateEmployee(employee: Employee) : Observable<MyResponse> {
-    return this.http.post<MyResponse>(this.employeeApi + 'ListEmployees/', employee);
+    return this.http.post<MyResponse>(this.employeeApi + 'CreateEmployee', employee);
   }
 
   //edit
   UpdateEmployee(employee: Employee) : Observable<MyResponse> {
-    return this.http.post<MyResponse>(this.employeeApi + 'ListEmployees/', employee);
+    return this.http.put<MyResponse>(this.employeeApi + 'UpdateEmployee', employee);
   }
 
   //delete
   DeleteEmployee(id) : Observable<MyResponse> {
-    return this.http.post<MyResponse>(this.employeeApi + 'ListEmployees/', String(id));
+    return this.http.delete<MyResponse>(this.employeeApi + 'DeleteEmployee/' + String(id));
   }
 }

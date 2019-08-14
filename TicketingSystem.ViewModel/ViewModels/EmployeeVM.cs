@@ -13,10 +13,11 @@ namespace TicketingSystem.ViewModel.ViewModels
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
-        
+        [Required]
         public string EmailAddress { get; set; }
         [Required]
-        public string Office { get; set; }
+        public string Officeid { get; set; }
+        public OfficeVM Office { get; set; }
 
     }
 }

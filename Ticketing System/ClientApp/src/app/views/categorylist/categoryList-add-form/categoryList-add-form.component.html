@@ -1,0 +1,80 @@
+
+        <div class="form-group has-success">
+                    <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="categoryListCreateForm">
+                             <div class="row">
+                                    <div class="col-md-4 mg">
+                                            <label class="col-form-label col-form-label-sm font" for="inputSmall" for="categoryid">Category: <span style="color: red">*</span></label> <br />
+                                            <input type="text" id="categoryid" formControlName="categoryid" hidden/>
+                                            <div>
+                                                <input type="text" class="form-control form-control-sm" formControlName="categorySelect" (keyup)="selectCategory($event)" (click)="$event.target.select()" list="categoryListss" [ngClass]="{'is-invalid': (f.categoryName.touched && f.categoryName.errors) || categoryListNameBackEndErrors}">
+                                                <datalist class="ui-datalist-data" height="100px" id="categoryListss" >
+                                                    <option [ngValue]="null" disabled="true" [selected]="true">Choose a Category
+                                                    <option id="{{category.categoryid}}" *ngFor="let category of categories" [value]="category.categoryName">
+                                                </datalist>
+                                            </div>
+                                    </div>
+                                  <div class="col-sm-7">
+                                             <label class="col-form-label col-form-label-sm font">Category List</label>
+                                            <input class="form-control form-control-sm" type="text" formControlName="categoryListName" [ngClass]="{'is-invalid': (f.categoryListName.touched && f.categoryListName.errors) || categoryListNameBackEndErrors}">
+                                            <div *ngIf="f.categoryListName.touched && f.categoryListName.errors"  class="invalid-feedback">  
+                                                    <div *ngIf="f.categoryListName.errors.required"><span class="error-msg">This field is required</span></div>
+                                                </div>
+                                                <div>
+                                                    <span class="error-msg" *ngFor="let error of categoryListNameBackEndErrors">{{error}}</span>
+                                                </div>
+                                    </div>
+                             </div>
+                             <div class="row mm">
+                             <div class="col-md-2 mg">
+                                    <label class="col-form-label col-form-label-sm font" for="inputSmall" for="severityid">Severity: <span style="color: red">*</span></label> <br />
+                                    <input type="text" id="severityid" formControlName="severityid" hidden/>
+                                    <div>
+                                        <input type="text" class="form-control form-control-sm" formControlName="severitySelect" (keyup)="selectSeverity($event)" (click)="$event.target.select()" list="severityListss">
+                                        <datalist class="ui-datalist-data" height="100px" id="severityListss" >
+                                            <option [ngValue]="null" disabled="true" [selected]="true">Choose a Severity
+                                            <option id="{{severity.severityid}}" *ngFor="let severity of severities" [value]="severity.severityName">
+                                        </datalist>
+                                        <div *ngIf="f.severitySelect.touched && f.severitySelect.errors" class="invalid-feedback">
+                                            <div *ngIf="f.severitySelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
+                                        </div>
+                                    </div>
+                            </div>
+                             <div class="col-md-3">
+                                     <label class="col-form-label col-form-label-sm font" for="inputSmall">SLA Response Time</label>
+                                     <input class="form-control form-control-sm" type="text" formControlName="slaResponseTime" [ngClass]="{'is-invalid': (f.slaResponseTime.touched && f.slaResponseTime.errors) || categoryListNameBackEndErrors}">
+                                            <div *ngIf="f.slaResponseTime.touched && f.slaResponseTime.errors"  class="invalid-feedback">  
+                                                    <div *ngIf="f.slaResponseime.errors.required"><span class="error-msg">This field is required</span></div>
+                                            </div>
+                                            <div>
+                                                    <span class="error-msg" *ngFor="let error of categoryListNameBackEndErrors">{{error}}</span>
+                                            </div>
+                             </div>
+                             <div class="col-md-3">
+                                     <label class="col-form-label col-form-label-sm font" for="inputSmall">SLA Resolve Time</label>
+                                     <input class="form-control form-control-sm" type="text" formControlName="slaResolvedTime" [ngClass]="{'is-invalid': (f.slaResolvedTime.touched && f.slaResolvedTime.errors) || categoryListNameBackEndErrors}">
+                                     <div *ngIf="f.slaResolvedTime.touched && f.slaResolvedTime.errors"  class="invalid-feedback">  
+                                             <div *ngIf="f.slaResolvedTime.errors.required"><span class="error-msg">This field is required</span></div>
+                                         </div>
+                                         <div>
+                                             <span class="error-msg" *ngFor="let error of categoryListNameBackEndErrors">{{error}}</span>
+                                         </div>
+                             </div>
+                             <div class="col-md-3">
+                                     <label class="col-form-label col-form-label-sm font" for="inputSmall">Responsible Group</label>
+                                     <input class="form-control form-control-sm" type="text" formControlName="itGroup" [ngClass]="{'is-invalid': (f.itGroup.touched && f.itGroup.errors) || categoryListNameBackEndErrors}">
+                                     <div *ngIf="f.itGroup.touched && f.itGroup.errors"  class="invalid-feedback">  
+                                             <div *ngIf="f.itGroup.errors.required"><span class="error-msg">This field is required</span></div>
+                                         </div>
+                                         <div>
+                                             <span class="error-msg" *ngFor="let error of categoryListNameBackEndErrors">{{error}}</span>
+                                         </div>
+                             </div>
+                            </div>
+                     <div class="row mm">
+                             <div class="col-md-3 " style="margin-left: 85%">
+                             <button type="submit" class="btn btn-primary m-1"><i class="material-icons m-1">save</i>Save</button>
+                             </div>
+                     </div>
+            </form>
+        </div>
+

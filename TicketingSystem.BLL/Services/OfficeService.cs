@@ -29,7 +29,7 @@ namespace TicketingSystem.BLL.Services
                 {
                     try
                     {
-                        
+                        officeVM.Officeid = Guid.NewGuid();
                         context.Offices.Add(toModel.Office(officeVM));
                         context.SaveChanges();
 

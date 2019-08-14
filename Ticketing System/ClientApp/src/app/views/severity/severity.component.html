@@ -1,0 +1,40 @@
+<div class="main">
+        <div class="card bg-light mb-3">
+            <div class="card-header">New Severity</div>
+                <div class="card-body">
+                    <app-severity-add-form></app-severity-add-form>
+                </div>
+        </div>
+        <div class="card border-light mb-3">
+                <div class="card-header">List of Severities</div>
+                <div class="card-body">
+                    <table class="table table-hover table-light" style="width: 100%;">
+                    <thead>
+                        <tr class="tbl-hr">
+                            <td style="width: 10%;">Code</td>
+                            <td style="width: 30%;">Name</td>
+                            <td style="width: 40%;">Description</td>
+                            <td style="width: 20%;"></td>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <tr *ngFor="let severity of severities" class="tbl-bd">  
+                            <td style="width: 10%;">{{severity.severityCode}}</td>
+                            <td style="width: 30%;">{{severity.severityName}}</td>
+                            <td style="width: 40%;">{{severity.severityDesc}}</td>
+                            <td style="width: 20%;">
+                            <div class="row">
+                                <button class="btn btn-success m-1"(click)="update(severity)" data-toggle="tooltip" data-placement="bottom" title="Edit severity">
+                                        <i class="material-icons">update</i>
+                                </button>
+                                <button class="btn btn-danger m-1"(click)="delete(severity.severityid)" data-toggle="tooltip" data-placement="bottom" title="Delete severity">
+                                        <i class="material-icons">delete </i>
+                                </button>
+                            </div> 
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+</div>
