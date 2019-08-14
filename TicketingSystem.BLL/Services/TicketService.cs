@@ -21,6 +21,7 @@ namespace TicketingSystem.BLL.Services
             context = _context;
         }
 
+      
         public ResponseVM Create(TicketVM ticketVM)
         {
             using (context)
@@ -90,6 +91,21 @@ namespace TicketingSystem.BLL.Services
                     }
                 }
             }
+        }
+
+        public IEnumerable<TicketVM> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public TicketVM GetSingleBy(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ResponseVM Delete(Guid id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

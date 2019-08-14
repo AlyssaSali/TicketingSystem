@@ -8,14 +8,8 @@ namespace TicketingSystem.BLL.Helpers
 {
     public class ToModel
     {
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-=======
 
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
->>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
         public Office Office(OfficeVM officeVM)
         {
             return new Office
@@ -25,9 +19,7 @@ namespace TicketingSystem.BLL.Helpers
                 OfficeDesc = officeVM.OfficeDesc,
             };
         }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
 
         public Category Category(CategoryVM categoryVM)
         {
@@ -39,24 +31,26 @@ namespace TicketingSystem.BLL.Helpers
         }
 
         public Severity Severity(SeverityVM severityVM)
-=======
->>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
-        public Employee Employee(EmployeeVM employeeVM)
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
         {
             return new Severity
             {
-<<<<<<< HEAD
+
                 severityid = severityVM.severityid,
                 SeverityName = severityVM.SeverityName,
                 SeverityCode = severityVM.SeverityCode,
                 SeverityDesc = severityVM.SeverityDesc
-=======
+            };
+        }
+        public Employee Employee(EmployeeVM employeeVM)
+
+        {
+            return new Employee
+            {
+
                 EmployeeID = employeeVM.EmployeeID,                
                 FirstName = employeeVM.FirstName,
                 LastName = employeeVM.LastName,
                 EmailAddress = employeeVM.EmailAddress,
-<<<<<<< HEAD
                 Officeid = Guid.Parse(employeeVM.Officeid)
             };
         }
@@ -75,10 +69,8 @@ namespace TicketingSystem.BLL.Helpers
                 ResponseTime = ticketVM.ResponseTime,
                 ResolveTime = ticketVM.ResolveTime,
                 IsUrgent = ticketVM.IsUrgent,
-                IsOpen = ticketVM.IsOpen
-=======
-                Office = employeeVM.Office
->>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
+                IsOpen = ticketVM.IsOpen,
+                
             };
         }
         public ITGroup ITGroup(ITGroupVM itgroupVM)
@@ -87,8 +79,7 @@ namespace TicketingSystem.BLL.Helpers
             {
                 ITGroupid = itgroupVM.ITGroupid,
                 ITGroupCode = itgroupVM.ITGroupCode,
-                ITGroupName = itgroupVM.ITGroupName,
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
+                ITGroupName = itgroupVM.ITGroupName
             };
         }
 

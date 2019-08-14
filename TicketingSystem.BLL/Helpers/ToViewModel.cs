@@ -8,13 +8,6 @@ namespace TicketingSystem.BLL.Helpers
 {
     public class ToViewModel
     {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
->>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
         public OfficeVM Office(Office office)
         {
             return new OfficeVM
@@ -23,13 +16,9 @@ namespace TicketingSystem.BLL.Helpers
                 OfficeCode = office.OfficeCode,
                 OfficeDesc = office.OfficeDesc,
             };
-<<<<<<< HEAD
         }
 
-=======
-<<<<<<< HEAD
-        }
-
+        
         public CategoryVM Category(Category category)
         {
             return new CategoryVM
@@ -40,26 +29,28 @@ namespace TicketingSystem.BLL.Helpers
         }
 
         public SeverityVM Severity(Severity severity)
-=======
-
-        }
->>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
-        public EmployeeVM Employee(Employee employee)
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
         {
+
             return new SeverityVM
             {
-<<<<<<< HEAD
+
                 severityid = severity.severityid,
                 SeverityCode = severity.SeverityCode,
                 SeverityName = severity.SeverityName,
-                SeverityDesc = severity.SeverityDesc,
-=======
+                SeverityDesc = severity.SeverityDesc
+            };
+         }
+
+        public EmployeeVM Employee(Employee employee)
+
+        {
+            return new EmployeeVM
+            {
+
                 EmployeeID = employee.EmployeeID,
                 FirstName = employee.FirstName,
                 LastName = employee.LastName,
                 EmailAddress = employee.EmailAddress,
-<<<<<<< HEAD
                 Officeid = employee.Officeid.ToString(),
                 Office = Office(employee.Office)
 
@@ -80,11 +71,8 @@ namespace TicketingSystem.BLL.Helpers
                 ResponseTime = ticket.ResponseTime,
                 ResolveTime = ticket.ResolveTime,
                 IsUrgent = ticket.IsUrgent,
-                IsOpen = ticket.IsOpen
-=======
-                Office = employee.Office
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
->>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
+                IsOpen = ticket.IsOpen,
+                
             };
 
          }
@@ -98,8 +86,6 @@ namespace TicketingSystem.BLL.Helpers
             };
 
         }
-
-<<<<<<< HEAD
         public CategoryListVM CategoryList(CategoryList categoryList)
         {
             return new CategoryListVM
@@ -115,8 +101,5 @@ namespace TicketingSystem.BLL.Helpers
                 Severity = Severity(categoryList.Severity)
             };
         }
-
-=======
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
     }
 }

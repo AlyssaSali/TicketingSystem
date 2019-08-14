@@ -8,6 +8,19 @@ namespace TicketingSystem.DAL.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "ITGroups",
+                columns: table => new
+                {
+                    ITGroupid = table.Column<Guid>(nullable: false),
+                    ITGroupCode = table.Column<string>(nullable: true),
+                    ITGroupName = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ITGroups", x => x.ITGroupid);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Offices",
                 columns: table => new
                 {
@@ -32,6 +45,54 @@ namespace TicketingSystem.DAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Severities", x => x.severityid);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Tickets",
+                columns: table => new
+                {
+                    Ticketid = table.Column<Guid>(nullable: false),
+                    AssistByid = table.Column<Guid>(nullable: false),
+                    Categoryid = table.Column<Guid>(nullable: false),
+                    Severityid = table.Column<Guid>(nullable: false),
+                    ItGroupid = table.Column<Guid>(nullable: false),
+                    RequestedBy = table.Column<Guid>(nullable: false),
+                    Officeid = table.Column<Guid>(nullable: false),
+                    DateOfRequest = table.Column<DateTime>(nullable: false),
+                    FormOfCommu = table.Column<string>(nullable: true),
+                    ContactInfo = table.Column<string>(nullable: true),
+                    RequestTitle = table.Column<string>(nullable: true),
+                    RequestDesc = table.Column<string>(nullable: true),
+                    TrackingSatus = table.Column<string>(nullable: true),
+                    ResponseTime = table.Column<TimeSpan>(nullable: false),
+                    ResolveTime = table.Column<TimeSpan>(nullable: false),
+                    IsUrgent = table.Column<bool>(nullable: false),
+                    IsOpen = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tickets", x => x.Ticketid);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Employees",
+                columns: table => new
+                {
+                    EmployeeID = table.Column<Guid>(nullable: false),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
+                    EmailAddress = table.Column<string>(nullable: true),
+                    Officeid = table.Column<Guid>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Employees", x => x.EmployeeID);
+                    table.ForeignKey(
+                        name: "FK_Employees_Offices_Officeid",
+                        column: x => x.Officeid,
+                        principalTable: "Offices",
+                        principalColumn: "Officeid",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -108,6 +169,11 @@ namespace TicketingSystem.DAL.Migrations
                 name: "IX_CategoryLists_severityid",
                 table: "CategoryLists",
                 column: "severityid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Employees_Officeid",
+                table: "Employees",
+                column: "Officeid");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -116,10 +182,19 @@ namespace TicketingSystem.DAL.Migrations
                 name: "CategoryLists");
 
             migrationBuilder.DropTable(
-                name: "Offices");
+                name: "Employees");
+
+            migrationBuilder.DropTable(
+                name: "ITGroups");
+
+            migrationBuilder.DropTable(
+                name: "Tickets");
 
             migrationBuilder.DropTable(
                 name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "Offices");
 
             migrationBuilder.DropTable(
                 name: "Severities");
