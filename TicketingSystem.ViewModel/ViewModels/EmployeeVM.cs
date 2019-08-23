@@ -14,7 +14,14 @@ namespace TicketingSystem.ViewModel.ViewModels
         [Required]
         public string LastName { get; set; }
         [Required]
-        public string EmailAddress { get; set; }
+        public string FormOfCommu { get; set; }
+        [Required]
+        public string ContactInfo { get; set; }
+
+        [Required]
+        public Guid EmployeeTypeid { get; set; }
+        public EmployeeTypeVM EmployeeType { get; set; }
+
         [Required]
         public string Officeid { get; set; }
         public OfficeVM Office { get; set; }

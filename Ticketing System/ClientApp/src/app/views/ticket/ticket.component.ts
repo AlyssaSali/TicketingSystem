@@ -4,6 +4,8 @@ import { Ticket } from 'src/app/models/ticket.model';
 import { MatDialogConfig, MatDialog } from '@angular/material';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { TicketDataService } from 'src/app/dataservices/ticket.dataservice';
+import { EmployeeDataService } from 'src/app/dataservices/employee.dataservice';
+import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
 
 @Component({
   selector: 'app-ticket',
@@ -20,6 +22,8 @@ export class TicketComponent implements OnInit {
   constructor(
     private ticketService: TicketService,
     private ticketDataService: TicketDataService,
+    private employeeDataService: EmployeeDataService,
+    private officeDataService: OfficeDataService,
     public dialog: MatDialog
    ) {
      this.ticketTableForm = new FormGroup({

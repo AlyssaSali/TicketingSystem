@@ -11,17 +11,33 @@
               <div class="card-body">
                 <div class="row mm">
                      <div class="col-sm-2 mg">
-                             <label class="col-form-label col-form-label-sm">Division/Office <span style="color: red">*</span></label>
-                             <select class="form-control form-control-sm" formControlName="office">
-                                        <option selected="selected"></option>
-                                        <option>COE</option>
-                                        <option>CMO</option>
-                                        <option>CSC</option>
-                                        <option>GSO</option>
-                             </select>
+                             <label for="officeid" class="col-form-label col-form-label-sm">Division/Office <span style="color: red">*</span></label>
+                              <input type="text" id="officeid" formControlName="officeid" hidden/>
+                              <div>
+                                  <input type="text" class="form-control" formControlName="officeSelect" (keyup)="selectOffice($event)" (click)="$event.target.select()" list="officesListss">
+                                  <datalist class="ui-datalist-data" height="100px" id="officesListss" >
+                                      <option [ngValue]="null" disabled="true" [selected]="true">Select Office
+                                      <option id="{{office.officeid}}" *ngFor="let office of officesList" [value]="office.officeCode">
+                                  </datalist>
+                                  <div *ngIf="f.officeSelect.touched && f.officeSelect.errors" class="invalid-feedback">
+                                      <div *ngIf="f.officeSelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
+                                  </div>
+                              </div>
                      </div>
                      <div class="col-sm-7">
-                        <label class="col-form-label col-form-label-sm font">Requested By</label>
+                        <label for="employeeid">Requested By: <span style="color: red">*</span></label> <br />
+                                    <input type="text" id="employeeid" formControlName="employeeid" hidden/>
+                                    <div>
+                                        <input type="text" class="form-control" formControlName="employeeSelect" (keyup)="selectOffice($event)" (click)="$event.target.select()" list="employeesListss">
+                                        <datalist class="ui-datalist-data" height="100px" id="employeesListss" >
+                                            <option [ngValue]="null" disabled="true" [selected]="true">Select Office
+                                            <option id="{{employee.employeeid}}" *ngFor="let employee of employeesList" [value]="employee.FirstName">
+                                        </datalist>
+                                        <div *ngIf="f.officeSelect.touched && f.officeSelect.errors" class="invalid-feedback">
+                                            <div *ngIf="f.officeSelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
+                                        </div>
+                                    </div>
+                        
                         <form>
                             <input class="form-control-sm mr-sm-2" type="text" placeholder="Search name" style="width: 100%"> 
                             <button class="btn btn-secondary my-2 my-sm-0" type="submit" hidden>Search name</button>

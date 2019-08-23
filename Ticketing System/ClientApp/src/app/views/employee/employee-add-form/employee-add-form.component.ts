@@ -7,6 +7,10 @@ import { OfficeService } from 'src/app/services/office.service';
 import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
 import { Office } from 'src/app/models/office.model';
 import { OfficeComponent } from '../../office/office.component';
+import { EmployeeType } from 'src/app/models/employeetype.model';
+import { EmployeeTypeService } from 'src/app/services/employeetype.service';
+import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.dataservice';
+import { EmployeetypeComponent } from '../../employeetype/employeetype.component';
 
 @Component({
   selector: 'app-employee-add-form',
@@ -19,28 +23,36 @@ export class EmployeeAddFormComponent implements OnInit {
 
   firstNameBackEndErrors: string[];
   lastNameBackEndErrors: string[];
-  emailAddressBackEndErrors: string[];
-  officeBackEndErrors: string[];
+  formOfCommuBackEndErrors: string[];
+  contactInfoBackEndErrors: string[];
 //added during employee-office relationship
   officesList : Office[];
-
+  
   dialogOpen = false;
 //added during employee-office relationship
+//added during employee-employeetype relationship
+  employeeTypesList : EmployeeType[];
+//added during employee-employeetype relationship
   constructor(
     private employeeService: EmployeeService,
     private employeeDataService: EmployeeDataService,
     private officeService: OfficeService,//added during employee-office relationship
     private officeDataService: OfficeDataService,//added during employee-office relationship
+    private employeeTypeService: EmployeeTypeService,//added during employee-employeetype relationship
+    private employeeTypeDataService: EmployeeTypeDataService,//added during employee-employeetype relationship
     private dialog: MatDialog//added during employee-office relationship
   ) { 
     //sets front-end max length
     this.employeeCreateForm = new FormGroup({
       firstname: new FormControl('', [Validators.required, Validators.maxLength(50)]),
       lastname: new FormControl('', [Validators.required, Validators.maxLength(50)]),
-      emailaddress: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      formofcommu: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      contactinfo: new FormControl('', [Validators.required, Validators.maxLength(50)]),
       //office: new FormControl('', [Validators.required, Validators.maxLength(50)])
       officeID: new FormControl('', Validators.required),//added during employee-office relationship
-      officeSelect: new FormControl('', Validators.required)//added during employee-office relationship
+      officeSelect: new FormControl('', Validators.required),//added during employee-office relationship
+      employeetypeID: new FormControl('', Validators.required),//added during employee-office relationship
+      employeetypeSelect: new FormControl('', Validators.required)//added during employee-office relationship
     })
   }
 
@@ -48,9 +60,13 @@ export class EmployeeAddFormComponent implements OnInit {
     //added during employee-office relationship
     this.officeDataService.officeSource.subscribe( data => {
       this.getOfficeLists();
+      this.getEmployeeTypeLists();      
     });
+    
     //added during employee-office relationship
   }
+
+   
 
   get f() { return this.employeeCreateForm.controls; }
 
@@ -65,12 +81,12 @@ export class EmployeeAddFormComponent implements OnInit {
       return;
     }
 
-    try{
+    try{      
       this.isSubmit = true;
       this.firstNameBackEndErrors = null;
       this.lastNameBackEndErrors = null;
-      this.emailAddressBackEndErrors = null;
-      this.officeBackEndErrors = null;
+      this.formOfCommuBackEndErrors = null;
+      this.contactInfoBackEndErrors = null;
       let result = await this.employeeService.CreateEmployee(this.employeeCreateForm.value).toPromise();
       if(result.isSuccess){
         alert(result.message);
@@ -94,15 +110,16 @@ export class EmployeeAddFormComponent implements OnInit {
         if('firstname' in errs.errors){
           this.firstNameBackEndErrors = errs.errors.firstname;//shows data annotations error message
         }
-        if('firstname' in errs.errors){
+        if('lastname' in errs.errors){
           this.lastNameBackEndErrors = errs.errors.lastname;//shows data annotations error message
         }
-        if('firstname' in errs.errors){
-          this.emailAddressBackEndErrors = errs.errors.emailaddress;//shows data annotations error message
+        if('formofcommu' in errs.errors){
+          this.formOfCommuBackEndErrors = errs.errors.formofcommu;//shows data annotations error message
         }
-        if('firstname' in errs.errors){
-          this.officeBackEndErrors = errs.errors.itgroup;//shows data annotations error message
+        if('contactinfo' in errs.errors){
+          this.contactInfoBackEndErrors = errs.errors.contactinfo;//shows data annotations error message
         }
+        
       }
 
       this.isSubmit = false;//enables button
@@ -120,13 +137,33 @@ export class EmployeeAddFormComponent implements OnInit {
     }
   }
 
+  async getEmployeeTypeLists(){//added during employee-employeetype relationship
+    try {
+      this.employeeTypesList = await this.employeeTypeService.getAll().toPromise();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   selectOffice($event){//added during employee-office relationship
     let office = this.employeeCreateForm.value.officeSelect;
     if (office.length > 2) {
       if ($event.timeStamp > 200) {
         let selectedOffice = this.officesList.find(data => data.officeCode == office);
         if (selectedOffice) {
-          this.employeeCreateForm.controls['officeID'].setValue(selectedOffice.officeid);
+          this.employeeCreateForm.controls['officeID'].setValue(selectedOffice.officeid);          
+        }
+      }      
+    }
+  }
+
+  selectEmployeeType($event){//added during employee-employeetype relationship
+    let emptype = this.employeeCreateForm.value.employeetypeSelect;
+    if (emptype.length > 2) {
+      if ($event.timeStamp > 200) {
+        let selectedEmployeeType = this.employeeTypesList.find(data => data.employeeTypeName == emptype);
+        if (selectedEmployeeType) {
+          this.employeeCreateForm.controls['employeetypeID'].setValue(selectedEmployeeType.employeeTypeid);          
         }
       }      
     }
@@ -137,5 +174,12 @@ export class EmployeeAddFormComponent implements OnInit {
     dialogConfig.width = '600px';
     dialogConfig.height = '600px';
     this.dialog.open(OfficeComponent, dialogConfig);
+  }
+
+  openEmployeeTypeDialog(){//added during employee-employeetype relationship
+    const dialogConfig = new MatDialogConfig;
+    dialogConfig.width = '600px';
+    dialogConfig.height = '600px';
+    this.dialog.open(EmployeetypeComponent, dialogConfig);
   }
 }

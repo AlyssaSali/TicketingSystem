@@ -5,8 +5,7 @@ export interface TicketMinor {
     assistByid: number,
     categoryid: number,
     requestDesc: string,
-    date: string,
-    time: number,
+    dateRequested: Date,
     itStaff: string,
     isOpen: boolean,
     //dummyinputs

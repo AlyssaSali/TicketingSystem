@@ -8,10 +8,9 @@ namespace TicketingSystem.ViewModel.ViewModels
     public class CategoryVM
     {
         
-            public Guid categoryid { get; set; }
+            public Guid Categoryid { get; set; }
             [Required]
             public string CategoryName { get; set; }
-        
 
     }
 }

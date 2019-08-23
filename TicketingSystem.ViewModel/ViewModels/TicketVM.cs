@@ -9,18 +9,21 @@ namespace TicketingSystem.ViewModel.ViewModels
     {
         [Required]
         public Guid Ticketid { get; set; }//PK
+        //[Required]
+        //public Guid AssistByid { get; set; }// FK - UserAccount
+
         [Required]
-        public Guid AssistByid { get; set; }// FK - UserAccount
+        public Guid CategoryListid { get; set; }// FK - Category
+        public CategoryListVM CategoryList { get; set; }        
         [Required]
-        public Guid Categoryid { get; set; }// FK - Category
+        public Guid ITGroupid { get; set; }// FK - ITGroup
+        public ITGroupVM ITGroup { get; set; }
         [Required]
-        public Guid Severityid { get; set; }// FK - Severity
-        [Required]
-        public Guid ItGroupid { get; set; }// FK - ITGroup
-        [Required]
-        public Guid RequestedBy { get; set; }// FK - Employee
+        public Guid EmployeeID { get; set; }// FK - Employee
+        public EmployeeVM Employee { get; set; }
         [Required]
         public Guid Officeid { get; set; }// FK - Office
+        public OfficeVM Office { get; set; }
         [Required]
         public DateTime DateOfRequest { get; set; }
         [Required]
@@ -32,11 +35,15 @@ namespace TicketingSystem.ViewModel.ViewModels
         [Required]
         public string RequestDesc { get; set; }
         [Required]
-        public string TrackingSatus { get; set; }
+        public string Severity { get; set; }
         [Required]
-        public TimeSpan ResponseTime { get; set; }
+        public string Category { get; set; }
         [Required]
-        public TimeSpan ResolveTime { get; set; }
+        public string TrackingStatus { get; set; }
+        //[Required]
+        public DateTime ResponseTime { get; set; }
+        //[Required]
+        public DateTime ResolveTime { get; set; }
         [Required]
         public bool IsUrgent { get; set; }
         [Required]

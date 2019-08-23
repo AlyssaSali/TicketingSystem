@@ -1,21 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-<<<<<<< HEAD
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~material-design-icons/iconfont/material-icons.css";
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-=======
-<<<<<<< HEAD
-
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-@import "~material-design-icons/iconfont/material-icons.css";
-
-=======
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-@import"~@angular/material/prebuilt-themes/pink-bluegrey.css";
-@import'~material-design-icons/iconfont/material-icons.css';
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
@@ -59,8 +46,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-size: 10pt;
     margin: 0;
 }
-
-<<<<<<< HEAD
 /* Main content */
 .main {
     margin-left: 200px; /* Same as the width of the sidenav */
@@ -116,7 +101,3 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mt2 {
   margin-top:20px;
 }
-
-=======
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
->>>>>>> af8a36911860fc01eb54fa1355606495cc985b86

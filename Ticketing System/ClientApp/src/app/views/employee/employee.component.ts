@@ -5,6 +5,7 @@ import { EmployeeDataService } from 'src/app/dataservices/employee.dataservice';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { EmployeeUpdateFormComponent } from './employee-update-form/employee-update-form.component';
 import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
+import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.dataservice';
 
 @Component({
   selector: 'app-employee',
@@ -18,6 +19,7 @@ export class EmployeeComponent implements OnInit {
     private employeeService: EmployeeService,
     private employeeDataService: EmployeeDataService,
     private officeDataService: OfficeDataService,
+    private employeeTypeDataService: EmployeeTypeDataService,
     public dialog: MatDialog
   ) { }
 
@@ -30,6 +32,7 @@ export class EmployeeComponent implements OnInit {
   async getEmployees() {
     try {
       this.employees = await this.employeeService.ListEmployees().toPromise();
+      console.log(this.employees);
     } catch (error) {
       alert("something went wrong");
       console.error(error);

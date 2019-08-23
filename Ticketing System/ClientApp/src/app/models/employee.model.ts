@@ -1,11 +1,15 @@
 import { Office } from './office.model';
+import { EmployeeType } from './employeetype.model';
 
 export interface Employee {
     employeeID: string;
     firstName: string;
     lastName: string;
-    emailAddress: string;
+    formOfCommu: string;
+    contactInfo: string;
+    employeeTypeid: number;
+    employeeType: EmployeeType;
     officeid: number;
-    office: Office
+    office: Office;
 
 }
