@@ -9,33 +9,33 @@ import { TicketMinor } from '../models/ticketMinor.model';
   providedIn: 'root'
 })
 export class TicketMinorService {
-  ticketApi: string;
+  ticketMinorApi: string;
 
   constructor(
     private http: HttpClient,
     @Inject('BASE_URL') baseUrl:string
   ) { 
-    this.ticketApi = baseUrl + 'api/TicketMinor/';
+    this.ticketMinorApi = baseUrl + 'api/TicketMinor/';
   }
 
   getAll(): Observable<TicketMinor[]> {
-    return this.http.get<TicketMinor[]>(this.ticketApi + 'GetAll');
+    return this.http.get<TicketMinor[]>(this.ticketMinorApi + 'GetAll');
   }
 
-  getSingleBy(ticketid): Observable<TicketMinor> {
-    return this.http.get<TicketMinor>(this.ticketApi + 'GetSingleby/' + String(ticketid));
+  getSingleBy(ticketMinorid): Observable<TicketMinor> {
+    return this.http.get<TicketMinor>(this.ticketMinorApi + 'GetSingleby/' + String(ticketMinorid));
   }
 
-  create(ticket: TicketMinor) : Observable<MyResponse>{
-    return this.http.post<MyResponse>(this.ticketApi + 'Create', ticket);
+  create(ticketMinor: TicketMinor) : Observable<MyResponse>{
+    return this.http.post<MyResponse>(this.ticketMinorApi + 'Create', ticketMinor);
   }
 
-  update(ticket: TicketMinor) : Observable<MyResponse>{
-    return this.http.put<MyResponse>(this.ticketApi + 'Update', ticket);
+  update(ticketMinor: TicketMinor) : Observable<MyResponse>{
+    return this.http.put<MyResponse>(this.ticketMinorApi + 'Update', ticketMinor);
   }
 
-  delete(ticketid) : Observable<MyResponse>{
-    return this.http.delete<MyResponse>(this.ticketApi + 'Delete/' + String(ticketid));
+  delete(ticketMinorid) : Observable<MyResponse>{
+    return this.http.delete<MyResponse>(this.ticketMinorApi + 'Delete/' + String(ticketMinorid));
   }
 
 }

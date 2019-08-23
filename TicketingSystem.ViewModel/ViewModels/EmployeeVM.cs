@@ -13,6 +13,7 @@ namespace TicketingSystem.ViewModel.ViewModels
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
+        public string FullName { get; set; }
         [Required]
         public string FormOfCommu { get; set; }
         [Required]

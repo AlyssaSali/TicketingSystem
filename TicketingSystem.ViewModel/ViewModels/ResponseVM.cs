@@ -34,5 +34,6 @@ namespace TicketingSystem.ViewModel.ViewModel
         public static string DOES_NOT_EXIST { get { return "It does not exist! It might have been deleted or edited by other user, try refreshing the page!"; } }
         public static string ALREADY_EXIST { get { return "It already exists!"; } }
         public static string NO_NEW_DATA { get { return "You did not update anything!Sent data is the same as the previous data!"; } }
+        public static string DONT_DELETE { get { return "Can't delete record. It is used in another transaction!"; } }
     }
 }

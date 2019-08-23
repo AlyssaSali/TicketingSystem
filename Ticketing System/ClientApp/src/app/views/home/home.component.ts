@@ -7,7 +7,11 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   constructor(
+<<<<<<< HEAD
     //private toastServcie: ToastrService
+=======
+   // private toastServcie: ToastrService
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
   ) {
   }
 

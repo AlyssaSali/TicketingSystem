@@ -44,9 +44,8 @@ export class EmployeeComponent implements OnInit {
     dialogConfig.data = {
       employeeContext: employee
     };
-    dialogConfig.width = "1000px";
+    dialogConfig.panelClass = 'custom-modalbox';
     this.dialog.open(EmployeeUpdateFormComponent, dialogConfig);
-    
   }
 
   async delete(id){

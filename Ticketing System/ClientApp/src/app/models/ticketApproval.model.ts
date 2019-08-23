@@ -1,7 +1,7 @@
 
 
 export interface TicketApproval {
-    ticketApprovalid: number,
+    ticketApprovalid: string;
     approvedByid: number,
     ticketid: number,
     comments: string,

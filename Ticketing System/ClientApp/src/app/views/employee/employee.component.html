@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <app-employee-add-form></app-employee-add-form>
 
 <h1></h1>
@@ -34,3 +35,85 @@
         </tr>
     </tbody>
 </table>
+=======
+<<<<<<< HEAD
+<div class="main">
+<app-employee-update-form></app-employee-update-form>
+    <h1></h1>
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email Address</td>
+                <td>Office</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td>{{employee.FirstName}}</td>
+                <td>{{employee.LastName}}</td>
+                <td>{{employee.EmailAddress}}</td>
+                <td>{{employee.Office}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+=======
+<div class="content-wrapper">
+    <section class="content">
+      <div class="row">
+      <!-- NEW EMPLOYEE -->
+        <div class="col-md-4">
+          <div class="box box-primary">
+            <div class="box-header with-border"><h3 class="box-title">New Employee</h3></div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <app-employee-add-form></app-employee-add-form>
+            </div>
+          </div>
+        </div>
+      <!-- EMPLOYEE TABLE -->
+        <div class="col-md-8">
+          <div class="box box-default">
+            <div class="box-header with-border"><h3 class="box-title">List of Employees</h3></div>
+            <div class="box-body margin">
+                <table class="table table-hover table-striped">
+                  <thead>
+                    <tr>
+                        <td style="width: 20%"><strong>First Name</strong></td>
+                        <td style="width: 20%"><strong>Last Name</strong></td>
+                        <td style="width: 20%"><strong>Email Address</strong></td>
+                        <td style="width: 20%"><strong>Office</strong></td>
+                        <td style="width: 20%"><strong>Action</strong></td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let employee of employees">
+                        <td style="width: 20%">{{employee.firstName}}</td>
+                        <td style="width: 20%">{{employee.lastName}}</td>
+                        <td style="width: 20%">{{employee.emailAddress}}</td>
+                        <td style="width: 20%">{{employee.office.officeCode}}</td>
+                        <td style="width: 20%">
+                          <div class="row">
+                            <button class="col-md-5 btn-success m-1" (click)="update(employee)" data-toggle="modal" data-target="#modal-updateEmp" title="Update Employee">
+                              <i class="material-icons">update</i>
+                            </button>
+                            <button class="col-md-5 btn-danger m-1" (click)="delete(employee.employeeID)" data-toggle="tooltip" data-placement="bottom" title="DeleteEmployee">
+                              <i class="material-icons">delete</i>
+                            </button>
+                          </div>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+</div>
+>>>>>>> ridz
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15

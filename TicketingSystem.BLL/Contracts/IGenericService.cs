@@ -11,7 +11,11 @@ namespace TicketingSystem.BLL.Contracts
         TVM GetSingleBy(Guid id);
 
         ResponseVM Create(TVM entity);
+<<<<<<< HEAD
         ResponseVM Delete(Guid guid);
+=======
+        ResponseVM Delete(Guid id);
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
         ResponseVM Update(TVM entity);
     }
 }

@@ -26,8 +26,7 @@ export class TicketSLAComponent implements OnInit {
   constructor(
     private ticketSLAService: TicketSLAService,
     private ticketSLADataService: TicketSLADataService,
-    public dialogRef:MatDialogRef<TicketSLAComponent>,
-    @Inject(MAT_DIALOG_DATA) data
+    // @Inject(MAT_DIALOG_DATA) data
 
   ) {
     this .ticketSLAUpdateform = new FormGroup({
@@ -37,7 +36,7 @@ export class TicketSLAComponent implements OnInit {
       
       
     })
-      this.ticketSLAContext = data;
+      // this.ticketSLAContext = data;
    }
   
   ngOnInit() {
@@ -49,9 +48,6 @@ export class TicketSLAComponent implements OnInit {
   change(){
     
    
-  }
-  close(){
-    this.dialogRef.close();
   }
   async onFormSubmit(){
     let ok = confirm("Are you sure you want to submit?");
@@ -75,7 +71,6 @@ export class TicketSLAComponent implements OnInit {
         alert(result.message);
         this.ticketSLAUpdateform.reset();
         this.ticketSLADataService.refreshTicketSLAs();
-        this.close();
       }
       else{
         alert(result.message);  

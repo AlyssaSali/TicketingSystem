@@ -27,6 +27,7 @@ export class CategoryListComponent implements OnInit {
   }
   async getCategoryLists() {
     try{
+
       this.categoryLists=await this.categoryListService.getAll().toPromise();
     }catch(error){
       alert('Something went wrong!');
@@ -55,8 +56,8 @@ export class CategoryListComponent implements OnInit {
       dialogConfig.data={
         categoryListContext:categoryList
       };
-      dialogConfig.width='600px';
-      //dialogConfig.height='600px';
+      dialogConfig.width = '600';
+      dialogConfig.panelClass = 'custom-modalbox';
       this.dialog.open(CategoryListUpdateFormComponent,dialogConfig)
     }
 

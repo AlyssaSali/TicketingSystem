@@ -24,6 +24,10 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
+                if (context.ITGroups.Where(x => x.ITGroupName == itgroupVM.ITGroupName).Any())
+                {
+                    return new ResponseVM("created", false, "ITGroup", ResponseVM.ALREADY_EXIST);
+                }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
                     try
@@ -47,6 +51,10 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
+                if (context.CategoryLists.Where(x => x.ITGroupid == id).Any())
+                {
+                    return new ResponseVM("deleted", false, "ITGroup", ResponseVM.DONT_DELETE);
+                }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
                     try
@@ -109,6 +117,10 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
+                if (context.ITGroups.Where(x => x.ITGroupName == itgroupVM.ITGroupName).Any())
+                {
+                    return new ResponseVM("updated", false, "ITGroup", ResponseVM.NO_NEW_DATA);
+                }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
                     try

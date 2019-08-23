@@ -1,11 +1,11 @@
-<div class="panel">
-    <div class="panel-heading">
-        <h1>Update Employee</h1>
-        <button class="btn btn-danger btn-sm float-right" (click)="close()"><i class="material-icons">close</i></button>
-    </div>
-    <div class="panel-body">
-        <div class="jumbotron">
-            <form (ngSubmit)="onFormSubmit()" method="POST" [formGroup]="employeeUpdateForm">
+<div class="modal-content">
+          <div class="modal-header bg-primary">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+              <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Update Employee</h4>
+          </div>
+        <form (ngSubmit)="onFormSubmit()" method="POST" [formGroup]="employeeUpdateForm">
+          <div class="modal-body">
                 <div class="row">
                     <div class="col-md-6">
                         <label for="FirstName">FirstName: <span style="color: red;">*</span></label>
@@ -36,6 +36,7 @@
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
                     <div class="col-md-6">
                             <label for="ContactInfo">Contact Information: <span style="color: red;">*</span></label>
                             <input type="text" class="form-control" id="ContactInfo" formControlName="contactinfo" [ngClass]="{'is-invalid': (f.contactinfo.touched && f.contactinfo.errors) || contactInfoBackEndErrors}"/>
@@ -98,8 +99,30 @@
                             <button type="submit" class="btn btn-primary" style="margin-top: 5px;" [disabled]="!employeeUpdateForm.valid || isSubmit">Update</button>
                     </div>
                     
+=======
+                        <div class="col-md-6">
+                                <label>Office</label>
+                                <input type="text" id="officeid" formControlName="officeID" hidden/>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" formControlName="officeSelect" (keyup)="selectOffice($event)" (click)="$event.target.select()" list="officesListss">
+                                    <datalist class="ui-datalist-data" height="100px" id="officesListss" >
+                                        <option [ngValue]="null" disabled="true" [selected]="true">Select Office
+                                        <option id="{{office.officeid}}" *ngFor="let office of officesList" [value]="office.officeCode">
+                                    </datalist>
+                                    <div *ngIf="f.officeSelect.touched && f.officeSelect.errors" class="invalid-feedback">
+                                        <div *ngIf="f.officeSelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
+                                    </div>
+                                    <span class="input-group-btn">
+                                            <button type="button" class="btn btn-primary btn-flat" data-toggle="modal" data-target="#modal-office"><span class="glyphicon glyphicon-plus"></span></button>
+                                    </span>
+                                </div>
+                        </div>
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
                 </div>
-            </form>
-        </div>
-    </div>
+          </div>
+          <div class="modal-footer">
+                <button type="submit" class="btn btn-primary pull-right" style="margin-top: 5px;" [disabled]="!employeeUpdateForm.valid || isSubmit">Update</button>
+                <button type="button" (click)="close()" class="btn btn-default" style="margin-top: 5px;">Close</button>
+          </div>
+        </form>
 </div>

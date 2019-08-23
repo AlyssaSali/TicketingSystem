@@ -42,8 +42,14 @@ namespace Ticketing_System
             services.AddScoped<CategoryService>();
             services.AddScoped<SeverityService>();
             services.AddScoped<CategoryListService>();
+<<<<<<< HEAD
             services.AddScoped<ITGroupService>();
             services.AddScoped<EmployeeTypeService>();
+=======
+            services.AddScoped<OfficeService>();
+            services.AddScoped<ITGroupService>();
+            services.AddScoped<TicketMinorService>();
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

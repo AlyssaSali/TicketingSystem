@@ -1,16 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { EmployeeDataService } from 'src/app/dataservices/employee.dataservice';
-import { MatDialog, MatDialogConfig } from '@angular/material';
+import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { OfficeService } from 'src/app/services/office.service';
 import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
 import { Office } from 'src/app/models/office.model';
 import { OfficeComponent } from '../../office/office.component';
+<<<<<<< HEAD
 import { EmployeeType } from 'src/app/models/employeetype.model';
 import { EmployeeTypeService } from 'src/app/services/employeetype.service';
 import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.dataservice';
 import { EmployeetypeComponent } from '../../employeetype/employeetype.component';
+=======
+import { EmployeeUpdateFormComponent } from '../employee-update-form/employee-update-form.component';
+import { OfficeAddFormComponent } from '../../office/office-add-form/office-add-form.component';
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 
 @Component({
   selector: 'app-employee-add-form',
@@ -29,6 +34,7 @@ export class EmployeeAddFormComponent implements OnInit {
   officesList : Office[];
   
   dialogOpen = false;
+  router: any;
 //added during employee-office relationship
 //added during employee-employeetype relationship
   employeeTypesList : EmployeeType[];
@@ -38,9 +44,15 @@ export class EmployeeAddFormComponent implements OnInit {
     private employeeDataService: EmployeeDataService,
     private officeService: OfficeService,//added during employee-office relationship
     private officeDataService: OfficeDataService,//added during employee-office relationship
+<<<<<<< HEAD
     private employeeTypeService: EmployeeTypeService,//added during employee-employeetype relationship
     private employeeTypeDataService: EmployeeTypeDataService,//added during employee-employeetype relationship
     private dialog: MatDialog//added during employee-office relationship
+=======
+    private dialog: MatDialog,//added during employee-office relationship,
+    public dialogRef:MatDialogRef<OfficeAddFormComponent>,
+    // @Inject(MAT_DIALOG_DATA) data
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
   ) { 
     //sets front-end max length
     this.employeeCreateForm = new FormGroup({
@@ -92,6 +104,7 @@ export class EmployeeAddFormComponent implements OnInit {
         alert(result.message);
         this.employeeCreateForm.reset();
         this.employeeDataService.refreshEmployees();
+        
       } 
       else {
         alert(result.message);
@@ -170,16 +183,26 @@ export class EmployeeAddFormComponent implements OnInit {
   }
 
   openOfficeDialog(){//added during employee-office relationship
-    const dialogConfig = new MatDialogConfig;
-    dialogConfig.width = '600px';
-    dialogConfig.height = '600px';
-    this.dialog.open(OfficeComponent, dialogConfig);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.panelClass = 'custom-modalbox';
+    this.dialog.open(OfficeAddFormComponent, dialogConfig);
   }
 
+<<<<<<< HEAD
   openEmployeeTypeDialog(){//added during employee-employeetype relationship
     const dialogConfig = new MatDialogConfig;
     dialogConfig.width = '600px';
     dialogConfig.height = '600px';
     this.dialog.open(EmployeetypeComponent, dialogConfig);
   }
+=======
+  close(){
+    this.dialogRef.close();
+  }
+
+  reset(){
+    this.employeeCreateForm.reset();
+  }
+
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 }

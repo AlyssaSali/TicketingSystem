@@ -25,6 +25,10 @@ namespace TicketingSystem.DAL.Models
         public Guid Officeid { get; set; }
         public Office Office { get; set; }
 
+<<<<<<< HEAD
         public virtual ICollection<Ticket> Tickets { get; set; }
+=======
+        public virtual ICollection<TicketMinor> TicketMinors { get; set; }
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
     }
 }

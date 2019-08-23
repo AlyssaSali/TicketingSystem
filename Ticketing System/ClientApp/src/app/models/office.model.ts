@@ -1,5 +1,5 @@
 export interface Office {
-    officeid: number;
+    officeid: string;
     officeCode: string;
     officeDesc: string;
 }

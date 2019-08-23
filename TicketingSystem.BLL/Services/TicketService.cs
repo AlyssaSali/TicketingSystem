@@ -102,6 +102,7 @@ namespace TicketingSystem.BLL.Services
             }
         }
 
+<<<<<<< HEAD
         public ResponseVM Delete(Guid guid) {
             using (context)
             {
@@ -191,5 +192,21 @@ namespace TicketingSystem.BLL.Services
                 }
             }
         }//dummy data
+=======
+        public IEnumerable<TicketVM> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public TicketVM GetSingleBy(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ResponseVM Delete(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
     }
 }

@@ -1,41 +1,41 @@
-<div class="card border-secondary mb-3">
-    <div class="card-header">Update Severity
-        <!-- <button class="btn btn-secondary btn-sm float-right"(click)="close()"><i class="material-icons">close</i></button> -->
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()"><i class="material-icons">close</i></button>
-    </div>
-        <div class="card-body">
-          <div class="form-group has-success">
+<div class="modal-content">
+        <div class="modal-header bg-primary">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Update Severity</h4>
+        </div>
+
             <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="severityUpdateform">
-                <div class="row">
-                        <div class="col-md-3">
+                <div class="modal-body margin">
+                    <div class="row">
+                        <div class="col-md-4">
                                 <label for="SeverityCode">Code: <span style="color: red">*</span></label><br />
-                                <input type="text" class="form-control" id="severityCode" formControlName="severityCode" placeholder="Code" [ngClass]="{'is-invalid': (f.severityCode.touched && f.severityCode.errors) || severityCodeBackEndErrors}"><br>
+                                <input type="text" class="form-control is-invalid" id="severityCode" formControlName="severityCode" placeholder="Code" [ngClass]="{'is-invalid': (f.severityCode.touched && f.severityCode.errors) || severityCodeBackEndErrors}"><br>
                                <div *ngIf="f.severityCode.touched && f.severityCode.errors"  class="invalid-feedback">  
                                     <div *ngIf="f.severityCode.errors.required"><span class="error-msg">This field is required</span></div>
                                 </div>
                                 <div>
                                     <span class="error-msg" *ngFor="let error of severityCodeBackEndErrors">{{error}}</span>
                                 </div>
+                        </div>
+                        <div class="col-md-8">
+                            <label for="SeverityName">Name: <span style="color: red">*</span></label><br />
+                            <input type="text" class="form-control" id="severityName" formControlName="severityName" placeholder="Name" [ngClass]="{'is-invalid': (f.severityName.touched && f.severityName.errors) || severityNameBackEndErrors}"><br>
+                        <div *ngIf="f.severityName.touched && f.severityName.errors"  class="invalid-feedback">  
+                                <div *ngIf="f.severityName.errors.required"><span class="error-msg">This field is required</span></div>
                             </div>
-                    <div class="col-md-5">
-                        <label for="SeverityName">Name: <span style="color: red">*</span></label><br />
-                        <input type="text" class="form-control" id="severityName" formControlName="severityName" placeholder="Name" [ngClass]="{'is-invalid': (f.severityName.touched && f.severityName.errors) || severityNameBackEndErrors}"><br>
-                       <div *ngIf="f.severityName.touched && f.severityName.errors"  class="invalid-feedback">  
-                            <div *ngIf="f.severityName.errors.required"><span class="error-msg">This field is required</span></div>
-                        </div>
-                        <div>
-                            <span class="error-msg" *ngFor="let error of severityNameBackEndErrors">{{error}}</span>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
+                            <div>
+                                <span class="error-msg" *ngFor="let error of severityNameBackEndErrors">{{error}}</span>
+                            </div>
+                        </div><br>
+                        <div class="col-md-12">
                             <label for="SeverityDesc">Description: <span style="color: #ff0000">*</span></label><br />
                             <textarea class="form-control form-control-sm" id="exampleTextarea" rows="5" placeholder="" formControlName="severityDesc"></textarea>
                         </div>
+                    </div>
                 </div>
-                <div style="float: right;">
-                        <button type="submit" [disabled]="!severityUpdateform.valid || isSubmit" class="btn btn-primary">Save Changes</button>
+                <div class="modal-footer">
+                    <button type="submit" [disabled]="!ticketCreateForm.valid || isSubmit" class="btn btn-primary m-1" style="width: 100px">Save</button>
                 </div>
             </form>
-        </div>
-    </div>
 </div>

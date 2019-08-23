@@ -1,43 +1,28 @@
-<div class="card border-light mb-3">
-        <div class="card-header">
-          <div class="row">
-          <div class="col-md-4"><h5>Ongoing Tickets</h5></div>
-          <div class="col-md-5"></div>
-          <div class="col-md-3">
-              <form>
-                  <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                  <button class="btn btn-secondary my-2 my-sm-0" type="submit" hidden>Search</button>
-                </form>
-          </div>
-        </div>
-        </div>
-        <div class="card-body">
-          <div class="row rw-tbl">
+
+          <div class="row" style="margin-left: 10px" id="ticketMinor">
                 <table class="table table-hover">
                     <thead>
                       <tr class="tbl-hr">
-                        <th>TicketNo.</th>
-                        <th>Severity</th>
-                        <th>Request Category</th>
-                        <th>RequestedBy</th>
-                        <th>TaskedTo</th>
-                        <th>SLA</th>
-                        <th style="width: 15%">Status</th>
+                        <th style="width: 20%"><strong>TicketNo.</strong></th>
+                        <th style="width: 10%"><strong>Office</strong></th>
+                        <th style="width: 20%"><strong>Request Category</strong></th>
+                        <th style="width: 15%"><strong>RequestedBy</strong></th>
+                        <th style="width: 15%"><strong>TaskedTo</strong></th>
+                        <th style="width: 10%"><strong>SLA</strong></th>
+                        <th style="width: 10%"><strong>Status</strong></th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr class="tbl-bd">
-                        <th style="font-weight: lighter"><a [routerLink]='["/ticketEdit"]'>Ticket No.</a></th>
-                        <th style="font-weight: lighter">Severity</th>
-                        <th style="font-weight: lighter">Request Category</th>
-                        <th style="font-weight: lighter">Requested By</th>
-                        <th style="font-weight: lighter">Tasked To</th>
-                        <th style="font-weight: lighter">5:00 - 8:00</th>
-                        <th style="font-weight: lighter">Request for Approval</th>
+                      <tr *ngFor="let ticketMinor of ticketMinorList">
+                        <th style="font-weight: lighter; width: 20%"><a [routerLink]='["/ticketMinorEdit"]'>{{ticketMinor.ticketMinorid}}</a></th>
+                        <th style="font-weight: lighter; width: 10%">{{ticketMinor.office.officeCode}}</th>
+                        <th style="font-weight: lighter; width: 20%">{{ticketMinor.categoryList.categoryListName}}</th>
+                        <th style="font-weight: lighter; width: 15%">{{ticketMinor.employee.fullName}}</th>
+                        <th style="font-weight: lighter; width: 15%">{{ticketMinor.employee.fullName}}</th>
+                        <th style="font-weight: lighter; width: 10%">{{ticketMinor.dateOfRequest}}</th>
+                        <th style="font-weight: lighter; width: 10%"><span class="label label-success">{{ticketMinor.status}}</span></th>
                       </tr>
                     </tbody>
                 </table> 
                 
             </div>
-          </div>
-</div>
