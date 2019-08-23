@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ItgroupService } from 'src/app/services/itgroup.service';
-import { MatDialog, MatDialogConfig } from '@angular/material';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { ItgroupDataService } from 'src/app/dataservices/itgroup.dataservice';
 import { ItgroupUpdateFormComponent } from './itgroup-update-form/itgroup-update-form.component';
 import { Itgroup } from 'src/app/models/itgroup.model';
+import { ItgroupAddFormComponent } from './itgroup-add-form/itgroup-add-form.component';
 
 @Component({
   selector: 'app-itgroup',
@@ -17,6 +18,7 @@ export class ItgroupComponent implements OnInit {
   constructor(
     private itgroupService: ItgroupService,
     private itgroupDataService: ItgroupDataService,
+    private dialogRef: MatDialogRef<ItgroupAddFormComponent>,
     public dialog:MatDialog,
     
   ) { }
@@ -57,9 +59,13 @@ export class ItgroupComponent implements OnInit {
       dialogConfig.data={
         itgroupContext:itgroup
       };
-      dialogConfig.width='600px';
-      //dialogConfig.height='600px';
+      dialogConfig.panelClass = 'custom-modalbox';
       this.dialog.open(ItgroupUpdateFormComponent,dialogConfig)
+    }
+
+    
+  close(){
+      this.dialogRef.close();
     }
 
 }

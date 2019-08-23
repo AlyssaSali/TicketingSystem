@@ -25,6 +25,10 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
+                if (context.Offices.Where(x => x.OfficeCode == officeVM.OfficeCode || x.OfficeDesc == officeVM.OfficeDesc).Any())
+                {
+                    return new ResponseVM("created", false, "Office", ResponseVM.ALREADY_EXIST);
+                }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
                     try
@@ -48,6 +52,10 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
+                if (context.Employees.Where(x => x.Officeid == id).Any())
+                {
+                    return new ResponseVM("deleted", false, "Office", ResponseVM.DONT_DELETE);
+                }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
                     try
@@ -110,6 +118,10 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
+                if (context.Offices.Where(x => x.OfficeCode == officeVM.OfficeCode && x.OfficeDesc == officeVM.OfficeDesc).Any())
+                {
+                    return new ResponseVM("updated", false, "Office", ResponseVM.NO_NEW_DATA);
+                }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
                     try

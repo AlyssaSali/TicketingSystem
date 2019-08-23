@@ -1,40 +1,52 @@
-<div class="sidenav">
-    <a [routerLink]="[ '/dashboard']">Dashboard</a>
-    <button class="dropdown-btn dropdown-toggle setting" (click)="dropdownlist()">Encode Ticket  
-        <i class="fa fa-caret-down"></i>
-    </button>
-      <div class="dropdown-container">
-          <a [routerLink]="[ '/ticketMinor']">Minor Request</a>
-          <a [routerLink]="[ '/ticketAdd']">Major Request</a>
-      </div>
-    <a href="#contact">Ticket History</a>
-    <button class="dropdown-btn dropdown-toggle setting" (click)="dropdownlist()">Settings  
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-container">
-          <button class="dropdown-btn dropdown-toggle" (click)="dropdownlist()">Employee  
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-container">
-              <a [routerLink]="['/employee']">Employee</a>
-              <a [routerLink]="['']">Employee Type</a>
-              <a [routerLink]="[ '/office']">Office</a>
-            </div>
-            <button class="dropdown-btn dropdown-toggle" (click)="dropdownlist()">Policy Table 
-                <i class="fa fa-caret-down"></i>
+  <!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- search form (Optional) -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <span class="input-group-btn">
+              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
               </button>
-              <div class="dropdown-container">
-                <a [routerLink]="[ '/categoryList']">Category List</a>
-                <a [routerLink]="[ '/severity']">Severity</a>
-                <a [routerLink]="[ '/category']">Request Category</a>
-              </div>
-              <button class="dropdown-btn dropdown-toggle" (click)="dropdownlist()">IT Group 
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-container">
-                <a href="#">IT Group</a>
-                <a href="#">IT Group Member</a>
-                <a href="#">User Account</a>
-              </div>
-      </div>
-  </div>
+            </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <!-- Optionally, you can add icons to the links -->
+        <li class="active"><a [routerLink]="['/dashboard']"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-laptop"></i> <span>Encode Ticket</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a [routerLink]="['/ticketMinor']"><i class="fa fa-circle-o"></i> Minor Request</a></li>
+            <li><a [routerLink]="['/ticketAdd']"><i class="fa fa-circle-o"></i> Major Request</a></li>
+          </ul>
+        </li>
+        <li><a [routerLink]="['/']"><i class="fa fa-files-o"></i> <span>Ticket History</span></a></li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-gears"></i> <span>Settings</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a [routerLink]="['/employee']"><i class="fa fa-circle-o"></i> Employee List</a></li>
+            <li><a [routerLink]="['/office']"><i class="fa fa-circle-o"></i> Office List</a></li>
+            <li><a [routerLink]="['/categoryList']"><i class="fa fa-circle-o"></i> Category List</a></li>
+            <li><a [routerLink]="['/severity']"><i class="fa fa-circle-o"></i> Severity List</a></li>
+            <li><a [routerLink]="['/itgroup']"><i class="fa fa-circle-o"></i> IT Group List</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>

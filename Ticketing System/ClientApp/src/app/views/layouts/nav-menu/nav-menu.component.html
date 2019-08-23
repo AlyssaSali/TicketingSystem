@@ -1,69 +1,45 @@
+<!-- Main Header -->
+<header class="main-header">
+          
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>i</b>TS</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg">
+          <img src="csd1.png" style="width: 40px; height: 40px;">i<b>Ticketing</b>System</span>
+    </a>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
 
-<header>
-<<<<<<< HEAD
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark navv">
-                <a class="navbar-brand " [routerLink]='["/"]'><img src="logo.png" style="width: 38px; height: 35px;"> iTicketing System</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Toggle navigation"
-                  [attr.aria-expanded]="isExpanded" (click)="toggle()">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive" [ngClass]='{"show": isExpanded}'>
-                  <ul class="nav nav-pills">
-                    <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-                      <a class="nav-link" [routerLink]='["/"]'>Home</a>
-                    </li>
-                    <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-                      <a class="nav-link" [routerLink]='["/dashboard"]'>Services</a>
-                    </li>
-                    <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-                      <a class="nav-link" [routerLink]='["/"]'>About</a>
-                    </li>
-                  </ul>
-                  <ul class="nav navbar-nav ml-auto">
-                      <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }' style="float: right;">
-                          <a class="nav-link" [routerLink]='["/"]'>Logout</a>
-                        </li>
-                  </ul>
-                </div>
-            </nav>
-=======
-  <nav class='navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3'>
-    <div class="container">
-      <a class="navbar-brand" [routerLink]='["/"]'>Ticketing_System</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Toggle navigation"
-        [attr.aria-expanded]="isExpanded" (click)="toggle()">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngClass]='{"show": isExpanded}'>
-        <ul class="navbar-nav flex-grow">
-          <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-            <a class="nav-link text-dark" [routerLink]='["/"]'>Home</a>
-          </li>
-          <li class="nav-item" [routerLinkActive]='["link-active"]'>
-            <a class="nav-link text-dark" [routerLink]='["/counter"]'>Counter</a>
-          </li>
-          <li class="nav-item" [routerLinkActive]='["link-active"]'>
-            <a class="nav-link text-dark" [routerLink]='["/fetch-data"]'>Fetch data</a>
-          </li>
-          <li class="nav-item" [routerLinkActive]='["link-active"]'>
-            <a class="nav-link text-dark" [routerLink]='["/employee"]'>Employees</a>
-<<<<<<< HEAD
-=======
-          </li>
-          <li class="nav-item" [routerLinkActive]='["link-active"]'>
-            <a class="nav-link text-dark" [routerLink]='["/office"]'>Office</a>
-          </li>
-          <li class="nav-item" [routerLinkActive]='["link-active"]'>
-            <a class="nav-link text-dark" [routerLink]='["/itgroup"]'>ITGroup</a>
->>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
-          </li>
-          <li class="nav-item" [routerLinkActive]='["link-active"]'>
-              <a class="nav-link text-dark" [routerLink]='["/office"]'>Offices</a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+    <!-- User Account Menu -->
+        <li class="dropdown user user-menu">
+          <!-- Menu Toggle Button -->
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="hidden-xs" >User  
+            <i class="fa fa-caret-down"></i></span>
+          </a>
+          <ul class="dropdown-menu">
+            <!-- Menu Footer-->
+            <li class="user-footer">
+              <div class="pull-right">
+                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+              </div>
+              <div class="pull-right">
+                <a href="#" class="btn btn-default btn-flat">Profile</a>
+              </div>
             </li>
+          </ul>
+        </li>
         </ul>
-      </div>
-    </div>
+        </div>
   </nav>
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
-</header>
-<app-sidenav></app-sidenav> 
+  </header>
+

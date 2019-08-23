@@ -4,8 +4,9 @@ export interface Employee {
     employeeID: string;
     firstName: string;
     lastName: string;
+    fullName: string;
     emailAddress: string;
-    officeid: number;
-    office: Office
+    officeid: string;
+    office: Office;
 
 }

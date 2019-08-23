@@ -13,10 +13,6 @@ export class SeverityAddFormComponent implements OnInit {
   severityCreateForm: FormGroup;
    isSubmit = false;
  
-   
-   severityCodeBackEndErrors: string[];
-   severityNameBackEndErrors: string[];
- 
    constructor(
      private severityService: SeverityService,
      private severityDataService: SeverityDataService,
@@ -25,7 +21,7 @@ export class SeverityAddFormComponent implements OnInit {
      this .severityCreateForm = new FormGroup({
        severityCode: new FormControl('',[Validators.required,Validators.maxLength(50)]),
        severityName: new FormControl('',[Validators.required,Validators.maxLength(50)]),
-       severityDesc: new FormControl('',[Validators.maxLength(50)])
+       severityDesc: new FormControl('',[Validators.maxLength(500)])
      })
     }
    
@@ -46,8 +42,6 @@ export class SeverityAddFormComponent implements OnInit {
  
      try{
        this.isSubmit=true;
-       this.severityCodeBackEndErrors=null;
-       this.severityNameBackEndErrors=null;
        let result = await this.severityService.create(this.severityCreateForm.value).toPromise();
        if(result.isSuccess){
          alert(result.message);
@@ -66,16 +60,6 @@ export class SeverityAddFormComponent implements OnInit {
          alert(errs.message);
          return;
        }
-       if(errs.errors){
-         if('severityCode' in errs.errors){
-           this.severityCodeBackEndErrors=errs.errors.severityCode;
-         }
-        }
-        if(errs.errors){
-          if('severityName' in errs.errors){
-            this.severityNameBackEndErrors=errs.errors.severityName;
-          }
-         }
      this.isSubmit = false;
    }  finally{
        this.isSubmit= false;

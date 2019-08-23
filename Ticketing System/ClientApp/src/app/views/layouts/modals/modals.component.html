@@ -1,0 +1,79 @@
+    <div class="modal fade" id="modal-office">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">New Office</h4>
+              </div>
+              <div class="modal-body">
+                  <a [routerLink]="['/office']" class="pull-right" data-dismiss="modal"><a [routerLink]="['/office']"><u>View all Offices</u></a></a>
+                <app-office-add-form></app-office-add-form>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-employee">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">New Employee</h4>
+              </div>
+              <div class="modal-body">
+                  <a [routerLink]="['/employee']" class="pull-right" data-dismiss="modal"><a [routerLink]="['/employee']"><u>View all Employees</u></a></a>
+                <app-employee-add-form></app-employee-add-form>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-category">
+      <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-primary">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Request Category</h4>
+            </div>
+            <div class="modal-body">
+                <a [routerLink]="['/category']" class="pull-right" data-dismiss="modal"><a [routerLink]="['/employee']"><u>View all Categories</u></a></a><br>
+              <app-category-add-form></app-category-add-form>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal-severity">
+      <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-primary">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">New Severity</h4>
+            </div>
+            <div class="modal-body">
+                <a [routerLink]="['/severity']" class="pull-right" data-dismiss="modal"><a [routerLink]="['/employee']"><u>View all Severities</u></a></a><br>
+              <app-severity-add-form></app-severity-add-form>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal-itGroup">
+      <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-primary">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">New IT Group</h4>
+            </div>
+            <div class="modal-body">
+                <a [routerLink]="['/itgroup']" class="pull-right" data-dismiss="modal"><a [routerLink]="['/employee']"><u>View all IT Groups</u></a></a><br>
+              <app-itgroup-add-form></app-itgroup-add-form>
+            </div>
+          </div>
+      </div>
+    </div>

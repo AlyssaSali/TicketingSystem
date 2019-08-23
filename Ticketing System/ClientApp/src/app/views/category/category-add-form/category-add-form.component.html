@@ -1,22 +1,17 @@
-
-        <div class="form-group has-success">
-            <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="categoryCreateForm">
-                <div class="row f1">
-                    <div class="col-md-7">
-                        <label for="CategoryCode">Name: <span style="color: #ff0000">*</span></label><br />
-                        <input type="text" class="form-control" id="categoryName" formControlName="categoryName" placeholder="Code" [ngClass]="{'is-invalid': (f.categoryName.touched && f.categoryName.errors) || categoryNameBackEndErrors}"><br>
-                       <div *ngIf="f.categoryName.touched && f.categoryName.errors"  class="invalid-feedback">  
-                            <div *ngIf="f.categoryName.errors.required"><span class="error-msg">This field is required</span></div>
-                        </div>
-                        <div>
-                            <span class="error-msg" *ngFor="let error of categoryNameBackEndErrors">{{error}}</span>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <br>
-                        <button type="submit" [disabled]="!categoryCreateForm.valid || isSubmit" class="btn btn-primary m-1">Save</button>
-                    </div>
+<form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="categoryCreateForm">
+    <div class="box-body margin">
+                <label for="CategoryCode">Name: <span style="color: #ff0000">*</span></label><br />
+                <input type="text" class="form-control" id="categoryName" formControlName="categoryName" [ngClass]="{'is-invalid': (f.categoryName.touched && f.categoryName.errors) || categoryNameBackEndErrors}"><br>
+                <div *ngIf="f.categoryName.touched && f.categoryName.errors"  class="invalid-feedback">  
+                    <div *ngIf="f.categoryName.errors.required"><span class="error-msg">This field is required</span></div>
                 </div>
-            </form>
+                <div>
+                    <span class="error-msg" *ngFor="let error of categoryNameBackEndErrors">{{error}}</span>
+                </div>
+    </div>
+    <div class="box-footer">
+            <button type="submit" [disabled]="!categoryCreateForm.valid || isSubmit" class="btn btn-primary m-1">Save</button>
         </div>
+</form>
+        
 

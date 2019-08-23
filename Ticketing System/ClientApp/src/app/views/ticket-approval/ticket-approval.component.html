@@ -1,9 +1,7 @@
-
-                
         <div class="card bg-light mb-3">
                 <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="ticketCreateForm" class="form-group">
-                     <div class="card-header f2">Approval Section
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()"><i class="material-icons">close</i></button>
+                     <div class="card-header f2"><h5>Approval Section
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()"><i class="material-icons">close</i></button></h5>
                      </div>
                       <div class="card-body">
                             <div class="row">
@@ -22,8 +20,8 @@
                                     </div>
                               </div>
                       <div class="row">
-                              <div class="col-md-3 ml" style="margin-left: 80%">
-                              <button type="submit" [disabled]="!ticketCreateForm.valid || isSubmit" class="btn btn-primary m-1"><i class="material-icons">save</i>Save</button>
+                              <div class="col-md-3 ml" style="margin-left: 77%">
+                                        <button type="submit" [disabled]="!ticketCreateForm.valid || isSubmit" class="btn btn-primary m-1" style="width: 100px">Save</button>
                               </div>
                       </div>
               </div>
