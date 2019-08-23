@@ -1,6 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+<<<<<<< HEAD
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import"~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import'~material-design-icons/iconfont/material-icons.css';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.error-msg {
+    color:  red;
+    font-size: 10pt;
+    margin: 0;
+}
+
+.rounded-btn {
+    color:red;
+    font-size: 10pt;
+}
+=======
 @import"~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import'~material-design-icons/iconfont/material-icons.css';
+>>>>>>> ridz
 
 .custom-modalbox >  mat-dialog-container {
     padding: 0px;
@@ -8,6 +29,71 @@
 }
 
 .error-msg {
+<<<<<<< HEAD
+    color:  red;
+    font-size: 10pt;
+    margin: 0;
+}
+
+
+/* Main content */
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 80px 0px;
+  }
+
+  .tbl-hr {
+    width:10%; 
+    font-weight:normal; 
+    font-size: 15px;
+  }
+
+  .tbl-bd {
+    font-weight:lighter; 
+    font-size: 15px
+  }
+  
+  .rw-tbl  {
+    margin-top: 10px;
+    margin-left:10px; 
+    width:100%;
+  }
+
+  .ico-s {
+    width: 100%; 
+    height: 100px;
+  }
+
+  .ico1 {
+    width:53px; 
+    height: 55px; 
+    margin-top: 10px;
+  }
+
+  .ico2{
+    width:65px; 
+    height: 60px;
+  }
+
+  .mg {
+      margin-left: 50px;
+  }
+
+  .mt {
+    margin-top: 30px;
+}
+
+.mt1 {
+  margin-top:10px;
+}
+
+.mt2 {
+  margin-top:20px;
+}
+
+=======
     color: #ff0000;
     font-size: 10px;
 }
+>>>>>>> ridz
