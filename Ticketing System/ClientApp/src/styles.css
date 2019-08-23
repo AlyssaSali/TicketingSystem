@@ -1,12 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 <<<<<<< HEAD
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~material-design-icons/iconfont/material-icons.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+=======
+<<<<<<< HEAD
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+<<<<<<< HEAD
 @import"~@angular/material/prebuilt-themes/pink-bluegrey.css";
 @import'~material-design-icons/iconfont/material-icons.css';
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+=======
+@import"~@angular/material/prebuilt-themes/indigo-pink.css"; 
+@import'~material-design-icons/iconfont/material-icons.css'; 
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */ 
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 
 .error-msg {
     color:  red;
@@ -14,10 +28,46 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin: 0;
 }
 
-.rounded-btn {
-    color:red;
-    font-size: 10pt;
+.rounded-btn{
+  border-radius: 10px;
 }
+.no-data-available{
+  text-align: center;
+}
+.ngHide{
+  display: none;
+}
+.dataTables_empty{
+  display: none;
+}
+.error-msge{
+  color: red;
+  font-size: 10pt;
+}
+<<<<<<< HEAD
+.f3 {
+  font-size: 10px;
+}
+
+.f1
+{
+    font-size: 12px;
+    font-style: inherit;
+}
+
+.f2
+{
+    font-size: 15px;
+    font-style: inherit;
+}
+
+.mm {
+    margin-left:10px;
+    margin-top:10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+=======
 =======
 @import"~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import'~material-design-icons/iconfont/material-icons.css';
@@ -26,6 +76,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .custom-modalbox >  mat-dialog-container {
     padding: 0px;
     margin: 0px;
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 }
 
 .error-msg {
@@ -34,8 +85,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-size: 10pt;
     margin: 0;
 }
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 /* Main content */
 .main {
     margin-left: 200px; /* Same as the width of the sidenav */
@@ -91,9 +145,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mt2 {
   margin-top:20px;
 }
+<<<<<<< HEAD
+=======
 
 =======
     color: #ff0000;
     font-size: 10px;
 }
 >>>>>>> ridz
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15

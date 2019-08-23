@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using TicketingSystem.BLL.Contracts;
 using TicketingSystem.BLL.Helpers;
@@ -21,6 +23,7 @@ namespace TicketingSystem.BLL.Services
             context = _context;
         }
 
+      
         public ResponseVM Create(TicketVM ticketVM)
         {
             using (context)
@@ -30,6 +33,9 @@ namespace TicketingSystem.BLL.Services
                     try
                     {
                         ticketVM.Ticketid = Guid.NewGuid();
+                        ticketVM.DateOfRequest = DateTime.Now;
+                        ticketVM.TrackingStatus = "REQUESTFORAPPROVAL";
+                        ticketVM.IsOpen = true;
                         //converts to book type then save to context
                         context.Tickets.Add(toModel.Ticket(ticketVM));
                         context.SaveChanges();
@@ -66,13 +72,18 @@ namespace TicketingSystem.BLL.Services
 
                         //update changes then save to context
                         ticketToBeUpdated.Ticketid = ticketVM.Ticketid;
+                        ticketToBeUpdated.CategoryListid = ticketVM.CategoryListid;
+                        ticketToBeUpdated.ITGroupid = ticketVM.ITGroupid;
+                        ticketToBeUpdated.EmployeeID = ticketVM.EmployeeID;
+                        ticketToBeUpdated.Officeid = ticketVM.Officeid;
                         ticketToBeUpdated.DateOfRequest = ticketVM.DateOfRequest;
                         ticketToBeUpdated.FormOfCommu = ticketVM.FormOfCommu;
                         ticketToBeUpdated.ContactInfo = ticketVM.ContactInfo;
                         ticketToBeUpdated.RequestTitle = ticketVM.RequestTitle;
                         ticketToBeUpdated.RequestDesc = ticketVM.RequestDesc;
-                        ticketToBeUpdated.RequestedBy = ticketVM.RequestedBy;
-                        ticketToBeUpdated.TrackingSatus = ticketVM.TrackingSatus;
+                        ticketToBeUpdated.Severity = ticketVM.Severity;
+                        ticketToBeUpdated.Category = ticketVM.Category;
+                        ticketToBeUpdated.TrackingStatus = ticketVM.TrackingStatus;
                         ticketToBeUpdated.ResponseTime = ticketVM.ResponseTime;
                         ticketToBeUpdated.ResolveTime = ticketVM.ResolveTime;
                         ticketToBeUpdated.IsUrgent = ticketVM.IsUrgent;
@@ -91,18 +102,97 @@ namespace TicketingSystem.BLL.Services
                 }
             }
         }
+        public ResponseVM Delete(Guid guid) {
+            using (context)
+            {
+                using (var dbTransaction = context.Database.BeginTransaction())
+                {
 
-        public IEnumerable<TicketVM> GetAll()
-        {
-            throw new NotImplementedException();
+                    try
+                    {
+                        Ticket ticketToBeDeleted = context.Tickets.Find(guid);
+                        //ends function if employee does not exists
+                        if (ticketToBeDeleted == null)
+                        {
+                            return new ResponseVM("deleted", false, "Employee", ResponseVM.DOES_NOT_EXIST);
+                        }
+                        //delete employee then save to context
+                        context.Tickets.Remove(ticketToBeDeleted);
+                        context.SaveChanges();
+
+                        //commit changes to db
+                        dbTransaction.Commit();
+                        return new ResponseVM("deleted", true, "Ticket");
+                    }
+                    catch (Exception ex)
+                    {
+                        dbTransaction.Rollback();
+                        return new ResponseVM("deleted", false, "Ticket", ResponseVM.SOMETHING_WENT_WRONG, "", ex);
+
+                    }
+                }
+            }
         }
 
-        public TicketVM GetSingleBy(Guid id)
-        {
-            throw new NotImplementedException();
+        public IEnumerable<TicketVM> GetAll() {
+            using (context)
+            {
+                using (var dbTransaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        //gets all employees and order the from last to first
+                        var tickets = context.Tickets
+                            .Include(x => x.Office)
+                            .Include(x => x.Employee)
+                            .Include(x => x.CategoryList)
+                            .Include(x => x.Severity)
+                            .Include(x => x.ITGroup)
+                            .ToList()
+                            .OrderByDescending(x => x.Ticketid);
+                        var ticketsVM = tickets.Select(x => toViewModel.Ticket(x));
+                        return ticketsVM;
+                    }
+                    catch (Exception)
+                    {
+                        throw;
+                    }
+                }
+            }
+        }//dummy data
+
+        public TicketVM GetSingleBy(Guid id) {
+            using (context)
+            {
+                using (var dbTransaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        var ticket = context.Tickets
+                            .Include(x => x.Office)
+                            .Include(x => x.Employee)
+                            .Include(x => x.Category)
+                            .Include(x => x.Severity)
+                            .Include(x => x.ITGroup)
+                            .Where(x => x.Ticketid == id)
+                            .FirstOrDefault();
+                        TicketVM ticketVM = null;
+                        if (ticket != null)
+                        {
+                            ticketVM = toViewModel.Ticket(ticket);
+                        }
+                        return ticketVM;
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+                }
+            }
         }
 
-        public ResponseVM Delete(Guid id)
+        public DatatableVM.PagingResponse<TicketVM> GetDataServerSide(DatatableVM.PagingRequest paging)
         {
             throw new NotImplementedException();
         }

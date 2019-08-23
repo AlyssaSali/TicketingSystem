@@ -7,9 +7,9 @@ namespace TicketingSystem.ViewModel.ViewModels
 {
     public class OfficeVM
     {
-        
+            [Required]
             public Guid Officeid { get; set; }
-
+            [Required]
             public string OfficeCode { get; set; }
             [Required]
             public string OfficeDesc { get; set; }

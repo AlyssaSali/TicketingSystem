@@ -8,6 +8,10 @@ import { OfficeService } from 'src/app/services/office.service';
 import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
 import { Office } from 'src/app/models/office.model';
 import { OfficeComponent } from '../../office/office.component';
+import { EmployeeType } from 'src/app/models/employeetype.model';
+import { EmployeeTypeService } from 'src/app/services/employeetype.service';
+import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.dataservice';
+import { EmployeetypeComponent } from '../../employeetype/employeetype.component';
 
 @Component({
   selector: 'app-employee-update-form',
@@ -18,8 +22,8 @@ export class EmployeeUpdateFormComponent implements OnInit {
   isSubmit=false;
   firstNameBackEndErrors: string[];
   lastNameBackEndErrors: string[];
-  emailAddressBackEndErrors: string[];
-  officeBackEndErrors: string[];
+  formOfCommuBackEndErrors: string[];
+  contactInfoBackEndErrors: string[];
 
   employeeContext: any;
   employeeUpdateForm: FormGroup;
@@ -28,11 +32,17 @@ export class EmployeeUpdateFormComponent implements OnInit {
   officesList : Office[];
   initialized = false;
   //added during employee-office relationship
+
+  //added during employee-employeetype relationship
+  employeeTypesList : EmployeeType[];
+  //added during employee-employeetype relationship
   constructor(
     private employeeService: EmployeeService,
     private employeeDataService: EmployeeDataService,
     private officeService: OfficeService,//added during employee-office relationship
     private officeDataService: OfficeDataService,//added during employee-office relationship
+    private employeeTypeService: EmployeeTypeService,//added during employee-employeetype relationship
+    private employeeTypeDataService: EmployeeTypeDataService,//added during employee-employeetype relationship
     private dialog: MatDialog,//added during employee-office relationship
     public dialogRef: MatDialogRef<EmployeeUpdateFormComponent>,
     @Inject(MAT_DIALOG_DATA) data
@@ -41,10 +51,13 @@ export class EmployeeUpdateFormComponent implements OnInit {
       employeeid: new FormControl(),
       firstname: new FormControl('', [Validators.required, Validators.maxLength(50)]),
       lastname: new FormControl('', [Validators.required, Validators.maxLength(50)]),
-      emailaddress: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      formofcommu: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      contactinfo: new FormControl('', [Validators.required, Validators.maxLength(50)]),
       //office: new FormControl('', [Validators.required, Validators.maxLength(50)])
       officeID: new FormControl('', Validators.required),//added during employee-office relationship
-      officeSelect: new FormControl('', Validators.required)//added during employee-office relationship
+      officeSelect: new FormControl('', Validators.required),//added during employee-office relationship
+      employeetypeID: new FormControl('', Validators.required),//added during employee-employeetype relationship
+      employeetypeSelect: new FormControl('', Validators.required)//added during employee-employeetype relationship
     });
     this.employeeContext = data;
    }
@@ -55,7 +68,7 @@ export class EmployeeUpdateFormComponent implements OnInit {
     //added during employee-office relationship
     //to show updated office list when office is updated
     this.employeeDataService.employeeSource.subscribe( data=> {
-      this.getOfficeLists();
+      this.getOfficeEmployeeTypeLists();//added during employee-employeetype relationship
     });
     //added during employee-office relationship
   }
@@ -65,7 +78,8 @@ export class EmployeeUpdateFormComponent implements OnInit {
   change(){
     this.employeeUpdateForm.controls['firstname'].setValue(this.employeeToBeEdited.firstName);
     this.employeeUpdateForm.controls['lastname'].setValue(this.employeeToBeEdited.lastName);
-    this.employeeUpdateForm.controls['emailaddress'].setValue(this.employeeToBeEdited.emailAddress);
+    this.employeeUpdateForm.controls['formofcommu'].setValue(this.employeeToBeEdited.formOfCommu);
+    this.employeeUpdateForm.controls['contactinfo'].setValue(this.employeeToBeEdited.contactInfo);
     //this.employeeUpdateForm.controls['office'].setValue(this.employeeToBeEdited.office);
 
     //added during employee-office relationship
@@ -73,6 +87,12 @@ export class EmployeeUpdateFormComponent implements OnInit {
     let officeCode = this.officesList.find(data => data.officeid === this.employeeToBeEdited.officeid);
     this.employeeUpdateForm.controls['officeSelect'].setValue(officeCode.officeCode);
     //added during employee-office relationship
+
+    //added during employee-employeetype relationship
+    this.employeeUpdateForm.controls['employeetypeID'].setValue(this.employeeToBeEdited.employeeTypeid);
+    let employeeTypeCode = this.employeeTypesList.find(data => data.employeeTypeid === this.employeeToBeEdited.employeeTypeid);
+    this.employeeUpdateForm.controls['employeetypeSelect'].setValue(employeeTypeCode.employeeTypeName);
+    //added during employee-employeetype relationship
   }
 
   close(){
@@ -94,8 +114,8 @@ export class EmployeeUpdateFormComponent implements OnInit {
       this.isSubmit = true;
       this.firstNameBackEndErrors = null;
       this.lastNameBackEndErrors = null;
-      this.emailAddressBackEndErrors = null;
-      this.officeBackEndErrors = null;
+      this.formOfCommuBackEndErrors = null;
+      this.contactInfoBackEndErrors = null;
       this.employeeUpdateForm.value.employeeid = this.employeeToBeEdited.employeeID;
       let result = await this.employeeService.UpdateEmployee(this.employeeUpdateForm.value).toPromise();
       if(result.isSuccess){
@@ -121,14 +141,14 @@ export class EmployeeUpdateFormComponent implements OnInit {
         if('firstname' in errs.errors){
           this.firstNameBackEndErrors = errs.errors.firstname;//shows data annotations error message
         }
-        if('firstname' in errs.errors){
+        if('lastname' in errs.errors){
           this.lastNameBackEndErrors = errs.errors.lastname;//shows data annotations error message
         }
-        if('firstname' in errs.errors){
-          this.emailAddressBackEndErrors = errs.errors.emailaddress;//shows data annotations error message
+        if('formofcommu' in errs.errors){
+          this.formOfCommuBackEndErrors = errs.errors.formofcommu;//shows data annotations error message
         }
-        if('firstname' in errs.errors){
-          this.officeBackEndErrors = errs.errors.office;//shows data annotations error message
+        if('contactinfo' in errs.errors){
+          this.contactInfoBackEndErrors = errs.errors.contactinfo;//shows data annotations error message
         }
       }
 
@@ -139,9 +159,10 @@ export class EmployeeUpdateFormComponent implements OnInit {
     }
   }
 
-  async getOfficeLists(){
+  async getOfficeEmployeeTypeLists(){
     try {
       this.officesList = await this.officeService.getAll().toPromise();
+      this.employeeTypesList = await this.employeeTypeService.getAll().toPromise();
       if (!this.initialized) {
         this.change();
         this.initialized;
@@ -150,6 +171,7 @@ export class EmployeeUpdateFormComponent implements OnInit {
       console.log(error);
     }
   }
+  
 
   selectOffice($event){//added during employee-office relationship
     let office = this.employeeUpdateForm.value.officeSelect;
@@ -163,11 +185,31 @@ export class EmployeeUpdateFormComponent implements OnInit {
     }
   }
 
+
+  selectEmployeeType($event){//added during employee-employeetype relationship
+    let emptype = this.employeeUpdateForm.value.employeetypeSelect;
+    if (emptype.length > 2) {
+      if ($event.timeStamp > 200) {
+        let selectedEmployeeType = this.employeeTypesList.find(data => data.employeeTypeName == emptype);
+        if (selectedEmployeeType) {
+          this.employeeUpdateForm.controls['employeetypeID'].setValue(selectedEmployeeType.employeeTypeid);
+        }
+      }      
+    }
+  }
+
   openOfficeDialog(){//added during employee-office relationship
     const dialogConfig = new MatDialogConfig;
     dialogConfig.width = '600px';
     dialogConfig.height = '600px';
     this.dialog.open(OfficeComponent, dialogConfig);
+  }
+
+  openEmployeeTpyeDialog(){//added during employee-office relationship
+    const dialogConfig = new MatDialogConfig;
+    dialogConfig.width = '600px';
+    dialogConfig.height = '600px';
+    this.dialog.open(EmployeetypeComponent, dialogConfig);
   }
 }
 

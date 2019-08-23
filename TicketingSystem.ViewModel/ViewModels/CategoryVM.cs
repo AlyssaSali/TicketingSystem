@@ -13,6 +13,5 @@ namespace TicketingSystem.ViewModel.ViewModels
             public string CategoryName { get; set; }
             public DateTime DateCreated { get; set; }
 
-
     }
 }

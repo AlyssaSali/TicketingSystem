@@ -1,11 +1,12 @@
+import { Employee } from './employee.model';
+import { Office } from './office.model';
 
 
 export interface Ticket {
     ticketid: number,
-    assistByid: number,
+    //assistByid: number,
     categoryid: number,
-    date: string,
-    time: number,
+    dateRequested: Date;
     formOfCommu: string,
     contactInfo: string,
     requestTitle: string,
@@ -19,6 +20,8 @@ export interface Ticket {
     trackingStatus: string,
 
     //dummyinputs
-    requestedBy: string,
-    office: string,
+    employeeID: string,
+    employee: Employee,
+    officeid: number,
+    office: Office
 }

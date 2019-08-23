@@ -13,6 +13,8 @@ namespace TicketingSystem.DAL.Models
         public string SeverityName { get; set; }
         public string SeverityDesc { get; set; }
 
+        public virtual ICollection<Category> Categories { get; set; }
+        public virtual ICollection<Ticket> Tickets { get; set; }
         public virtual ICollection<CategoryList> CategoryLists { get; set; }
 
     }

@@ -7,6 +7,7 @@ using TicketingSystem.BLL.Contracts;
 using TicketingSystem.BLL.Services;
 using TicketingSystem.ViewModel.ViewModel;
 using TicketingSystem.ViewModel.ViewModels;
+using static TicketingSystem.ViewModel.ViewModels.DatatableVM;
 
 namespace Ticketing_System.Controllers
 {
@@ -32,7 +33,7 @@ namespace Ticketing_System.Controllers
             return officeService.Create(officeVM);
         }
         [HttpDelete("[action]/{id}")]
-        public ActionResult<ResponseVM> Delete(Guid id)
+        public ActionResult<ResponseVM> Delete (Guid id)
         {
             if (!ModelState.IsValid)
             {
@@ -40,6 +41,7 @@ namespace Ticketing_System.Controllers
             }
             return officeService.Delete(id);
         }
+
         [HttpGet("[action]")]
         public IEnumerable<OfficeVM> GetAll()
         {
@@ -60,6 +62,10 @@ namespace Ticketing_System.Controllers
                 return BadRequest("something went wrong");
             }
             return officeService.Update(officeVM);
+        }
+        public ActionResult<PagingResponse<OfficeVM>> GetDataServerSide([FromBody]PagingRequest paging)
+        {
+            return officeService.GetDataServerSide(paging);
         }
     }
 

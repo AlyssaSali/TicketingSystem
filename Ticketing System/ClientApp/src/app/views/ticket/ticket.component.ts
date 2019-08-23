@@ -4,9 +4,14 @@ import { Ticket } from 'src/app/models/ticket.model';
 import { MatDialogConfig, MatDialog } from '@angular/material';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { TicketDataService } from 'src/app/dataservices/ticket.dataservice';
+<<<<<<< HEAD
+import { EmployeeDataService } from 'src/app/dataservices/employee.dataservice';
+import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
+=======
 import { TicketMinor } from 'src/app/models/ticketMinor.model';
 import { TicketMinorDataService } from 'src/app/dataservices/ticketMinor.dataservice';
 import { TicketMinorService } from 'src/app/services/ticketMinor.service';
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 
 @Component({
   selector: 'app-ticket',
@@ -24,8 +29,13 @@ export class TicketComponent implements OnInit {
   constructor(
     private ticketService: TicketService,
     private ticketDataService: TicketDataService,
+<<<<<<< HEAD
+    private employeeDataService: EmployeeDataService,
+    private officeDataService: OfficeDataService,
+=======
     private ticketMinorService: TicketMinorService,
     private ticketMinorDataService: TicketMinorDataService,
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
     public dialog: MatDialog
    ) {
      this.ticketTableForm = new FormGroup({

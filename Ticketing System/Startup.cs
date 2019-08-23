@@ -36,14 +36,18 @@ namespace Ticketing_System
                   options.UseSqlServer
                   (Configuration.GetConnectionString
                   ("TicketingSystemContext")));
+
             services.AddScoped<OfficeService>();
             services.AddScoped<EmployeeService>();
             services.AddScoped<TicketService>();
             services.AddScoped<CategoryService>();
             services.AddScoped<SeverityService>();
             services.AddScoped<CategoryListService>();
+            services.AddScoped<ITGroupService>();
+            services.AddScoped<EmployeeTypeService>();
             services.AddScoped<OfficeService>();
             services.AddScoped<ITGroupService>();
+            services.AddScoped<ITGroupMemberService>();
             services.AddScoped<TicketMinorService>();
         }
 
