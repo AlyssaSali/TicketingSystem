@@ -7,6 +7,7 @@ using TicketingSystem.BLL.Helpers;
 using TicketingSystem.DAL.Models;
 using TicketingSystem.ViewModel.ViewModel;
 using TicketingSystem.ViewModel.ViewModels;
+using static TicketingSystem.ViewModel.ViewModels.DatatableVM;
 
 namespace TicketingSystem.BLL.Contracts
 {
@@ -128,7 +129,7 @@ namespace TicketingSystem.BLL.Contracts
                         var employeesVm = employees.Select(x=>toViewModel.Employee(x));
                         return employeesVm;
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         throw;
                     }
@@ -162,5 +163,54 @@ namespace TicketingSystem.BLL.Contracts
                 }
             }
         }
+
+        public DatatableVM.PagingResponse<EmployeeVM> GetDataServerSide(DatatableVM.PagingRequest paging)
+        {
+            using (context)
+            {
+
+                var pagingResponse = new PagingResponse<EmployeeVM>()
+                {
+                    // counts how many times the user draws data
+                    Draw = paging.Draw
+                };
+                // initialized query
+                IEnumerable<Employee> query = null;
+                // search if user provided a search value, i.e. search value is not empty
+                if (!string.IsNullOrEmpty(paging.Search.Value))
+                {
+                    // search based from the search value
+                    query = context.Employees.Include(x => x.Office)
+                          .Where(v => v.Office.ToString().ToLower().Contains(paging.Search.Value.ToLower()) || v.FirstName.ToString().ToLower().Contains(paging.Search.Value.ToLower()) ||
+                    v.LastName.ToString().ToLower().Contains(paging.Search.Value.ToLower()));
+                }
+                else
+                {
+                    // selects all from table
+                    query = context.Employees;
+                }
+                // total records from query
+                var recordsTotal = query.Count();
+                // orders the data by the sorting selected by the user
+                // used ternary operator to determine if ascending or descending
+                var colOrder = paging.Order[0];
+                switch (colOrder.Column)
+                {
+                    case 0:
+                        query = colOrder.Dir == "asc" ? query.OrderBy(v => v.FirstName) : query.OrderByDescending(v => v.FirstName);
+                        break;
+
+                }
+
+                var taken = query.Skip(paging.Start).Take(paging.Length).ToArray();
+                // converts model(query) into viewmodel then assigns it to response which is displayed as "data"
+                pagingResponse.Reponse = taken.Select(x => toViewModel.Employee(x));
+                pagingResponse.RecordsTotal = recordsTotal;
+                pagingResponse.RecordsFiltered = recordsTotal;
+
+                return pagingResponse;
+            }
+        }
     }
+    
 }

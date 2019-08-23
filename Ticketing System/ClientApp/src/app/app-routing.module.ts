@@ -27,9 +27,13 @@ import { ItgroupComponent } from './views/itgroup/itgroup.component';
 import { CategoryListComponent } from './views/categoryList/categoryList.component';
 <<<<<<< HEAD
 import { ItgroupComponent } from './views/itgroup/itgroup.component';
+<<<<<<< HEAD
+import { ItgroupmemberComponent } from './views/itgroupmember/itgroupmember.component';
+=======
 =======
 import { ModalsComponent } from './views/layouts/modals/modals.component';
 >>>>>>> ridz
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
@@ -45,7 +49,8 @@ const routes: Routes = [
   {path: 'category', component: CategoryComponent},
 <<<<<<< HEAD
   {path: 'categoryList', component: CategoryListComponent},
-  { path: 'itgroup', component: ItgroupComponent}
+  { path: 'itgroup', component: ItgroupComponent},
+  {path: 'itgroupmember', component: ItgroupmemberComponent}
   
 =======
   { path: '', component: HomeComponent, pathMatch: 'full' },

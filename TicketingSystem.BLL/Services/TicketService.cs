@@ -21,6 +21,7 @@ namespace TicketingSystem.BLL.Services
             context = _context;
         }
 
+      
         public ResponseVM Create(TicketVM ticketVM)
         {
             using (context)
@@ -106,5 +107,13 @@ namespace TicketingSystem.BLL.Services
         {
             throw new NotImplementedException();
         }
+<<<<<<< HEAD
+
+        public DatatableVM.PagingResponse<TicketVM> GetDataServerSide(DatatableVM.PagingRequest paging)
+        {
+            throw new NotImplementedException();
+        }
+=======
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
     }
 }

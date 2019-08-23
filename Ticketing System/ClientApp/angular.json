@@ -27,10 +27,17 @@
 <<<<<<< HEAD
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/ngx-toastr/toastr.css"
               
             ],
+<<<<<<< HEAD
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/datatables.net/js/jquery.dataTables.js"
+            ]
+=======
             "scripts": []
 =======
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
@@ -51,6 +58,7 @@
               "src/dist/js/adminlte.min.js"
             ]
 >>>>>>> ridz
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
           },
           "configurations": {
             "production": {
