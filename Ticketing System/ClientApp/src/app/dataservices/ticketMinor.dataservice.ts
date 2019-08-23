@@ -8,16 +8,16 @@ import { TicketMinor } from '../models/ticketMinor.model';
 export class TicketMinorDataService implements
 OnDestroy{
     
-    ticketSource=new BehaviorSubject<TicketMinor[]>([]);
-    tickets =this.ticketSource.asObservable();
+    ticketMinorSource=new BehaviorSubject<TicketMinor[]>([]);
+    ticketMinors =this.ticketMinorSource.asObservable();
     
     constructor(){
     }
         refreshTicketMinors(){
-            this.ticketSource.next(null);
+            this.ticketMinorSource.next(null);
         }
         ngOnDestroy(){
-            this.ticketSource.unsubscribe();
+            this.ticketMinorSource.unsubscribe();
         }
    
 }

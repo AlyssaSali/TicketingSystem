@@ -49,9 +49,7 @@ export class CategoryUpdateFormComponent implements OnInit {
     (this.categoryToBeEdited.categoryName)
    
   }
-  close(){
-    this.dialogRef.close();
-  }
+  
   async onFormSubmit(){
     let ok = confirm("Are you sure you want to submit?");
 
@@ -96,6 +94,10 @@ export class CategoryUpdateFormComponent implements OnInit {
   }  finally{
       this.isSubmit= false;
   }
+}
+
+close(){
+  this.dialogRef.close();
 }
 
 }

@@ -12,17 +12,14 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 export class OfficeAddFormComponent implements OnInit {
   officeCreateForm: FormGroup;
    isSubmit = false;
- 
    
    officecodeBackEndErrors: string[];
    officedescBackEndErrors: string[];
    
-   
- 
    constructor(
      private officeService: OfficeService,
      private officeDataService: OfficeDataService,
-     
+     public dialogRef:MatDialogRef<OfficeAddFormComponent>
    ) {
      this .officeCreateForm = new FormGroup({
        officecode: new FormControl('',[Validators.required,Validators.maxLength(50)]),
@@ -83,5 +80,13 @@ export class OfficeAddFormComponent implements OnInit {
        this.isSubmit= false;
    }
  }
+
+ close(){
+  this.dialogRef.close();
+  }
+
+  reset(){
+    this.officeCreateForm.reset();
+  }
  
  }

@@ -1,4 +1,4 @@
 export interface EmployeeType {
-    id: number,
+    id: string;
     employeeType: string,
 }

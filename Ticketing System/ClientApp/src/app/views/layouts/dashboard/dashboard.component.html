@@ -1,37 +1,94 @@
-<div class="main">
-        <div class="row">
-          <div class="col-md-4">
-              <div class="card bg-light mb-3 f1">
-                  <div class="card-header">Sort By</div>
-                    <div class="list-group">
-                          <a href="#" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">Emergency Request 
-                            <span class="badge badge-primary badge-pill" style="font-size: 12px;">2</span>
-                          </a>
-                          <a href="#" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">Normal Request
-                            <span class="badge badge-primary badge-pill" style="font-size: 12px;">14</span>
-                          </a>
-                          <a href="#" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">Critical Request
-                            <span class="badge badge-primary badge-pill" style="font-size: 12px;">1</span>
-                          </a>
-                        </div>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>Dashboard
+        <small></small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-aqua"><i class="ion ion-ios-paper-outline"></i></span>
+  
+              <div class="info-box-content">
+                <span class="info-box-text">Minor <br>Request</span>
+                <a href="#ticketMinor"><span class="info-box-number">10</span></a>
               </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
           </div>
-          <div class="col-md-8">
-              <div class="card border-light mb-3">
-                  <div class="card-header f2">Create Ticket</div>
-                  <div class="row">
-                  <div class="col-md-6">
-                      <button type="button" class="btn btn-outline-info ico-s" [routerLink]="[ '/ticketMinor']">
-                        <img src="rf.png" class="ico2">Minor Request
-                      </button>
-                  </div>
-                  <div class="col-md-6">
-                      <button type="button" class="btn btn-outline-info ico-s" [routerLink]="[ '/ticketAdd']">
-                          <img src="cm.png" class="ico1">Major Request
-                        </button>
-                  </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-green"><i class="ion ion-ios-gear-outline"></i></span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-text">Major <br>Request</span>
+                  <a [routerLink]="[ '/ticketAdd']"><span class="info-box-number">6</span></a>
                 </div>
+                <!-- /.info-box-content -->
               </div>
+              <!-- /.info-box -->
+            </div>
+        <div class="col-md-3">
+            <div class="info-box bg-yellow">
+                <span class="info-box-icon"><h1>2</h1></span>
+    
+                <div class="info-box-content"><br>
+                  <span class="info-box-text" style="font-size: 16px">Emergency</span>
+                  <small>REQUEST</small>
+    
+                  <div class="progress">
+                    <div class="progress-bar" style="width: 50%"></div>
+                  </div>
+                  <span class="progress-description">
+                      </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+        </div>
+        <div class="col-md-3">
+        <div class="info-box bg-red">
+            <span class="info-box-icon"><h1>4</h1></span>
+
+            <div class="info-box-content"><br>
+              <span class="info-box-text" style="font-size: 16px">Critical</span>
+              <small>REQUEST</small>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 70%"></div>
+              </div>
+            </div>
+            <!-- /.info-box-content -->
           </div>
         </div>
-        <app-ticket></app-ticket>
+      </div>
+    
+
+<!-- TABLE: LATEST ORDERS -->
+<div class="box box-info">
+    <div class="box-header with-border">
+      <h3 class="box-title">Ongoing Tickets</h3>
+      <div class="col-md-3 pull-right">
+          <form>
+              <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            </form>
+      </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <app-ticket></app-ticket>
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer clearfix">
+      <a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">View All Tickets</a>
+    </div>
+    <!-- /.box-footer -->
+  </div>
+  <!-- /.box -->
+</section>
+</div>

@@ -1,7 +1,7 @@
 
 
 export interface TicketSLA {
-    ticketSLAid: number,
+    ticketSLAid: string;
     employeeid: number,
     requestid: number,
     categoryid: number,

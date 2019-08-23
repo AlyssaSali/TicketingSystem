@@ -1,12 +1,12 @@
 
-<div class="panel">
-    <div class="panel-heading">
-        <h1 style="display: inline"> Update ITGroup</h1>
-        <button class="btn btn-danger btn-sm float-right"(click)="close()"><i class="material-icons">close</i></button>
-    </div>
-    <div class="panel-body">
-        <div class="form-group has-success">
-            <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="itgroupUpdateform">
+<div class="modal-content">
+        <div class="modal-header bg-primary">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Update IT Group</h4>
+        </div>
+        <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="itgroupUpdateform">
+            <div class="modal-body">
                 <div class="row">
                     <div class="col-md-5">
                         <label for="ITGroupCode">Code: <span style="color: red">*</span></label><br />
@@ -28,20 +28,13 @@
                             <span class="error-msg" *ngFor="let error of itgroupnameBackEndErrors">{{error}}</span>
                         </div>
                     </div>
-                    <div class="row">
-                        <br>
-                        <button type="submit" [disabled]="!itgroupUpdateform.valid || isSubmit" class="btn btn-success">Update
-
-                        </button>
-                        <br>
-                        <button type="button" (click) = "close()" class="btn btn-danger">Close
-                            
-                        </button>
-                    </div>
                 </div>
-            </form>
-        </div>
-    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" [disabled]="!ticketCreateForm.valid || isSubmit" class="btn btn-primary pull-right" style="margin-top: 5px;">Save</button>
+                <button type="button" (click)="close()" class="btn btn-default" style="margin-top: 5px;">Close</button>
+            </div>
+        </form>
 </div>
 
 

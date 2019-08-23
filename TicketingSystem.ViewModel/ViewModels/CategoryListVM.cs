@@ -9,17 +9,23 @@ namespace TicketingSystem.ViewModel.ViewModels
     {
         public Guid CategoryListid { get; set; }
         public string CategoryListName { get; set; }
+        public string CategoryType { get; set; }
         public int SlaResponseTime { get; set; }
+        public string SlaResponseTimeExt { get; set; }
         public int SlaResolvedTime { get; set; }
-        public string ItGroup { get; set; }
+        public string SlaResolvedTimeExt { get; set; }
 
         [Required]
-        public Guid categoryid { get; set; }
+        public string Categoryid { get; set; }
         public CategoryVM Category { get; set; }
 
         [Required]
-        public Guid severityid { get; set; }
+        public string Severityid { get; set; }
         public SeverityVM Severity { get; set; }
+
+        [Required]
+        public string ITGroupid { get; set; }
+        public ITGroupVM ITGroup { get; set; }
 
     }
 }
