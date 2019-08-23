@@ -1,12 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 <<<<<<< HEAD
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~material-design-icons/iconfont/material-icons.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+=======
+<<<<<<< HEAD
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+<<<<<<< HEAD
+@import"~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import'~material-design-icons/iconfont/material-icons.css';
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+=======
 @import"~@angular/material/prebuilt-themes/indigo-pink.css"; 
 @import'~material-design-icons/iconfont/material-icons.css'; 
 /* html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */ 
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 
 .error-msg {
     color:  red;
@@ -71,8 +85,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
     font-size: 10pt;
     margin: 0;
 }
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 /* Main content */
 .main {
     margin-left: 200px; /* Same as the width of the sidenav */
@@ -128,9 +145,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 .mt2 {
   margin-top:20px;
 }
+<<<<<<< HEAD
+=======
 
 =======
     color: #ff0000;
     font-size: 10px;
 }
 >>>>>>> ridz
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15

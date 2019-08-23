@@ -5,8 +5,12 @@ import { EmployeeDataService } from 'src/app/dataservices/employee.dataservice';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { EmployeeUpdateFormComponent } from './employee-update-form/employee-update-form.component';
 import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
+<<<<<<< HEAD
+import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.dataservice';
+=======
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 
 @Component({
   selector: 'app-employee',
@@ -24,6 +28,7 @@ export class EmployeeComponent implements OnInit {
     private employeeService: EmployeeService,
     private employeeDataService: EmployeeDataService,
     private officeDataService: OfficeDataService,
+    private employeeTypeDataService: EmployeeTypeDataService,
     public dialog: MatDialog
   ) { }
 

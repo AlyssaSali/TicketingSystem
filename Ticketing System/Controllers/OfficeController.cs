@@ -46,6 +46,7 @@ namespace Ticketing_System.Controllers
             }
             return officeService.Delete(id);
         }
+
         [HttpGet("[action]")]
         public IEnumerable<OfficeVM> GetAll()
         {

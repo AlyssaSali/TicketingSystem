@@ -2,6 +2,19 @@
   "format": 1,
   "restore": {
 <<<<<<< HEAD
+<<<<<<< HEAD
+    "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.BLL\\TicketingSystem.BLL.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.BLL\\TicketingSystem.BLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.BLL\\TicketingSystem.BLL.csproj",
+        "projectName": "TicketingSystem.BLL",
+        "projectPath": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.BLL\\TicketingSystem.BLL.csproj",
+        "packagesPath": "C:\\Users\\Moore\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.BLL\\obj\\",
+=======
     "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.BLL\\TicketingSystem.BLL.csproj": {}
   },
   "projects": {
@@ -13,6 +26,7 @@
         "projectPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.BLL\\TicketingSystem.BLL.csproj",
         "packagesPath": "C:\\Users\\Dis Moore\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.BLL\\obj\\",
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 =======
     "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.BLL\\TicketingSystem.BLL.csproj": {}
   },
@@ -32,11 +46,18 @@
         ],
         "configFilePaths": [
 <<<<<<< HEAD
+<<<<<<< HEAD
+          "C:\\Users\\Moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+=======
           "C:\\Users\\Dis Moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 =======
           "C:\\Users\\ridz\\AppData\\Roaming\\NuGet\\NuGet.Config",
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
@@ -49,11 +70,19 @@
           "netcoreapp2.2": {
             "projectReferences": {
 <<<<<<< HEAD
+<<<<<<< HEAD
+              "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj": {
+                "projectPath": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj"
+              },
+              "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj": {
+                "projectPath": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj"
+=======
               "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj": {
                 "projectPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj"
               },
               "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj": {
                 "projectPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj"
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 =======
               "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj": {
                 "projectPath": "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj"
@@ -90,7 +119,18 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
+    "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj",
+        "projectName": "TicketingSystem.DAL",
+        "projectPath": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj",
+        "packagesPath": "C:\\Users\\Moore\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\obj\\",
+=======
     "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj": {
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 =======
     "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj": {
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
@@ -113,11 +153,18 @@
         ],
         "configFilePaths": [
 <<<<<<< HEAD
+<<<<<<< HEAD
+          "C:\\Users\\Moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+=======
           "C:\\Users\\Dis Moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 =======
           "C:\\Users\\ridz\\AppData\\Roaming\\NuGet\\NuGet.Config",
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
@@ -174,6 +221,16 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
+    "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj",
+        "projectName": "TicketingSystem.ViewModel",
+        "projectPath": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj",
+        "packagesPath": "C:\\Users\\Moore\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\obj\\",
+=======
     "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -182,6 +239,7 @@
         "projectPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj",
         "packagesPath": "C:\\Users\\Dis Moore\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\obj\\",
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 =======
     "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj": {
       "version": "1.0.0",
@@ -198,11 +256,18 @@
         ],
         "configFilePaths": [
 <<<<<<< HEAD
+<<<<<<< HEAD
+          "C:\\Users\\Moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+=======
           "C:\\Users\\Dis Moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 =======
           "C:\\Users\\ridz\\AppData\\Roaming\\NuGet\\NuGet.Config",
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"

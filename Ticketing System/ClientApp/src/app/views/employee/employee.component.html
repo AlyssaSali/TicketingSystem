@@ -1,4 +1,42 @@
 <<<<<<< HEAD
+<app-employee-add-form></app-employee-add-form>
+
+<h1></h1>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Contact Information</td>
+            <td>Employee Type</td>
+            <td>Office</td>
+            <td></td>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td style="width: 15%;">{{employee.firstName}}</td>
+            <td style="width: 15%;">{{employee.lastName}}</td>
+            <td style="width: 15%;">[{{employee.formOfCommu}}] - {{employee.contactInfo}}</td>
+            <td style="width: 15%;">{{employee.employeeType.employeeTypeName}}</td>
+            <td style="width: 15%;">{{employee.office.officeCode}}</td>
+           
+            <td style="width: 25%;">
+                <div class="row">
+                    <button class="col-md-5 btn-success m-1" (click)="update(employee)" data-toggle="tooltip" data-placement="bottom" title="Update Employee">
+                        <i class="material-icons">update</i>
+                    </button>
+                    <button class="col-md-5 btn-danger m-1" (click)="delete(employee.employeeID)" data-toggle="tooltip" data-placement="bottom" title="DeleteEmployee">
+                        <i class="material-icons">delete</i>
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+=======
+<<<<<<< HEAD
 <div class="main">
 <app-employee-add-form></app-employee-add-form>
     <h1>List of Employee</h1>
@@ -89,3 +127,4 @@
     
 </div>
 >>>>>>> ridz
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
