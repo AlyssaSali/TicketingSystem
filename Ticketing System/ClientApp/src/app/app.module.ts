@@ -65,7 +65,10 @@ import { EmployeetypeUpdateFormComponent } from './views/employeetype/employeety
 =======
 <<<<<<< HEAD
 import { ToastrModule } from 'ngx-toastr';
-
+import { ItgroupmemberComponent } from './views/itgroupmember/itgroupmember.component';
+import { ItgroupmemberAddFormComponent } from './views/itgroupmember/itgroupmember-add-form/itgroupmember-add-form.component';
+import { ItgroupmemberUpdateFormComponent } from './views/itgroupmember/itgroupmember-update-form/itgroupmember-update-form.component';
+import {DataTablesModule} from 'angular-datatables';
 
 =======
 import { CategoryListUpdateFormComponent } from './views/categoryList/categoryList-update-form/categoryList-update-form.component';
@@ -109,13 +112,20 @@ import { ModalsComponent } from './views/layouts/modals/modals.component';
     ItgroupAddFormComponent,
 <<<<<<< HEAD
     ItgroupUpdateFormComponent,
+<<<<<<< HEAD
     EmployeetypeComponent,
     EmployeetypeAddFormComponent,
     EmployeetypeUpdateFormComponent
   ],
 =======
+    ItgroupmemberComponent,
+    ItgroupmemberAddFormComponent,
+    ItgroupmemberUpdateFormComponent
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
+=======
 <<<<<<< HEAD
     ItgroupUpdateFormComponent
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 
 ],
 =======
@@ -143,10 +153,11 @@ import { ModalsComponent } from './views/layouts/modals/modals.component';
 =======
 <<<<<<< HEAD
     CommonModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    DataTablesModule
   ],
   entryComponents: [EmployeeUpdateFormComponent, OfficeUpdateFormComponent, ItgroupUpdateFormComponent, TicketAddFormComponent,
-    SeverityUpdateFormComponent,
+    SeverityUpdateFormComponent,ItgroupmemberUpdateFormComponent,
     TicketSLAComponent,
     TicketApprovalComponent,
     CategoryUpdateFormComponent,

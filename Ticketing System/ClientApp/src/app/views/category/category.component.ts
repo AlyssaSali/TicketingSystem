@@ -1,10 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Category } from 'src/app/models/category.model';
 import { CategoryService } from 'src/app/services/category.service';
 import { CategoryDataService } from 'src/app/dataservices/category.dataservice';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { CategoryUpdateFormComponent } from './category-update-form/category-update-form.component';
+<<<<<<< HEAD
+import { DataTableDirective } from 'angular-datatables';
+import { Subject } from 'rxjs';
+=======
 import { CategoryAddFormComponent } from './category-add-form/category-add-form.component';
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 
 @Component({
   selector: 'app-category',
@@ -12,6 +17,10 @@ import { CategoryAddFormComponent } from './category-add-form/category-add-form.
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
+  @ViewChild(DataTableDirective, {static: false})
+  dtElement: DataTableDirective;
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<Category> = new Subject();
   categories:Category[];
 
   constructor(
@@ -31,6 +40,7 @@ export class CategoryComponent implements OnInit {
     try{
 
       this.categories=await this.categoryService.getAll().toPromise();
+      this.rerender();
     }catch(error){
       alert('Something went wrong!');
       console.error(error);
@@ -61,6 +71,23 @@ export class CategoryComponent implements OnInit {
       dialogConfig.width = '400px';
       dialogConfig.panelClass = 'custom-modalbox';
       this.dialog.open(CategoryUpdateFormComponent,dialogConfig)
+    }
+    ngAfterViewInit(): void {
+      this.dtTrigger.next();
+    }
+  
+    ngOnDestroy(): void {
+      // Do not forget to unsubscribe the event
+      this.dtTrigger.unsubscribe();
+    }
+  
+    rerender(): void {
+      this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+        // Destroy the table first
+        dtInstance.destroy();
+        // Call the dtTrigger to rerender again
+        this.dtTrigger.next();
+      });
     }
 
     close(){

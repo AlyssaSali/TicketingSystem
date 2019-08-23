@@ -2,6 +2,7 @@
   "format": 1,
   "restore": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj": {}
   },
   "projects": {
@@ -13,6 +14,19 @@
         "projectPath": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj",
         "packagesPath": "C:\\Users\\Moore\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\obj\\",
+=======
+    "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj",
+        "projectName": "TicketingSystem.ViewModel",
+        "projectPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj",
+        "packagesPath": "C:\\Users\\Dis Moore\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.ViewModel\\obj\\",
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 =======
     "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.ViewModel\\TicketingSystem.ViewModel.csproj": {}
   },
@@ -32,11 +46,16 @@
         ],
         "configFilePaths": [
 <<<<<<< HEAD
+<<<<<<< HEAD
           "C:\\Users\\Moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
 =======
+          "C:\\Users\\Dis Moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
+=======
           "C:\\Users\\ridz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
         ],
@@ -70,6 +89,10 @@
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
             },
             "microsoft.entityframeworkcore.design": {
               "target": "Package",

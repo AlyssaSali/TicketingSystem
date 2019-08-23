@@ -1,11 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Employee } from 'src/app/models/employee.model';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { EmployeeDataService } from 'src/app/dataservices/employee.dataservice';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { EmployeeUpdateFormComponent } from './employee-update-form/employee-update-form.component';
 import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
+<<<<<<< HEAD
 import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.dataservice';
+=======
+import { DataTableDirective } from 'angular-datatables';
+import { Subject } from 'rxjs';
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 
 @Component({
   selector: 'app-employee',
@@ -13,6 +18,10 @@ import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.datas
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
+  @ViewChild(DataTableDirective, {static: false})
+  dtElement: DataTableDirective;
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<Employee> = new Subject();
   employees: Employee[];
 
   constructor(
@@ -32,7 +41,11 @@ export class EmployeeComponent implements OnInit {
   async getEmployees() {
     try {
       this.employees = await this.employeeService.ListEmployees().toPromise();
+<<<<<<< HEAD
+      this.rerender();
+=======
       console.log(this.employees);
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
     } catch (error) {
       alert("something went wrong");
       console.error(error);
@@ -66,5 +79,23 @@ export class EmployeeComponent implements OnInit {
         console.log(error);
       }
     }
+    
+  }
+  ngAfterViewInit(): void {
+    this.dtTrigger.next();
+  }
+
+  ngOnDestroy(): void {
+    // Do not forget to unsubscribe the event
+    this.dtTrigger.unsubscribe();
+  }
+
+  rerender(): void {
+    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+      // Destroy the table first
+      dtInstance.destroy();
+      // Call the dtTrigger to rerender again
+      this.dtTrigger.next();
+    });
   }
 }

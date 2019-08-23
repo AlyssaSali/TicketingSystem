@@ -34,10 +34,16 @@ import { ItgroupComponent } from './views/itgroup/itgroup.component';
 import { CategoryListComponent } from './views/categoryList/categoryList.component';
 <<<<<<< HEAD
 import { ItgroupComponent } from './views/itgroup/itgroup.component';
+<<<<<<< HEAD
 import { EmployeetypeComponent } from './views/employeetype/employeetype.component';
 =======
 <<<<<<< HEAD
 import { ItgroupComponent } from './views/itgroup/itgroup.component';
+=======
+<<<<<<< HEAD
+import { ItgroupmemberComponent } from './views/itgroupmember/itgroupmember.component';
+=======
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 =======
 import { ModalsComponent } from './views/layouts/modals/modals.component';
 >>>>>>> ridz
@@ -58,11 +64,15 @@ const routes: Routes = [
 <<<<<<< HEAD
   {path: 'categoryList', component: CategoryListComponent},
   { path: 'itgroup', component: ItgroupComponent},
+<<<<<<< HEAD
   { path: 'employeeType', component: EmployeetypeComponent},
 =======
 <<<<<<< HEAD
   {path: 'categoryList', component: CategoryListComponent},
   { path: 'itgroup', component: ItgroupComponent}
+=======
+  {path: 'itgroupmember', component: ItgroupmemberComponent}
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
   
 =======
   { path: '', component: HomeComponent, pathMatch: 'full' },

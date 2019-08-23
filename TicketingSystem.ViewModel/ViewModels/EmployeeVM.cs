@@ -15,6 +15,7 @@ namespace TicketingSystem.ViewModel.ViewModels
         public string LastName { get; set; }
         public string FullName { get; set; }
         [Required]
+<<<<<<< HEAD
         public string FormOfCommu { get; set; }
         [Required]
         public string ContactInfo { get; set; }
@@ -23,9 +24,15 @@ namespace TicketingSystem.ViewModel.ViewModels
         public Guid EmployeeTypeid { get; set; }
         public EmployeeTypeVM EmployeeType { get; set; }
 
+=======
+        public string EmailAddress { get; set; }
+        public string FullName { get; set; }
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
         [Required]
         public string Officeid { get; set; }
         public OfficeVM Office { get; set; }
+
+        public virtual List<GroupEmployeeVM> GroupEmployees { get; set; }
 
     }
 }

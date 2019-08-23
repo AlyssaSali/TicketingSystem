@@ -12,5 +12,7 @@ namespace TicketingSystem.ViewModel.ViewModels
         public string ITGroupCode { get; set; }
         [Required]
         public string ITGroupName { get; set; }
+
+        
     }
 }

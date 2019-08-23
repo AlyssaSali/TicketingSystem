@@ -114,6 +114,7 @@ namespace TicketingSystem.DAL.Migrations
                     b.Property<Guid>("EmployeeID")
                         .ValueGeneratedOnAdd();
 
+<<<<<<< HEAD
                     b.Property<string>("ContactInfo");
 
                     b.Property<Guid>("EmployeeTypeid");
@@ -122,19 +123,29 @@ namespace TicketingSystem.DAL.Migrations
 
                     b.Property<string>("FormOfCommu");
 
+=======
+                    b.Property<string>("EmailAddress");
+
+                    b.Property<string>("FirstName");
+
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
                     b.Property<string>("LastName");
 
                     b.Property<Guid>("Officeid");
 
                     b.HasKey("EmployeeID");
 
+<<<<<<< HEAD
                     b.HasIndex("EmployeeTypeid");
 
+=======
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
                     b.HasIndex("Officeid");
 
                     b.ToTable("Employees");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("TicketingSystem.DAL.Models.EmployeeType", b =>
                 {
                     b.Property<Guid>("EmployeeTypeid")
@@ -145,6 +156,26 @@ namespace TicketingSystem.DAL.Migrations
                     b.HasKey("EmployeeTypeid");
 
                     b.ToTable("EmployeeTypes");
+=======
+            modelBuilder.Entity("TicketingSystem.DAL.Models.GroupEmployee", b =>
+                {
+                    b.Property<Guid>("GroupEmployeeid")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("EmployeeFullName");
+
+                    b.Property<Guid>("EmployeeID");
+
+                    b.Property<Guid>("ITGroupMemberid");
+
+                    b.HasKey("GroupEmployeeid");
+
+                    b.HasIndex("EmployeeID");
+
+                    b.HasIndex("ITGroupMemberid");
+
+                    b.ToTable("GroupEmployees");
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
                 });
 
             modelBuilder.Entity("TicketingSystem.DAL.Models.ITGroup", b =>
@@ -161,6 +192,23 @@ namespace TicketingSystem.DAL.Migrations
                     b.HasKey("ITGroupid");
 
                     b.ToTable("ITGroups");
+<<<<<<< HEAD
+                });
+
+            modelBuilder.Entity("TicketingSystem.DAL.Models.ITGroupMember", b =>
+                {
+                    b.Property<Guid>("ITGroupMemberid")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid>("ITGroupid");
+
+                    b.HasKey("ITGroupMemberid");
+
+                    b.HasIndex("ITGroupid");
+
+                    b.ToTable("ITGroupMembers");
+=======
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
                 });
 
             modelBuilder.Entity("TicketingSystem.DAL.Models.Office", b =>
@@ -198,6 +246,7 @@ namespace TicketingSystem.DAL.Migrations
                 });
 
             modelBuilder.Entity("TicketingSystem.DAL.Models.Ticket", b =>
+<<<<<<< HEAD
                 {
                     b.Property<Guid>("Ticketid")
                         .ValueGeneratedOnAdd();
@@ -310,6 +359,7 @@ namespace TicketingSystem.DAL.Migrations
                 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             modelBuilder.Entity("TicketingSystem.DAL.Models.Employee", b =>
                 {
                     b.HasOne("TicketingSystem.DAL.Models.EmployeeType", "EmployeeType")
@@ -317,12 +367,62 @@ namespace TicketingSystem.DAL.Migrations
                         .HasForeignKey("EmployeeTypeid")
                         .OnDelete(DeleteBehavior.Cascade);
 
+=======
+            modelBuilder.Entity("TicketingSystem.DAL.Models.Category", b =>
+=======
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+                {
+                    b.Property<Guid>("Ticketid")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid>("AssistByid");
+
+                    b.Property<Guid>("Categoryid");
+
+                    b.Property<string>("ContactInfo");
+
+                    b.Property<DateTime>("DateOfRequest");
+
+                    b.Property<string>("FormOfCommu");
+
+                    b.Property<bool>("IsOpen");
+
+                    b.Property<bool>("IsUrgent");
+
+                    b.Property<Guid>("ItGroupid");
+
+                    b.Property<Guid>("Officeid");
+
+                    b.Property<string>("RequestDesc");
+
+                    b.Property<string>("RequestTitle");
+
+                    b.Property<Guid>("RequestedBy");
+
+                    b.Property<TimeSpan>("ResolveTime");
+
+                    b.Property<TimeSpan>("ResponseTime");
+
+                    b.Property<Guid>("Severityid");
+
+                    b.Property<string>("TrackingSatus");
+
+                    b.HasKey("Ticketid");
+
+                    b.ToTable("Tickets");
+                });
+
+<<<<<<< HEAD
+            modelBuilder.Entity("TicketingSystem.DAL.Models.Employee", b =>
+                {
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
                     b.HasOne("TicketingSystem.DAL.Models.Office", "Office")
                         .WithMany("Employees")
                         .HasForeignKey("Officeid")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("TicketingSystem.DAL.Models.Ticket", b =>
                 {
                     b.HasOne("TicketingSystem.DAL.Models.CategoryList", "CategoryList")
@@ -352,6 +452,27 @@ namespace TicketingSystem.DAL.Migrations
                     b.HasOne("TicketingSystem.DAL.Models.Severity")
                         .WithMany("Tickets")
                         .HasForeignKey("severityid");
+=======
+            modelBuilder.Entity("TicketingSystem.DAL.Models.GroupEmployee", b =>
+                {
+                    b.HasOne("TicketingSystem.DAL.Models.Employee", "Employee")
+                        .WithMany("GroupEmployees")
+                        .HasForeignKey("EmployeeID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("TicketingSystem.DAL.Models.ITGroupMember", "ITGroupMember")
+                        .WithMany("GroupEmployees")
+                        .HasForeignKey("ITGroupMemberid")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("TicketingSystem.DAL.Models.ITGroupMember", b =>
+                {
+                    b.HasOne("TicketingSystem.DAL.Models.ITGroup", "ITGroup")
+                        .WithMany()
+                        .HasForeignKey("ITGroupid")
+                        .OnDelete(DeleteBehavior.Cascade);
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 =======
             modelBuilder.Entity("TicketingSystem.DAL.Models.TicketMinor", b =>
                 {
