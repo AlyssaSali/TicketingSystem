@@ -36,7 +36,11 @@ export class EmployeeComponent implements OnInit {
   async getEmployees() {
     try {
       this.employees = await this.employeeService.ListEmployees().toPromise();
+<<<<<<< HEAD
       this.rerender();
+=======
+      console.log(this.employees);
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
     } catch (error) {
       alert("something went wrong");
       console.error(error);
@@ -48,9 +52,8 @@ export class EmployeeComponent implements OnInit {
     dialogConfig.data = {
       employeeContext: employee
     };
-    dialogConfig.width = "1000px";
+    dialogConfig.panelClass = 'custom-modalbox';
     this.dialog.open(EmployeeUpdateFormComponent, dialogConfig);
-    
   }
 
   async delete(id){

@@ -25,6 +25,11 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
+                if (context.CategoryLists.Where(x => x.CategoryListName == categoryListVM.CategoryListName).Any())
+                {
+                    return new ResponseVM("created", false, "CategoryList", ResponseVM.ALREADY_EXIST);
+                }
+
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
                     try
@@ -76,7 +81,11 @@ namespace TicketingSystem.BLL.Services
             {
                 try
                 {
-                    var categories = context.CategoryLists.Include(x => x.Category).Include(x => x.Severity).ToList().OrderByDescending(x => x.CategoryListid);
+                    var categories = context.CategoryLists
+                        .Include(x => x.Category)
+                        .Include(x => x.Severity)
+                        .Include(x => x.ITGroup)
+                        .ToList().OrderByDescending(x => x.CategoryListid);
                     var categoriesVm = categories.Select(x => toViewModel.CategoryList(x));
                     return categoriesVm;
                 }
@@ -110,6 +119,18 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
+                if (context.CategoryLists.Where(x => x.CategoryListName == categoryListVM.CategoryListName &&
+                                                     x.CategoryType == categoryListVM.CategoryType &&
+                                                     x.SlaResponseTime == categoryListVM.SlaResponseTime &&
+                                                     x.SlaResponseTimeExt == categoryListVM.SlaResponseTimeExt &&
+                                                     x.SlaResolvedTime == categoryListVM.SlaResolvedTime &&
+                                                     x.SlaResolvedTimeExt == categoryListVM.SlaResolvedTimeExt &&
+                                                     x.Categoryid == Guid.Parse(categoryListVM.Categoryid) &&
+                                                     x.Severityid == Guid.Parse(categoryListVM.Severityid) &&
+                                                     x.ITGroupid == Guid.Parse(categoryListVM.ITGroupid)).Any())
+                {
+                    return new ResponseVM("updated", false, "CategoryList", ResponseVM.NO_NEW_DATA);
+                }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
                     try
@@ -119,8 +140,14 @@ namespace TicketingSystem.BLL.Services
                             return new ResponseVM("updated", false, "CategoryList", ResponseVM.DOES_NOT_EXIST);
 
                         categoryListToBeUpdated.CategoryListName = categoryListVM.CategoryListName;
-                        categoryListToBeUpdated.categoryid = categoryListVM.categoryid;
-                        categoryListToBeUpdated.severityid = categoryListVM.severityid;
+                        categoryListToBeUpdated.CategoryType = categoryListVM.CategoryType;
+                        categoryListToBeUpdated.SlaResponseTime = categoryListVM.SlaResponseTime;
+                        categoryListToBeUpdated.SlaResponseTimeExt = categoryListVM.SlaResponseTimeExt;
+                        categoryListToBeUpdated.SlaResolvedTime = categoryListVM.SlaResolvedTime;
+                        categoryListToBeUpdated.SlaResolvedTimeExt = categoryListVM.SlaResolvedTimeExt;
+                        categoryListToBeUpdated.Categoryid = Guid.Parse(categoryListVM.Categoryid);
+                        categoryListToBeUpdated.Severityid = Guid.Parse(categoryListVM.Severityid);
+                        categoryListToBeUpdated.ITGroupid = Guid.Parse(categoryListVM.ITGroupid);
                         context.SaveChanges();
 
                         dbTransaction.Commit();

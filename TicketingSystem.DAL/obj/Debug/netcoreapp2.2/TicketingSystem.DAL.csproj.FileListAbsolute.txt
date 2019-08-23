@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.deps.json
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.runtimeconfig.json
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.runtimeconfig.dev.json
@@ -9,3 +10,16 @@ C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\ne
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.dll
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.pdb
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.csprojAssemblyReference.cache
+=======
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.deps.json
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.runtimeconfig.json
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.runtimeconfig.dev.json
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.dll
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.pdb
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.csproj.CoreCompileInputs.cache
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.AssemblyInfoInputs.cache
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.AssemblyInfo.cs
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.dll
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.pdb
+C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.csprojAssemblyReference.cache
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15

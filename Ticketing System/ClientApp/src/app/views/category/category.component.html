@@ -1,32 +1,48 @@
-<div class="main">
-        <div class="card bg-light mb-3">
-            <div class="card-header">New Category</div>
-                <div class="card-body">
-                    <app-category-add-form></app-category-add-form>
+<div class="content-wrapper">
+    <section class="content">
+      <div class="row">
+      <!-- NEW -->
+        <div class="col-md-4">
+            <div class="box box-primary">
+              <div class="box-header with-border"><h3 class="box-title">New Category</h3></div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                  <app-category-add-form></app-category-add-form>
                 </div>
+            </div>
         </div>
+<<<<<<< HEAD
         <div class="card border-light mb-3">
                 <div class="card-header">List of Categories</div>
                 <div class="card-body">
                         <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-striped">
+=======
+        <!-- TABLE -->
+        <div class="col-md-8">
+            <div class="box box-default">
+            <div class="box-header with-border"><h3 class="box-title">List of Categories</h3></div>
+              <div class="box-body margin">
+                    <table class="table table-hover table-light" style="width: 100%;">
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
                     <thead>
-                        <tr class="tbl-hr">
-                            <td style="width: 30%;">MyGuid</td>
-                            <td style="width: 50%;">Category</td>
-                            <td style="width: 20%;"></td>
+                        <tr>
+                            <td style="width: 40%;"><strong>Category</strong></td>
+                            <td style="width: 20%;"><strong>Date Created</strong></td>
+                            <td style="width: 20%;"><strong>Time</strong></td>
+                            <td style="width: 20%;"><strong>Action</strong></td>
                         </tr>
                     </thead>
                     <tbody> 
-                        <tr *ngFor="let category of categories" class="tbl-bd">  
-                            <!-- <td style="width: 30%;">{{category.categoryid}}</td> -->
-                            <td style="width: 30%;">{{category.categoryid}}</td>
-                            <td style="width: 50%;">{{category.categoryName}}</td>
+                        <tr *ngFor="let category of categories">
+                            <td style="width: 40%;">{{category.categoryName}}</td>
+                            <td style="width: 20%;">{{category.dateCreated | date:'MM/dd/yyyy'}}</td>
+                            <td style="width: 20%;">{{category.dateCreated | date: 'HH:mm:ss a'}}</td>
                             <td style="width: 20%;">
                             <div class="row">
-                                <button class="btn btn-success m-1"(click)="update(category)" data-toggle="tooltip" data-placement="bottom" title="Edit category">
+                                <button class="btn btn-success m-1" (click)="update(category)" data-toggle="tooltip" data-placement="bottom" title="Edit category">
                                         <i class="material-icons">update</i>
                                 </button>
-                                <button class="btn btn-danger m-1"(click)="delete(category.categoryid)" data-toggle="tooltip" data-placement="bottom" title="Delete category">
+                                <button class="btn btn-danger m-1" (click)="delete(category.categoryid)" data-toggle="tooltip" data-placement="bottom" title="Delete category">
                                         <i class="material-icons">delete </i>
                                 </button>
                             </div> 
@@ -34,6 +50,9 @@
                         </tr>
                     </tbody>
                     </table>
-                </div>
+              </div>
             </div>
+        </div>
+      </div>
+    </section>
 </div>

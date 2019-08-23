@@ -63,8 +63,7 @@ export class OfficeComponent implements OnInit {
       dialogConfig.data={
         officeContext:office
       };
-      dialogConfig.width='600px';
-      //dialogConfig.height='600px';
+      dialogConfig.panelClass = 'custom-modalbox';
       this.dialog.open(OfficeUpdateFormComponent,dialogConfig)
     }
     ngAfterViewInit(): void {

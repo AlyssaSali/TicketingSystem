@@ -1,32 +1,60 @@
+<<<<<<< HEAD
 
 <div class="main">
         <div class="card bg-light mb-3">
             <div class="card-header">New Office</div>
                 <div class="card-body">
+=======
+<div class="content-wrapper">
+    <section class="content">
+      <div class="row">
+      <!-- NEW OFFICE -->
+        <div class="col-md-4">
+            <div class="box box-primary">
+                <div class="box-header with-border"><h3 class="box-title">New Office</h3></div>
+                <!-- /.box-header -->
+                <div class="box-body">
+>>>>>>> ridz
                     <app-office-add-form></app-office-add-form>
                 </div>
+            </div>
         </div>
+<<<<<<< HEAD
         <div class="card border-light mb-3">
                 <div class="card-header">List of Offices</div>
                 <div class="card-body">
                     <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-striped">
+=======
+
+            <!-- OFFICE TABLE -->
+              <div class="col-md-8">
+               <div class="box box-default">
+                <div class="box-header with-border"><h3 class="box-title">List of Offices</h3></div>
+                  <div class="box-body margin">
+                    <table class="table table-hover table-striped">
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
                     <thead>
-                        <tr class="tbl-hr">
-                            <td style="width: 30%;">Code</td>
-                            <td style="width: 50%;">Description</td>
-                            <td style="width: 20%;"></td>
+                        <tr>
+                            <td style="width: 30%;"><strong>Code</strong></td>
+                            <td style="width: 50%;"><strong>Description</strong></td>
+                            <td style="width: 20%;"><strong>Actions</strong></td>
                         </tr>
                     </thead>
                     <tbody> 
+<<<<<<< HEAD
                         <tr *ngFor="let office of offices" class="tbl-bd">  
+=======
+                        <tr *ngFor="let office of offices">  
+                            <!-- <td style="width: 30%;">{{office.officeid}}</td> -->
+>>>>>>> ridz
                             <td style="width: 30%;">{{office.officeCode}}</td>
                             <td style="width: 50%;">{{office.officeDesc}}</td>
                             <td style="width: 20%;">
                             <div class="row">
-                                <button class="btn btn-success m-1"(click)="update(office)" data-toggle="tooltip" data-placement="bottom" title="Edit office">
+                                <button class="col-md-5 btn-success m-1" (click)="update(office)" data-toggle="tooltip" data-placement="bottom" title="Edit office">
                                         <i class="material-icons">update</i>
                                 </button>
-                                <button class="btn btn-danger m-1"(click)="delete(office.officeid)" data-toggle="tooltip" data-placement="bottom" title="Delete office">
+                                <button class="col-md-5 btn-danger m-1"(click)="delete(office.officeid)" data-toggle="tooltip" data-placement="bottom" title="Delete office">
                                         <i class="material-icons">delete </i>
                                 </button>
                             </div> 
@@ -34,9 +62,19 @@
                         </tr>
                     </tbody>
                     </table>
+<<<<<<< HEAD
                 </div>
             </div>
 </div>
 
 
 
+=======
+                  </div>
+               </div>
+              </div>
+
+      </div>
+    </section>
+</div>
+>>>>>>> ridz

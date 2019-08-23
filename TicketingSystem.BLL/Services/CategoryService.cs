@@ -26,21 +26,27 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
-                using (var dbTransaction = context.Database.BeginTransaction())
+                if (context.Categories.Where(x => x.CategoryName == categoryVM.CategoryName).Any())
                 {
-                    try
+                    return new ResponseVM("created", false, "Category", ResponseVM.ALREADY_EXIST);
+                }
+                else { 
+                    using (var dbTransaction = context.Database.BeginTransaction())
                     {
-                        categoryVM.categoryid = Guid.NewGuid();
-                        context.Categories.Add(toModel.Category(categoryVM));
-                        context.SaveChanges();
-
-                        dbTransaction.Commit();
-                        return new ResponseVM("created", true, "Category");
-                    }
-                    catch (Exception ex)
-                    {
-                        dbTransaction.Rollback();
-                        return new ResponseVM("created", false, "Category", ResponseVM.SOMETHING_WENT_WRONG, "", ex);
+                        try
+                        {
+                            categoryVM.Categoryid = Guid.NewGuid();
+                            categoryVM.DateCreated = DateTime.Now;
+                            context.Categories.Add(toModel.Category(categoryVM));
+                            context.SaveChanges();
+                            dbTransaction.Commit();
+                            return new ResponseVM("created", true, "Category");
+                        }
+                        catch (Exception ex)
+                        {
+                            dbTransaction.Rollback();
+                            return new ResponseVM("created", false, "Category", ResponseVM.SOMETHING_WENT_WRONG, "", ex);
+                        }
                     }
                 }
             }
@@ -49,6 +55,10 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
+                if (context.CategoryLists.Where(x => x.Categoryid == id).Any())
+                {
+                    return new ResponseVM("deleted", false, "Category", ResponseVM.DONT_DELETE);
+                }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
                     try
@@ -77,7 +87,7 @@ namespace TicketingSystem.BLL.Services
             {
                 try
                 {
-                    var categories = context.Categories.ToList().OrderByDescending(x => x.categoryid);
+                    var categories = context.Categories.ToList().OrderByDescending(x => x.Categoryid);
                     var categoriesVm = categories.Select(x => toViewModel.Category(x));
                     return categoriesVm;
                 }
@@ -111,24 +121,31 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
-                using (var dbTransaction = context.Database.BeginTransaction())
+                if (context.Categories.Where(x => x.CategoryName == categoryVM.CategoryName).Any())
                 {
-                    try
+                    return new ResponseVM("updated", false, "Category", ResponseVM.NO_NEW_DATA);
+                }
+                else
+                {
+                    using (var dbTransaction = context.Database.BeginTransaction())
                     {
-                        Category categoryToBeUpdated = context.Categories.Find(categoryVM.categoryid);
-                        if (categoryToBeUpdated == null)
-                            return new ResponseVM("updated", false, "Category", ResponseVM.DOES_NOT_EXIST);
+                        try
+                        {
+                            Category categoryToBeUpdated = context.Categories.Find(categoryVM.Categoryid);
+                            if (categoryToBeUpdated == null)
+                                return new ResponseVM("updated", false, "Category", ResponseVM.DOES_NOT_EXIST);
 
-                        categoryToBeUpdated.CategoryName = categoryVM.CategoryName;
-                        context.SaveChanges();
+                            categoryToBeUpdated.CategoryName = categoryVM.CategoryName;
+                            context.SaveChanges();
 
-                        dbTransaction.Commit();
-                        return new ResponseVM("updated", true, "Category");
-                    }
-                    catch (Exception ex)
-                    {
-                        dbTransaction.Rollback();
-                        return new ResponseVM("updated", false, "Category", ResponseVM.SOMETHING_WENT_WRONG, "", ex);
+                            dbTransaction.Commit();
+                            return new ResponseVM("updated", true, "Category");
+                        }
+                        catch (Exception ex)
+                        {
+                            dbTransaction.Rollback();
+                            return new ResponseVM("updated", false, "Category", ResponseVM.SOMETHING_WENT_WRONG, "", ex);
+                        }
                     }
                 }
             }

@@ -2,10 +2,15 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Severity } from 'src/app/models/severity.model';
 import { SeverityService } from 'src/app/services/severity.service';
 import { SeverityDataService } from 'src/app/dataservices/severity.dataservice';
-import { MatDialog, MatDialogConfig } from '@angular/material';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { SeverityUpdateFormComponent } from './severity-update-form/severity-update-form.component';
+<<<<<<< HEAD
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
+=======
+import { CategoryAddFormComponent } from '../category/category-add-form/category-add-form.component';
+import { SeverityAddFormComponent } from './severity-add-form/severity-add-form.component';
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 
 @Component({
   selector: 'app-severity',
@@ -22,6 +27,7 @@ export class SeverityComponent implements OnInit {
   constructor(
     private severityService: SeverityService,
     private severityDataService: SeverityDataService,
+    private dialogRef: MatDialogRef<SeverityAddFormComponent>,
     public dialog:MatDialog,
     
   ) { }
@@ -63,8 +69,7 @@ export class SeverityComponent implements OnInit {
       dialogConfig.data={
         severityContext:severity
       };
-      dialogConfig.width='600px';
-      //dialogConfig.height='600px';
+      dialogConfig.panelClass = 'custom-modalbox';
       this.dialog.open(SeverityUpdateFormComponent,dialogConfig)
     }
     ngAfterViewInit(): void {
@@ -83,6 +88,11 @@ export class SeverityComponent implements OnInit {
         // Call the dtTrigger to rerender again
         this.dtTrigger.next();
       });
+    }
+
+    
+  close(){
+      this.dialogRef.close();
     }
 
 }
