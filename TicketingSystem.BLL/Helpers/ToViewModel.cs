@@ -8,13 +8,6 @@ namespace TicketingSystem.BLL.Helpers
 {
     public class ToViewModel
     {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
->>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
         public OfficeVM Office(Office office)
         {
             return new OfficeVM
@@ -23,47 +16,47 @@ namespace TicketingSystem.BLL.Helpers
                 OfficeCode = office.OfficeCode,
                 OfficeDesc = office.OfficeDesc,
             };
-<<<<<<< HEAD
-        }
-
-=======
-<<<<<<< HEAD
         }
 
         public CategoryVM Category(Category category)
         {
             return new CategoryVM
             {
-                categoryid = category.categoryid,
-                CategoryName = category.CategoryName
+
+                Categoryid = category.Categoryid,
+                CategoryName = category.CategoryName,
+                DateCreated = category.DateCreated
             };
         }
 
         public SeverityVM Severity(Severity severity)
-=======
-
-        }
->>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
-        public EmployeeVM Employee(Employee employee)
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
         {
             return new SeverityVM
             {
-<<<<<<< HEAD
-                severityid = severity.severityid,
+                Severityid = severity.Severityid,
                 SeverityCode = severity.SeverityCode,
                 SeverityName = severity.SeverityName,
                 SeverityDesc = severity.SeverityDesc,
-=======
+            };
+        }
+
+        public EmployeeVM Employee(Employee employee)
+        {
+            return new EmployeeVM
+            {
                 EmployeeID = employee.EmployeeID,
                 FirstName = employee.FirstName,
                 LastName = employee.LastName,
                 EmailAddress = employee.EmailAddress,
-<<<<<<< HEAD
                 Officeid = employee.Officeid.ToString(),
-                Office = Office(employee.Office)
-
+                Office = Office(employee.Office),
+                FullName = ToFullName(employee.FirstName, employee.LastName)
             };
+        }
+
+        public string ToFullName(string firstName, string lastName)
+        {
+            return $"{firstName} { (string.IsNullOrEmpty(lastName) ? "" : " " + lastName)} ";
         }
 
         public TicketVM Ticket(Ticket ticket)
@@ -81,13 +74,9 @@ namespace TicketingSystem.BLL.Helpers
                 ResolveTime = ticket.ResolveTime,
                 IsUrgent = ticket.IsUrgent,
                 IsOpen = ticket.IsOpen
-=======
-                Office = employee.Office
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
->>>>>>> af8a36911860fc01eb54fa1355606495cc985b86
             };
-
          }
+
         public ITGroupVM ITGroup(ITGroup itgroup)
         {
             return new ITGroupVM
@@ -99,24 +88,44 @@ namespace TicketingSystem.BLL.Helpers
 
         }
 
-<<<<<<< HEAD
         public CategoryListVM CategoryList(CategoryList categoryList)
         {
             return new CategoryListVM
             {
                 CategoryListid = categoryList.CategoryListid,
                 CategoryListName = categoryList.CategoryListName,
+                CategoryType = categoryList.CategoryType,
                 SlaResponseTime = categoryList.SlaResponseTime,
+                SlaResponseTimeExt = categoryList.SlaResponseTimeExt,
                 SlaResolvedTime = categoryList.SlaResolvedTime,
-                ItGroup = categoryList.ItGroup,
-                categoryid = categoryList.categoryid,
-                Category = Category(categoryList.Category),
-                severityid = categoryList.severityid,
-                Severity = Severity(categoryList.Severity)
+                SlaResolvedTimeExt = categoryList.SlaResolvedTimeExt,
+                ITGroupid = (categoryList.ITGroupid).ToString(),
+                ITGroup = categoryList.ITGroup != null ? ITGroup(categoryList.ITGroup):null,
+                Categoryid = (categoryList.Categoryid).ToString(),
+                Category = categoryList.Category != null ? Category(categoryList.Category):null,
+                Severityid = (categoryList.Severityid).ToString(),
+                Severity = categoryList.Severity != null ? Severity(categoryList.Severity):null
             };
         }
 
-=======
->>>>>>> 672730fec7a9527c892fc88cfb34fa9e84777be3
+        public TicketMinorVM TicketMinor(TicketMinor ticketMinor)
+        {
+            return new TicketMinorVM
+            {
+                TicketMinorid = ticketMinor.TicketMinorid,
+                Description = ticketMinor.Description,
+                DateOfRequest = ticketMinor.DateOfRequest,
+                TimeOfRequest = ticketMinor.TimeOfRequest,
+                Status = ticketMinor.Status,
+                WorkDone = ticketMinor.WorkDone,
+                Officeid = (ticketMinor.Officeid).ToString(),
+                Office = Office(ticketMinor.Office),
+                Requesterid = (ticketMinor.Requesterid).ToString(),
+                WorkByid = (ticketMinor.WorkByid).ToString(),
+                Employee = Employee(ticketMinor.Employee),
+                CategoryListid = (ticketMinor.CategoryListid).ToString(),
+                CategoryList = CategoryList(ticketMinor.CategoryList)
+            };
+        }
     }
 }

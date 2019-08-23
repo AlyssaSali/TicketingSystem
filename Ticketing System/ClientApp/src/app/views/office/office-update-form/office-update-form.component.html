@@ -1,12 +1,13 @@
-<div class="card border-secondary mb-3">
-    <div class="card-header">Update Office
-        <!-- <button class="btn btn-secondary btn-sm float-right"(click)="close()"><i class="material-icons">close</i></button> -->
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()"><i class="material-icons">close</i></button>
-    </div>
-        <div class="card-body">
-          <div class="form-group has-success">
+<div class="modal-content">
+        <div class="modal-header bg-primary">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Update Office</h4>
+        </div>
+
             <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="officeUpdateform">
-                <div class="row">
+                <div class="modal-body">
+                  <div class="row">
                     <div class="col-md-5">
                         <label for="OfficeCode">Code: <span style="color: red">*</span></label><br />
                         <input type="text" class="form-control" id="officeCode" formControlName="officeCode" placeholder="Code" [ngClass]="{'is-invalid': (f.officeCode.touched && f.officeCode.errors) || officecodeBackEndErrors}"><br>
@@ -27,11 +28,11 @@
                             <span class="error-msg" *ngFor="let error of officedescBackEndErrors">{{error}}</span>
                         </div>
                     </div>
+                  </div>
                 </div>
-                <div style="float: right;">
-                        <button type="submit" [disabled]="!officeUpdateform.valid || isSubmit" class="btn btn-primary">Save Changes</button>
+                <div class="modal-footer">
+                        <button type="submit" [disabled]="!ticketCreateForm.valid || isSubmit" class="btn btn-primary pull-right" style="margin-top: 5px;">Save</button>
+                        <button type="button" (click)="close()" class="btn btn-default" style="margin-top: 5px;">Close</button>
                 </div>
             </form>
-        </div>
-    </div>
 </div>

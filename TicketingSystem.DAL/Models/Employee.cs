@@ -18,5 +18,7 @@ namespace TicketingSystem.DAL.Models
         [ForeignKey("Office")]
         public Guid Officeid { get; set; }
         public Office Office { get; set; }
+
+        public virtual ICollection<TicketMinor> TicketMinors { get; set; }
     }
 }

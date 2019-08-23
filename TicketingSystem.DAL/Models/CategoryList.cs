@@ -11,16 +11,24 @@ namespace TicketingSystem.DAL.Models
         [Key]
         public Guid CategoryListid { get; set; }
         public string CategoryListName { get; set; }
+        public string CategoryType { get; set; }
         public int SlaResponseTime { get; set; }
+        public string SlaResponseTimeExt { get; set; }
         public int SlaResolvedTime { get; set; }
-        public string ItGroup { get; set; }
+        public string SlaResolvedTimeExt { get; set; }
 
         [ForeignKey("Category")]
-        public Guid categoryid { get; set; }
+        public Guid Categoryid { get; set; }
         public Category Category { get; set; }
 
         [ForeignKey("Severity")]
-        public Guid severityid { get; set; }
+        public Guid Severityid { get; set; }
         public Severity Severity { get; set; }
+
+        [ForeignKey("ITGroup")]
+        public Guid ITGroupid { get; set; }
+        public ITGroup ITGroup { get; set; }
+
+        public virtual ICollection<TicketMinor> TicketMinors { get; set; }
     }
 }

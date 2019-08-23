@@ -33,7 +33,7 @@ export class SeverityUpdateFormComponent implements OnInit {
       severityid: new FormControl(),
       severityCode: new FormControl('',[Validators.required,Validators.maxLength(50)]),
       severityName: new FormControl('',[Validators.required,Validators.maxLength(50)]),
-      severityDesc: new FormControl('',[Validators.maxLength(50)]),
+      severityDesc: new FormControl('',[Validators.maxLength(500)]),
     })
       this.severityContext = data;
    }

@@ -91,5 +91,20 @@ namespace TicketingSystem.BLL.Services
                 }
             }
         }
+
+        public IEnumerable<TicketVM> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public TicketVM GetSingleBy(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ResponseVM Delete(Guid id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Category } from 'src/app/models/category.model';
 import { CategoryService } from 'src/app/services/category.service';
 import { CategoryDataService } from 'src/app/dataservices/category.dataservice';
-import { MatDialog, MatDialogConfig } from '@angular/material';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { CategoryUpdateFormComponent } from './category-update-form/category-update-form.component';
+import { CategoryAddFormComponent } from './category-add-form/category-add-form.component';
 
 @Component({
   selector: 'app-category',
@@ -16,6 +17,7 @@ export class CategoryComponent implements OnInit {
   constructor(
     private categoryService: CategoryService,
     private categoryDataService: CategoryDataService,
+    private dialogRef: MatDialogRef<CategoryAddFormComponent>,
     public dialog:MatDialog,
     
   ) { }
@@ -56,9 +58,22 @@ export class CategoryComponent implements OnInit {
       dialogConfig.data={
         categoryContext:category
       };
-      dialogConfig.width='600px';
-      //dialogConfig.height='600px';
+      dialogConfig.width = '400px';
+      dialogConfig.panelClass = 'custom-modalbox';
       this.dialog.open(CategoryUpdateFormComponent,dialogConfig)
     }
+
+    close(){
+      this.dialogRef.close();
+    }
+
+    // filterDate() {
+    //   var re = /\/Date\(([0-9]*)\)\//;
+    //   return function(x) {
+    //       var m = x.match(re);
+    //       if( m ) return new Date(parseInt(m[1]));
+    //       else return null;
+    //   };
+    // }
 
 }

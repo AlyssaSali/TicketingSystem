@@ -1,80 +1,131 @@
-
-        <div class="form-group has-success">
-                    <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="categoryListCreateForm">
-                             <div class="row">
-                                    <div class="col-md-4 mg">
-                                            <label class="col-form-label col-form-label-sm font" for="inputSmall" for="categoryid">Category: <span style="color: red">*</span></label> <br />
-                                            <input type="text" id="categoryid" formControlName="categoryid" hidden/>
-                                            <div>
-                                                <input type="text" class="form-control form-control-sm" formControlName="categorySelect" (keyup)="selectCategory($event)" (click)="$event.target.select()" list="categoryListss" [ngClass]="{'is-invalid': (f.categoryName.touched && f.categoryName.errors) || categoryListNameBackEndErrors}">
-                                                <datalist class="ui-datalist-data" height="100px" id="categoryListss" >
-                                                    <option [ngValue]="null" disabled="true" [selected]="true">Choose a Category
-                                                    <option id="{{category.categoryid}}" *ngFor="let category of categories" [value]="category.categoryName">
-                                                </datalist>
-                                            </div>
-                                    </div>
-                                  <div class="col-sm-7">
-                                             <label class="col-form-label col-form-label-sm font">Category List</label>
-                                            <input class="form-control form-control-sm" type="text" formControlName="categoryListName" [ngClass]="{'is-invalid': (f.categoryListName.touched && f.categoryListName.errors) || categoryListNameBackEndErrors}">
-                                            <div *ngIf="f.categoryListName.touched && f.categoryListName.errors"  class="invalid-feedback">  
-                                                    <div *ngIf="f.categoryListName.errors.required"><span class="error-msg">This field is required</span></div>
-                                                </div>
-                                                <div>
-                                                    <span class="error-msg" *ngFor="let error of categoryListNameBackEndErrors">{{error}}</span>
-                                                </div>
-                                    </div>
-                             </div>
-                             <div class="row mm">
-                             <div class="col-md-2 mg">
-                                    <label class="col-form-label col-form-label-sm font" for="inputSmall" for="severityid">Severity: <span style="color: red">*</span></label> <br />
-                                    <input type="text" id="severityid" formControlName="severityid" hidden/>
-                                    <div>
-                                        <input type="text" class="form-control form-control-sm" formControlName="severitySelect" (keyup)="selectSeverity($event)" (click)="$event.target.select()" list="severityListss">
-                                        <datalist class="ui-datalist-data" height="100px" id="severityListss" >
-                                            <option [ngValue]="null" disabled="true" [selected]="true">Choose a Severity
-                                            <option id="{{severity.severityid}}" *ngFor="let severity of severities" [value]="severity.severityName">
-                                        </datalist>
-                                        <div *ngIf="f.severitySelect.touched && f.severitySelect.errors" class="invalid-feedback">
-                                            <div *ngIf="f.severitySelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
-                                        </div>
-                                    </div>
+    <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="categoryListCreateForm">
+      <div class="box-body margin">
+        <div class="row">
+            <div class="col-md-12" for="CategoryName">
+                <label>Name: <span style="color: #ff0000">*</span></label>
+                <input type="text" class="form-control" id="categoryListName" formControlName="categoryListName" [ngClass]="{'is-invalid': (f.categoryListName.touched && f.categoryListName.errors) || categoryListNameBackEndErrors}">
+                <div *ngIf="f.categoryListName.touched && f.categoryListName.errors"  class="invalid-feedback">  
+                    <div *ngIf="f.categoryListName.errors.required"><span class="error-msg">This field is required</span></div>
+                </div>
+            </div><br>
+            <div class="col-md-6" for="categoryType"><br>
+                <label>Category Type: <span style="color: red"></span></label>
+                <select class="form-control" formControlName="categoryType">
+                        <option>Minor</option>
+                        <option>Major</option>
+                </select>
+                <div *ngIf="f.severitySelect.touched && f.severitySelect.errors" class="invalid-feedback">
+                        <div *ngIf="f.severitySelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
+                </div>
+            </div>
+            <div class="col-md-6" for="Request Category"><br>
+                <label>Request Category: <span style="color: red">*</span></label>
+                <input type="text" id="categoryid" formControlName="categoryid" hidden/>
+                <div class="input-group">
+                    <input type="text" class="form-control" formControlName="categorySelect" (keyup)="selectCategory($event)" (click)="$event.target.select()" list="categorysListss">
+                    <datalist class="ui-datalist-data" height="100px" id="categorysListss" >
+                        <option [ngValue]="null" disabled="true" [selected]="true">Select Category
+                        <option id="{{category.categoryid}}" *ngFor="let category of categoryList" [value]="category.categoryName">
+                    </datalist>
+                    <div *ngIf="f.categorySelect.touched && f.categorySelect.errors" class="invalid-feedback">
+                        <div *ngIf="f.categorySelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
+                    </div>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-primary btn-flat" data-toggle="modal" data-target="#modal-category"><span class="glyphicon glyphicon-plus"></span></button>
+                    </span>
+                </div>
+            </div><br>
+            <div class="col-md-3" for="SLAResponseTime"><br>
+                <label for="SLAResponseTime" style="font-size: 12px">Response Time</label>
+                    <input type="number" class="form-control form-control-sm" id="SLAResponseTime" formControlName="slaResponseTime"/>
+                    <div *ngIf="f.slaResponseTime.touched && f.slaResponseTime.errors" class="invalid-feedback">
+                        <div *ngIf="f.slaResponseTime.errors.required">
+                            <span style="color: red; font-size: 10pt;">This field is required</span>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-md-3" for="slaResponseTimeExt"><br>
+                    <label><span style="color: red;">*</span></label>
+                    <select class="form-control form-control-sm" formControlName="slaResponseTimeExt">
+                            <option>Minute</option>
+                            <option>Hour</option>
+                            <option>Day</option>
+                            <option>Month</option>
+                    </select>
+                    <div *ngIf="f.slaResponseTime.touched && f.slaResponseTime.errors" class="invalid-feedback">
+                        <div *ngIf="f.slaResponseTime.errors.required">
+                            <span style="color: red; font-size: 10pt;">This field is required</span>
+                        </div>
+                    </div>
+            </div><br>
+            <div class="col-md-3" for="SLAResolvedTime"><br>
+                <label for="SLAResolvedTime" style="font-size: 12px">Resolved Time:</label>
+                <input type="number" class="form-control form-control-sm" id="SLAResolvedTime" formControlName="slaResolvedTime"/>
+                <div *ngIf="f.slaResolvedTime.touched && f.slaResolvedTime.errors" class="invalid-feedback">
+                    <div *ngIf="f.slaResolvedTime.errors.required">
+                        <span style="color: red; font-size: 10pt;">This field is required</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3" for="slaResolvedTimeExt"><br>
+                        <label><span style="color: red;">*</span></label>
+                        <select class="form-control form-control-sm" formControlName="slaResolvedTimeExt">
+                                <option>Minute</option>
+                                <option>Hour</option>
+                                <option>Day</option>
+                                <option>Month</option>
+                        </select>
+                            <div *ngIf="f.slaResponseTime.touched && f.slaResponseTime.errors" class="invalid-feedback">
+                                <div *ngIf="f.slaResponseTime.errors.required">
+                                    <span style="color: red; font-size: 10pt;">This field is required</span>
+                                </div>
                             </div>
-                             <div class="col-md-3">
-                                     <label class="col-form-label col-form-label-sm font" for="inputSmall">SLA Response Time</label>
-                                     <input class="form-control form-control-sm" type="text" formControlName="slaResponseTime" [ngClass]="{'is-invalid': (f.slaResponseTime.touched && f.slaResponseTime.errors) || categoryListNameBackEndErrors}">
-                                            <div *ngIf="f.slaResponseTime.touched && f.slaResponseTime.errors"  class="invalid-feedback">  
-                                                    <div *ngIf="f.slaResponseime.errors.required"><span class="error-msg">This field is required</span></div>
-                                            </div>
-                                            <div>
-                                                    <span class="error-msg" *ngFor="let error of categoryListNameBackEndErrors">{{error}}</span>
-                                            </div>
-                             </div>
-                             <div class="col-md-3">
-                                     <label class="col-form-label col-form-label-sm font" for="inputSmall">SLA Resolve Time</label>
-                                     <input class="form-control form-control-sm" type="text" formControlName="slaResolvedTime" [ngClass]="{'is-invalid': (f.slaResolvedTime.touched && f.slaResolvedTime.errors) || categoryListNameBackEndErrors}">
-                                     <div *ngIf="f.slaResolvedTime.touched && f.slaResolvedTime.errors"  class="invalid-feedback">  
-                                             <div *ngIf="f.slaResolvedTime.errors.required"><span class="error-msg">This field is required</span></div>
-                                         </div>
-                                         <div>
-                                             <span class="error-msg" *ngFor="let error of categoryListNameBackEndErrors">{{error}}</span>
-                                         </div>
-                             </div>
-                             <div class="col-md-3">
-                                     <label class="col-form-label col-form-label-sm font" for="inputSmall">Responsible Group</label>
-                                     <input class="form-control form-control-sm" type="text" formControlName="itGroup" [ngClass]="{'is-invalid': (f.itGroup.touched && f.itGroup.errors) || categoryListNameBackEndErrors}">
-                                     <div *ngIf="f.itGroup.touched && f.itGroup.errors"  class="invalid-feedback">  
-                                             <div *ngIf="f.itGroup.errors.required"><span class="error-msg">This field is required</span></div>
-                                         </div>
-                                         <div>
-                                             <span class="error-msg" *ngFor="let error of categoryListNameBackEndErrors">{{error}}</span>
-                                         </div>
-                             </div>
+            </div><br>
+            <div class="col-md-6" for="Severity"><br>
+                <label>Severity: <span style="color: red">*</span></label>
+                <input type="text" id="severityid" formControlName="severityid" hidden/>
+                <div>
+                    <input type="text" class="form-control form-control-sm" formControlName="severitySelect" (keyup)="selectSeverity($event)" (click)="$event.target.select()" list="severitysListss">
+                    <datalist class="ui-datalist-data" height="100px" id="severitysListss" >
+                        <option [ngValue]="null" disabled="true" [selected]="true">Select Severity
+                        <option *ngFor="let severity of severityList" [value]="severity.severityCode">
+                    </datalist>
+                    <div *ngIf="f.severitySelect.touched && f.severitySelect.errors" class="invalid-feedback">
+                        <div *ngIf="f.severitySelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" for="SeverityDesc"><br>
+                    <label>Description: <span style="color: red"></span></label>
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-sm" formControlName="severityName" disabled>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-primary btn-flat" data-toggle="modal" data-target="#modal-severity"><span class="glyphicon glyphicon-plus"></span></button>
+                        </span>
+                    </div>
+            </div><br>
+            <div class="col-md-12" for="itGroup"><br>
+                        <label>Responsible Group: <span style="color: red">*</span></label>
+                        <input type="text" id="itGroupid" formControlName="itGroupid" hidden/>
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-sm" formControlName="itGroupSelect" (keyup)="selectItGroup($event)" (click)="$event.target.select()" list="itGroupsListss">
+                                <datalist class="ui-datalist-data" height="100px" id="itGroupsListss" >
+                                    <option [ngValue]="null" disabled="true" [selected]="true">Select itGroup
+                                    <option id="{{itGroup.itGroupid}}" *ngFor="let itGroup of itGroupList" [value]="itGroup.itGroupName">
+                                </datalist>
+                                <div *ngIf="f.itGroupSelect.touched && f.itGroupSelect.errors" class="invalid-feedback">
+                                    <div *ngIf="f.itGroupSelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
+                                </div>
+                                <span class="input-group-btn">
+                                        <button type="button" class="btn btn-primary btn-flat" data-toggle="modal" data-target="#modal-itGroup"><span class="glyphicon glyphicon-plus"></span></button>
+                                </span>
                             </div>
-                     <div class="row mm">
-                             <div class="col-md-3 " style="margin-left: 85%">
-                             <button type="submit" class="btn btn-primary m-1"><i class="material-icons m-1">save</i>Save</button>
-                             </div>
-                     </div>
-            </form>
+            </div>
         </div>
+      </div>
+      <div class="box-footer">
+        <button type="submit" [disabled]="!categoryListCreateForm.valid || isSubmit" class="btn btn-primary m-1">Save</button>
+        <button type="button" (click)="reset()" class="btn btn-default">Reset</button>
+    </div>
+    </form>
 

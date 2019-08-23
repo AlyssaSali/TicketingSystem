@@ -1,75 +1,97 @@
-<div class="main">
-  <div class="row">
-   <div class="card border-light" style="width:100%">
-     <div class="card-header"><h4>Encode Ticket
-      <label style="font-size: 15px; font-weight: lighter">[Major Request]</label></h4>
-    </div>
-        <div class="card-body">
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>Encode Ticket
+        <small>Major Request</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="box box-default">
+        <div class="box-header with-border"><h3 class="box-title">Request Section</h3></div>
+
           <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="ticketCreateForm" class="form-group">
-            <div class="card bg-light mb-3">
-            <div class="card-header f2">Request Section</div>
-              <div class="card-body">
-                <div class="row mm">
-                     <div class="col-sm-2 mg">
-                             <label class="col-form-label col-form-label-sm">Division/Office <span style="color: red">*</span></label>
-                             <select class="form-control form-control-sm" formControlName="office">
-                                        <option selected="selected"></option>
-                                        <option>COE</option>
-                                        <option>CMO</option>
-                                        <option>CSC</option>
-                                        <option>GSO</option>
-                             </select>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                            <label>Office/Department <span style="color: red">*</span></label>
+                            <select class="form-control select2" formControlName="office">
+                                       <option selected="selected"></option>
+                                       <option>COE</option>
+                                       <option>CMO</option>
+                                       <option>CSC</option>
+                                       <option>GSO</option>
+                            </select>
+                    </div>
+                    <div class="col-sm-6">
+                       <label>Requested By</label>
+                       <div class="input-group">
+                           <input type="text" class="form-control">
+                               <span class="input-group-btn">
+                                 <button type="button" class="btn btn-primary btn-flat" data-toggle="modal" data-target="#modal-employee"><span class="glyphicon glyphicon-plus"></span></button>
+                               </span>
+                         </div>
+                    </div>
+               </div>
+               <div class="row"><br>
+                      <div class="col-sm-2">
+                          <label>Contact Via <span style="color: red">*</span></label>
+                          <select class="form-control select2" formControlName="office">
+                                     <option selected="selected"></option>
+                                     <option>Text</option>
+                                     <option>Call</option>
+                                     <option>Chat</option>
+                                     <option>Gmail</option>
+                          </select>
                      </div>
-                     <div class="col-sm-7">
-                        <label class="col-form-label col-form-label-sm font">Requested By</label>
-                        <form>
-                            <input class="form-control-sm mr-sm-2" type="text" placeholder="Search name" style="width: 100%"> 
-                            <button class="btn btn-secondary my-2 my-sm-0" type="submit" hidden>Search name</button>
-                        </form>
-                     </div>
-                     <div class="col-md-2"><button type="button" class="btn btn-primary mt" style="font-size: 11px">New Requester</button></div>
-                     <div class="col-md-2 mg mt1">
-                                <label class="col-form-label col-form-label-sm">Contact Via:<span style="color: red">*</span></label>
-                                <select class="form-control form-control-sm" formControlName="contactVia">
-                                                <option selected="selected"></option>
-                                                <option>Email</option>
-                                                <option>Call</option>
-                                                <option>Text</option>
-                                                <option>Chat</option>
-                                </select>
-                        </div>
-                        <div class="col-md-3 mt1">
-                                <label class="col-form-label col-form-label-sm font" for="inputSmall">Contact Info</label>
-                                <input class="form-control form-control-sm" type="text"  formControlName="contactInfo">
-                        </div>
-                        <div class="col-md-3 mt1">
-                                <label class="col-form-label col-form-label-sm font" for="inputSmall">Date of Request</label>
-                                <input class="form-control form-control-sm" type="text"  formControlName="requestedBy">
-                        </div>
-                        <div class="col-md-3 mt1">
-                                <label class="col-form-label col-form-label-sm font" for="inputSmall">Time of Request</label>
-                                <input class="form-control form-control-sm" type="text"  formControlName="responseTime">
-                        </div>
+                    <div class="col-sm-4">
+                      <label>Category Info</label>
+                      <input class="form-control" type="text" placeholder="Search" style="width: 100%">
+                    </div>
+                    <div class="col-md-3">
+                       <label>Date of Request:</label>
+                       <div class="input-group">
+                         <div class="input-group-addon">
+                           <i class="fa fa-calendar"></i>
+                         </div>
+                         <input type="datetime" class="form-control" data-inputmask="'alias': 'mm/dd/yyyy'" data-mask>
+                       </div>
+                    </div>
+                    <div class="col-md-3">
+                       <!-- time Picker -->
+                         <div class="bootstrap-timepicker">
+                             <div class="form-group">
+                               <label>Time picker:</label>
+                               <div class="input-group">
+                                 <input type="text" class="form-control timepicker">
+                                 <div class="input-group-addon">
+                                   <i class="fa fa-clock-o"></i>
+                                 </div>
+                               </div>
+                               <!-- /.input group -->
+                             </div>
+                             <!-- /.form group -->
+                           </div>
+                    </div>
                 </div>
-                <div class="row mm">
-                      <div class="col-md-11 mg"><label class="col-form-label" for="inputSmall">Request</label><br></div>
-                      <div class="col-md-11 mg">
+                <div class="row"><br>
+                    <div class="col-md-12">
+                        <label for="">Request</label>
                         <input class="form-control form-control-sm" placeholder="Title" type="text" formControlName="requestTitle">
                         </div>
-                      <div class="col-md-11 mg mt2">
-                        <textarea class="form-control form-control-sm" id="exampleTextarea" rows="3" placeholder="Description" formControlName="requestDesc"></textarea>
-                      </div>
-                </div>
-                <div class="row mm">
-                    <div class="col-md-4 mg" style="margin-left: 82%">
-                    <button type="submit" class="btn btn-primary" [routerLink]="[ '/ticketEdit']"><i class="material-icons m-1">save</i>
-                    <label class="m-1">Save</label></button>
-                    </div>
+                     <div class="col-md-12"><br>
+                       <textarea class="form-control form-control-sm" id="exampleTextarea" rows="3" placeholder="Description" formControlName="requestDesc"></textarea>
+                     </div>
+               </div>
             </div>
-            </div>
-            </div>
-        </form>
-        </div>
-       </div>
-   </div>
+              <div class="box-footer">
+                  <button type="submit" class="btn btn-primary pull-right" [routerLink]="[ '/ticketEdit']">Save</button>
+                <button type="submit" class="btn btn-default pull-right">Reset</button>
+              </div>
+          </form>
+      </div>
+    </section>
+
 </div>

@@ -13,6 +13,7 @@ namespace TicketingSystem.DAL.Models
         public string OfficeDesc { get; set; }
 
         public virtual ICollection<Employee> Employees { get; set; }
+        public virtual ICollection<TicketMinor> TicketMinors { get; set; }
 
     }
 }

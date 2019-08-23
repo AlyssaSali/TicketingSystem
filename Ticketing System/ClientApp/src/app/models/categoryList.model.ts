@@ -1,14 +1,19 @@
 import { Severity } from './severity.model';
 import { Category } from './category.model';
+import { Itgroup } from './itgroup.model';
 
 export interface CategoryList {
-    categoryListid:number;
+    categoryListid: string;
     categoryListName: string;
-    categoryid:number;
-    categoryName: Category;
-    severityid: number;
-    severityCode: Severity;
     slaResponseTime: number;
+    slaResponseTimeExt: string;
     slaResolvedTime:  number;
-    itGroup: string;
+    slaResolvedTimeExt:  string;
+    categoryType: string;
+    categoryid:string;
+    category: Category;
+    severityid: string;
+    severity: Severity;
+    itGroupid: string;
+    itGroup: Itgroup[];
 }

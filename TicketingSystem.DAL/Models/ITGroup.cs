@@ -12,5 +12,7 @@ namespace TicketingSystem.DAL.Models
         public string ITGroupCode { get; set; }
         public string ITGroupName { get; set; }
 
+        public virtual ICollection<CategoryList> CategoryLists { get; set; }
+
     }
 }

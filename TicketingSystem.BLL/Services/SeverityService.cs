@@ -25,22 +25,27 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
+                if (context.Severities.Where(x => x.SeverityCode == severityVM.SeverityCode ||
+                                                  x.SeverityName == severityVM.SeverityName ||
+                                                  x.SeverityDesc == severityVM.SeverityDesc).Any())
+                { return new ResponseVM("created", false, "Severity", ResponseVM.ALREADY_EXIST); }
+
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
-                    try
-                    {
-                        severityVM.severityid = Guid.NewGuid();
-                        context.Severities.Add(toModel.Severity(severityVM));
-                        context.SaveChanges();
+                        try
+                        {
+                            severityVM.Severityid = Guid.NewGuid();
+                            context.Severities.Add(toModel.Severity(severityVM));
+                            context.SaveChanges();
 
-                        dbTransaction.Commit();
-                        return new ResponseVM("created", true, "Severity");
-                    }
-                    catch (Exception ex)
-                    {
-                        dbTransaction.Rollback();
-                        return new ResponseVM("created", false, "Severity", ResponseVM.SOMETHING_WENT_WRONG, "", ex);
-                    }
+                            dbTransaction.Commit();
+                            return new ResponseVM("created", true, "Severity");
+                        }
+                        catch (Exception ex)
+                        {
+                            dbTransaction.Rollback();
+                            return new ResponseVM("created", false, "Severity", ResponseVM.SOMETHING_WENT_WRONG, "", ex);
+                        }
                 }
             }
         }
@@ -48,6 +53,10 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
+                if (context.CategoryLists.Where(x => x.Severityid == id).Any())
+                {
+                    return new ResponseVM("deleted", false, "Severity", ResponseVM.DONT_DELETE);
+                }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
                     try
@@ -76,7 +85,7 @@ namespace TicketingSystem.BLL.Services
             {
                 try
                 {
-                    var categories = context.Severities.ToList().OrderByDescending(x => x.severityid);
+                    var categories = context.Severities.ToList().OrderByDescending(x => x.Severityid);
                     var categoriesVm = categories.Select(x => toViewModel.Severity(x));
                     return categoriesVm;
                 }
@@ -110,27 +119,32 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
+                if (context.Severities.Where(x => x.SeverityCode == severityVM.SeverityCode &&
+                                                  x.SeverityName == severityVM.SeverityName &&
+                                                  x.SeverityDesc == severityVM.SeverityDesc).Any())
+                { return new ResponseVM("updated", false, "Severity", ResponseVM.NO_NEW_DATA); }
+
                 using (var dbTransaction = context.Database.BeginTransaction())
-                {
-                    try
-                    {
-                        Severity severityToBeUpdated = context.Severities.Find(severityVM.severityid);
-                        if (severityToBeUpdated == null)
-                            return new ResponseVM("updated", false, "Severity", ResponseVM.DOES_NOT_EXIST);
+                { 
+                        try
+                        {
+                            Severity severityToBeUpdated = context.Severities.Find(severityVM.Severityid);
+                            if (severityToBeUpdated == null)
+                                return new ResponseVM("updated", false, "Severity", ResponseVM.DOES_NOT_EXIST);
 
-                        severityToBeUpdated.SeverityCode = severityVM.SeverityCode;
-                        severityToBeUpdated.SeverityName = severityVM.SeverityName;
-                        severityToBeUpdated.SeverityDesc = severityVM.SeverityDesc;
-                        context.SaveChanges();
+                            severityToBeUpdated.SeverityCode = severityVM.SeverityCode;
+                            severityToBeUpdated.SeverityName = severityVM.SeverityName;
+                            severityToBeUpdated.SeverityDesc = severityVM.SeverityDesc;
+                            context.SaveChanges();
 
-                        dbTransaction.Commit();
-                        return new ResponseVM("updated", true, "Severity");
-                    }
-                    catch (Exception ex)
-                    {
-                        dbTransaction.Rollback();
-                        return new ResponseVM("updated", false, "Severity", ResponseVM.SOMETHING_WENT_WRONG, "", ex);
-                    }
+                            dbTransaction.Commit();
+                            return new ResponseVM("updated", true, "Severity");
+                        }
+                        catch (Exception ex)
+                        {
+                            dbTransaction.Rollback();
+                            return new ResponseVM("updated", false, "Severity", ResponseVM.SOMETHING_WENT_WRONG, "", ex);
+                        }
                 }
             }
         }

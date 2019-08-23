@@ -1,6 +1,17 @@
-<body>
-  <app-nav-menu></app-nav-menu>
-    <div class="container">
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+    
+      <app-nav-menu></app-nav-menu>
+      <app-sidenav></app-sidenav>
+    
+      <!-- Content Wrapper. Contains page content -->
       <router-outlet></router-outlet>
+      <!-- /.content-wrapper -->
+      <app-modals></app-modals>
+      <app-footer></app-footer>
+      <!-- Add the sidebar's background. This div must be placed
+      immediately after the control sidebar -->
+      <div class="control-sidebar-bg"></div>
     </div>
-</body>
+    <!-- ./wrapper -->
+    </body>
