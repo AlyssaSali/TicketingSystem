@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using TicketingSystem.ViewModel.ViewModel;
+using static TicketingSystem.ViewModel.ViewModels.DatatableVM;
 
 namespace TicketingSystem.BLL.Contracts
 {
@@ -14,5 +15,7 @@ namespace TicketingSystem.BLL.Contracts
         ResponseVM Delete(Guid id);
 
         ResponseVM Update(TVM entity);
+
+        PagingResponse<TVM> GetDataServerSide(PagingRequest paging);
     }
 }

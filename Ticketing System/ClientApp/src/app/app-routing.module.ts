@@ -18,6 +18,7 @@ import { TicketEditFormComponent } from './views/ticket/ticket-edit-form/ticket-
 import { CategoryComponent } from './views/category/category.component';
 import { CategoryListComponent } from './views/categoryList/categoryList.component';
 import { ItgroupComponent } from './views/itgroup/itgroup.component';
+import { ItgroupmemberComponent } from './views/itgroupmember/itgroupmember.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
@@ -34,7 +35,8 @@ const routes: Routes = [
   {path: 'ticketSLA', component: TicketSLAComponent},
   {path: 'category', component: CategoryComponent},
   {path: 'categoryList', component: CategoryListComponent},
-  { path: 'itgroup', component: ItgroupComponent}
+  { path: 'itgroup', component: ItgroupComponent},
+  {path: 'itgroupmember', component: ItgroupmemberComponent}
   
 ]
 

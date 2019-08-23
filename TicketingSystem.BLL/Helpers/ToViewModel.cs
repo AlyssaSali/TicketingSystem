@@ -52,10 +52,19 @@ namespace TicketingSystem.BLL.Helpers
                 LastName = employee.LastName,
                 EmailAddress = employee.EmailAddress,
                 Officeid = employee.Officeid.ToString(),
-                Office = Office(employee.Office)
+                Office = employee.Office != null ? Office(employee.Office): null,
+                FullName = ToFullName(employee.FirstName, employee.LastName)
 
             };
         }
+        public string ToFullName(string firstName, string lastName)
+        {
+            return $"{firstName} { (string.IsNullOrEmpty(lastName) ? "" : " " + lastName)} ";
+        }
+
+
+    
+        
 
         public TicketVM Ticket(Ticket ticket)
         {
@@ -83,9 +92,30 @@ namespace TicketingSystem.BLL.Helpers
                 ITGroupid = itgroup.ITGroupid,
                 ITGroupCode = itgroup.ITGroupCode,
                 ITGroupName = itgroup.ITGroupName,
+              
+
             };
 
         }
+
+        private List<EmployeeVM> GroupEmployee(List<GroupEmployee> groupEmployee)
+        {
+            List<EmployeeVM> employeeLists = new List<EmployeeVM>();
+            if (groupEmployee != null)
+            {
+                foreach (var ge in groupEmployee)
+                {
+                    var employee = Employee(ge.Employee);
+                    employeeLists.Add(employee);
+                }
+            }
+            else
+                employeeLists = null;
+
+            return employeeLists;
+        }
+    
+
         public CategoryListVM CategoryList(CategoryList categoryList)
         {
             return new CategoryListVM
@@ -101,5 +131,22 @@ namespace TicketingSystem.BLL.Helpers
                 Severity = Severity(categoryList.Severity)
             };
         }
+
+        public ITGroupMemberVM ITGroupMember(ITGroupMember itgroupmember)
+
+        {
+            return new ITGroupMemberVM
+            {
+
+                ITGroupMemberid = itgroupmember.ITGroupMemberid.ToString(),
+                
+                ITGroupid = itgroupmember.ITGroupid.ToString(),
+                ITGroup = ITGroup(itgroupmember.ITGroup),
+                Employees = GroupEmployee(itgroupmember.GroupEmployees)
+            };
+        }
+
+
     }
 }
+

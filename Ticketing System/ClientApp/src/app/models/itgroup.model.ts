@@ -1,6 +1,6 @@
 export interface Itgroup {
     
-        itGroupid:number;
+        itGroupid:string;
         itGroupCode: string;
         itGroupName: string;
     

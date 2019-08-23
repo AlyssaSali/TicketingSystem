@@ -96,6 +96,14 @@ namespace TicketingSystem.BLL.Helpers
                 severityid = categorylistVM.severityid
             };
         }
-
+        public ITGroupMember ITGroupMember(ITGroupMemberVM itgroupmemberVM)
+        {
+            return new ITGroupMember
+            {
+                ITGroupMemberid = Guid.Parse( itgroupmemberVM.ITGroupMemberid),
+                
+                ITGroupid = Guid.Parse(itgroupmemberVM.ITGroupid)
+            };
+        }
     }
 }

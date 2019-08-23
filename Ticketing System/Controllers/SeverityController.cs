@@ -7,6 +7,7 @@ using TicketingSystem.BLL.Contracts;
 using TicketingSystem.BLL.Services;
 using TicketingSystem.ViewModel.ViewModel;
 using TicketingSystem.ViewModel.ViewModels;
+using static TicketingSystem.ViewModel.ViewModels.DatatableVM;
 
 namespace Ticketing_System.Controllers
 {
@@ -60,6 +61,10 @@ namespace Ticketing_System.Controllers
                 return BadRequest("something went wrong");
             }
             return severityService.Update(severityVM);
+        }
+        public ActionResult<PagingResponse<SeverityVM>> GetDataServerSide([FromBody]PagingRequest paging)
+        {
+            return severityService.GetDataServerSide(paging);
         }
     }
 

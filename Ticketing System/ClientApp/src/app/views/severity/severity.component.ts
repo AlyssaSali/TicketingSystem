@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Severity } from 'src/app/models/severity.model';
 import { SeverityService } from 'src/app/services/severity.service';
 import { SeverityDataService } from 'src/app/dataservices/severity.dataservice';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { SeverityUpdateFormComponent } from './severity-update-form/severity-update-form.component';
+import { DataTableDirective } from 'angular-datatables';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-severity',
@@ -11,6 +13,10 @@ import { SeverityUpdateFormComponent } from './severity-update-form/severity-upd
   styleUrls: ['./severity.component.css']
 })
 export class SeverityComponent implements OnInit {
+  @ViewChild(DataTableDirective, {static: false})
+  dtElement: DataTableDirective;
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<Severity> = new Subject();
   severities:Severity[];
 
   constructor(
@@ -29,6 +35,7 @@ export class SeverityComponent implements OnInit {
   async getSeverities() {
     try{
       this.severities=await this.severityService.getAll().toPromise();
+      this.rerender();
     }catch(error){
       alert('Something went wrong!');
       console.error(error);
@@ -59,6 +66,23 @@ export class SeverityComponent implements OnInit {
       dialogConfig.width='600px';
       //dialogConfig.height='600px';
       this.dialog.open(SeverityUpdateFormComponent,dialogConfig)
+    }
+    ngAfterViewInit(): void {
+      this.dtTrigger.next();
+    }
+  
+    ngOnDestroy(): void {
+      // Do not forget to unsubscribe the event
+      this.dtTrigger.unsubscribe();
+    }
+  
+    rerender(): void {
+      this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+        // Destroy the table first
+        dtInstance.destroy();
+        // Call the dtTrigger to rerender again
+        this.dtTrigger.next();
+      });
     }
 
 }

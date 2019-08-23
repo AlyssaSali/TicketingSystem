@@ -17,7 +17,7 @@ export class ItgroupService {
   ) {
     this.itgroupApi=baseURL + 'api/Itgroup/';
    }
-   getAll(): Observable<Itgroup[]> {
+   getGroups(): Observable<Itgroup[]> {
      return this.http.get<Itgroup[]>(this.itgroupApi +'GetAll')
    }
    getSingleBy(itGroupid): Observable<Itgroup> {

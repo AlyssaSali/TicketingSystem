@@ -14,9 +14,12 @@ namespace TicketingSystem.DAL.Models
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
         
+        
 
         [ForeignKey("Office")]
         public Guid Officeid { get; set; }
         public Office Office { get; set; }
+
+        public List<GroupEmployee> GroupEmployees { get; set; }
     }
 }

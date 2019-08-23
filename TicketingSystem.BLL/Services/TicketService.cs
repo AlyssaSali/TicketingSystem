@@ -107,5 +107,10 @@ namespace TicketingSystem.BLL.Services
         {
             throw new NotImplementedException();
         }
+
+        public DatatableVM.PagingResponse<TicketVM> GetDataServerSide(DatatableVM.PagingRequest paging)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

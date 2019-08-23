@@ -38,7 +38,10 @@ import { ItgroupAddFormComponent } from './views/itgroup/itgroup-add-form/itgrou
 import { ItgroupUpdateFormComponent } from './views/itgroup/itgroup-update-form/itgroup-update-form.component';
 import { ItgroupDataService } from './dataservices/itgroup.dataservice';
 import { ToastrModule } from 'ngx-toastr';
-
+import { ItgroupmemberComponent } from './views/itgroupmember/itgroupmember.component';
+import { ItgroupmemberAddFormComponent } from './views/itgroupmember/itgroupmember-add-form/itgroupmember-add-form.component';
+import { ItgroupmemberUpdateFormComponent } from './views/itgroupmember/itgroupmember-update-form/itgroupmember-update-form.component';
+import {DataTablesModule} from 'angular-datatables';
 
 
 @NgModule({
@@ -71,7 +74,10 @@ import { ToastrModule } from 'ngx-toastr';
     CategoryListUpdateFormComponent,
     ItgroupComponent,
     ItgroupAddFormComponent,
-    ItgroupUpdateFormComponent
+    ItgroupUpdateFormComponent,
+    ItgroupmemberComponent,
+    ItgroupmemberAddFormComponent,
+    ItgroupmemberUpdateFormComponent
 
 ],
   imports: [
@@ -83,10 +89,11 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     MatDialogModule,
     CommonModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    DataTablesModule
   ],
   entryComponents: [EmployeeUpdateFormComponent, OfficeUpdateFormComponent, ItgroupUpdateFormComponent, TicketAddFormComponent,
-    SeverityUpdateFormComponent,
+    SeverityUpdateFormComponent,ItgroupmemberUpdateFormComponent,
     TicketSLAComponent,
     TicketApprovalComponent,
     CategoryUpdateFormComponent,

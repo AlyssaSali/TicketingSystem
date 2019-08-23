@@ -43,6 +43,7 @@ namespace Ticketing_System
             services.AddScoped<OfficeService>();
             services.AddScoped<EmployeeService>();
             services.AddScoped<ITGroupService>();
+            services.AddScoped<ITGroupMemberService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -134,6 +134,11 @@ namespace TicketingSystem.BLL.Services
                 }
             }
         }
+
+        public DatatableVM.PagingResponse<CategoryListVM> GetDataServerSide(DatatableVM.PagingRequest paging)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

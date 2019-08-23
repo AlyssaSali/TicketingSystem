@@ -7,6 +7,7 @@ using TicketingSystem.BLL.Helpers;
 using TicketingSystem.DAL.Models;
 using TicketingSystem.ViewModel.ViewModel;
 using TicketingSystem.ViewModel.ViewModels;
+using static TicketingSystem.ViewModel.ViewModels.DatatableVM;
 
 namespace TicketingSystem.BLL.Services
 {
@@ -132,6 +133,56 @@ namespace TicketingSystem.BLL.Services
                 }
             }
         }
-        
+
+        public PagingResponse<ITGroupVM> GetDataServerSide(PagingRequest paging)
+        {    
+            using (context)
+            {
+
+                var pagingResponse = new PagingResponse<ITGroupVM>()
+                {
+                    // counts how many times the user draws data
+                    Draw = paging.Draw
+                };
+                // initialized query
+                IEnumerable<ITGroup> query = null;
+                // search if user provided a search value, i.e. search value is not empty
+                if (!string.IsNullOrEmpty(paging.Search.Value))
+                {
+                    // search based from the search value
+                    query = context.ITGroups
+                          .Where(v => v.ITGroupCode.ToString().ToLower().Contains(paging.Search.Value.ToLower()) ||
+                                      v.ITGroupName.ToString().ToLower().Contains(paging.Search.Value.ToLower()));
+                }
+                else
+                {
+                    // selects all from table
+                    query = context.ITGroups;
+                }
+                // total records from query
+                var recordsTotal = query.Count();
+                // orders the data by the sorting selected by the user
+                // used ternary operator to determine if ascending or descending
+                var colOrder = paging.Order[0];
+                switch (colOrder.Column)
+                {
+                    case 0:
+                        query = colOrder.Dir == "asc" ? query.OrderBy(v => v.ITGroupName) : query.OrderByDescending(v => v.ITGroupName);
+                        break;
+                    
+                }
+
+                var taken = query.Skip(paging.Start).Take(paging.Length).ToArray();
+                // converts model(query) into viewmodel then assigns it to response which is displayed as "data"
+                pagingResponse.Reponse = taken.Select(x => toViewModel.ITGroup(x));
+                pagingResponse.RecordsTotal = recordsTotal;
+                pagingResponse.RecordsFiltered = recordsTotal;
+
+                return pagingResponse;
+            }
+        }
     }
+
+
 }
+

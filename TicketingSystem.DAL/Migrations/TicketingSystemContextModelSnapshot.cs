@@ -85,6 +85,26 @@ namespace TicketingSystem.DAL.Migrations
                     b.ToTable("Employees");
                 });
 
+            modelBuilder.Entity("TicketingSystem.DAL.Models.GroupEmployee", b =>
+                {
+                    b.Property<Guid>("GroupEmployeeid")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("EmployeeFullName");
+
+                    b.Property<Guid>("EmployeeID");
+
+                    b.Property<Guid>("ITGroupMemberid");
+
+                    b.HasKey("GroupEmployeeid");
+
+                    b.HasIndex("EmployeeID");
+
+                    b.HasIndex("ITGroupMemberid");
+
+                    b.ToTable("GroupEmployees");
+                });
+
             modelBuilder.Entity("TicketingSystem.DAL.Models.ITGroup", b =>
                 {
                     b.Property<Guid>("ITGroupid")
@@ -97,6 +117,20 @@ namespace TicketingSystem.DAL.Migrations
                     b.HasKey("ITGroupid");
 
                     b.ToTable("ITGroups");
+                });
+
+            modelBuilder.Entity("TicketingSystem.DAL.Models.ITGroupMember", b =>
+                {
+                    b.Property<Guid>("ITGroupMemberid")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid>("ITGroupid");
+
+                    b.HasKey("ITGroupMemberid");
+
+                    b.HasIndex("ITGroupid");
+
+                    b.ToTable("ITGroupMembers");
                 });
 
             modelBuilder.Entity("TicketingSystem.DAL.Models.Office", b =>
@@ -200,6 +234,27 @@ namespace TicketingSystem.DAL.Migrations
                     b.HasOne("TicketingSystem.DAL.Models.Office", "Office")
                         .WithMany("Employees")
                         .HasForeignKey("Officeid")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("TicketingSystem.DAL.Models.GroupEmployee", b =>
+                {
+                    b.HasOne("TicketingSystem.DAL.Models.Employee", "Employee")
+                        .WithMany("GroupEmployees")
+                        .HasForeignKey("EmployeeID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("TicketingSystem.DAL.Models.ITGroupMember", "ITGroupMember")
+                        .WithMany("GroupEmployees")
+                        .HasForeignKey("ITGroupMemberid")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("TicketingSystem.DAL.Models.ITGroupMember", b =>
+                {
+                    b.HasOne("TicketingSystem.DAL.Models.ITGroup", "ITGroup")
+                        .WithMany()
+                        .HasForeignKey("ITGroupid")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
