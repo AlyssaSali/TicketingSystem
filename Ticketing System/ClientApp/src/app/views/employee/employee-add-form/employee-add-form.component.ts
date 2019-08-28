@@ -7,12 +7,6 @@ import { OfficeService } from 'src/app/services/office.service';
 import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
 import { Office } from 'src/app/models/office.model';
 import { OfficeComponent } from '../../office/office.component';
-<<<<<<< HEAD
-import { EmployeeType } from 'src/app/models/employeetype.model';
-import { EmployeeTypeService } from 'src/app/services/employeetype.service';
-import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.dataservice';
-import { EmployeetypeComponent } from '../../employeetype/employeetype.component';
-=======
 import { EmployeeUpdateFormComponent } from '../employee-update-form/employee-update-form.component';
 import { OfficeAddFormComponent } from '../../office/office-add-form/office-add-form.component';
 <<<<<<< HEAD
@@ -20,8 +14,14 @@ import { EmployeeType } from 'src/app/models/employeetype.model';
 import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.dataservice';
 import { EmployeeTypeService } from 'src/app/services/employeetype.service';
 =======
+<<<<<<< HEAD
+import { EmployeeType } from 'src/app/models/employeetype.model';
+import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.dataservice';
+import { EmployeeTypeService } from 'src/app/services/employeetype.service';
+=======
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
 
 @Component({
   selector: 'app-employee-add-form',
@@ -37,6 +37,12 @@ export class EmployeeAddFormComponent implements OnInit {
   employeeTypesList : EmployeeType[];
 
 =======
+<<<<<<< HEAD
+//added during employee-office relationship
+  officesList : Office[];
+  employeeTypesList : EmployeeType[];
+
+=======
 
   firstNameBackEndErrors: string[];
   lastNameBackEndErrors: string[];
@@ -46,28 +52,25 @@ export class EmployeeAddFormComponent implements OnInit {
   officesList : Office[];
   
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
   dialogOpen = false;
   router: any;
 //added during employee-office relationship
-//added during employee-employeetype relationship
-  employeeTypesList : EmployeeType[];
-//added during employee-employeetype relationship
   constructor(
     private employeeService: EmployeeService,
     private employeeDataService: EmployeeDataService,
+<<<<<<< HEAD
+    private employeeTypeService: EmployeeTypeService,
+    private employeeTypeDataService: EmployeeTypeDataService,
+=======
     // private employeeTypeService: EmployeeTypeService,
     // private employeeTypeDataService: EmployeeTypeDataService,
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
     private officeService: OfficeService,//added during employee-office relationship
     private officeDataService: OfficeDataService,//added during employee-office relationship
-<<<<<<< HEAD
-    private employeeTypeService: EmployeeTypeService,//added during employee-employeetype relationship
-    private employeeTypeDataService: EmployeeTypeDataService,//added during employee-employeetype relationship
-    private dialog: MatDialog//added during employee-office relationship
-=======
     private dialog: MatDialog,//added during employee-office relationship,
     // public dialogRef:MatDialogRef<OfficeAddFormComponent>,
     // @Inject(MAT_DIALOG_DATA) data
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
   ) { 
     //sets front-end max length
     this.employeeCreateForm = new FormGroup({
@@ -92,6 +95,10 @@ export class EmployeeAddFormComponent implements OnInit {
     //added during employee-office relationship
 <<<<<<< HEAD
     this.officeDataService.officeSource.subscribe( data => { this.getOfficeLists(); });
+    this.employeeTypeDataService.employeeTypeSource.subscribe( data => { this.getEmployeeTypeLists(); });  
+=======
+<<<<<<< HEAD
+    this.officeDataService.officeSource.subscribe( data => { this.getOfficeLists(); });
     // this.employeeTypeDataService.employeeTypeSource.subscribe( data => { this.getEmployeeTypeLists(); });  
     // //added during employee-office relationship
 =======
@@ -100,11 +107,10 @@ export class EmployeeAddFormComponent implements OnInit {
       this.getEmployeeTypeLists();      
     });
     
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
     //added during employee-office relationship
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
   }
-
-   
 
   get f() { return this.employeeCreateForm.controls; }
 
@@ -119,8 +125,10 @@ export class EmployeeAddFormComponent implements OnInit {
       return;
     }
 
-    try{      
+    try{
       this.isSubmit = true;
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 =======
       this.firstNameBackEndErrors = null;
@@ -128,6 +136,7 @@ export class EmployeeAddFormComponent implements OnInit {
       this.formOfCommuBackEndErrors = null;
       this.contactInfoBackEndErrors = null;
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
       let result = await this.employeeService.CreateEmployee(this.employeeCreateForm.value).toPromise();
       if(result.isSuccess){
         alert(result.message);
@@ -150,6 +159,8 @@ export class EmployeeAddFormComponent implements OnInit {
 
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
       if(errs.errors) {
         if('firstname' in errs.errors){
           this.firstNameBackEndErrors = errs.errors.firstname;//shows data annotations error message
@@ -167,6 +178,7 @@ export class EmployeeAddFormComponent implements OnInit {
       }
 
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
       this.isSubmit = false;//enables button
     }
     finally{
@@ -206,7 +218,7 @@ export class EmployeeAddFormComponent implements OnInit {
       if ($event.timeStamp > 200) {
         let selectedOffice = this.officesList.find(data => data.officeCode == office);
         if (selectedOffice) {
-          this.employeeCreateForm.controls['officeID'].setValue(selectedOffice.officeid);          
+          this.employeeCreateForm.controls['officeID'].setValue(selectedOffice.officeid);
         }
       }      
     }
@@ -243,6 +255,8 @@ export class EmployeeAddFormComponent implements OnInit {
   }
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
   // close(){
   //   this.dialogRef.close();
   // }
@@ -255,6 +269,7 @@ export class EmployeeAddFormComponent implements OnInit {
     this.dialog.open(EmployeetypeComponent, dialogConfig);
   }
 =======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
   close(){
     this.dialogRef.close();
   }
@@ -264,5 +279,4 @@ export class EmployeeAddFormComponent implements OnInit {
     this.employeeCreateForm.reset();
   }
 
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 }

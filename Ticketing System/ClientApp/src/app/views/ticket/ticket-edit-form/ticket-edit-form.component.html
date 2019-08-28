@@ -1,0 +1,54 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+          
+    </section>
+
+    <!-- Main content -->
+    <section class="content" >
+        <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="pull-right">
+                  <a class="btn btn-app" data-toggle="tooltip" (click)="ticketSLA(ticket)"><i class="fa fa-clock-o"></i> SLA </a>
+                  <a class="btn btn-app"><i class="fa fa-edit"></i> Approval </a>                  
+                  <a class="btn btn-app"><i class="fa fa-wrench"></i> Action </a>                  
+                  <a class="btn btn-app"><i class="fa fa-calendar-times-o"></i> Closure </a>                  
+                  <a class="btn btn-app"><i class="fa fa-copy"></i> PIR </a>                  
+              </div>
+              <div class="pull-left" style="margin-left: 10px">
+                    <h1><small>Ticket </small> #007612 </h1>
+              </div>
+            </div>
+            <br>
+            <div class="box-body">
+              <div class="row" style="margin-left: 10px">
+                <div class="col-sm-6">
+                    <strong>Requested By:</strong> Employee Name Here <br>         
+                    <strong>Division/Office:</strong> Office Here <br>
+                    <strong>Desired form of Communication:</strong> Via Email<br>
+                    <strong>Contact Info: </strong> 000000000
+                </div>
+                <div class="col-md-6">
+                      <strong>Status: </strong>Request For Approval<br>
+                      <strong>Date of Request: </strong>Date Here<br>
+                      <strong>Time of Request: </strong>Time Here
+                </div>
+              </div>
+              <br>
+              <div class="row" style="margin-left: 25px">
+                  <strong>Request Title: </strong>Title Here <br>
+                  <strong>Request Description: </strong>Description Here
+              </div>
+            </div>
+            <div class="box-footer">
+                <br><br>
+            </div>
+        </div>
+    </section>
+    
+    <div class="modal fade" id="modal-sla">
+        <app-ticket-SLA></app-ticket-SLA>
+      </div>
+</div>
+        

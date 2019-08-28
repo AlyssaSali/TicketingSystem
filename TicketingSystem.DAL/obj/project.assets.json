@@ -3527,7 +3527,6 @@
       "path": "system.reflection.emit/4.0.1",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3735,7 +3734,6 @@
       "path": "system.reflection.typeextensions/4.1.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4543,6 +4541,9 @@
   },
   "packageFolders": {
 <<<<<<< HEAD
+    "C:\\Users\\ridz\\.nuget\\packages\\": {},
+=======
+<<<<<<< HEAD
     "C:\\Users\\Dis Moore\\.nuget\\packages\\": {},
 =======
 <<<<<<< HEAD
@@ -4556,11 +4557,14 @@
     "C:\\Users\\ridz\\.nuget\\packages\\": {},
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -4581,18 +4585,25 @@
 =======
 >>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 =======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
       "projectUniqueName": "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj",
       "projectName": "TicketingSystem.DAL",
       "projectPath": "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj",
       "packagesPath": "C:\\Users\\ridz\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.DAL\\obj\\",
+<<<<<<< HEAD
+=======
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
+        "C:\\Users\\ridz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
 <<<<<<< HEAD
         "C:\\Users\\Dis Moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
 =======
@@ -4608,8 +4619,8 @@
         "C:\\Users\\ridz\\AppData\\Roaming\\NuGet\\NuGet.Config",
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"

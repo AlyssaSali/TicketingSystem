@@ -15,12 +15,18 @@ namespace TicketingSystem.ViewModel.ViewModels
 =======
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
             public DateTime DateCreated { get; set; }
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 
+<<<<<<< HEAD
+=======
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 
             public DateTime DateCreated { get; set; }
 
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
     }
 }

@@ -46,5 +46,45 @@
                         </div>
                 </div>
             </div>
+<<<<<<< HEAD
+
+            <!-- OFFICE TABLE -->
+            <div class="col-md-8">
+                    <div class="box box-default">
+                     <div class="box-header with-border"><h3 class="box-title">List of IT Groups</h3></div>
+                       <div class="box-body margin">
+                        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <td style="width: 30%;"><strong>Code</strong></td>
+                                    <td style="width: 60%;"><strong>Name</strong></td>
+                                    <td style="width: 10%;"><strong>Action</strong></td>
+                                </tr>
+                            </thead>
+                            <tbody> 
+                                <tr *ngFor="let itgroup of itgroups"> 
+                                    <td style="width: 30%;">{{itgroup.itGroupCode}}</td>
+                                    <td style="width: 60%;">{{itgroup.itGroupName}}</td>
+                                    <td style="width: 10%;">
+                                    <div class="row">
+                                        <button class="btn-success m-1"(click)="update(itgroup)" data-toggle="tooltip" data-placement="bottom" title="Edit itgroup">
+                                                <i class="material-icons">update</i>
+                                        </button>
+                                        <button class="btn-danger m-1"(click)="delete(itgroup.itGroupid)" data-toggle="tooltip" data-placement="bottom" title="Delete itgroup">
+                                                <i class="material-icons">delete </i>
+                                        </button>
+                                    </div> 
+                                    </td>
+                                </tr>
+                            </tbody>
+                            </table>
+                       </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+</div>
+=======
         </section>
     </div>
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7

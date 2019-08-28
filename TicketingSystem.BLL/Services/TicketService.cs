@@ -102,11 +102,14 @@ namespace TicketingSystem.BLL.Services
                 }
             }
         }
+<<<<<<< HEAD
+=======
 
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
         public ResponseVM Delete(Guid guid) {
             using (context)
             {
@@ -197,6 +200,9 @@ namespace TicketingSystem.BLL.Services
                     }
                 }
             }
+<<<<<<< HEAD
+        }
+=======
         }//dummy data
 =======
         public IEnumerable<TicketVM> GetAll()
@@ -294,6 +300,7 @@ namespace TicketingSystem.BLL.Services
 =======
 <<<<<<< HEAD
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
 
         public DatatableVM.PagingResponse<TicketVM> GetDataServerSide(DatatableVM.PagingRequest paging)
         {
@@ -301,9 +308,12 @@ namespace TicketingSystem.BLL.Services
         }
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
     }
 }

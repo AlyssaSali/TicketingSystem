@@ -5,6 +5,8 @@ import { CategoryList } from './categoryList.model';
 
 export interface TicketMinor {
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 
     assistByid: number
 =======
@@ -24,6 +26,7 @@ export interface TicketMinor {
     office: string,
 =======
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
     ticketMinorid: string;
     agentid: number,
     description: string,
@@ -38,5 +41,5 @@ export interface TicketMinor {
     employee: Employee;
     categoryListid: string;
     categoryList: CategoryList;
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+    dateAccomplished: string;
 }

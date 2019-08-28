@@ -12,12 +12,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 export class CategoryAddFormComponent implements OnInit {
   categoryCreateForm: FormGroup;
    isSubmit = false;
- 
-   
    categoryNameBackEndErrors: string[];
-   
-   
- 
+
    constructor(
      private categoryService: CategoryService,
      private categoryDataService: CategoryDataService,

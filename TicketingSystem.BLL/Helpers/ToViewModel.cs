@@ -18,20 +18,21 @@ namespace TicketingSystem.BLL.Helpers
             };
         }
 
-<<<<<<< HEAD
-        public Category Category(CategoryVM categoryVM)
-=======
-        
         public CategoryVM Category(Category category)
->>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
         {
-            return new Category
+            return new CategoryVM
             {
+<<<<<<< HEAD
+                Categoryid = category.Categoryid,
+                CategoryName = category.CategoryName,
+                DateCreated = category.DateCreated
+=======
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
                 Categoryid = categoryVM.Categoryid,
                 CategoryName = categoryVM.CategoryName,
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
             };
         }
 
@@ -45,6 +46,7 @@ namespace TicketingSystem.BLL.Helpers
                 SeverityDesc = severityVM.SeverityDesc
             };
         }
+
         public EmployeeVM Employee(Employee employee)
         { 
             return new EmployeeVM
@@ -55,8 +57,27 @@ namespace TicketingSystem.BLL.Helpers
                 FormOfCommu = employee.FormOfCommu,
                 ContactInfo = employee.ContactInfo,
                 EmployeeTypeid = employee.EmployeeTypeid,
-                EmployeeType = EmployeeType(employee.EmployeeType),
+                EmployeeType = employee.EmployeeType != null ?EmployeeType(employee.EmployeeType):null,
                 Officeid = employee.Officeid.ToString(),
+<<<<<<< HEAD
+                Office = employee.Office != null ? Office(employee.Office) : null,
+                FullName = ToFullName(employee.FirstName, employee.LastName)
+            };
+        }
+
+        public SeverityVM Severity(Severity severity)
+        {
+
+            return new SeverityVM
+            {
+                Severityid = severity.Severityid,
+                SeverityCode = severity.SeverityCode,
+                SeverityName = severity.SeverityName,
+                SeverityDesc = severity.SeverityDesc
+            };
+         }
+
+=======
                 Office = Office(employee.Office)
 =======
 
@@ -99,6 +120,7 @@ namespace TicketingSystem.BLL.Helpers
             };
          }
 
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
         public string ToFullName(string firstName, string lastName)
         {
             return $"{firstName} { (string.IsNullOrEmpty(lastName) ? "" : " " + lastName)} ";
@@ -110,7 +132,7 @@ namespace TicketingSystem.BLL.Helpers
             {
                 Ticketid = ticket.Ticketid,
                 CategoryListid = ticket.CategoryListid,
-                CategoryList = CategoryList(ticket.CategoryList),                
+                CategoryList = ticket.CategoryList != null ? CategoryList(ticket.CategoryList):null,                
                 ITGroupid = ticket.ITGroupid,
                 ITGroup = ITGroup(ticket.ITGroup),
                 EmployeeID = ticket.EmployeeID,
@@ -148,11 +170,14 @@ namespace TicketingSystem.BLL.Helpers
 =======
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
         private List<EmployeeVM> GroupEmployee(List<GroupEmployee> groupEmployee)
         {
             List<EmployeeVM> employeeLists = new List<EmployeeVM>();
@@ -169,6 +194,9 @@ namespace TicketingSystem.BLL.Helpers
 
             return employeeLists;
         }
+<<<<<<< HEAD
+    
+=======
 
 <<<<<<< HEAD
         private List<EmployeeVM> TypeEmployee(List<TypeEmployee> typeEmployees)
@@ -193,6 +221,7 @@ namespace TicketingSystem.BLL.Helpers
 >>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
         public CategoryListVM CategoryList(CategoryList categoryList)
         {
             return new CategoryListVM
@@ -204,20 +233,23 @@ namespace TicketingSystem.BLL.Helpers
                 SlaResponseTimeExt = categoryList.SlaResponseTimeExt,
                 SlaResolvedTime = categoryList.SlaResolvedTime,
                 SlaResolvedTimeExt = categoryList.SlaResolvedTimeExt,
-                ITGroupid = (categoryList.ITGroupid).ToString(),
-                ITGroup = categoryList.ITGroup != null ? ITGroup(categoryList.ITGroup):null,
-                Categoryid = (categoryList.Categoryid).ToString(),
-                Category = categoryList.Category != null ? Category(categoryList.Category):null,
-                Severityid = (categoryList.Severityid).ToString(),
-                Severity = categoryList.Severity != null ? Severity(categoryList.Severity):null
+                ITGroupid = (categoryList.ITGroupid).ToString() != null ? (categoryList.ITGroupid).ToString() : null,
+                ITGroup = categoryList.ITGroup != null ? ITGroup(categoryList.ITGroup) : null,
+                Categoryid = (categoryList.Categoryid).ToString() != null ? (categoryList.Categoryid).ToString() : null,
+                Category = categoryList.Category != null ? Category(categoryList.Category) : null,
+                Severityid = (categoryList.Severityid).ToString() != null ? (categoryList.Severityid).ToString() : null,
+                Severity = categoryList.Severity != null ? Severity(categoryList.Severity) : null
             };
         }
 
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
         public EmployeeTypeVM EmployeeType(EmployeeType employeetype)
         {
             return new EmployeeTypeVM
@@ -227,9 +259,15 @@ namespace TicketingSystem.BLL.Helpers
 <<<<<<< HEAD
             };
         }
+
+=======
+<<<<<<< HEAD
+            };
+        }
 =======
 =======
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
         public ITGroupMemberVM ITGroupMember(ITGroupMember itgroupmember)
 
         {
@@ -249,6 +287,8 @@ namespace TicketingSystem.BLL.Helpers
             return new EmployeeEmployeeTypeVM
             {
 
+<<<<<<< HEAD
+=======
                 EmployeeEmployeeTypeid = employeeEmployeeType.EmployeeEmployeeTypeid.ToString(),
 
 <<<<<<< HEAD
@@ -261,6 +301,7 @@ namespace TicketingSystem.BLL.Helpers
 >>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 =======
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
         public TicketMinorVM TicketMinor(TicketMinor ticketMinor)
         {
             return new TicketMinorVM
@@ -271,16 +312,18 @@ namespace TicketingSystem.BLL.Helpers
                 TimeOfRequest = ticketMinor.TimeOfRequest,
                 Status = ticketMinor.Status,
                 WorkDone = ticketMinor.WorkDone,
+                DateAccomplished = ticketMinor.DateAccomplished,
                 Officeid = (ticketMinor.Officeid).ToString(),
-                Office = Office(ticketMinor.Office),
+                Office = ticketMinor.Office != null ? Office(ticketMinor.Office):null,
                 Requesterid = (ticketMinor.Requesterid).ToString(),
                 WorkByid = (ticketMinor.WorkByid).ToString(),
-                Employee = Employee(ticketMinor.Employee),
+                Employee = ticketMinor.Employee != null ? Employee(ticketMinor.Employee):null,
                 CategoryListid = (ticketMinor.CategoryListid).ToString(),
-                CategoryList = CategoryList(ticketMinor.CategoryList)
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+                CategoryList = ticketMinor.CategoryList != null ? CategoryList(ticketMinor.CategoryList):null
             };
         }
+<<<<<<< HEAD
+=======
         public UserVM User(User user)
         {
             return new UserVM
@@ -291,6 +334,7 @@ namespace TicketingSystem.BLL.Helpers
                 UserName=user.UserName
             };
         }
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
     }
 }
 

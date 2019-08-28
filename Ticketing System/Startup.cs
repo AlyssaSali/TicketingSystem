@@ -47,6 +47,8 @@ namespace Ticketing_System
                   (Configuration.GetConnectionString
                   ("TicketingSystemContext")));
 
+<<<<<<< HEAD
+=======
             services.AddDefaultIdentity<User>()
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<TicketingSystemContext>();
@@ -80,6 +82,7 @@ namespace Ticketing_System
                     ClockSkew = TimeSpan.Zero
                 };
             });
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
             services.AddScoped<OfficeService>();
             services.AddScoped<EmployeeService>();
             services.AddScoped<TicketService>();
@@ -89,17 +92,24 @@ namespace Ticketing_System
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
             services.AddScoped<ITGroupService>();
             services.AddScoped<EmployeeTypeService>();
-=======
             services.AddScoped<OfficeService>();
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
             services.AddScoped<ITGroupService>();
+<<<<<<< HEAD
+            services.AddScoped<ITGroupMemberService>();
+            services.AddScoped<TicketMinorService>();
+=======
             services.AddScoped<EmployeeTypeService>();
             services.AddScoped<ITGroupMemberService>();
             services.AddScoped<EmployeeEmployeeTypeService>();
             services.AddScoped<TicketMinorService>();
             services.AddScoped<UserService>();
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

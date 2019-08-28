@@ -7,6 +7,7 @@ using TicketingSystem.BLL.Contracts;
 using TicketingSystem.BLL.Services;
 using TicketingSystem.ViewModel.ViewModel;
 using TicketingSystem.ViewModel.ViewModels;
+using static TicketingSystem.ViewModel.ViewModels.DatatableVM;
 
 namespace Ticketing_System.Controllers
 {
@@ -50,6 +51,7 @@ namespace Ticketing_System.Controllers
         {
             return ticketMinorService.GetSingleBy(id);
         }
+
         [HttpPut("[action]")]
         public ActionResult<ResponseVM> Update
             ([FromBody] TicketMinorVM ticketMinorVM)
@@ -60,6 +62,11 @@ namespace Ticketing_System.Controllers
                 return BadRequest("something went wrong");
             }
             return ticketMinorService.Update(ticketMinorVM);
+        }
+
+        public ActionResult<PagingResponse<TicketMinorVM>> GetDataServerSide([FromBody]PagingRequest paging)
+        {
+            return ticketMinorService.GetDataServerSide(paging);
         }
     }
 

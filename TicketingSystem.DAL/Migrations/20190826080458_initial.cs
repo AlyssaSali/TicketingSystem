@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TicketingSystem.DAL.Migrations
 {
-    public partial class addedemptype : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -49,14 +49,32 @@ namespace TicketingSystem.DAL.Migrations
                 name: "Severities",
                 columns: table => new
                 {
-                    severityid = table.Column<Guid>(nullable: false),
-                    SeverityCode = table.Column<string>(nullable: true),
+                    Severityid = table.Column<Guid>(nullable: false),
+                    SeverityCode = table.Column<int>(nullable: false),
                     SeverityName = table.Column<string>(nullable: true),
                     SeverityDesc = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Severities", x => x.severityid);
+                    table.PrimaryKey("PK_Severities", x => x.Severityid);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ITGroupMembers",
+                columns: table => new
+                {
+                    ITGroupMemberid = table.Column<Guid>(nullable: false),
+                    ITGroupid = table.Column<Guid>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ITGroupMembers", x => x.ITGroupMemberid);
+                    table.ForeignKey(
+                        name: "FK_ITGroupMembers_ITGroups_ITGroupid",
+                        column: x => x.ITGroupid,
+                        principalTable: "ITGroups",
+                        principalColumn: "ITGroupid",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -69,6 +87,7 @@ namespace TicketingSystem.DAL.Migrations
                     FormOfCommu = table.Column<string>(nullable: true),
                     ContactInfo = table.Column<string>(nullable: true),
                     EmployeeTypeid = table.Column<Guid>(nullable: false),
+                    EmailAddress = table.Column<string>(nullable: true),
                     Officeid = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
@@ -79,31 +98,58 @@ namespace TicketingSystem.DAL.Migrations
                         column: x => x.EmployeeTypeid,
                         principalTable: "EmployeeTypes",
                         principalColumn: "EmployeeTypeid",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Employees_Offices_Officeid",
                         column: x => x.Officeid,
                         principalTable: "Offices",
                         principalColumn: "Officeid",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Categories",
                 columns: table => new
                 {
-                    categoryid = table.Column<Guid>(nullable: false),
+                    Categoryid = table.Column<Guid>(nullable: false),
                     CategoryName = table.Column<string>(nullable: true),
-                    severityid = table.Column<Guid>(nullable: true)
+                    DateCreated = table.Column<DateTime>(nullable: false),
+                    Severityid = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categories", x => x.categoryid);
+                    table.PrimaryKey("PK_Categories", x => x.Categoryid);
                     table.ForeignKey(
-                        name: "FK_Categories_Severities_severityid",
-                        column: x => x.severityid,
+                        name: "FK_Categories_Severities_Severityid",
+                        column: x => x.Severityid,
                         principalTable: "Severities",
-                        principalColumn: "severityid",
+                        principalColumn: "Severityid",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "GroupEmployees",
+                columns: table => new
+                {
+                    GroupEmployeeid = table.Column<Guid>(nullable: false),
+                    EmployeeID = table.Column<Guid>(nullable: false),
+                    EmployeeFullName = table.Column<string>(nullable: true),
+                    ITGroupMemberid = table.Column<Guid>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GroupEmployees", x => x.GroupEmployeeid);
+                    table.ForeignKey(
+                        name: "FK_GroupEmployees_Employees_EmployeeID",
+                        column: x => x.EmployeeID,
+                        principalTable: "Employees",
+                        principalColumn: "EmployeeID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_GroupEmployees_ITGroupMembers_ITGroupMemberid",
+                        column: x => x.ITGroupMemberid,
+                        principalTable: "ITGroupMembers",
+                        principalColumn: "ITGroupMemberid",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -113,27 +159,75 @@ namespace TicketingSystem.DAL.Migrations
                 {
                     CategoryListid = table.Column<Guid>(nullable: false),
                     CategoryListName = table.Column<string>(nullable: true),
+                    CategoryType = table.Column<string>(nullable: true),
                     SlaResponseTime = table.Column<int>(nullable: false),
+                    SlaResponseTimeExt = table.Column<string>(nullable: true),
                     SlaResolvedTime = table.Column<int>(nullable: false),
-                    ItGroup = table.Column<string>(nullable: true),
-                    categoryid = table.Column<Guid>(nullable: false),
-                    severityid = table.Column<Guid>(nullable: false)
+                    SlaResolvedTimeExt = table.Column<string>(nullable: true),
+                    Categoryid = table.Column<Guid>(nullable: false),
+                    Severityid = table.Column<Guid>(nullable: false),
+                    ITGroupid = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CategoryLists", x => x.CategoryListid);
                     table.ForeignKey(
-                        name: "FK_CategoryLists_Categories_categoryid",
-                        column: x => x.categoryid,
+                        name: "FK_CategoryLists_Categories_Categoryid",
+                        column: x => x.Categoryid,
                         principalTable: "Categories",
-                        principalColumn: "categoryid",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Categoryid",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_CategoryLists_Severities_severityid",
-                        column: x => x.severityid,
+                        name: "FK_CategoryLists_ITGroups_ITGroupid",
+                        column: x => x.ITGroupid,
+                        principalTable: "ITGroups",
+                        principalColumn: "ITGroupid",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_CategoryLists_Severities_Severityid",
+                        column: x => x.Severityid,
                         principalTable: "Severities",
-                        principalColumn: "severityid",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Severityid",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TicketMinors",
+                columns: table => new
+                {
+                    TicketMinorid = table.Column<Guid>(nullable: false),
+                    Description = table.Column<string>(nullable: true),
+                    Status = table.Column<string>(nullable: true),
+                    WorkDone = table.Column<string>(nullable: true),
+                    DateAccomplished = table.Column<DateTime>(nullable: false),
+                    DateOfRequest = table.Column<DateTime>(nullable: false),
+                    TimeOfRequest = table.Column<DateTime>(nullable: false),
+                    Officeid = table.Column<Guid>(nullable: false),
+                    Requesterid = table.Column<Guid>(nullable: false),
+                    WorkByid = table.Column<Guid>(nullable: false),
+                    CategoryListid = table.Column<Guid>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TicketMinors", x => x.TicketMinorid);
+                    table.ForeignKey(
+                        name: "FK_TicketMinors_CategoryLists_CategoryListid",
+                        column: x => x.CategoryListid,
+                        principalTable: "CategoryLists",
+                        principalColumn: "CategoryListid",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_TicketMinors_Offices_Officeid",
+                        column: x => x.Officeid,
+                        principalTable: "Offices",
+                        principalColumn: "Officeid",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_TicketMinors_Employees_Requesterid",
+                        column: x => x.Requesterid,
+                        principalTable: "Employees",
+                        principalColumn: "EmployeeID",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -157,8 +251,8 @@ namespace TicketingSystem.DAL.Migrations
                     ResolveTime = table.Column<DateTime>(nullable: false),
                     IsUrgent = table.Column<bool>(nullable: false),
                     IsOpen = table.Column<bool>(nullable: false),
-                    categoryid = table.Column<Guid>(nullable: true),
-                    severityid = table.Column<Guid>(nullable: true)
+                    Categoryid = table.Column<Guid>(nullable: true),
+                    Severityid = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -168,6 +262,12 @@ namespace TicketingSystem.DAL.Migrations
                         column: x => x.CategoryListid,
                         principalTable: "CategoryLists",
                         principalColumn: "CategoryListid",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Tickets_Categories_Categoryid",
+                        column: x => x.Categoryid,
+                        principalTable: "Categories",
+                        principalColumn: "Categoryid",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Tickets_Employees_EmployeeID",
@@ -188,33 +288,32 @@ namespace TicketingSystem.DAL.Migrations
                         principalColumn: "Officeid",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Tickets_Categories_categoryid",
-                        column: x => x.categoryid,
-                        principalTable: "Categories",
-                        principalColumn: "categoryid",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Tickets_Severities_severityid",
-                        column: x => x.severityid,
+                        name: "FK_Tickets_Severities_Severityid",
+                        column: x => x.Severityid,
                         principalTable: "Severities",
-                        principalColumn: "severityid",
+                        principalColumn: "Severityid",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Categories_severityid",
+                name: "IX_Categories_Severityid",
                 table: "Categories",
-                column: "severityid");
+                column: "Severityid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CategoryLists_categoryid",
+                name: "IX_CategoryLists_Categoryid",
                 table: "CategoryLists",
-                column: "categoryid");
+                column: "Categoryid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CategoryLists_severityid",
+                name: "IX_CategoryLists_ITGroupid",
                 table: "CategoryLists",
-                column: "severityid");
+                column: "ITGroupid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CategoryLists_Severityid",
+                table: "CategoryLists",
+                column: "Severityid");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Employees_EmployeeTypeid",
@@ -227,9 +326,44 @@ namespace TicketingSystem.DAL.Migrations
                 column: "Officeid");
 
             migrationBuilder.CreateIndex(
+                name: "IX_GroupEmployees_EmployeeID",
+                table: "GroupEmployees",
+                column: "EmployeeID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GroupEmployees_ITGroupMemberid",
+                table: "GroupEmployees",
+                column: "ITGroupMemberid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ITGroupMembers_ITGroupid",
+                table: "ITGroupMembers",
+                column: "ITGroupid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TicketMinors_CategoryListid",
+                table: "TicketMinors",
+                column: "CategoryListid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TicketMinors_Officeid",
+                table: "TicketMinors",
+                column: "Officeid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TicketMinors_Requesterid",
+                table: "TicketMinors",
+                column: "Requesterid");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Tickets_CategoryListid",
                 table: "Tickets",
                 column: "CategoryListid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Tickets_Categoryid",
+                table: "Tickets",
+                column: "Categoryid");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Tickets_EmployeeID",
@@ -247,20 +381,24 @@ namespace TicketingSystem.DAL.Migrations
                 column: "Officeid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tickets_categoryid",
+                name: "IX_Tickets_Severityid",
                 table: "Tickets",
-                column: "categoryid");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Tickets_severityid",
-                table: "Tickets",
-                column: "severityid");
+                column: "Severityid");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "GroupEmployees");
+
+            migrationBuilder.DropTable(
+                name: "TicketMinors");
+
+            migrationBuilder.DropTable(
                 name: "Tickets");
+
+            migrationBuilder.DropTable(
+                name: "ITGroupMembers");
 
             migrationBuilder.DropTable(
                 name: "CategoryLists");
@@ -269,10 +407,10 @@ namespace TicketingSystem.DAL.Migrations
                 name: "Employees");
 
             migrationBuilder.DropTable(
-                name: "ITGroups");
+                name: "Categories");
 
             migrationBuilder.DropTable(
-                name: "Categories");
+                name: "ITGroups");
 
             migrationBuilder.DropTable(
                 name: "EmployeeTypes");

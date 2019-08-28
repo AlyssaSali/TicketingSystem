@@ -1,0 +1,134 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>Encode Ticket
+        <small>Minor Request</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a [routerLink]="[ '']"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Minor Request</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="box box-default">
+        <div class="box-header with-border"><h3 class="box-title">Request Section</h3>
+        </div>
+        <!-- /.box-header -->
+            <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="ticketMinorCreateForm" class="form-group" role="form">
+                <div class="box-body margin">
+                    
+                  <div class="row">
+                      <div class="col-sm-6">
+                          <label>Requested By</label>
+                          <input type="text" id="requesterid" formControlName="requesterid" hidden/>
+                          <div class="input-group">
+                              <input type="text" class="form-control" formControlName="requesterSelect" (keyup)="selectRequester($event)" (click)="$event.target.select()" list="requestersListss">
+                              <datalist class="ui-datalist-data" height="100px" id="requestersListss" >
+                                <option [ngValue]="null" disabled="true" [selected]="true">Select Requester
+                                <option id="{{requester.employeeID}}" *ngFor="let requester of requesterList" [value]="requester.fullName">
+                              </datalist>
+                                  <span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary btn-flat" (click)="loadPageEmployee()"><span class="glyphicon glyphicon-plus"></span></button>
+                                  </span>
+                          </div>
+                       </div>
+                       <div class="col-sm-6">
+                          <label>Office/Department</label>
+                          <input type="text" id="officeid" formControlName="officeid" hidden/>
+                          <div class="input-group">
+                              <input type="text" class="form-control" formControlName="officeSelect" (keyup)="selectOffice($event)" (click)="$event.target.select()" list="officesListss">
+                              <datalist class="ui-datalist-data" height="100px" id="officesListss" >
+                                <option [ngValue]="null" disabled="true" [selected]="true">Select Office
+                                <option id="{{office.officeid}}" *ngFor="let office of officeList" [value]="office.officeDesc">
+                              </datalist>
+                              <div *ngIf="f.officeSelect.touched && f.officeSelect.errors" class="invalid-feedback">
+                                  <div *ngIf="f.officeSelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
+                              </div>
+                                  <span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary btn-flat" data-toggle="modal" data-target="#modal-office"><span class="glyphicon glyphicon-plus"></span></button>
+                                  </span>
+                          </div>
+                       </div>
+                  </div>
+                  <div class="row"><br>
+                        <div class="col-md-6">
+                            <label>Category List</label>
+                            <input type="text" id="categoryListid" formControlName="categoryListid" hidden/>
+                            <div>
+                              <input type="text" class="form-control" formControlName="categoryListSelect" (keyup)="selectCategoryList($event)" (click)="$event.target.select()" list="categoryListss">
+                              <datalist class="ui-datalist-data" height="100px" id="categoryListss" >
+                                <option [ngValue]="null" disabled="true" [selected]="true">Select Category List
+                                <option id="{{categoryList.categoryListid}}" *ngFor="let category of categoryList" [value]="category.categoryListName">
+                              </datalist>
+                            </div>
+                         </div>
+                       <div class="col-md-3">
+                          <label>Date of Request:</label>
+                          <div class="input-group">
+                            <div class="input-group-addon">
+                              <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="date" class="form-control" data-inputmask="'alias': 'mm/dd/yyyy'" data-mask formControlName="dateOfRequest">
+                          </div>
+                       </div>
+                       <div class="col-md-3">
+                          <!-- time Picker -->
+                            <div class="bootstrap-timepicker">
+                                <div class="form-group">
+                                  <label>Time of Request:</label>
+                                  <div class="input-group">
+                                    <input type="time" class="form-control timepicker" formControlName="timeOfRequest">
+                                    <div class="input-group-addon">
+                                      <i class="fa fa-clock-o"></i>
+                                    </div>
+                                  </div>
+                                  <!-- /.input group -->
+                                </div>
+                                <!-- /.form group -->
+                              </div>
+                       </div>
+                        <div class="col-md-12">
+                          <textarea class="form-control form-control-sm" id="description" rows="5" placeholder="Description" formControlName="description"></textarea>
+                        </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                     <div class="col-md-6">
+                     </div>
+                      <div class="col-md-4">
+                          <label>Work By</label>
+                          <input type="text" id="workByid" formControlName="workByid" hidden/>
+                          <div>
+                              <input type="text" class="form-control" formControlName="workBySelect" (keyup)="selectWorker($event)" (click)="$event.target.select()" list="workersListss">
+                              <datalist class="ui-datalist-data" height="100px" id="workersListss" >
+                                <option [ngValue]="null" disabled="true" [selected]="true">Select Worker
+                                <option id="{{worker.employeeID}}" *ngFor="let worker of itStaffList" [value]="worker.fullName">
+                              </datalist>
+                          </div>
+                      </div>
+                      <div class="col-md-2">
+                          <label class="col-form-label col-form-label-sm font" for="inputSmall">Status</label>
+                          <select class="form-control form-control-sm" formControlName="status">
+                              <option selected="selected"></option>
+                              <option>Open</option>
+                              <option>Close</option>
+                          </select>
+                      </div><br>
+                      <div class="col-md-12">
+                          <label><h4>Work Done</h4></label>
+                        <textarea class="form-control form-control-sm" id="workDone" rows="5" placeholder="Comment Here" formControlName="workDone"></textarea>
+                      </div>
+                  </div>
+                </div>
+                <div class="box-footer">
+                  <button type="submit" [disabled]="!ticketMinorCreateForm.valid || isSubmit" class="btn btn-primary pull-right">Save</button>
+                  <button type="button" (click)="reset()" class="btn btn-default pull-right">Reset</button>
+                </div>
+            </form>
+      </div>
+    </section>
+</div>
+

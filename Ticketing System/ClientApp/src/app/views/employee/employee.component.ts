@@ -6,6 +6,10 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 import { EmployeeUpdateFormComponent } from './employee-update-form/employee-update-form.component';
 import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
 <<<<<<< HEAD
+import { DataTableDirective } from 'angular-datatables';
+import { Subject } from 'rxjs';
+=======
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.dataservice';
@@ -14,6 +18,7 @@ import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
 >>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
 
 @Component({
   selector: 'app-employee',
@@ -21,13 +26,20 @@ import { Subject } from 'rxjs';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
+<<<<<<< HEAD
+  @ViewChild(DataTableDirective, {static: false})
+  dtElement: DataTableDirective;
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<Employee> = new Subject();
+  
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
   employees: Employee[];
 
   constructor(
     private employeeService: EmployeeService,
     private employeeDataService: EmployeeDataService,
     private officeDataService: OfficeDataService,
-    private employeeTypeDataService: EmployeeTypeDataService,
     public dialog: MatDialog
   ) { }
 
@@ -40,12 +52,35 @@ export class EmployeeComponent implements OnInit {
   async getEmployees() {
     try {
       this.employees = await this.employeeService.ListEmployees().toPromise();
+<<<<<<< HEAD
+      this.rerender();
+=======
       console.log(this.employees);
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
     } catch (error) {
       alert("something went wrong");
       console.error(error);
     }
   }
+
+  ngAfterViewInit(): void {
+    this.dtTrigger.next();
+  }
+
+  ngOnDestroy(): void {
+    // Do not forget to unsubscribe the event
+    this.dtTrigger.unsubscribe();
+  }
+  
+  rerender(): void {
+    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+      // Destroy the table first
+      dtInstance.destroy();
+      // Call the dtTrigger to rerender again
+      this.dtTrigger.next();
+    });
+  }
+
 
   update(employee){
     const dialogConfig = new MatDialogConfig();

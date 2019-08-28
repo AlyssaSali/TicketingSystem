@@ -5,6 +5,11 @@ import { CategoryDataService } from 'src/app/dataservices/category.dataservice';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { CategoryUpdateFormComponent } from './category-update-form/category-update-form.component';
 import { CategoryAddFormComponent } from './category-add-form/category-add-form.component';
+<<<<<<< HEAD
+import { DataTableDirective } from 'angular-datatables';
+import { Subject } from 'rxjs';
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
 
 @Component({
   selector: 'app-category',
@@ -12,6 +17,14 @@ import { CategoryAddFormComponent } from './category-add-form/category-add-form.
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
+<<<<<<< HEAD
+  @ViewChild(DataTableDirective, {static: false})
+  dtElement: DataTableDirective;
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<Category> = new Subject();
+  
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
   categories:Category[];
 
   constructor(
@@ -29,7 +42,6 @@ export class CategoryComponent implements OnInit {
   }
   async getCategorys() {
     try{
-
       this.categories=await this.categoryService.getAll().toPromise();
     }catch(error){
       alert('Something went wrong!');
@@ -62,6 +74,27 @@ export class CategoryComponent implements OnInit {
       dialogConfig.panelClass = 'custom-modalbox';
       this.dialog.open(CategoryUpdateFormComponent,dialogConfig)
     }
+<<<<<<< HEAD
+
+    ngAfterViewInit(): void {
+      this.dtTrigger.next();
+    }
+  
+    ngOnDestroy(): void {
+      // Do not forget to unsubscribe the event
+      this.dtTrigger.unsubscribe();
+    }
+    
+    rerender(): void {
+      this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+        // Destroy the table first
+        dtInstance.destroy();
+        // Call the dtTrigger to rerender again
+        this.dtTrigger.next();
+      });
+    }
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
 
     close(){
       this.dialogRef.close();

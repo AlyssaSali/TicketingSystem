@@ -16,7 +16,11 @@
             <div class="box box-default">
             <div class="box-header with-border"><h3 class="box-title">List of Categories</h3></div>
               <div class="box-body margin">
+<<<<<<< HEAD
+                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-striped">
+=======
                     <table class="table table-hover table-light" style="width: 100%;">
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
                     <thead>
                         <tr>
                             <td style="width: 40%;"><strong>Category</strong></td>
@@ -29,13 +33,13 @@
                         <tr *ngFor="let category of categories">
                             <td style="width: 40%;">{{category.categoryName}}</td>
                             <td style="width: 20%;">{{category.dateCreated | date:'MM/dd/yyyy'}}</td>
-                            <td style="width: 20%;">{{category.dateCreated | date: 'HH:mm:ss a'}}</td>
+                            <td style="width: 20%;">{{category.dateCreated | date: 'h:mm a'}}</td>
                             <td style="width: 20%;">
                             <div class="row">
-                                <button class="btn btn-success m-1" (click)="update(category)" data-toggle="tooltip" data-placement="bottom" title="Edit category">
+                                <button class="btn-success m-1" (click)="update(category)" data-toggle="tooltip" data-placement="bottom" title="Edit category">
                                         <i class="material-icons">update</i>
                                 </button>
-                                <button class="btn btn-danger m-1" (click)="delete(category.categoryid)" data-toggle="tooltip" data-placement="bottom" title="Delete category">
+                                <button class="btn-danger m-1" (click)="delete(category.categoryid)" data-toggle="tooltip" data-placement="bottom" title="Delete category">
                                         <i class="material-icons">delete </i>
                                 </button>
                             </div> 

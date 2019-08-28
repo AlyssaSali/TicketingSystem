@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+@import"~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import'~material-design-icons/iconfont/material-icons.css';
+
+=======
 /* You can add global styles to this file, and also import other style files */
 <<<<<<< HEAD
 
@@ -31,6 +36,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 
 
 
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
 .no-data-available{
   text-align: center;
 }
@@ -51,6 +57,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
     font-size: 10pt;
     margin: 0;
 }
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 =======
 
@@ -121,3 +129,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 >>>>>>> ridz
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
