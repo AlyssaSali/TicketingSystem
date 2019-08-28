@@ -9,9 +9,9 @@ import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
 import { Office } from 'src/app/models/office.model';
 import { OfficeComponent } from '../../office/office.component';
 import { EmployeeType } from 'src/app/models/employeetype.model';
+import { EmployeetypeComponent } from '../../employeetype/employeetype.component';
 import { EmployeeTypeService } from 'src/app/services/employeetype.service';
 import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.dataservice';
-import { EmployeetypeComponent } from '../../employeetype/employeetype.component';
 
 @Component({
   selector: 'app-employee-update-form',
@@ -22,9 +22,9 @@ export class EmployeeUpdateFormComponent implements OnInit {
   isSubmit=false;
   firstNameBackEndErrors: string[];
   lastNameBackEndErrors: string[];
-  formOfCommuBackEndErrors: string[];
-  contactInfoBackEndErrors: string[];
-
+  emailAddressBackEndErrors: string[];
+  officeBackEndErrors: string[];
+  //added during employee-office relationship
   employeeContext: any;
   employeeUpdateForm: FormGroup;
   employeeToBeEdited: Employee;
@@ -40,7 +40,7 @@ export class EmployeeUpdateFormComponent implements OnInit {
     private employeeService: EmployeeService,
     private employeeDataService: EmployeeDataService,
     private officeService: OfficeService,//added during employee-office relationship
-    private officeDataService: OfficeDataService,//added during employee-office relationship
+    private officeDataService: OfficeDataService,//added during employee-office relationship\
     private employeeTypeService: EmployeeTypeService,//added during employee-employeetype relationship
     private employeeTypeDataService: EmployeeTypeDataService,//added during employee-employeetype relationship
     private dialog: MatDialog,//added during employee-office relationship
@@ -64,13 +64,13 @@ export class EmployeeUpdateFormComponent implements OnInit {
 
   async ngOnInit() {
     this.employeeToBeEdited = this.employeeContext.employeeContext;
-    //this.change();
-    //added during employee-office relationship
-    //to show updated office list when office is updated
-    this.employeeDataService.employeeSource.subscribe( data=> {
-      this.getOfficeEmployeeTypeLists();//added during employee-employeetype relationship
+    this.employeeDataService.employeeSource.subscribe(async data => {
+      await this.getEmployeeLists();
+      if(!this.initialized){
+        this.change()
+        this.initialized = true;
+      }
     });
-    //added during employee-office relationship
   }
 
   get f() { return this.employeeUpdateForm.controls; }
@@ -114,8 +114,8 @@ export class EmployeeUpdateFormComponent implements OnInit {
       this.isSubmit = true;
       this.firstNameBackEndErrors = null;
       this.lastNameBackEndErrors = null;
-      this.formOfCommuBackEndErrors = null;
-      this.contactInfoBackEndErrors = null;
+      this.emailAddressBackEndErrors = null;
+      this.officeBackEndErrors = null;
       this.employeeUpdateForm.value.employeeid = this.employeeToBeEdited.employeeID;
       let result = await this.employeeService.UpdateEmployee(this.employeeUpdateForm.value).toPromise();
       if(result.isSuccess){
@@ -141,14 +141,14 @@ export class EmployeeUpdateFormComponent implements OnInit {
         if('firstname' in errs.errors){
           this.firstNameBackEndErrors = errs.errors.firstname;//shows data annotations error message
         }
-        if('lastname' in errs.errors){
+        if('firstname' in errs.errors){
           this.lastNameBackEndErrors = errs.errors.lastname;//shows data annotations error message
         }
-        if('formofcommu' in errs.errors){
-          this.formOfCommuBackEndErrors = errs.errors.formofcommu;//shows data annotations error message
+        if('firstname' in errs.errors){
+          this.emailAddressBackEndErrors = errs.errors.emailaddress;//shows data annotations error message
         }
-        if('contactinfo' in errs.errors){
-          this.contactInfoBackEndErrors = errs.errors.contactinfo;//shows data annotations error message
+        if('firstname' in errs.errors){
+          this.officeBackEndErrors = errs.errors.office;//shows data annotations error message
         }
       }
 
@@ -159,19 +159,14 @@ export class EmployeeUpdateFormComponent implements OnInit {
     }
   }
 
-  async getOfficeEmployeeTypeLists(){
+  async getEmployeeLists(){
     try {
       this.officesList = await this.officeService.getAll().toPromise();
       this.employeeTypesList = await this.employeeTypeService.getAll().toPromise();
-      if (!this.initialized) {
-        this.change();
-        this.initialized;
-      }
     } catch (error) {
       console.log(error);
     }
   }
-  
 
   selectOffice($event){//added during employee-office relationship
     let office = this.employeeUpdateForm.value.officeSelect;
@@ -184,7 +179,6 @@ export class EmployeeUpdateFormComponent implements OnInit {
       }      
     }
   }
-
 
   selectEmployeeType($event){//added during employee-employeetype relationship
     let emptype = this.employeeUpdateForm.value.employeetypeSelect;

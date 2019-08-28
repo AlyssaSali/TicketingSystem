@@ -8,11 +8,6 @@ namespace TicketingSystem.BLL.Helpers
 {
     public class ToModel
     {
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
         public Office Office(OfficeVM officeVM)
         {
             return new Office
@@ -22,10 +17,6 @@ namespace TicketingSystem.BLL.Helpers
                 OfficeDesc = officeVM.OfficeDesc,
             };
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 
         public Category Category(CategoryVM categoryVM)
         {
@@ -41,20 +32,13 @@ namespace TicketingSystem.BLL.Helpers
         {
             return new Severity
             {
-<<<<<<< HEAD
-
-                severityid = severityVM.severityid,
-=======
                 Severityid = severityVM.Severityid,
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
                 SeverityName = severityVM.SeverityName,
                 SeverityCode = severityVM.SeverityCode,
                 SeverityDesc = severityVM.SeverityDesc
             };
         }
-<<<<<<< HEAD
         public Employee Employee(EmployeeVM employeeVM)
-<<<<<<< HEAD
         { 
             return new Employee
             { 
@@ -64,24 +48,6 @@ namespace TicketingSystem.BLL.Helpers
                 FormOfCommu = employeeVM.FormOfCommu,
                 ContactInfo = employeeVM.ContactInfo,
                 EmployeeTypeid = employeeVM.EmployeeTypeid,
-=======
-
-        {
-            return new Employee
-            {
-
->>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
-=======
-
-        public Employee Employee(EmployeeVM employeeVM)
-        {
-            return new Employee { 
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
-                EmployeeID = employeeVM.EmployeeID,                
-                FirstName = employeeVM.FirstName,
-                LastName = employeeVM.LastName,
-                EmailAddress = employeeVM.EmailAddress,
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
                 Officeid = Guid.Parse(employeeVM.Officeid)
             };
         }
@@ -91,32 +57,14 @@ namespace TicketingSystem.BLL.Helpers
             return new Ticket
             {
                 Ticketid = ticketVM.Ticketid,
-                CategoryListid = ticketVM.CategoryListid,
-                ITGroupid = ticketVM.ITGroupid,
                 EmployeeID = ticketVM.EmployeeID,
                 Officeid = ticketVM.Officeid,
-                DateOfRequest = ticketVM.DateOfRequest,
-                FormOfCommu = ticketVM.FormOfCommu,
-                ContactInfo = ticketVM.ContactInfo,
+                DateOfRequest = DateTime.ParseExact(ticketVM.Date + " " + ticketVM.Time + ":00", "yyyy-MM-dd HH:mm:ss", null),
                 RequestTitle = ticketVM.RequestTitle,
                 RequestDesc = ticketVM.RequestDesc,
-                Category = ticketVM.Category,
-                Severity = ticketVM.Severity,
+                RequestedBy = ticketVM.RequestedBy,
                 TrackingStatus = ticketVM.TrackingStatus,
-                ResponseTime = ticketVM.ResponseTime,
-                ResolveTime = ticketVM.ResolveTime,
-                IsUrgent = ticketVM.IsUrgent,
-<<<<<<< HEAD
                 IsOpen = ticketVM.IsOpen
-=======
-                IsOpen = ticketVM.IsOpen,
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-                
-=======
->>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
             };
         }
         public ITGroup ITGroup(ITGroupVM itgroupVM)
@@ -125,11 +73,7 @@ namespace TicketingSystem.BLL.Helpers
             {
                 ITGroupid = itgroupVM.ITGroupid,
                 ITGroupCode = itgroupVM.ITGroupCode,
-<<<<<<< HEAD
                 ITGroupName = itgroupVM.ITGroupName,
-=======
-                ITGroupName = itgroupVM.ITGroupName
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
             };
         }
 
@@ -166,7 +110,6 @@ namespace TicketingSystem.BLL.Helpers
                 CategoryListid = Guid.Parse(ticketMinorVM.CategoryListid)
             };
         }
-<<<<<<< HEAD
 
         public EmployeeType EmployeeType(EmployeeTypeVM employeetypeVM)
         {
@@ -174,7 +117,8 @@ namespace TicketingSystem.BLL.Helpers
             {
                 EmployeeTypeid = employeetypeVM.EmployeeTypeid,
                 EmployeeTypeName = employeetypeVM.EmployeeTypeName
-=======
+            };
+        }
         public ITGroupMember ITGroupMember(ITGroupMemberVM itgroupmemberVM)
         {
             return new ITGroupMember
@@ -182,7 +126,6 @@ namespace TicketingSystem.BLL.Helpers
                 ITGroupMemberid = Guid.Parse( itgroupmemberVM.ITGroupMemberid),
                 
                 ITGroupid = Guid.Parse(itgroupmemberVM.ITGroupid)
->>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
             };
         }
     }

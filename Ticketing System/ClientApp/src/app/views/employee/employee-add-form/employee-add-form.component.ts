@@ -7,15 +7,11 @@ import { OfficeService } from 'src/app/services/office.service';
 import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
 import { Office } from 'src/app/models/office.model';
 import { OfficeComponent } from '../../office/office.component';
-<<<<<<< HEAD
-import { EmployeeType } from 'src/app/models/employeetype.model';
-import { EmployeeTypeService } from 'src/app/services/employeetype.service';
-import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.dataservice';
-import { EmployeetypeComponent } from '../../employeetype/employeetype.component';
-=======
 import { EmployeeUpdateFormComponent } from '../employee-update-form/employee-update-form.component';
 import { OfficeAddFormComponent } from '../../office/office-add-form/office-add-form.component';
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+import { EmployeeType } from 'src/app/models/employeetype.model';
+import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.dataservice';
+import { EmployeeTypeService } from 'src/app/services/employeetype.service';
 
 @Component({
   selector: 'app-employee-add-form',
@@ -25,34 +21,23 @@ import { OfficeAddFormComponent } from '../../office/office-add-form/office-add-
 export class EmployeeAddFormComponent implements OnInit {
   employeeCreateForm: FormGroup;
   isSubmit = false;
-
-  firstNameBackEndErrors: string[];
-  lastNameBackEndErrors: string[];
-  formOfCommuBackEndErrors: string[];
-  contactInfoBackEndErrors: string[];
 //added during employee-office relationship
   officesList : Office[];
-  
+  employeeTypesList : EmployeeType[];
+
   dialogOpen = false;
   router: any;
 //added during employee-office relationship
-//added during employee-employeetype relationship
-  employeeTypesList : EmployeeType[];
-//added during employee-employeetype relationship
   constructor(
     private employeeService: EmployeeService,
     private employeeDataService: EmployeeDataService,
+    private employeeTypeService: EmployeeTypeService,
+    private employeeTypeDataService: EmployeeTypeDataService,
     private officeService: OfficeService,//added during employee-office relationship
     private officeDataService: OfficeDataService,//added during employee-office relationship
-<<<<<<< HEAD
-    private employeeTypeService: EmployeeTypeService,//added during employee-employeetype relationship
-    private employeeTypeDataService: EmployeeTypeDataService,//added during employee-employeetype relationship
-    private dialog: MatDialog//added during employee-office relationship
-=======
     private dialog: MatDialog,//added during employee-office relationship,
     public dialogRef:MatDialogRef<OfficeAddFormComponent>,
     // @Inject(MAT_DIALOG_DATA) data
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
   ) { 
     //sets front-end max length
     this.employeeCreateForm = new FormGroup({
@@ -70,15 +55,10 @@ export class EmployeeAddFormComponent implements OnInit {
 
   ngOnInit() {
     //added during employee-office relationship
-    this.officeDataService.officeSource.subscribe( data => {
-      this.getOfficeLists();
-      this.getEmployeeTypeLists();      
-    });
-    
+    this.officeDataService.officeSource.subscribe( data => { this.getOfficeLists(); });
+    this.employeeTypeDataService.employeeTypeSource.subscribe( data => { this.getEmployeeTypeLists(); });  
     //added during employee-office relationship
   }
-
-   
 
   get f() { return this.employeeCreateForm.controls; }
 
@@ -93,12 +73,8 @@ export class EmployeeAddFormComponent implements OnInit {
       return;
     }
 
-    try{      
+    try{
       this.isSubmit = true;
-      this.firstNameBackEndErrors = null;
-      this.lastNameBackEndErrors = null;
-      this.formOfCommuBackEndErrors = null;
-      this.contactInfoBackEndErrors = null;
       let result = await this.employeeService.CreateEmployee(this.employeeCreateForm.value).toPromise();
       if(result.isSuccess){
         alert(result.message);
@@ -117,22 +93,6 @@ export class EmployeeAddFormComponent implements OnInit {
       if(errs.isSuccess===false){
         alert(errs.message);
         return;
-      }
-
-      if(errs.errors) {
-        if('firstname' in errs.errors){
-          this.firstNameBackEndErrors = errs.errors.firstname;//shows data annotations error message
-        }
-        if('lastname' in errs.errors){
-          this.lastNameBackEndErrors = errs.errors.lastname;//shows data annotations error message
-        }
-        if('formofcommu' in errs.errors){
-          this.formOfCommuBackEndErrors = errs.errors.formofcommu;//shows data annotations error message
-        }
-        if('contactinfo' in errs.errors){
-          this.contactInfoBackEndErrors = errs.errors.contactinfo;//shows data annotations error message
-        }
-        
       }
 
       this.isSubmit = false;//enables button
@@ -164,7 +124,7 @@ export class EmployeeAddFormComponent implements OnInit {
       if ($event.timeStamp > 200) {
         let selectedOffice = this.officesList.find(data => data.officeCode == office);
         if (selectedOffice) {
-          this.employeeCreateForm.controls['officeID'].setValue(selectedOffice.officeid);          
+          this.employeeCreateForm.controls['officeID'].setValue(selectedOffice.officeid);
         }
       }      
     }
@@ -188,14 +148,6 @@ export class EmployeeAddFormComponent implements OnInit {
     this.dialog.open(OfficeAddFormComponent, dialogConfig);
   }
 
-<<<<<<< HEAD
-  openEmployeeTypeDialog(){//added during employee-employeetype relationship
-    const dialogConfig = new MatDialogConfig;
-    dialogConfig.width = '600px';
-    dialogConfig.height = '600px';
-    this.dialog.open(EmployeetypeComponent, dialogConfig);
-  }
-=======
   close(){
     this.dialogRef.close();
   }
@@ -204,5 +156,4 @@ export class EmployeeAddFormComponent implements OnInit {
     this.employeeCreateForm.reset();
   }
 
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 }

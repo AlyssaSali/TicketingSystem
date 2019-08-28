@@ -1,77 +1,3 @@
-<<<<<<< HEAD
-<app-employee-add-form></app-employee-add-form>
-
-<h1></h1>
-<table class="table table-hover table-dark">
-    <thead>
-        <tr>
-            <td>First Name</td>
-            <td>Last Name</td>
-            <td>Contact Information</td>
-            <td>Employee Type</td>
-            <td>Office</td>
-            <td></td>
-
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let employee of employees">
-            <td style="width: 15%;">{{employee.firstName}}</td>
-            <td style="width: 15%;">{{employee.lastName}}</td>
-            <td style="width: 15%;">[{{employee.formOfCommu}}] - {{employee.contactInfo}}</td>
-            <td style="width: 15%;">{{employee.employeeType.employeeTypeName}}</td>
-            <td style="width: 15%;">{{employee.office.officeCode}}</td>
-           
-            <td style="width: 25%;">
-                <div class="row">
-                    <button class="col-md-5 btn-success m-1" (click)="update(employee)" data-toggle="tooltip" data-placement="bottom" title="Update Employee">
-                        <i class="material-icons">update</i>
-                    </button>
-                    <button class="col-md-5 btn-danger m-1" (click)="delete(employee.employeeID)" data-toggle="tooltip" data-placement="bottom" title="DeleteEmployee">
-                        <i class="material-icons">delete</i>
-                    </button>
-                </div>
-            </td>
-        </tr>
-    </tbody>
-</table>
-=======
-<<<<<<< HEAD
-<div class="main">
-<app-employee-add-form></app-employee-add-form>
-    <h1>List of Employee</h1>
-    
-    <table class="table table-hover table-dark" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-striped">
- 
-        <thead>
-            <tr>
-                <td>First Name</td>
-                <td>Last Name</td>
-                <td>Email Address</td>
-                <td>Office</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let employee of employees">
-                <td>{{employee.firstName}}</td>
-                <td>{{employee.lastName}}</td>
-                <td>{{employee.emailAddress}}</td>
-                <td>{{employee.office.officeCode}}</td>
-           
-                <div class="row">
-                    <button class="col-md-10 btn btn-success m-1"(click)="update(employee)" data-toggle="tooltip" data-placement="bottom" title="Edit employee">
-                         <i class="material-icons">update</i>
-                    </button>
-                    <button class="col-md-10 btn btn-danger m-1"(click)="delete(employee.employeeID)" data-toggle="tooltip" data-placement="bottom" title="Delete employee">
-                         <i class="material-icons">delete </i>
-                    </button>
-                </div>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-=======
 <div class="content-wrapper">
     <section class="content">
       <div class="row">
@@ -95,7 +21,7 @@
                     <tr>
                         <td style="width: 20%"><strong>First Name</strong></td>
                         <td style="width: 20%"><strong>Last Name</strong></td>
-                        <td style="width: 20%"><strong>Email Address</strong></td>
+                        <td style="width: 20%"><strong>Employee Type</strong></td>
                         <td style="width: 20%"><strong>Office</strong></td>
                         <td style="width: 20%"><strong>Action</strong></td>
                     </tr>
@@ -104,7 +30,7 @@
                     <tr *ngFor="let employee of employees">
                         <td style="width: 20%">{{employee.firstName}}</td>
                         <td style="width: 20%">{{employee.lastName}}</td>
-                        <td style="width: 20%">{{employee.emailAddress}}</td>
+                        <td style="width: 20%">{{employee.employeeType.employeeTypeName}}</td>
                         <td style="width: 20%">{{employee.office.officeCode}}</td>
                         <td style="width: 20%">
                           <div class="row">
@@ -126,5 +52,3 @@
     </section>
     
 </div>
->>>>>>> ridz
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15

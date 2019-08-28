@@ -1,28 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './views/home/home.component';
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-import { CounterComponent } from './views/counter/counter.component';
-import { FetchDataComponent } from './views/fetch-data/fetch-data.component';
-import { EmployeeComponent } from './views/employee/employee.component';
-=======
->>>>>>> ridz
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 import { RouterModule, Routes } from '@angular/router';
 import { SeverityComponent } from './views/severity/severity.component';
 import { TicketComponent } from './views/ticket/ticket.component';
 import { TicketAddFormComponent } from './views/ticket/ticket-add-form/ticket-add-form.component';
 import { OfficeComponent } from './views/office/office.component';
-<<<<<<< HEAD
 import { EmployeeComponent } from './views/employee/employee.component';
-=======
-<<<<<<< HEAD
-=======
-import { EmployeeComponent } from './views/employee/employee.component';
->>>>>>> ridz
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 import { SidenavComponent } from './views/layouts/sidenav/sidenav.component';
 import { DashboardComponent } from './views/layouts/dashboard/dashboard.component';
 import { TicketMinorComponent } from './views/ticket-minor/ticket-minor.component';
@@ -32,22 +16,9 @@ import { TicketEditFormComponent } from './views/ticket/ticket-edit-form/ticket-
 import { CategoryComponent } from './views/category/category.component';
 import { ItgroupComponent } from './views/itgroup/itgroup.component';
 import { CategoryListComponent } from './views/categoryList/categoryList.component';
-<<<<<<< HEAD
-import { ItgroupComponent } from './views/itgroup/itgroup.component';
-<<<<<<< HEAD
 import { EmployeetypeComponent } from './views/employeetype/employeetype.component';
-=======
-<<<<<<< HEAD
-import { ItgroupComponent } from './views/itgroup/itgroup.component';
-=======
-<<<<<<< HEAD
 import { ItgroupmemberComponent } from './views/itgroupmember/itgroupmember.component';
-=======
->>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
-=======
 import { ModalsComponent } from './views/layouts/modals/modals.component';
->>>>>>> ridz
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
@@ -61,28 +32,16 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'ticketSLA', component: TicketSLAComponent},
   {path: 'category', component: CategoryComponent},
-<<<<<<< HEAD
   {path: 'categoryList', component: CategoryListComponent},
   { path: 'itgroup', component: ItgroupComponent},
-<<<<<<< HEAD
   { path: 'employeeType', component: EmployeetypeComponent},
-=======
-<<<<<<< HEAD
-  {path: 'categoryList', component: CategoryListComponent},
-  { path: 'itgroup', component: ItgroupComponent}
-=======
-  {path: 'itgroupmember', component: ItgroupmemberComponent}
->>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
-  
-=======
+  {path: 'itgroupmember', component: ItgroupmemberComponent},
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'office', component: OfficeComponent },
   { path: 'employee', component: EmployeeComponent },
   { path: 'itgroup', component: ItgroupComponent },
   { path: 'categoryList', component: CategoryListComponent },
   { path: 'modals', component: ModalsComponent}
->>>>>>> ridz
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 ]
 
 @NgModule({

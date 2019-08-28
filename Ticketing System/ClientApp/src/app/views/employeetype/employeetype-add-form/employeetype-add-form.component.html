@@ -1,8 +1,7 @@
 
-        <div class="form-group has-success">
             <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="employeetypeCreateForm">
-                <div class="row font">
-                    <div class="col-md-4">
+              <div class="box-body margin">
+                <div class="row">
                         <label for="employeetypename">Name: <span style="color: #ff0000">*</span></label><br />
                         <input type="text" class="form-control" id="employeetypename" formControlName="employeetypename" placeholder="Code" [ngClass]="{'is-invalid': (f.employeetypename.touched && f.employeetypename.errors) || employeeTypeNameBackEndErrors}"><br>
                        <div *ngIf="f.employeetypename.touched && f.employeetypename.errors"  class="invalid-feedback">  
@@ -11,14 +10,11 @@
                         <div>
                             <span class="error-msg" *ngFor="let error of employeeTypeNameBackEndErrors">{{error}}</span>
                         </div>
-                    </div>
-                    
-                    <div class="col-md-2">
-                        <br>
-                        <button type="submit" [disabled]="!employeetypeCreateForm.valid || isSubmit" class="btn btn-primary m-1">Save</button>
-                    </div>
                 </div>
+                    <div class="box-footer">
+                        <button type="submit" [disabled]="!employeetypeCreateForm.valid || isSubmit" class="btn btn-primary pull-left">Save</button>
+                    </div>
+            </div>
             </form>
-        </div>
 
 

@@ -9,6 +9,7 @@ using TicketingSystem.BLL.Services;
 using TicketingSystem.DAL.Models;
 using TicketingSystem.ViewModel.ViewModel;
 using TicketingSystem.ViewModel.ViewModels;
+using static TicketingSystem.ViewModel.ViewModels.DatatableVM;
 
 namespace Ticketing_System.Controllers
 {
@@ -61,6 +62,11 @@ namespace Ticketing_System.Controllers
                 return BadRequest("something went wrong");
             }
             return employeeTypeService.Update(employeetypeVM);
+        }
+
+        public ActionResult<PagingResponse<EmployeeTypeVM>> GetDataServerSide([FromBody]PagingRequest paging)
+        {
+            return employeeTypeService.GetDataServerSide(paging);
         }
     }
 }

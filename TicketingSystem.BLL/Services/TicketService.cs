@@ -8,6 +8,7 @@ using TicketingSystem.BLL.Helpers;
 using TicketingSystem.DAL.Models;
 using TicketingSystem.ViewModel.ViewModel;
 using TicketingSystem.ViewModel.ViewModels;
+using static TicketingSystem.ViewModel.ViewModels.DatatableVM;
 
 namespace TicketingSystem.BLL.Services
 {
@@ -33,9 +34,9 @@ namespace TicketingSystem.BLL.Services
                     try
                     {
                         ticketVM.Ticketid = Guid.NewGuid();
-                        ticketVM.DateOfRequest = DateTime.Now;
-                        ticketVM.TrackingStatus = "REQUESTFORAPPROVAL";
-                        ticketVM.IsOpen = true;
+                        ticketVM.TrackingStatus = "Request for approval";
+                        ticketVM.IsOpen = "True";
+                        ticketVM.RequestedBy = "ridz";
                         //converts to book type then save to context
                         context.Tickets.Add(toModel.Ticket(ticketVM));
                         context.SaveChanges();
@@ -71,23 +72,11 @@ namespace TicketingSystem.BLL.Services
                         }
 
                         //update changes then save to context
-                        ticketToBeUpdated.Ticketid = ticketVM.Ticketid;
-                        ticketToBeUpdated.CategoryListid = ticketVM.CategoryListid;
-                        ticketToBeUpdated.ITGroupid = ticketVM.ITGroupid;
                         ticketToBeUpdated.EmployeeID = ticketVM.EmployeeID;
                         ticketToBeUpdated.Officeid = ticketVM.Officeid;
-                        ticketToBeUpdated.DateOfRequest = ticketVM.DateOfRequest;
-                        ticketToBeUpdated.FormOfCommu = ticketVM.FormOfCommu;
-                        ticketToBeUpdated.ContactInfo = ticketVM.ContactInfo;
+                        ticketToBeUpdated.DateOfRequest = DateTime.ParseExact(ticketVM.Date + " " + ticketVM.Time, "dd/MM/yyyy HH:mm:ss", null);
                         ticketToBeUpdated.RequestTitle = ticketVM.RequestTitle;
                         ticketToBeUpdated.RequestDesc = ticketVM.RequestDesc;
-                        ticketToBeUpdated.Severity = ticketVM.Severity;
-                        ticketToBeUpdated.Category = ticketVM.Category;
-                        ticketToBeUpdated.TrackingStatus = ticketVM.TrackingStatus;
-                        ticketToBeUpdated.ResponseTime = ticketVM.ResponseTime;
-                        ticketToBeUpdated.ResolveTime = ticketVM.ResolveTime;
-                        ticketToBeUpdated.IsUrgent = ticketVM.IsUrgent;
-                        ticketToBeUpdated.IsOpen = ticketVM.IsOpen;
                         context.SaveChanges();
 
                         //commit changes to db
@@ -102,8 +91,6 @@ namespace TicketingSystem.BLL.Services
                 }
             }
         }
-
-<<<<<<< HEAD
         public ResponseVM Delete(Guid guid) {
             using (context)
             {
@@ -143,13 +130,10 @@ namespace TicketingSystem.BLL.Services
                 {
                     try
                     {
-                        //gets all employees and order the from last to first
                         var tickets = context.Tickets
                             .Include(x => x.Office)
                             .Include(x => x.Employee)
-                            .Include(x => x.CategoryList)
-                            .Include(x => x.Severity)
-                            .Include(x => x.ITGroup)
+                            .ThenInclude(x=>x.EmployeeType)
                             .ToList()
                             .OrderByDescending(x => x.Ticketid);
                         var ticketsVM = tickets.Select(x => toViewModel.Ticket(x));
@@ -161,7 +145,7 @@ namespace TicketingSystem.BLL.Services
                     }
                 }
             }
-        }//dummy data
+        }
 
         public TicketVM GetSingleBy(Guid id) {
             using (context)
@@ -173,9 +157,6 @@ namespace TicketingSystem.BLL.Services
                         var ticket = context.Tickets
                             .Include(x => x.Office)
                             .Include(x => x.Employee)
-                            .Include(x => x.Category)
-                            .Include(x => x.Severity)
-                            .Include(x => x.ITGroup)
                             .Where(x => x.Ticketid == id)
                             .FirstOrDefault();
                         TicketVM ticketVM = null;
@@ -192,32 +173,59 @@ namespace TicketingSystem.BLL.Services
                     }
                 }
             }
-        }//dummy data
-=======
-        public IEnumerable<TicketVM> GetAll()
-        {
-            throw new NotImplementedException();
         }
-
-        public TicketVM GetSingleBy(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ResponseVM Delete(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 
         public DatatableVM.PagingResponse<TicketVM> GetDataServerSide(DatatableVM.PagingRequest paging)
         {
-            throw new NotImplementedException();
+            using (context)
+            {
+
+                var pagingResponse = new PagingResponse<TicketVM>()
+                {
+                    // counts how many times the user draws data
+                    Draw = paging.Draw
+                };
+                // initialized query
+                IEnumerable<Ticket> query = null;
+                // search if user provided a search value, i.e. search value is not empty
+                if (!string.IsNullOrEmpty(paging.Search.Value))
+                {
+                    // search based from the search value
+                    query = context.Tickets.Include(x => x.Office)
+                        .Include(x => x.Employee)
+                          .Where(v => v.Office.ToString().ToLower().Contains(paging.Search.Value.ToLower()) ||
+                          v.Employee.ToString().ToLower().Contains(paging.Search.Value.ToLower()) ||
+                          v.RequestTitle.ToString().ToLower().Contains(paging.Search.Value.ToLower()) ||
+                          v.RequestDesc.ToString().ToLower().Contains(paging.Search.Value.ToLower()) ||
+                          v.IsOpen.ToString().ToLower().Contains(paging.Search.Value.ToLower())
+                          );
+                }
+                else
+                {
+                    // selects all from table
+                    query = context.Tickets;
+                }
+                // total records from query
+                var recordsTotal = query.Count();
+                // orders the data by the sorting selected by the user
+                // used ternary operator to determine if ascending or descending
+                var colOrder = paging.Order[0];
+                switch (colOrder.Column)
+                {
+                    case 0:
+                        query = colOrder.Dir == "asc" ? query.OrderBy(v => v.RequestTitle) : query.OrderByDescending(v => v.RequestTitle);
+                        break;
+
+                }
+
+                var taken = query.Skip(paging.Start).Take(paging.Length).ToArray();
+                // converts model(query) into viewmodel then assigns it to response which is displayed as "data"
+                pagingResponse.Reponse = taken.Select(x => toViewModel.Ticket(x));
+                pagingResponse.RecordsTotal = recordsTotal;
+                pagingResponse.RecordsFiltered = recordsTotal;
+
+                return pagingResponse;
+            }
         }
-=======
->>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
     }
 }

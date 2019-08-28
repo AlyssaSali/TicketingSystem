@@ -120,7 +120,7 @@ async getSeverityLists(){
 
 async getItGroupLists(){
   try {
-    this.itGroupList = await this.itgroupService.getAll().toPromise();
+    this.itGroupList = await this.itgroupService.getGroups().toPromise();
   } catch (error) {
     console.log(error);
   }
