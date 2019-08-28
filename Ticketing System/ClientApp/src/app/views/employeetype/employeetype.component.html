@@ -1,0 +1,48 @@
+<div class="content-wrapper">
+        <section class="content">
+          <div class="row">
+          <!-- NEW -->
+            <div class="col-md-4">
+                <div class="box box-primary">
+                  <div class="box-header with-border"><h3 class="box-title">New Employee Type</h3></div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <app-employeetype-add-form></app-employeetype-add-form>
+                    </div>
+                </div>
+            </div>
+            <!-- TABLE -->
+            <div class="col-md-8">
+                <div class="box box-default">
+                    <div class="box-header with-border"><h3 class="box-title">List of Employees Type</h3></div>
+                      <div class="box-body margin">
+                        <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <td style="width: 70%;"><strong>Name</strong></td>
+                                <td style="width: 30%;"><strong>Action</strong></td>
+                            </tr>
+                        </thead>
+                        <tbody> 
+                            <tr *ngFor="let employeeType of employeeTypes"> 
+                                <td style="width: 70%;">{{employeeType.employeeTypeName}}</td>
+                                <td style="width: 30%;">
+                                <div class="row">
+                                    <button class="btn-success m-1"(click)="update(employeeType)" data-toggle="tooltip" data-placement="bottom" title="Edit office">
+                                            <i class="material-icons">update</i>
+                                    </button>
+                                    <button class="btn-danger m-1"(click)="delete(employeeType.employeeTypeid)" data-toggle="tooltip" data-placement="bottom" title="Delete office">
+                                            <i class="material-icons">delete </i>
+                                    </button>
+                                </div> 
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </section>
+    </div>
+

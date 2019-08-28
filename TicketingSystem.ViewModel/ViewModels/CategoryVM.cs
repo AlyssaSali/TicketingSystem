@@ -11,8 +11,9 @@ namespace TicketingSystem.ViewModel.ViewModels
             public Guid Categoryid { get; set; }
             [Required]
             public string CategoryName { get; set; }
-            public DateTime DateCreated { get; set; }
 
+
+            public DateTime DateCreated { get; set; }
 
     }
 }

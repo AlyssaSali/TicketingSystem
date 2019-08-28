@@ -1,0 +1,78 @@
+<div class="panel">
+    <div class="panel-heading">
+        <h1 style="display: inline;">Update Employee EmployeeType</h1>
+        <button class="btn btn-danger btn-sm float-right" (click)="close()"><i class="material-icons">close</i></button>
+    </div>
+    <div class="panel-body">
+        <div class="jumbotron">
+            <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="employeeEmployeeTypeUpdateForm">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="employeeTypeid">EmployeeType: <span style="color: red">*</span></label> <br />
+                                <input type="text" id="employeeTypeid" formControlName="employeeTypeid" hidden/>
+                                <div>
+                                    <input type="text" class="form-control" formControlName="employeeTypeSelect" (keyup)="selectEmployeeType($event)" (click)="$event.target.select()" list="employeeTypesListss">
+                                    <datalist class="ui-datalist-data" height="100px" id="employeeTypesListss" >
+                                        <option [ngValue]="null" disabled="true" [selected]="true">Choose a EmployeeType 
+                                        <option id="{{employeeType.employeeTypeid}}" *ngFor="let employeeType of employeeTypesList" [value]="employeeType.employeeTypeName"> 
+                                    </datalist>
+                                    <div *ngIf="f.employeeTypeSelect.touched && f.employeeTypeSelect.errors" class="invalid-feedback">
+                                        <div *ngIf="f.employeeTypeSelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <br>
+                                <button type="button" class="btn btn-info btn-trans" (click)="openEmployeeTypeDialog()" data-toggle="tooltip" data-placement="bottom" title="Update employeeType"><i class="material-icons">update</i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-11">
+                                <label >Employees:</label> <br />
+                                <div>
+                                    <input type="text" class="form-control" (keyup)="selectEmployee($event)" (click)="$event.target.select()" formControlName="employeeSelect" list="employeesListss">
+                                    <datalist class="ui-datalist-data" height="100px" id="employeesListss" >
+                                        <option [ngValue]="null" disabled="true" [selected]="true">Choose an employee
+                                        <option id="{{employee.employeeID}}" *ngFor="let employee of employeesList" [value]="employee.fullName">
+                                    </datalist>
+                                    <div *ngIf="f.employeeSelect.touched && f.employeeSelect.errors" class="invalid-feedback">
+                                        <div *ngIf="f.employeeSelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <br>
+                                <button type="button" class="btn btn-success btn-trans" (click)="openEmployeeDialog()" data-toggle="tooltip" data-placement="bottom" title="Update employee"><i class="material-icons">update</i></button>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="selectedEmployees.length >= 0">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <td>Employee</td>
+                                        <td>Remove</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let employee of selectedEmployees">
+                                        <td>{{employee.fullName}}</td>
+                                        <td><button type="button" class="btn btn-warning btn-trans" (click)="removeEmployee(employee)" data-toggle="tooltip" data-placement="bottom" title="Remove employee"><i class="material-icons">delete</i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <br>
+                    <button type="submit" class="btn btn-primary" style="margin-top: 5px;" [disabled]="!itgroupmemberUpdateForm.valid || isSubmit">Update</button>
+                </div>
+            </form>   
+        </div>
+    </div>
+</div>

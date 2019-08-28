@@ -25,6 +25,12 @@ namespace TicketingSystem.BLL.Contracts
         public ResponseVM Create(EmployeeVM employeeVM) {
             using (context)
             {
+                //check if record already exists
+                if (context.Employees.Where(b => b.FirstName.ToLower() == employeeVM.FirstName.ToLower()).Any() &&
+                    context.Employees.Where(b => b.LastName.ToLower() == employeeVM.LastName.ToLower()).Any())
+                {
+                    return new ResponseVM("created", false, "Employee", ResponseVM.ALREADY_EXIST);
+                }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
                     try
@@ -50,6 +56,12 @@ namespace TicketingSystem.BLL.Contracts
         public ResponseVM Update(EmployeeVM employeeVM) {
             using (context)
             {
+                //check if record already exists
+                if (context.Employees.Where(b => b.FirstName.ToLower() == employeeVM.FirstName.ToLower()).Any() &&
+                    context.Employees.Where(b => b.LastName.ToLower() == employeeVM.LastName.ToLower()).Any())
+                {
+                    return new ResponseVM("created", false, "Employee", ResponseVM.ALREADY_EXIST);
+                }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
                     try
@@ -66,7 +78,9 @@ namespace TicketingSystem.BLL.Contracts
                         employeeToBeUpdated.EmployeeID = employeeVM.EmployeeID;
                         employeeToBeUpdated.FirstName = employeeVM.FirstName;
                         employeeToBeUpdated.LastName = employeeVM.LastName;
-                        employeeToBeUpdated.EmailAddress = employeeVM.EmailAddress;
+                        employeeToBeUpdated.FormOfCommu = employeeVM.FormOfCommu;
+                        employeeToBeUpdated.ContactInfo = employeeVM.ContactInfo;
+                        //employeeToBeUpdated.EmployeeTypeid = employeeVM.EmployeeTypeid;
                         employeeToBeUpdated.Officeid = Guid.Parse(employeeVM.Officeid);
                         context.SaveChanges();
 
@@ -86,6 +100,11 @@ namespace TicketingSystem.BLL.Contracts
         {
             using (context)
             {
+                //check if employee exists in ticket
+                if (context.Tickets.Where(b => b.EmployeeID == id).Any())
+                {
+                    return new ResponseVM("deleted", false, "Employee", "Can't delete record. It is used in a transaction");
+                }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
                     
@@ -124,6 +143,7 @@ namespace TicketingSystem.BLL.Contracts
                         //gets all employees and order the from last to first
                         var employees = context.Employees
                             .Include(x => x.Office)
+                            //.Include(x => x.EmployeeType)
                             .ToList()
                             .OrderByDescending(x => x.EmployeeID);
                         var employeesVm = employees.Select(x=>toViewModel.Employee(x));
@@ -146,6 +166,7 @@ namespace TicketingSystem.BLL.Contracts
                     {
                         var employee = context.Employees
                             .Include(x=>x.Office)
+                            //.Include(x => x.EmployeeType)
                             .Where(x => x.EmployeeID == id)
                             .FirstOrDefault();
                         EmployeeVM employeeVm = null;

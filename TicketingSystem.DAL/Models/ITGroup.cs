@@ -13,11 +13,11 @@ namespace TicketingSystem.DAL.Models
         public string ITGroupCode { get; set; }
         public string ITGroupName { get; set; }
 
-<<<<<<< HEAD
         public virtual ICollection<ITGroupMember> ITGroupMembers { get; set; }
-=======
+
         public virtual ICollection<CategoryList> CategoryLists { get; set; }
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+
+        public virtual ICollection<Ticket> Tickets { get; set; }
 
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace TicketingSystem.DAL.Models
@@ -9,20 +10,29 @@ namespace TicketingSystem.DAL.Models
     {
         [Key]
         public Guid Ticketid { get; set; }//PK
-        public Guid AssistByid { get; set; }// FK - UserAccount
-        public Guid Categoryid { get; set; }// FK - Category
-        public Guid Severityid { get; set; }// FK - Severity
-        public Guid ItGroupid { get; set; }// FK - ITGroup
-        public Guid RequestedBy { get; set; }// FK - Employee
-        public Guid Officeid { get; set; }// FK - Office
+        //public Guid AssistByid { get; set; }// FK - UserAccount
+        [ForeignKey("ITGroup")]
+        public Guid ITGroupid { get; set; }
+        public ITGroup ITGroup { get; set; }
+        [ForeignKey("Employee")]
+        public Guid EmployeeID { get; set; }
+        public Employee Employee { get; set; }
+        [ForeignKey("Office")]
+        public Guid Officeid { get; set; }
+        public Office Office { get; set; }
+        [ForeignKey("CategoryList")]
+        public Guid CategoryListid { get; set; }
+        public CategoryList CategoryList { get; set; }
         public DateTime DateOfRequest { get; set; }
         public string FormOfCommu { get; set; }
         public string ContactInfo { get; set; }
         public string RequestTitle { get; set; }
         public string RequestDesc { get; set; }
-        public string TrackingSatus { get; set; }
-        public TimeSpan ResponseTime { get; set; }
-        public TimeSpan ResolveTime { get; set; }
+        public string Category { get; set; }
+        public string Severity { get; set; }
+        public string TrackingStatus { get; set; }
+        public DateTime ResponseTime { get; set; }
+        public DateTime ResolveTime { get; set; }
         public bool IsUrgent { get; set; }
         public bool IsOpen { get; set; }
 

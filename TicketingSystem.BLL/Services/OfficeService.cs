@@ -26,7 +26,10 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
+
+
                 if (context.Offices.Where(x => x.OfficeCode == officeVM.OfficeCode || x.OfficeDesc == officeVM.OfficeDesc).Any())
+
                 {
                     return new ResponseVM("created", false, "Office", ResponseVM.ALREADY_EXIST);
                 }
@@ -53,9 +56,9 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
-                if (context.Employees.Where(x => x.Officeid == id).Any())
+                if (context.Employees.Where(b => b.Officeid == id).Any())
                 {
-                    return new ResponseVM("deleted", false, "Office", ResponseVM.DONT_DELETE);
+                    return new ResponseVM("deleted", false, "Office", "Can't delete record. It is used in a transaction");
                 }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
@@ -121,7 +124,7 @@ namespace TicketingSystem.BLL.Services
             {
                 if (context.Offices.Where(x => x.OfficeCode == officeVM.OfficeCode && x.OfficeDesc == officeVM.OfficeDesc).Any())
                 {
-                    return new ResponseVM("updated", false, "Office", ResponseVM.NO_NEW_DATA);
+                    return new ResponseVM("updated", false, "Office", ResponseVM.ALREADY_EXIST);
                 }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {

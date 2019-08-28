@@ -77,8 +77,6 @@ export class CategoryListUpdateFormComponent implements OnInit {
         this.initialized = true;
       }
     });
-    
-    
   }
   get f() {return this.categoryListUpdateform.controls;}
 
@@ -145,7 +143,7 @@ async getCategoryLists(){
   try {
     this.categoryList = await this.categoryService.getAll().toPromise();
     this.severityList = await this.severityService.getAll().toPromise();
-    this.itGroupList = await this.itgroupService.getAll().toPromise();
+    this.itGroupList = await this.itgroupService.getGroups().toPromise();
   } catch (error) {
     console.log(error);
   }

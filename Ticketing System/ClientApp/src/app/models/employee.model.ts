@@ -1,20 +1,19 @@
 import { Office } from './office.model';
-import { Itgroupmember } from './itgroupmember.model';
+import { EmployeeType } from './employeetype.model';
+
+
 
 export interface Employee {
     employeeID: string;
     firstName: string;
     lastName: string;
+    formOfCommu: string;
+    contactInfo: string;
     fullName: string;
-    emailAddress: string;
-<<<<<<< HEAD
-    fullName: string;
-    officeid: number;
-    office: Office
-    
-=======
     officeid: string;
     office: Office;
+    // employeeTypeid: string;
+    // employeeType: EmployeeType;
 
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+
 }

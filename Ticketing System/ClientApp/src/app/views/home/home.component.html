@@ -1,1 +1,8 @@
-<app-dashboard></app-dashboard>
+<div *ngIf="isLogin">
+    <h1>Hello {{userName}}</h1>
+    <h2>Welcome to Ticketting system!</h2>
+  </div>
+  
+  <div *ngIf="!isLogin">
+    <app-login></app-login>
+  </div>

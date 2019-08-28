@@ -1,0 +1,20 @@
+
+            <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="employeetypeCreateForm">
+              <div class="box-body margin">
+                <div class="row">
+                        <label for="employeetypename">Name: <span style="color: #ff0000">*</span></label><br />
+                        <input type="text" class="form-control" id="employeetypename" formControlName="employeetypename" placeholder="Code" [ngClass]="{'is-invalid': (f.employeetypename.touched && f.employeetypename.errors) || employeeTypeNameBackEndErrors}"><br>
+                       <div *ngIf="f.employeetypename.touched && f.employeetypename.errors"  class="invalid-feedback">  
+                            <div *ngIf="f.employeetypename.errors.required"><span class="error-msg">This field is required</span></div>
+                        </div>
+                        <div>
+                            <span class="error-msg" *ngFor="let error of employeeTypeNameBackEndErrors">{{error}}</span>
+                        </div>
+                </div>
+                    <div class="box-footer">
+                        <button type="submit" [disabled]="!employeetypeCreateForm.valid || isSubmit" class="btn btn-primary pull-left">Save</button>
+                    </div>
+            </div>
+            </form>
+
+

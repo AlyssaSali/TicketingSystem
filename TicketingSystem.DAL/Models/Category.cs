@@ -12,7 +12,9 @@ namespace TicketingSystem.DAL.Models
         public string CategoryName { get; set; }
 
         public DateTime DateCreated { get; set; }
+
         public virtual ICollection<CategoryList> CategoryLists { get; set; }
 
+        public virtual ICollection<Ticket> Tickets { get; set; }
     }
 }

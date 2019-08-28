@@ -16,36 +16,6 @@
         <span class="sr-only">Toggle navigation</span>
       </a>
 
-<<<<<<< HEAD
-<header>
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark navv">
-                <a class="navbar-brand " [routerLink]='["/"]'><img src="logo.png" style="width: 38px; height: 35px;"> iTicketing System</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Toggle navigation"
-                  [attr.aria-expanded]="isExpanded" (click)="toggle()">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive" [ngClass]='{"show": isExpanded}'>
-                  <ul class="nav nav-pills">
-                    <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-                      <a class="nav-link" [routerLink]='["/"]'>Home</a>
-                    </li>
-                    <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-                      <a class="nav-link" [routerLink]='["/dashboard"]'>Services</a>
-                    </li>
-                    <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-                      <a class="nav-link" [routerLink]='["/"]'>About</a>
-                    </li>
-                  </ul>
-                  <ul class="nav navbar-nav ml-auto">
-                      <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }' style="float: right;">
-                          <a class="nav-link" [routerLink]='["/"]'>Logout</a>
-                        </li>
-                  </ul>
-                </div>
-            </nav>
-</header>
-<app-sidenav></app-sidenav> 
-=======
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
@@ -60,7 +30,7 @@
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                <a href="#" class="btn btn-default btn-flat" (click)="logout()">Logout</a>
               </div>
               <div class="pull-right">
                 <a href="#" class="btn btn-default btn-flat">Profile</a>
@@ -73,4 +43,3 @@
   </nav>
   </header>
 
->>>>>>> ridz
