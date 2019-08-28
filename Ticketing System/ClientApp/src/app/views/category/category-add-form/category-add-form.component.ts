@@ -17,7 +17,7 @@ export class CategoryAddFormComponent implements OnInit {
    constructor(
      private categoryService: CategoryService,
      private categoryDataService: CategoryDataService,
-     public dialogRef:MatDialogRef<CategoryAddFormComponent>,
+    //  public dialogRef:MatDialogRef<CategoryAddFormComponent>,
      
    ) {
      this .categoryCreateForm = new FormGroup({
@@ -72,8 +72,8 @@ export class CategoryAddFormComponent implements OnInit {
    }
  }
 
- close(){
-  this.dialogRef.close();
-}
+//  close(){
+//   this.dialogRef.close();
+// }
  
  }

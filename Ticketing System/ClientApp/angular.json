@@ -24,6 +24,32 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.css",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-toastr/toastr.css"
+<<<<<<< HEAD
+            ],
+            "scripts": [
+              ]
+=======
+              
+            ],
+<<<<<<< HEAD
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/datatables.net/js/jquery.dataTables.js"
+            ]
+=======
+            "scripts": []
+=======
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "./node_modules/ngx-toastr/toastr.css",
               "src/bower_components/bootstrap/dist/css/bootstrap.min.css",
@@ -32,11 +58,17 @@
               "src/dist/css/AdminLTE.min.css",
               "src/dist/css/skins/skin-blue.min.css",
               "src/bower_components/select2/dist/css/select2.min.css",
+<<<<<<< HEAD
               "src/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css",
               "src/plugins/timepicker/bootstrap-timepicker.min.css",
               "src/styles.css",
               "node_modules/datatables.net-dt/css/jquery.dataTables.css",
               "src/plugins/iCheck/all.css"
+=======
+              "src/styles.css",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
             ],
             "scripts": [
               "src/bower_components/jquery/dist/jquery.min.js",
@@ -102,18 +134,44 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+=======
+<<<<<<< HEAD
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+           
+=======
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/bower_components/bootstrap/dist/css/bootstrap.min.css",
               "src/bower_components/font-awesome/css/font-awesome.min.css",
               "src/bower_components/Ionicons/css/ionicons.min.css",
               "src/dist/css/AdminLTE.min.css",
               "src/dist/css/skins/skin-blue.min.css",
+<<<<<<< HEAD
+              "src/bower_components/select2/dist/css/select2.min.css",
+              "src/styles.css",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+=======
               "src/bower_components/select2/dist/css/select2.mnin.css",
               "src/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css",
               "src/plugins/timepicker/bootstrap-timepicker.min.css",
+<<<<<<< HEAD
               "src/styles.css",
               "node_modules/datatables.net-dt/css/jquery.dataTables.css",
               "src/plugins/iCheck/all.css"
+=======
+>>>>>>> ridz
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+              "src/styles.css"
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
             ],
             "scripts": [
               "src/bower_components/jquery/dist/jquery.min.js",

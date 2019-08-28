@@ -1,11 +1,14 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { OfficeUpdateFormComponent } from './office-update-form/office-update-form.component';
 import { Office } from 'src/app/models/office.model';
 import { OfficeService } from 'src/app/services/office.service';
 import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
+<<<<<<< HEAD
 import { Subject } from 'rxjs';
 import { DataTableDirective } from 'angular-datatables';
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
 
 @Component({
   selector: 'app-office',
@@ -13,11 +16,14 @@ import { DataTableDirective } from 'angular-datatables';
   styleUrls: ['./office.component.css']
 })
 export class OfficeComponent implements OnInit {
+<<<<<<< HEAD
   @ViewChild(DataTableDirective, {static: false})
   dtElement: DataTableDirective;
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<Office> = new Subject();
   
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
   offices:Office[];
 
   constructor(
@@ -34,7 +40,6 @@ export class OfficeComponent implements OnInit {
   async getOffices() {
     try{
       this.offices=await this.officeService.getAll().toPromise();
-      this.rerender();
     }catch(error){
       alert('Something went wrong!');
       console.error(error);
@@ -65,6 +70,7 @@ export class OfficeComponent implements OnInit {
       dialogConfig.panelClass = 'custom-modalbox';
       this.dialog.open(OfficeUpdateFormComponent,dialogConfig)
     }
+<<<<<<< HEAD
 
     ngAfterViewInit(): void {
       this.dtTrigger.next();
@@ -83,5 +89,7 @@ export class OfficeComponent implements OnInit {
         this.dtTrigger.next();
       });
     }
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
 
 }

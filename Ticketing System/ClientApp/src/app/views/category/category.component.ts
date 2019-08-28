@@ -1,12 +1,15 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Category } from 'src/app/models/category.model';
 import { CategoryService } from 'src/app/services/category.service';
 import { CategoryDataService } from 'src/app/dataservices/category.dataservice';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { CategoryUpdateFormComponent } from './category-update-form/category-update-form.component';
 import { CategoryAddFormComponent } from './category-add-form/category-add-form.component';
+<<<<<<< HEAD
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
 
 @Component({
   selector: 'app-category',
@@ -14,11 +17,14 @@ import { Subject } from 'rxjs';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
+<<<<<<< HEAD
   @ViewChild(DataTableDirective, {static: false})
   dtElement: DataTableDirective;
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<Category> = new Subject();
   
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
   categories:Category[];
 
   constructor(
@@ -37,7 +43,6 @@ export class CategoryComponent implements OnInit {
   async getCategorys() {
     try{
       this.categories=await this.categoryService.getAll().toPromise();
-      this.rerender();
     }catch(error){
       alert('Something went wrong!');
       console.error(error);
@@ -69,6 +74,7 @@ export class CategoryComponent implements OnInit {
       dialogConfig.panelClass = 'custom-modalbox';
       this.dialog.open(CategoryUpdateFormComponent,dialogConfig)
     }
+<<<<<<< HEAD
 
     ngAfterViewInit(): void {
       this.dtTrigger.next();
@@ -87,6 +93,8 @@ export class CategoryComponent implements OnInit {
         this.dtTrigger.next();
       });
     }
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
 
     close(){
       this.dialogRef.close();

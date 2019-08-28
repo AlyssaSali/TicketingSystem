@@ -74,7 +74,11 @@ namespace TicketingSystem.BLL.Contracts
                         employeeToBeUpdated.LastName = employeeVM.LastName;
                         employeeToBeUpdated.FormOfCommu = employeeVM.FormOfCommu;
                         employeeToBeUpdated.ContactInfo = employeeVM.ContactInfo;
+<<<<<<< HEAD
+                        //employeeToBeUpdated.EmployeeTypeid = employeeVM.EmployeeTypeid;
+=======
                         employeeToBeUpdated.EmployeeTypeid = employeeVM.EmployeeTypeid;
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
                         employeeToBeUpdated.Officeid = Guid.Parse(employeeVM.Officeid);
                         context.SaveChanges();
 
@@ -136,7 +140,11 @@ namespace TicketingSystem.BLL.Contracts
                         //gets all employees and order the from last to first
                         var employees = context.Employees
                             .Include(x => x.Office)
+<<<<<<< HEAD
+                            //.Include(x => x.EmployeeType)
+=======
                             .Include(x => x.EmployeeType)
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
                             .ToList()
                             .OrderByDescending(x => x.EmployeeID);
                         var employeesVm = employees.Select(x=>toViewModel.Employee(x));
@@ -159,7 +167,11 @@ namespace TicketingSystem.BLL.Contracts
                     {
                         var employee = context.Employees
                             .Include(x=>x.Office)
+<<<<<<< HEAD
+                            //.Include(x => x.EmployeeType)
+=======
                             .Include(x => x.EmployeeType)
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
                             .Where(x => x.EmployeeID == id)
                             .FirstOrDefault();
                         EmployeeVM employeeVm = null;

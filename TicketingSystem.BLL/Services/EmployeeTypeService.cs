@@ -96,11 +96,19 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
+<<<<<<< HEAD
+                ////check if employee exists in ticket
+                //if (context.Employees.Where(b => b.EmployeeTypeid == id).Any())
+                //{
+                //    return new ResponseVM("deleted", false, "Employee Type", "Can't delete record. It is used in a transaction");
+                //}
+=======
                 //check if employee exists in ticket
                 if (context.Employees.Where(b => b.EmployeeTypeid == id).Any())
                 {
                     return new ResponseVM("deleted", false, "Employee Type", "Can't delete record. It is used in a transaction");
                 }
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
 
@@ -164,10 +172,19 @@ namespace TicketingSystem.BLL.Services
                 }
             }
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
 
         public DatatableVM.PagingResponse<EmployeeTypeVM> GetDataServerSide(DatatableVM.PagingRequest paging)
         {
             throw new NotImplementedException();
         }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
     }
 }

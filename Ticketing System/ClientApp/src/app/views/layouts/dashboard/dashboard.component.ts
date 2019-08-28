@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialogConfig, MatDialog } from '@angular/material';
+<<<<<<< HEAD
 import { TicketAddFormComponent } from '../../ticket/ticket-add-form/ticket-add-form.component';
 import { TicketMinor } from 'src/app/models/ticketMinor.model';
 import { TicketService } from 'src/app/services/ticket.service';
@@ -13,6 +14,9 @@ import { EmployeeService } from 'src/app/services/employee.service';
 import { EmployeeDataService } from 'src/app/dataservices/employee.dataservice';
 import { TicketMinorUpdateFormComponent } from '../../ticket-minor/ticket-minor-update-form/ticket-minor-update-form.component';
 import { TicketMinorDetailsComponent } from '../../ticket-minor/ticket-minor-details/ticket-minor-details.component';
+=======
+
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
 
 @Component({
   selector: 'app-dashboard',

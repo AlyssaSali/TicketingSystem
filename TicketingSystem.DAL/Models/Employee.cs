@@ -12,21 +12,60 @@ namespace TicketingSystem.DAL.Models
         public Guid EmployeeID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
         public string FormOfCommu { get; set; }
         public string ContactInfo { get; set; }
 
 
+<<<<<<< HEAD
+        //[ForeignKey("EmployeeType")]
+        //public Guid EmployeeTypeid { get; set; }
+        //public EmployeeType EmployeeType { get; set; }
+
+=======
         [ForeignKey("EmployeeType")]
         public Guid EmployeeTypeid { get; set; }
         public EmployeeType EmployeeType { get; set; }
+<<<<<<< HEAD
+=======
+
+=======
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
         public string EmailAddress { get; set; }
 
         [ForeignKey("Office")]
         public Guid Officeid { get; set; }
         public Office Office { get; set; }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        public virtual ICollection<Ticket> Tickets { get; set; }
+
+        public List<GroupEmployee> GroupEmployees { get; set; }
+        public List<TypeEmployee> TypeEmployees { get; set; }
+
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
         public virtual ICollection<Ticket> Tickets { get; set; }
         public List<GroupEmployee> GroupEmployees { get; set; }
+<<<<<<< HEAD
         public virtual ICollection<TicketMinor> TicketMinors { get; set; }
+=======
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
+=======
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+        public virtual ICollection<TicketMinor> TicketMinors { get; set; }
+
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
     }
 }

@@ -19,7 +19,7 @@ export class OfficeAddFormComponent implements OnInit {
    constructor(
      private officeService: OfficeService,
      private officeDataService: OfficeDataService,
-     public dialogRef:MatDialogRef<OfficeAddFormComponent>
+    //  public dialogRef:MatDialogRef<OfficeAddFormComponent>
    ) {
      this .officeCreateForm = new FormGroup({
        officecode: new FormControl('',[Validators.required,Validators.maxLength(50)]),
@@ -81,9 +81,9 @@ export class OfficeAddFormComponent implements OnInit {
    }
  }
 
- close(){
-  this.dialogRef.close();
-  }
+//  close(){
+//   this.dialogRef.close();
+//   }
 
   reset(){
     this.officeCreateForm.reset();

@@ -11,6 +11,14 @@ namespace TicketingSystem.DAL.Models
         public Guid Categoryid { get; set; }
         public string CategoryName { get; set; }
         public DateTime DateCreated { get; set; }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
         public virtual ICollection<CategoryList> CategoryLists { get; set; }
 
         public virtual ICollection<Ticket> Tickets { get; set; }

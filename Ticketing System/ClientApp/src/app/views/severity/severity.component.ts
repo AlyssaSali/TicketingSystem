@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Severity } from 'src/app/models/severity.model';
 import { SeverityService } from 'src/app/services/severity.service';
 import { SeverityDataService } from 'src/app/dataservices/severity.dataservice';
@@ -6,8 +6,11 @@ import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { SeverityUpdateFormComponent } from './severity-update-form/severity-update-form.component';
 import { CategoryAddFormComponent } from '../category/category-add-form/category-add-form.component';
 import { SeverityAddFormComponent } from './severity-add-form/severity-add-form.component';
+<<<<<<< HEAD
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
 
 @Component({
   selector: 'app-severity',
@@ -15,11 +18,14 @@ import { Subject } from 'rxjs';
   styleUrls: ['./severity.component.css']
 })
 export class SeverityComponent implements OnInit {
+<<<<<<< HEAD
   @ViewChild(DataTableDirective, {static: false})
   dtElement: DataTableDirective;
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<Severity> = new Subject();
   
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
   severities:Severity[];
 
   constructor(
@@ -39,7 +45,6 @@ export class SeverityComponent implements OnInit {
   async getSeverities() {
     try{
       this.severities=await this.severityService.getAll().toPromise();
-      this.rerender();
     }catch(error){
       alert('Something went wrong!');
       console.error(error);
@@ -70,6 +75,7 @@ export class SeverityComponent implements OnInit {
       dialogConfig.panelClass = 'custom-modalbox';
       this.dialog.open(SeverityUpdateFormComponent,dialogConfig)
     }
+<<<<<<< HEAD
 
     
   close(){
@@ -93,5 +99,7 @@ export class SeverityComponent implements OnInit {
         this.dtTrigger.next();
       });
     }
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
 
 }

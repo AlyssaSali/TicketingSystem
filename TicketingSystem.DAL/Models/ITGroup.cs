@@ -12,8 +12,19 @@ namespace TicketingSystem.DAL.Models
         public Guid ITGroupid { get; set; }
         public string ITGroupCode { get; set; }
         public string ITGroupName { get; set; }
+<<<<<<< HEAD
         public virtual ICollection<ITGroupMember> ITGroupMembers { get; set; }
         public virtual ICollection<CategoryList> CategoryLists { get; set; }
+=======
+
+        public virtual ICollection<ITGroupMember> ITGroupMembers { get; set; }
+
+        public virtual ICollection<CategoryList> CategoryLists { get; set; }
+
+        public virtual ICollection<Ticket> Tickets { get; set; }
+
+<<<<<<< HEAD
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
         public virtual ICollection<Ticket> Tickets { get; set; }
     }
 }
