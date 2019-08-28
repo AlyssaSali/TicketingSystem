@@ -4,8 +4,8 @@ import { OfficeUpdateFormComponent } from './office-update-form/office-update-fo
 import { Office } from 'src/app/models/office.model';
 import { OfficeService } from 'src/app/services/office.service';
 import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
-import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
+import { DataTableDirective } from 'angular-datatables';
 
 @Component({
   selector: 'app-office',
@@ -17,13 +17,13 @@ export class OfficeComponent implements OnInit {
   dtElement: DataTableDirective;
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<Office> = new Subject();
+  
   offices:Office[];
 
   constructor(
     private officeService: OfficeService,
     private officeDataService: OfficeDataService,
     public dialog:MatDialog,
-    
   ) { }
 
   ngOnInit() {
@@ -33,7 +33,6 @@ export class OfficeComponent implements OnInit {
   }
   async getOffices() {
     try{
-
       this.offices=await this.officeService.getAll().toPromise();
       this.rerender();
     }catch(error){
@@ -66,6 +65,7 @@ export class OfficeComponent implements OnInit {
       dialogConfig.panelClass = 'custom-modalbox';
       this.dialog.open(OfficeUpdateFormComponent,dialogConfig)
     }
+
     ngAfterViewInit(): void {
       this.dtTrigger.next();
     }
@@ -74,7 +74,7 @@ export class OfficeComponent implements OnInit {
       // Do not forget to unsubscribe the event
       this.dtTrigger.unsubscribe();
     }
-  
+    
     rerender(): void {
       this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
         // Destroy the table first

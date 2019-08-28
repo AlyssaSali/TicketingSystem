@@ -164,5 +164,10 @@ namespace TicketingSystem.BLL.Services
                 }
             }
         }
+
+        public DatatableVM.PagingResponse<EmployeeTypeVM> GetDataServerSide(DatatableVM.PagingRequest paging)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

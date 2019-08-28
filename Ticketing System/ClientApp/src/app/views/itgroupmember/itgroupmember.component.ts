@@ -33,20 +33,8 @@ itgroupmembers: Itgroupmember[];
       this.itgroupmemberDataService.itgroupmembers.subscribe(data =>{
         this.getItgroupmembers();
       })
-   
-      // this.itgroupDataService.itgroups.subscribe(data =>{
-      //   this.getItgroupmembers();
-      // })
     }
-    // async getItgroupmembers() {
-    //   try{
-  
-    //     this.itgroupmembers=await this.itgroupmemberService.getAll().toPromise();
-    //   }catch(error){
-    //     alert('Something went wrong!');
-    //     console.error(error);
-    //   }
-    // }
+
     async getItgroupmembers(){
       try {
         this.dtOptions = {    
@@ -90,15 +78,7 @@ itgroupmembers: Itgroupmember[];
           }
         
       }
-      // update(itgroupmember){
-      //   const dialogConfig = new MatDialogConfig();
-      //   dialogConfig.data={
-      //     itgroupmemberContext:itgroupmember
-      //   };
-      //   dialogConfig.width='600px';
-      //   //dialogConfig.height='600px';
-      //   this.dialog.open(ItgroupmemberUpdateFormComponent,dialogConfig)
-      // }
+      
       update(itgroupmember){
         const dialogConfig = new MatDialogConfig();
         itgroupmember.employeeIdList = itgroupmember.employees.map(data => {return data.employeeID})
@@ -106,8 +86,7 @@ itgroupmembers: Itgroupmember[];
         dialogConfig.data = {
           itgroupmemberContext: itgroupmember
         };
-        dialogConfig.width = '600px';
-        dialogConfig.maxHeight = '1000px';
+        dialogConfig.panelClass = 'custom-modalbox';
         this.dialogOpen =  true;
         let dialogRef = this.dialog.open(ItgroupmemberUpdateFormComponent, dialogConfig)
         dialogRef.afterClosed().subscribe( data => {

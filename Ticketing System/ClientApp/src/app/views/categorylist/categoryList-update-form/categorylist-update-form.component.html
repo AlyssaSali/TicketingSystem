@@ -129,8 +129,9 @@
                             </div>
                     </div>
             </div>
-            <div class="box-footer">
-                    <button type="submit" [disabled]="!categoryListUpdateForm.valid || isSubmit" class="btn btn-primary m-1 pull-right margin">Save Changes</button>
+            <div class="box-footer pull-right">
+                    <button type="submit" class="btn btn-primary pull-right" style="margin-top: 5px;" [disabled]="!categoryListUpdateform.valid || isSubmit">Save</button>
+                    <button type="button" (click)="close()" class="btn btn-default" style="margin-top: 5px;">Close</button>
             </div>
         </form>
 </div>

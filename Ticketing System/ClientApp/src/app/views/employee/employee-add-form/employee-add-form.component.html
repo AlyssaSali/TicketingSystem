@@ -1,113 +1,6 @@
 
 
             <form (ngSubmit)="onFormSubmit()" method="POST" [formGroup]="employeeCreateForm">
-<<<<<<< HEAD
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="FirstName">FirstName: <span style="color: red;">*</span></label>
-                        <input type="text" class="form-control" id="FirstName" formControlName="firstname" [ngClass]="{'is-invalid': (f.firstname.touched && f.firstname.errors) || firstNameBackEndErrors}"/>
-                        <div *ngIf="f.firstname.touched && f.firstname.errors" class="invalid-feedback">
-                            <div *ngIf="f.firstname.errors.required">
-                                <span style="color: red; font-size: 10pt;">This field is required</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="LastName">LastName: <span style="color: red;">*</span></label>
-                        <input type="text" class="form-control" id="LastName" formControlName="lastname" [ngClass]="{'is-invalid': (f.lastname.touched && f.lastname.errors) || lastNameBackEndErrors}"/>
-                        <div *ngIf="f.lastname.touched && f.lastname.errors" class="invalid-feedback">
-                            <div *ngIf="f.lastname.errors.required">
-                                <span style="color: red; font-size: 10pt;">This field is required</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="formofcommu">Form of Communication: <span style="color: red;">*</span></label>
-                        
-                        <select class="form-control form-control-sm" id="formofcommu" formControlName="formofcommu" [ngClass]="{'is-invalid': (f.formofcommu.touched && f.formofcommu.errors) || formOfCommuBackEndErrors}">
-                            <option selected="selected"></option>
-                            <option>Email</option>
-                            <option>Call</option>
-                            <option>Text</option>
-                            <option>Chat</option>
-                        </select>
-                        <div *ngIf="f.formofcommu.touched && f.formofcommu.errors" class="invalid-feedback">
-                            <div *ngIf="f.formofcommu.errors.required">
-                                <span style="color: red; font-size: 10pt;">This field is required</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                            <label for="contactinfo">Contact Information: <span style="color: red;">*</span></label>
-                            <input type="text" class="form-control" id="contactinfo" formControlName="contactinfo" [ngClass]="{'is-invalid': (f.contactinfo.touched && f.contactinfo.errors) || contactInfoBackEndErrors}"/>
-                            <div *ngIf="f.contactinfo.touched && f.contactinfo.errors" class="invalid-feedback">
-                                <div *ngIf="f.contactinfo.errors.required">
-                                    <span style="color: red; font-size: 10pt;">This field is required</span>
-                                </div>
-                            </div>
-                        
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-
-                            <div class="row">
-                                <div class="col-md-10">
-                                    <label for="officeid">Office: <span style="color: red">*</span></label> <br />
-                                    <input type="text" id="officeid" formControlName="officeID" hidden/>
-                                    <div>
-                                        <input type="text" class="form-control" formControlName="officeSelect" (keyup)="selectOffice($event)" (click)="$event.target.select()" list="officesListss">
-                                        <datalist class="ui-datalist-data" height="100px" id="officesListss" >
-                                            <option [ngValue]="null" disabled="true" [selected]="true">Select Office
-                                            <option id="{{office.officeid}}" *ngFor="let office of officesList" [value]="office.officeCode">
-                                        </datalist>
-                                        <div *ngIf="f.officeSelect.touched && f.officeSelect.errors" class="invalid-feedback">
-                                            <div *ngIf="f.officeSelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <br>
-                                    <button type="button" class="btn btn-info btn-trans" (click)="openOfficeDialog()" data-toggle="tooltip" data-placement="bottom" title="Add new office"><i class="material-icons">add</i></button>
-                                </div>
-                            </div>
-
-                    </div>
-                    
-                    <div class="col-md-6">
-
-                            <div class="row">
-                                <div class="col-md-10">
-                                    <label for="employeeTypeid">Employee Type: <span style="color: red">*</span></label> <br />
-                                    <input type="text" id="employeeTypeid" formControlName="employeetypeID" hidden/>
-                                    <div>
-                                        <input type="text" class="form-control" formControlName="employeetypeSelect" (keyup)="selectEmployeeType($event)" (click)="$event.target.select()" list="employeeTypesListss">
-                                        <datalist class="ui-datalist-data" height="100px" id="employeeTypesListss" >
-                                            <option [ngValue]="null" disabled="true" [selected]="true">Select Employee Type
-                                            <option id="{{employeeType.employeeTypeid}}" *ngFor="let employeeType of employeeTypesList" [value]="employeeType.employeeTypeName">
-                                        </datalist>
-                                        <div *ngIf="f.employeetypeSelect.touched && f.employeetypeSelect.errors" class="invalid-feedback">
-                                            <div *ngIf="f.employeetypeSelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <br>
-                                    <button type="button" class="btn btn-info btn-trans" (click)="openEmployeeTypeDialog()" data-toggle="tooltip" data-placement="bottom" title="Add new Employee Type"><i class="material-icons">add</i></button>
-                                </div>
-                            </div>
-
-                    </div>
-                    
-                </div>
-                <div class="row">
-                        <div class="col-md-2">
-                                <button type="submit" class="btn btn-primary" style="margin-top: 5px;" [disabled]="!employeeCreateForm.valid || isSubmit">Create</button>
-                        </div>
-=======
                 <div class="box-body margin">
                         <div class="row">
                                 <label for="FirstName">FirstName: <span style="color: red;">*</span></label>
@@ -127,32 +20,67 @@
                                     </div>
                                 </div>
                         </div><br>
-                        <div class="row">
-                                <label for="EmailAddress">Email Address: <span style="color: red;">*</span></label>
-                                <input type="text" class="form-control" id="EmailAddress" formControlName="emailaddress" [ngClass]="{'is-invalid': (f.emailaddress.touched && f.emailaddress.errors) || firstNameBackEndErrors}"/>
-                                <div *ngIf="f.emailaddress.touched && f.emailaddress.errors" class="invalid-feedback">
-                                    <div *ngIf="f.emailaddress.errors.required">
-                                        <span style="color: red; font-size: 10pt;">This field is required</span>
+                                <div class="row">
+                                    <label for="formofcommu">Form of Communication: <span style="color: red;">*</span></label>
+                                    
+                                    <select class="form-control form-control-sm" id="formofcommu" formControlName="formofcommu" [ngClass]="{'is-invalid': (f.formofcommu.touched && f.formofcommu.errors) || formOfCommuBackEndErrors}">
+                                        <option selected="selected"></option>
+                                        <option>Email</option>
+                                        <option>Call</option>
+                                        <option>Text</option>
+                                        <option>Chat</option>
+                                    </select>
+                                    <div *ngIf="f.formofcommu.touched && f.formofcommu.errors" class="invalid-feedback">
+                                        <div *ngIf="f.formofcommu.errors.required">
+                                            <span style="color: red; font-size: 10pt;">This field is required</span>
+                                        </div>
                                     </div>
-                                </div>
-                        </div><br>
-                        <div class="row">
-                                <label>Office</label>
-                                <input type="text" id="officeid" formControlName="officeID" hidden/>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" formControlName="officeSelect" (keyup)="selectOffice($event)" (click)="$event.target.select()" list="officesListss">
-                                    <datalist class="ui-datalist-data" height="100px" id="officesListss" >
-                                        <option [ngValue]="null" disabled="true" [selected]="true">Select Office
-                                        <option id="{{office.officeid}}" *ngFor="let office of officesList" [value]="office.officeCode">
-                                    </datalist>
-                                    <span class="input-group-btn">
-                                        <button type="button" class="btn btn-primary btn-flat" data-toggle="modal" data-target="#modal-office"><span class="glyphicon glyphicon-plus"></span></button>
-                                    </span>
-                                </div>
-                        </div>
+                                </div><br>
+                                <div class="row">
+                                        <label for="contactinfo">Contact Information: <span style="color: red;">*</span></label>
+                                        <input type="text" class="form-control" id="contactinfo" formControlName="contactinfo" [ngClass]="{'is-invalid': (f.contactinfo.touched && f.contactinfo.errors) || contactInfoBackEndErrors}"/>
+                                        <div *ngIf="f.contactinfo.touched && f.contactinfo.errors" class="invalid-feedback">
+                                            <div *ngIf="f.contactinfo.errors.required">
+                                                <span style="color: red; font-size: 10pt;">This field is required</span>
+                                            </div>
+                                        </div>
+                                </div><br>
+                                    <div class="row">
+                                            <label for="employeeTypeid">Employee Type: <span style="color: red">*</span></label> <br />
+                                            <input type="text" id="employeeTypeid" formControlName="employeetypeID" hidden/>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" formControlName="employeetypeSelect" (keyup)="selectEmployeeType($event)" (click)="$event.target.select()" list="employeeTypesListss">
+                                                <datalist class="ui-datalist-data" height="100px" id="employeeTypesListss" >
+                                                    <option [ngValue]="null" disabled="true" [selected]="true">Select Employee Type
+                                                    <option id="{{employeeType.employeeTypeid}}" *ngFor="let employeeType of employeeTypesList" [value]="employeeType.employeeTypeName">
+                                                </datalist>
+                                                <div *ngIf="f.employeetypeSelect.touched && f.employeetypeSelect.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.employeetypeSelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
+                                                </div>
+                                                <span class="input-group-btn">
+                                                        <button type="button" class="btn btn-primary btn-flat" data-toggle="modal" data-target="#modal-employeeType"><span class="glyphicon glyphicon-plus"></span></button>
+                                                </span>
+                                            </div>
+                                    </div><br>
+                                    <div class="row">
+                                            <label>Office</label>
+                                            <input type="text" id="officeid" formControlName="officeID" hidden/>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" formControlName="officeSelect" (keyup)="selectOffice($event)" (click)="$event.target.select()" list="officesListss">
+                                                <datalist class="ui-datalist-data" height="100px" id="officesListss" >
+                                                    <option [ngValue]="null" disabled="true" [selected]="true">Select Office
+                                                    <option id="{{office.officeid}}" *ngFor="let office of officesList" [value]="office.officeCode">
+                                                </datalist>
+                                                <div *ngIf="f.officeSelect.touched && f.officeSelect.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.officeSelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
+                                                </div>
+                                                <span class="input-group-btn">
+                                                        <button type="button" class="btn btn-primary btn-flat" data-toggle="modal" data-target="#modal-office"><span class="glyphicon glyphicon-plus"></span></button>
+                                                </span>
+                                            </div>
+                                    </div>
                 </div>
                 <div class="box-footer">
                         <button type="submit" class="btn btn-primary pull-left" [disabled]="!employeeCreateForm.valid || isSubmit">Save</button>
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
                 </div>
             </form>

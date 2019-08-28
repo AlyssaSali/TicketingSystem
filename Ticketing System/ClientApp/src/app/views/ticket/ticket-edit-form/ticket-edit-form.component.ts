@@ -20,10 +20,9 @@ export class TicketEditFormComponent implements OnInit {
   ticketSLA(ticket){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data={
-      officeContext:ticket
+      ticketSLAContext:ticket
     };
-    dialogConfig.width='800px';
-    //dialogConfig.height='600px';
+    dialogConfig.panelClass = 'custom-modalbox';
     this.dialog.open(TicketSLAComponent,dialogConfig)
   }
 
@@ -32,8 +31,7 @@ export class TicketEditFormComponent implements OnInit {
     dialogConfig.data={
       officeContext:ticket
     };
-    dialogConfig.width='800px';
-    //dialogConfig.height='600px';
+    dialogConfig.panelClass = 'custom-modalbox';
     this.dialog.open(TicketApprovalComponent,dialogConfig)
   }
   

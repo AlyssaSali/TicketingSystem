@@ -53,7 +53,7 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
-                if (context.Employees.Where(x => x.Officeid == id).Any())
+                if (context.Employees.Where(x => x.Officeid == id).Any() || context.TicketMinors.Where(x => x.Officeid == id).Any())
                 {
                     return new ResponseVM("deleted", false, "Office", ResponseVM.DONT_DELETE);
                 }

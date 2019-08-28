@@ -77,3 +77,19 @@
           </div>
       </div>
     </div>
+
+    <div class="modal fade" id="modal-employeeType">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">New Employee Type</h4>
+              </div>
+              <div class="modal-body">
+                  <a (click)="loadEmployeeType()" class="pull-right" data-dismiss="modal"><u>View all Employee Type</u></a><br>
+                <app-employeetype-add-form></app-employeetype-add-form>
+              </div>
+            </div>
+        </div>
+      </div>

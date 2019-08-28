@@ -1,4 +1,4 @@
 export interface EmployeeType {
-    id: string;
-    employeeType: string,
+    employeeTypeid: string;
+    employeeTypeName: string,
 }

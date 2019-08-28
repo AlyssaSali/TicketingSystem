@@ -4,13 +4,10 @@ import { SeverityService } from 'src/app/services/severity.service';
 import { SeverityDataService } from 'src/app/dataservices/severity.dataservice';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { SeverityUpdateFormComponent } from './severity-update-form/severity-update-form.component';
-<<<<<<< HEAD
-import { DataTableDirective } from 'angular-datatables';
-import { Subject } from 'rxjs';
-=======
 import { CategoryAddFormComponent } from '../category/category-add-form/category-add-form.component';
 import { SeverityAddFormComponent } from './severity-add-form/severity-add-form.component';
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+import { DataTableDirective } from 'angular-datatables';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-severity',
@@ -22,6 +19,7 @@ export class SeverityComponent implements OnInit {
   dtElement: DataTableDirective;
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<Severity> = new Subject();
+  
   severities:Severity[];
 
   constructor(
@@ -62,8 +60,8 @@ export class SeverityComponent implements OnInit {
             console.log(error)
           }
         }
-      
     }
+    
     update(severity){
       const dialogConfig = new MatDialogConfig();
       dialogConfig.data={
@@ -72,6 +70,12 @@ export class SeverityComponent implements OnInit {
       dialogConfig.panelClass = 'custom-modalbox';
       this.dialog.open(SeverityUpdateFormComponent,dialogConfig)
     }
+
+    
+  close(){
+      this.dialogRef.close();
+    }
+
     ngAfterViewInit(): void {
       this.dtTrigger.next();
     }
@@ -80,7 +84,7 @@ export class SeverityComponent implements OnInit {
       // Do not forget to unsubscribe the event
       this.dtTrigger.unsubscribe();
     }
-  
+    
     rerender(): void {
       this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
         // Destroy the table first
@@ -88,11 +92,6 @@ export class SeverityComponent implements OnInit {
         // Call the dtTrigger to rerender again
         this.dtTrigger.next();
       });
-    }
-
-    
-  close(){
-      this.dialogRef.close();
     }
 
 }

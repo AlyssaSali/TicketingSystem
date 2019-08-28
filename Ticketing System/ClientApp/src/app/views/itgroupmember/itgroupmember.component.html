@@ -1,34 +1,53 @@
 
-<div class="main">
-
-<app-itgroupmember-add-form></app-itgroupmember-add-form>
-
-<h1>ITGroupMembers</h1>
-<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-striped">
-    <thead>
-        <tr>
-            <td style="width: 30%;">ITGroups</td>
-            <td style="width: 30%;">Employees</td>
-            <td style="width: 20%;">Action</td>
-        </tr>
-    </thead>
-    <tbody  *ngIf="itgroupmembers != null || itgroupmembers?.length != 0">
-        <tr *ngFor="let itgroupmember of itgroupmembers">
-            
-            <td style="width: 30%;"><div *ngIf="itgroupmember.itGroup">{{itgroupmember.itGroup.itGroupName}}</div></td>
-            <td style="width: 20%;"><div *ngFor="let employee of itgroupmember.employees">{{employee.fullName}}</div></td>
-            <td >
-                <div class="row">
-                    <button class="col-md-3 btn btn-success m-1" (click)="update(itgroupmember)" data-toggle="tooltip" data-placement="bottom" title="Update itgroupmember" >
-                        <i class="material-icons">update</i>
-                    </button>
-                    <button class="col-md-3 btn btn-danger m-1" (click)="delete(itgroupmember.itGroupMemberid)" data-toggle="tooltip" data-placement="bottom" title="Delete itgroupmember">
-                        <i class="material-icons">delete</i>
-                    </button>
+<div class="content-wrapper">
+        <section class="content">
+          <div class="row">
+          <!-- NEW OFFICE -->
+            <div class="col-md-4">
+                <div class="box box-primary">
+                    <div class="box-header with-border"><h3 class="box-title">New IT Group Member</h3></div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <app-itgroupmember-add-form></app-itgroupmember-add-form>
+                    </div>
                 </div>
-            </td>
-        </tr>
-    </tbody>
-   
-</table>
+            </div>
+
+            <!-- OFFICE TABLE -->
+            <div class="col-md-8">
+                    <div class="box box-default">
+                     <div class="box-header with-border"><h3 class="box-title">List of IT Group Members</h3></div>
+                       <div class="box-body margin">
+                            <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <td style="width: 40%;">ITGroups</td>
+                                    <td style="width: 50%;">Employees</td>
+                                    <td style="width: 10%;">Action</td>
+                                </tr>
+                            </thead>
+                            <tbody  *ngIf="itgroupmembers != null || itgroupmembers?.length != 0">
+                                <tr *ngFor="let itgroupmember of itgroupmembers">
+                                    
+                                    <td style="width: 40%;"><div *ngIf="itgroupmember.itGroup">{{itgroupmember.itGroup.itGroupName}}</div></td>
+                                    <td style="width: 50%;"><div *ngFor="let employee of itgroupmember.employees">{{employee.fullName}}</div></td>
+                                    <td style="width: 10%;">
+                                        <div class="row">
+                                            <button class="btn-success m-1" (click)="update(itgroupmember)" data-toggle="tooltip" data-placement="bottom" title="Update itgroupmember" >
+                                                <i class="material-icons">update</i>
+                                            </button>
+                                            <button class="btn-danger m-1" (click)="delete(itgroupmember.itGroupMemberid)" data-toggle="tooltip" data-placement="bottom" title="Delete itgroupmember">
+                                                <i class="material-icons">delete</i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        
+                            </table>
+                       </div>
+                    </div>
+            </div>
+          </div>
+        </section>
 </div>

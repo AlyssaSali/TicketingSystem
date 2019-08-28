@@ -24,11 +24,14 @@ import { ItgroupComponent } from '../../itgroup/itgroup.component';
 export class CategoryListAddFormComponent implements OnInit {
   categoryListCreateForm: FormGroup;
    isSubmit = false;
-   isValid = true;
+   isValid: boolean;
  
    categoryList: Category[];
    severityList: Severity[];
    itGroupList: Itgroup[];
+
+   totalMinute1: number;
+   totalMinute2: number;
 
    constructor(
      private categoryListService: CategoryListService,
@@ -43,8 +46,8 @@ export class CategoryListAddFormComponent implements OnInit {
    ) {
      this .categoryListCreateForm = new FormGroup({
        categoryListName: new FormControl('',[Validators.required,Validators.maxLength(50)]),
-       slaResponseTime: new FormControl('',[Validators.required, Validators.maxLength(50)]),
-       slaResolvedTime: new FormControl('',[Validators.required, Validators.maxLength(50)]),
+       slaResponseTime: new FormControl(''),
+       slaResolvedTime: new FormControl(''),
        slaResponseTimeExt: new FormControl(''),
        slaResolvedTimeExt: new FormControl(''),
        severityName: new FormControl(''),
@@ -75,6 +78,8 @@ export class CategoryListAddFormComponent implements OnInit {
      }
      if(!this.categoryListCreateForm.valid)
      return;
+
+     
  
      try{
        this.isSubmit=true;
@@ -88,7 +93,7 @@ export class CategoryListAddFormComponent implements OnInit {
          alert(result.message);  
        }
      }catch(error){
-       console.error(error)
+       console.error(this.categoryListCreateForm.value)
        let errs=error.error
  
        if(errs.isSuccess===false){
@@ -120,7 +125,7 @@ async getSeverityLists(){
 
 async getItGroupLists(){
   try {
-    this.itGroupList = await this.itgroupService.getAll().toPromise();
+    this.itGroupList = await this.itgroupService.getGroups().toPromise();
   } catch (error) {
     console.log(error);
   }
@@ -140,8 +145,6 @@ selectCategory($event){
 
 selectSeverity($event){
   let severity = this.categoryListCreateForm.value.severitySelect;
-  
-  //console.log(this.severityList.values);
   if (severity.length > 0) {
     if ($event.timeStamp > 200) {
       let selectedSeverity = this.severityList.find(data => data.severityCode == severity);
@@ -183,18 +186,72 @@ openITGroupDialog(){
   this.dialog.open(ItgroupComponent, dialogConfig);
 }
 
-async validateSLA(){
-  var slarpt = this.categoryListCreateForm.controls['slaResponseTime']
-  var slarst = this.categoryListCreateForm.controls['slaResolvedTime']
-  if( slarpt == slarst || slarpt > slarst ){
-    alert("Inputted value is greater than other!")
-    this.isValid = false;
-  } else {
-    this.isValid = true;
-  }
-}
 
 reset(){
   this.categoryListCreateForm.reset();
 }
+
+convertToMinute1($event){
+  let ext1 = this.categoryListCreateForm.value.slaResponseTimeExt;
+  let num1 = this.categoryListCreateForm.value.slaResponseTime;
+    if (ext1.length > 2) {
+      if ($event.timeStamp > 200) {
+          if (ext1 == 'Minute'){
+            this.totalMinute1 = num1;
+          } else if (ext1== 'Hour'){
+            this.totalMinute1 = num1 * 60 ;
+          } else if (ext1 == 'Day') {
+            this.totalMinute1 = num1 * 24 * 60;
+          } else if (ext1 == 'Week') {
+            this.totalMinute1 = num1 * 7 * 24 * 60;
+          } else if (ext1 == 'Month') {
+            this.totalMinute1 = num1 * 30 * 24 * 60;
+          }
+        }
+      }
+      if(this.categoryListCreateForm.value.slaResolvedTimeExt != ''){
+          this.validateInput();
+      }
+      
+  }
+
+  convertToMinute2($event){
+    let ext2 = this.categoryListCreateForm.value.slaResolvedTimeExt;
+    let num2 = this.categoryListCreateForm.value.slaResolvedTime;
+      if (ext2.length > 2) {
+        if ($event.timeStamp > 200) {
+            if (ext2 == 'Minute' || ext2 == ''){
+              this.totalMinute2 = num2;
+            } else if (ext2 == 'Hour'){
+              this.totalMinute2 = num2 * 60;
+            } else if (ext2 == 'Day') {
+              this.totalMinute2 = num2 * 24 * 60;
+            } else if (ext2 == 'Week') {
+              this.totalMinute2 = num2 * 7 * 24 * 60;
+            } else if (ext2 == 'Month') {
+              this.totalMinute2 = num2 * 30 * 24 * 60;
+            }
+          }
+        }
+        if(this.categoryListCreateForm.value.slaResponseTimeExt != '' || ext2 != ''){
+          this.validateInput();
+        }
+    }
+
+validateInput(){
+  if (this.totalMinute1 == this.totalMinute2|| this.totalMinute1 > this.totalMinute2){
+    this.isValid = true;
+  } if(this.totalMinute1 < this.totalMinute2){
+    this.isValid = false;
+  }
+}
+
+clearExt1(){
+  this.categoryListCreateForm.controls['slaResponseTimeExt'].setValue('');
+}
+
+clearExt2(){
+  this.categoryListCreateForm.controls['slaResolvedTimeExt'].setValue('');
+}
+
 }

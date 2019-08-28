@@ -49,7 +49,7 @@ namespace TicketingSystem.BLL.Helpers
                 FormOfCommu = employee.FormOfCommu,
                 ContactInfo = employee.ContactInfo,
                 EmployeeTypeid = employee.EmployeeTypeid,
-                EmployeeType = EmployeeType(employee.EmployeeType),
+                EmployeeType = employee.EmployeeType != null ?EmployeeType(employee.EmployeeType):null,
                 Officeid = employee.Officeid.ToString(),
                 Office = employee.Office != null ? Office(employee.Office) : null,
                 FullName = ToFullName(employee.FirstName, employee.LastName)
@@ -79,7 +79,7 @@ namespace TicketingSystem.BLL.Helpers
             {
                 Ticketid = ticket.Ticketid,
                 CategoryListid = ticket.CategoryListid,
-                CategoryList = CategoryList(ticket.CategoryList),                
+                CategoryList = ticket.CategoryList != null ? CategoryList(ticket.CategoryList):null,                
                 ITGroupid = ticket.ITGroupid,
                 ITGroup = ITGroup(ticket.ITGroup),
                 EmployeeID = ticket.EmployeeID,
@@ -141,12 +141,12 @@ namespace TicketingSystem.BLL.Helpers
                 SlaResponseTimeExt = categoryList.SlaResponseTimeExt,
                 SlaResolvedTime = categoryList.SlaResolvedTime,
                 SlaResolvedTimeExt = categoryList.SlaResolvedTimeExt,
-                ITGroupid = (categoryList.ITGroupid).ToString(),
-                ITGroup = categoryList.ITGroup != null ? ITGroup(categoryList.ITGroup):null,
-                Categoryid = (categoryList.Categoryid).ToString(),
-                Category = categoryList.Category != null ? Category(categoryList.Category):null,
-                Severityid = (categoryList.Severityid).ToString(),
-                Severity = categoryList.Severity != null ? Severity(categoryList.Severity):null
+                ITGroupid = (categoryList.ITGroupid).ToString() != null ? (categoryList.ITGroupid).ToString() : null,
+                ITGroup = categoryList.ITGroup != null ? ITGroup(categoryList.ITGroup) : null,
+                Categoryid = (categoryList.Categoryid).ToString() != null ? (categoryList.Categoryid).ToString() : null,
+                Category = categoryList.Category != null ? Category(categoryList.Category) : null,
+                Severityid = (categoryList.Severityid).ToString() != null ? (categoryList.Severityid).ToString() : null,
+                Severity = categoryList.Severity != null ? Severity(categoryList.Severity) : null
             };
         }
 
@@ -183,13 +183,14 @@ namespace TicketingSystem.BLL.Helpers
                 TimeOfRequest = ticketMinor.TimeOfRequest,
                 Status = ticketMinor.Status,
                 WorkDone = ticketMinor.WorkDone,
+                DateAccomplished = ticketMinor.DateAccomplished,
                 Officeid = (ticketMinor.Officeid).ToString(),
-                Office = Office(ticketMinor.Office),
+                Office = ticketMinor.Office != null ? Office(ticketMinor.Office):null,
                 Requesterid = (ticketMinor.Requesterid).ToString(),
                 WorkByid = (ticketMinor.WorkByid).ToString(),
-                Employee = Employee(ticketMinor.Employee),
+                Employee = ticketMinor.Employee != null ? Employee(ticketMinor.Employee):null,
                 CategoryListid = (ticketMinor.CategoryListid).ToString(),
-                CategoryList = CategoryList(ticketMinor.CategoryList)
+                CategoryList = ticketMinor.CategoryList != null ? CategoryList(ticketMinor.CategoryList):null
             };
         }
     }

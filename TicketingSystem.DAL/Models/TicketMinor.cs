@@ -13,12 +13,14 @@ namespace TicketingSystem.DAL.Models
         public string Description { get; set; }
         public string Status { get; set; }
         public string WorkDone { get; set; }
+        public DateTime DateAccomplished{ get; set; }
 
-        //[Display(Name = "Date")]
+        [Display(Name = "Date")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [DataType(DataType.Date)]
         public DateTime DateOfRequest { get; set; }
 
+        [Display(Name = "Time")]
         [DataType(DataType.Time)]
         [DisplayFormat(DataFormatString = "{0:HH:mm}")]
         public DateTime TimeOfRequest { get; set; }

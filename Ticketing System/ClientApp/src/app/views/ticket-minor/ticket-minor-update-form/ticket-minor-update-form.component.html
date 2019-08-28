@@ -1,0 +1,70 @@
+    <div class="modal-content">
+        <div class="modal-header bg-primary">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Update Ticket</h4>
+        </div>
+        
+        <div class="modal-body margin">
+            <div *ngFor="let detail of ticketMinorList">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box box-default">
+                            <div class="box-header with-border">
+                                <h3 class="box-title"><small>Ticket # </small><br>
+                                    <a>{{detail.categoryListid}}</a></h3>
+                            </div>
+                            <div class="box-body margin">
+                                <strong>Requested By: </strong><span *ngFor="let employee of employeeList">{{employee.employeeID === detail.requesterid ? employee.fullName : ''}}</span><br>         
+                                <strong>Office: </strong>{{detail.office.officeDesc}}<br><br>
+                                <strong>Date of Request: </strong>{{detail.dateOfRequest | date:'MM/dd/yyyy'}}<br>
+                                <strong>Time of Request: </strong>{{detail.timeOfRequest | date:'h:mm a'}} <br><br>
+                                <strong>Request Category: </strong>{{detail.categoryList.categoryListName}}<br>
+                                <strong>Request Description: </strong>{{detail.description}} <br>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="box box-info">
+                        <div class="box-header with-border"><h3 class="box-title">Work Done</h3></div>
+                        <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="ticketMinorUpdateform" class="form-group" role="form">
+                            <div class="box-body margin">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Work By</label>
+                                        <input type="text" id="workByid" formControlName="workByid" hidden/>
+                                        <div>
+                                            <input type="text" class="form-control" formControlName="workBySelect" (keyup)="selectWorker($event)" (click)="$event.target.select()" list="workersListss">
+                                            <datalist class="ui-datalist-data" height="100px" id="workersListss" >
+                                                <option [ngValue]="null" disabled="true" [selected]="true">Select Worker
+                                                <option id="{{worker.employeeID}}" *ngFor="let worker of workerList" [value]="worker.fullName">
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                            <label class="col-form-label col-form-label-sm font" for="inputSmall">Status</label>
+                                            <select class="form-control form-control-sm" formControlName="status">
+                                                <option selected="selected"></option>
+                                                <option>Open</option>
+                                                <option>Close</option>
+                                            </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-12"><br>
+                                    <label>Comment:</label>
+                                    <textarea class="form-control form-control-sm" id="workDone" rows="5" placeholder="Comment Here" formControlName="workDone"></textarea>
+                                  </div>
+                                </div>
+                            </div>   
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-primary pull-right" style="margin-top: 5px;" [disabled]="!ticketMinorUpdateform.valid || isSubmit">Save</button>
+                    <button type="button" (click)="close()" class="btn btn-default" style="margin-top: 5px;">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>

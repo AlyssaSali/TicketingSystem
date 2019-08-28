@@ -4,12 +4,9 @@ import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { ItgroupDataService } from 'src/app/dataservices/itgroup.dataservice';
 import { ItgroupUpdateFormComponent } from './itgroup-update-form/itgroup-update-form.component';
 import { Itgroup } from 'src/app/models/itgroup.model';
-<<<<<<< HEAD
-import { Subject } from 'rxjs';
-import { DataTableDirective } from 'angular-datatables';
-=======
 import { ItgroupAddFormComponent } from './itgroup-add-form/itgroup-add-form.component';
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+import { DataTableDirective } from 'angular-datatables';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-itgroup',
@@ -21,7 +18,7 @@ export class ItgroupComponent implements OnInit {
   dtElement: DataTableDirective;
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<Itgroup> = new Subject();
-  
+
   itgroups:Itgroup[];
 
   constructor(
@@ -72,6 +69,7 @@ export class ItgroupComponent implements OnInit {
       dialogConfig.panelClass = 'custom-modalbox';
       this.dialog.open(ItgroupUpdateFormComponent,dialogConfig)
     }
+
     ngAfterViewInit(): void {
       this.dtTrigger.next();
     }
@@ -80,7 +78,7 @@ export class ItgroupComponent implements OnInit {
       // Do not forget to unsubscribe the event
       this.dtTrigger.unsubscribe();
     }
-  
+    
     rerender(): void {
       this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
         // Destroy the table first
@@ -90,8 +88,7 @@ export class ItgroupComponent implements OnInit {
       });
     }
 
-    
-  close(){
+    close(){
       this.dialogRef.close();
     }
 

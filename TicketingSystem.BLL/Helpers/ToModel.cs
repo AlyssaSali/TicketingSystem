@@ -114,6 +114,7 @@ namespace TicketingSystem.BLL.Helpers
                 TimeOfRequest = ticketMinorVM.TimeOfRequest,
                 Status = ticketMinorVM.Status,
                 WorkDone = ticketMinorVM.WorkDone,
+                DateAccomplished = ticketMinorVM.DateAccomplished,
                 Officeid = Guid.Parse(ticketMinorVM.Officeid),
                 Requesterid = Guid.Parse(ticketMinorVM.Requesterid),
                 WorkByid = Guid.Parse(ticketMinorVM.WorkByid),

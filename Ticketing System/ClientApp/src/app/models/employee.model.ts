@@ -1,6 +1,5 @@
 import { Office } from './office.model';
 import { EmployeeType } from './employeetype.model';
-import { Itgroupmember } from './itgroupmember.model';
 
 export interface Employee {
     employeeID: string;

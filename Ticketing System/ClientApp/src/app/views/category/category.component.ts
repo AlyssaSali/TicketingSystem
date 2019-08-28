@@ -4,12 +4,9 @@ import { CategoryService } from 'src/app/services/category.service';
 import { CategoryDataService } from 'src/app/dataservices/category.dataservice';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { CategoryUpdateFormComponent } from './category-update-form/category-update-form.component';
-<<<<<<< HEAD
+import { CategoryAddFormComponent } from './category-add-form/category-add-form.component';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
-=======
-import { CategoryAddFormComponent } from './category-add-form/category-add-form.component';
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 
 @Component({
   selector: 'app-category',
@@ -21,6 +18,7 @@ export class CategoryComponent implements OnInit {
   dtElement: DataTableDirective;
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<Category> = new Subject();
+  
   categories:Category[];
 
   constructor(
@@ -38,7 +36,6 @@ export class CategoryComponent implements OnInit {
   }
   async getCategorys() {
     try{
-
       this.categories=await this.categoryService.getAll().toPromise();
       this.rerender();
     }catch(error){
@@ -72,6 +69,7 @@ export class CategoryComponent implements OnInit {
       dialogConfig.panelClass = 'custom-modalbox';
       this.dialog.open(CategoryUpdateFormComponent,dialogConfig)
     }
+
     ngAfterViewInit(): void {
       this.dtTrigger.next();
     }
@@ -80,7 +78,7 @@ export class CategoryComponent implements OnInit {
       // Do not forget to unsubscribe the event
       this.dtTrigger.unsubscribe();
     }
-  
+    
     rerender(): void {
       this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
         // Destroy the table first
@@ -93,14 +91,4 @@ export class CategoryComponent implements OnInit {
     close(){
       this.dialogRef.close();
     }
-
-    // filterDate() {
-    //   var re = /\/Date\(([0-9]*)\)\//;
-    //   return function(x) {
-    //       var m = x.match(re);
-    //       if( m ) return new Date(parseInt(m[1]));
-    //       else return null;
-    //   };
-    // }
-
 }

@@ -5,12 +5,6 @@ import { MatDialogRef, MatDialog, MatDialogConfig, MAT_DIALOG_DATA } from '@angu
 import { TicketEditFormComponent } from '../ticket-edit-form/ticket-edit-form.component';
 import { TicketService } from 'src/app/services/ticket.service';
 import { TicketDataService } from 'src/app/dataservices/ticket.dataservice';
-import { EmployeeDataService } from 'src/app/dataservices/employee.dataservice';
-import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
-import { EmployeeService } from 'src/app/services/employee.service';
-import { OfficeService } from 'src/app/services/office.service';
-import { Office } from 'src/app/models/office.model';
-import { Employee } from 'src/app/models/employee.model';
 
 
 @Component({
@@ -22,47 +16,26 @@ export class TicketAddFormComponent implements OnInit {
   ticketCreateForm: FormGroup;
   isSubmit = false;
 
-  dateRequestedBackEndErrors: string[];
-  contactInfoBackEndErrors: string[];
-  formOfCommuBackEndErrors: string[];
-  CategoryBackEndErrors: string[];
-  requestTitleBackEndErrors: string[];
-  requestDescEndErrors: string[];
-  severityBackEndErrors: string[];
-  responseTimeInfoBackEndErrors: string[];
-  resolveTimeInfoBackEndErrors: string[];
-//added during employee-office relationship
-  officesList : Office[];
-  employeesList: Employee[];
-
-  
   constructor(
     private ticketService: TicketService,
-    private ticketDataService: TicketDataService,
-    private employeeService: EmployeeService,
-    private employeeDataService: EmployeeDataService,
-    private officeService: OfficeService,
-    private officeDataService: OfficeDataService,
-    private dialog: MatDialog
+    private ticketDataService: TicketDataService
   ) { 
     this.ticketCreateForm = new FormGroup({
-      dateRequested: new FormControl(),
+      date: new FormControl(),
+      time: new FormControl(),
       contactInfo: new FormControl('', [Validators.required, Validators.maxLength(50)]),
-      formOfCommu: new FormControl('', [Validators.required, Validators.maxLength(50)]),
-      
-      employeeid: new FormControl('', [Validators.required]),
-      employeeSelect: new FormControl('', [Validators.required]),
-
-      officeid: new FormControl('', [Validators.required]),
-      officeSelect: new FormControl('', [Validators.required]),
-
-      Category: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      contactVia: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      requestedBy: new FormControl('', [Validators.maxLength(50)]),
+      office: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      requestCategory: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      requestSubCategory: new FormControl('', [Validators.required, Validators.maxLength(50)]),
       requestTitle: new FormControl('', [Validators.required]),
       requestDesc: new FormControl('', [Validators.required]),
       severity: new FormControl('', [Validators.required]),
       responseTime: new FormControl('', [Validators.required]),
       resolveTime: new FormControl('', [Validators.required]),
-      itGroup: new FormControl('', [Validators.required])
+      technician: new FormControl('', [Validators.required]),
+      isUrgent: new FormControl()
     })
   }
 

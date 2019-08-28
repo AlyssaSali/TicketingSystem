@@ -14,16 +14,10 @@ namespace TicketingSystem.ViewModel.ViewModels
         public string SlaResponseTimeExt { get; set; }
         public int SlaResolvedTime { get; set; }
         public string SlaResolvedTimeExt { get; set; }
-
-        [Required]
         public string Categoryid { get; set; }
         public CategoryVM Category { get; set; }
-
-        [Required]
         public string Severityid { get; set; }
         public SeverityVM Severity { get; set; }
-
-        [Required]
         public string ITGroupid { get; set; }
         public ITGroupVM ITGroup { get; set; }
 

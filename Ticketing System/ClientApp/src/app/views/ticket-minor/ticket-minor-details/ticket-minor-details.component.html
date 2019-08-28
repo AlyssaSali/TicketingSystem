@@ -1,0 +1,49 @@
+
+   <div class="modal-dialog" style="width: 700px">
+        <div class="modal-content margin">
+                <div *ngFor="let detail of ticketMinorList">
+                    <div class="modal-header bg-default margin">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+                        <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title"><small>Ticket # </small>{{detail.categoryListid}}</h4>
+                            <span class="label label-default" *ngIf="detail.status === 'Close'">{{detail.status}}</span>
+                            <span class="label label-success" *ngIf="detail.status === 'Open'">{{detail.status}}</span>
+                    </div>
+                    <div class="modal-body margin">
+                        <div class="box box-default">
+                            <div class="box-body">
+                                <div class="col-sm-6">
+                                    <strong>Requested By: </strong><span *ngFor="let employee of employeeList">{{employee.employeeID === detail.requesterid ? employee.fullName : ''}}</span><br>         
+                                    <strong>Office: </strong>{{detail.office.officeDesc}}<br>
+                                </div>
+                                <div class="col-md-6">
+                                    <strong>Date of Request: </strong>{{detail.dateOfRequest | date:'MM/dd/yyyy'}}<br>
+                                    <strong>Time of Request: </strong>{{detail.timeOfRequest | date:'h:mm a'}}<br>
+                                </div><br>
+                                <div class="col-md-12"><br>
+                                    <strong>Request Category: </strong>{{detail.categoryList.categoryListName}}<br>
+                                    <strong>Request Description: </strong>{{detail.description}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-left: 10px">
+                            <div class="col-md-6">
+                                <strong>Work By: </strong><span *ngFor="let employee of employeeList">{{employee.employeeID === detail.workByid ? employee.fullName : ''}}</span>
+                            </div>
+                            <div class="col-md-6" *ngIf="detail.status == 'Close'">
+                                <strong *ngIf="detail.dateAccomplished != ''">Date Accomplished: </strong>{{detail.dateAccomplished | date:'MM/dd/yyyy h:mm a'}}
+                            </div>
+                            <div class="col-md-12">
+                                <strong>Work Done: </strong>{{detail.workDone}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                            <button class="btn btn-default btn-flat" (click)="close()" type="button" [disabled]="">Close</button>
+                            <button class="btn btn-primary btn-flat" (click)="update(detail)" type="button" *ngIf="detail.status == 'Open'">Update</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+       
+                

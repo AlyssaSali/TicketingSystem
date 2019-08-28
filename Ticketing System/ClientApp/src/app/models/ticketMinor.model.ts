@@ -18,4 +18,5 @@ export interface TicketMinor {
     employee: Employee;
     categoryListid: string;
     categoryList: CategoryList;
+    dateAccomplished: string;
 }

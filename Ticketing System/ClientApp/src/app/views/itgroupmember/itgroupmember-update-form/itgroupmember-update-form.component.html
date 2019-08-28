@@ -1,18 +1,16 @@
-<div class="panel">
-    <div class="panel-heading">
-        <h1 style="display: inline;">Update ITGroupMember</h1>
-        <button class="btn btn-danger btn-sm float-right" (click)="close()"><i class="material-icons">close</i></button>
-    </div>
-    <div class="panel-body">
-        <div class="jumbotron">
-            <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="itgroupmemberUpdateForm">
+<div class="modal-content">
+            <div class="modal-header bg-primary">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+                <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Update IT Group Members</h4>
+            </div>
+        <form (ngSubmit)="onFormSubmit()" method="post" [formGroup]="itgroupmemberUpdateForm">
+            <div class="modal-body margin">
                 <div class="row">
                     <div class="col-md-5">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <label for="itGroupid">ITGroup: <span style="color: red">*</span></label> <br />
-                                <input type="text" id="itGroupid" formControlName="itGroupid" hidden/>
-                                <div>
+                        <label for="itGroupid">ITGroup: <span style="color: red">*</span></label> <br />
+                        <input type="text" id="itGroupid" formControlName="itGroupid" hidden/>
+                        <div class="input-group">
                                     <input type="text" class="form-control" formControlName="itgroupSelect" (keyup)="selectItgroup($event)" (click)="$event.target.select()" list="itgroupsListss">
                                     <datalist class="ui-datalist-data" height="100px" id="itgroupsListss" >
                                         <option [ngValue]="null" disabled="true" [selected]="true">Choose a ITGroup 
@@ -21,58 +19,49 @@
                                     <div *ngIf="f.itgroupSelect.touched && f.itgroupSelect.errors" class="invalid-feedback">
                                         <div *ngIf="f.itgroupSelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-1">
-                                <br>
-                                <button type="button" class="btn btn-info btn-trans" (click)="openItgroupDialog()" data-toggle="tooltip" data-placement="bottom" title="Update itGroup"><i class="material-icons">update</i></button>
-                            </div>
+                                    <span class="input-group-btn">
+                                            <button type="button" class="btn btn-primary btn-flat" data-toggle="modal" data-target="#modal-itGroup"><span class="glyphicon glyphicon-plus"></span></button>
+                                    </span>
                         </div>
                     </div>
                     
-                    <div class="col-md-5">
-                        <div class="row">
-                            <div class="col-md-11">
-                                <label >Employees:</label> <br />
-                                <div>
-                                    <input type="text" class="form-control" (keyup)="selectEmployee($event)" (click)="$event.target.select()" formControlName="employeeSelect" list="employeesListss">
-                                    <datalist class="ui-datalist-data" height="100px" id="employeesListss" >
-                                        <option [ngValue]="null" disabled="true" [selected]="true">Choose an employee
-                                        <option id="{{employee.employeeID}}" *ngFor="let employee of employeesList" [value]="employee.fullName">
-                                    </datalist>
-                                    <div *ngIf="f.employeeSelect.touched && f.employeeSelect.errors" class="invalid-feedback">
-                                        <div *ngIf="f.employeeSelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
-                                    </div>
-                                </div>
+                    <div class="col-md-7">
+                        <label >Employees:</label> <br />
+                        <div class="input-group">
+                            <input type="text" class="form-control" (keyup)="selectEmployee($event)" (click)="$event.target.select()" formControlName="employeeSelect" list="employeesListss">
+                            <datalist class="ui-datalist-data" height="100px" id="employeesListss" >
+                                <option [ngValue]="null" disabled="true" [selected]="true">Choose an employee
+                                <option id="{{employee.employeeID}}" *ngFor="let employee of employeesList" [value]="employee.fullName">
+                            </datalist>
+                            <div *ngIf="f.employeeSelect.touched && f.employeeSelect.errors" class="invalid-feedback">
+                                <div *ngIf="f.employeeSelect.errors.required"><span style="color: red; font-size: 10pt">This field is required</span></div>
                             </div>
-                            <div class="col-md-1">
-                                <br>
-                                <button type="button" class="btn btn-success btn-trans" (click)="openEmployeeDialog()" data-toggle="tooltip" data-placement="bottom" title="Update employee"><i class="material-icons">update</i></button>
-                            </div>
-                        </div>
-                        <div class="row" *ngIf="selectedEmployees.length >= 0">
+                            <span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary btn-flat" data-toggle="modal" data-target="#modal-employee"><span class="glyphicon glyphicon-plus"></span></button>
+                            </span>
+                        </div><br>
+                        <div class="row" *ngIf="selectedEmployees.length >= 0" style="margin-left: 1px">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <td>Employee</td>
-                                        <td>Remove</td>
+                                        <td style="width: 70%"><strong>Employee</strong></td>
+                                        <td style="width: 30%"><strong>Remove</strong></td>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let employee of selectedEmployees">
-                                        <td>{{employee.fullName}}</td>
-                                        <td><button type="button" class="btn btn-warning btn-trans" (click)="removeEmployee(employee)" data-toggle="tooltip" data-placement="bottom" title="Remove employee"><i class="material-icons">delete</i></button></td>
+                                        <td style="width: 70%">{{employee.fullName}}</td>
+                                        <td style="width: 30%"><button type="button" class="btn-warning" (click)="removeEmployee(employee)" data-toggle="tooltip" data-placement="bottom" title="Remove employee"><span class="glyphicon glyphicon-minus"></span></button></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <br>
-                    <button type="submit" class="btn btn-primary" style="margin-top: 5px;" [disabled]="!itgroupmemberUpdateForm.valid || isSubmit">Update</button>
-                </div>
-            </form>   
-        </div>
-    </div>
+            </div>
+            <div class="modal-footer pull-right">
+                    <button type="submit" class="btn btn-primary pull-right" style="margin-top: 5px;" [disabled]="!itgroupmemberUpdateForm.valid || isSubmit">Save</button>
+                    <button type="button" (click)="close()" class="btn btn-default" style="margin-top: 5px;">Close</button>
+            </div>
+        </form>
 </div>

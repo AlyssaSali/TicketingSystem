@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modals',
@@ -9,7 +10,8 @@ import { MatDialogRef } from '@angular/material';
 export class ModalsComponent implements OnInit {
 
   constructor(
-    public dialogRef: MatDialogRef<ModalsComponent>
+    public dialogRef: MatDialogRef<ModalsComponent>,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -17,6 +19,10 @@ export class ModalsComponent implements OnInit {
 
   close(){
     this.dialogRef.close();
+  }
+
+  loadEmployeeType(){
+    this.router.navigate(["/employeeType"]);
   }
 
 }
