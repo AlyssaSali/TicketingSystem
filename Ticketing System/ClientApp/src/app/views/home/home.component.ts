@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   userName: string;
 
   constructor(
+<<<<<<< HEAD
     private userService: UserService,
     private toastrService: ToastrService
   ){  }
@@ -27,6 +28,14 @@ export class HomeComponent implements OnInit {
     } else {
       this.isLogin = false;
     }
+=======
+<<<<<<< HEAD
+    //private toastServcie: ToastrService
+=======
+   // private toastServcie: ToastrService
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+  ) {
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
   }
 
   async getUserInfo(){

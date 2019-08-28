@@ -1,10 +1,33 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './views/home/home.component';
+<<<<<<< HEAD
 import { EmployeeComponent } from './views/employee/employee.component';
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import { CounterComponent } from './views/counter/counter.component';
+import { FetchDataComponent } from './views/fetch-data/fetch-data.component';
+import { EmployeeComponent } from './views/employee/employee.component';
+=======
+>>>>>>> ridz
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 import { RouterModule, Routes } from '@angular/router';
 import { SeverityComponent } from './views/severity/severity.component';
 import { OfficeComponent } from './views/office/office.component';
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import { EmployeeComponent } from './views/employee/employee.component';
+=======
+<<<<<<< HEAD
+=======
+import { EmployeeComponent } from './views/employee/employee.component';
+>>>>>>> ridz
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 import { SidenavComponent } from './views/layouts/sidenav/sidenav.component';
 import { DashboardComponent } from './views/layouts/dashboard/dashboard.component';
 import { TicketMinorComponent } from './views/ticket-minor/ticket-minor.component';
@@ -13,8 +36,24 @@ import { TicketSLAComponent } from './views/ticket-SLA/ticket-SLA.component';
 import { CategoryComponent } from './views/category/category.component';
 import { ItgroupComponent } from './views/itgroup/itgroup.component';
 import { CategoryListComponent } from './views/categoryList/categoryList.component';
+<<<<<<< HEAD
 import { EmployeetypeComponent } from './views/employeetype/employeetype.component';
 import { ItgroupmemberComponent } from './views/itgroupmember/itgroupmember.component';
+=======
+<<<<<<< HEAD
+import { ItgroupComponent } from './views/itgroup/itgroup.component';
+<<<<<<< HEAD
+import { EmployeetypeComponent } from './views/employeetype/employeetype.component';
+=======
+<<<<<<< HEAD
+import { ItgroupComponent } from './views/itgroup/itgroup.component';
+=======
+<<<<<<< HEAD
+import { ItgroupmemberComponent } from './views/itgroupmember/itgroupmember.component';
+=======
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
+=======
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 import { ModalsComponent } from './views/layouts/modals/modals.component';
 import { RegisterComponent } from './views/auth/register/register.component';
 import { AuthGuard } from './guard/auth.guard';
@@ -24,6 +63,7 @@ import { EmployeeEmployeeTypeComponent } from './views/employeeEmployeeType/empl
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
+<<<<<<< HEAD
   {path: 'severity', component: SeverityComponent, canActivate:[AuthGuard]},
   {path: 'ticketMinor', component: TicketMinorComponent, canActivate:[AuthGuard]},
   {path: 'ticketApproval', component: TicketApprovalComponent, canActivate:[AuthGuard]},
@@ -43,6 +83,40 @@ const routes: Routes = [
   { path: 'modals', component: ModalsComponent, canActivate:[AuthGuard]},
   { path: 'register', component: RegisterComponent, canActivate:[AuthGuard], data: {permittedRoles:['Admin']}},
   { path: 'forgot-password', component: ForgotPasswordComponent}
+=======
+  {path: 'severity', component: SeverityComponent},
+  {path: 'ticket', component: TicketComponent},
+  {path: 'ticketAdd', component: TicketAddFormComponent},
+  {path: 'ticketEdit', component: TicketEditFormComponent},
+  {path: 'ticketMinor', component: TicketMinorComponent},
+  {path: 'ticketApproval', component: TicketApprovalComponent},
+  {path: 'setting', component: SidenavComponent},
+  {path: 'dashboard', component: DashboardComponent},
+  {path: 'ticketSLA', component: TicketSLAComponent},
+  {path: 'category', component: CategoryComponent},
+<<<<<<< HEAD
+  {path: 'categoryList', component: CategoryListComponent},
+  { path: 'itgroup', component: ItgroupComponent},
+<<<<<<< HEAD
+  { path: 'employeeType', component: EmployeetypeComponent},
+=======
+<<<<<<< HEAD
+  {path: 'categoryList', component: CategoryListComponent},
+  { path: 'itgroup', component: ItgroupComponent}
+=======
+  {path: 'itgroupmember', component: ItgroupmemberComponent}
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
+  
+=======
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'office', component: OfficeComponent },
+  { path: 'employee', component: EmployeeComponent },
+  { path: 'itgroup', component: ItgroupComponent },
+  { path: 'categoryList', component: CategoryListComponent },
+  { path: 'modals', component: ModalsComponent}
+>>>>>>> ridz
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 ]
 
 @NgModule({

@@ -26,10 +26,19 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
+<<<<<<< HEAD
 
 
                 if (context.Offices.Where(x => x.OfficeCode == officeVM.OfficeCode || x.OfficeDesc == officeVM.OfficeDesc).Any())
 
+=======
+<<<<<<< HEAD
+                //check if record already exists
+                if (context.Offices.Where(b => b.OfficeCode.ToLower() == officeVM.OfficeCode.ToLower()).Any())
+=======
+                if (context.Offices.Where(x => x.OfficeCode == officeVM.OfficeCode || x.OfficeDesc == officeVM.OfficeDesc).Any())
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
                 {
                     return new ResponseVM("created", false, "Office", ResponseVM.ALREADY_EXIST);
                 }
@@ -56,9 +65,21 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
+<<<<<<< HEAD
                 if (context.Employees.Where(b => b.Officeid == id).Any())
                 {
                     return new ResponseVM("deleted", false, "Office", "Can't delete record. It is used in a transaction");
+=======
+<<<<<<< HEAD
+                if (context.Employees.Where(b => b.Officeid == id).Any())
+                {
+                    return new ResponseVM("deleted", false, "Office", "Can't delete record. It is used in a transaction");
+=======
+                if (context.Employees.Where(x => x.Officeid == id).Any())
+                {
+                    return new ResponseVM("deleted", false, "Office", ResponseVM.DONT_DELETE);
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
                 }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
@@ -122,9 +143,20 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
+<<<<<<< HEAD
+                //check if record already exists
+                if (context.Offices.Where(b => b.OfficeCode.ToLower() == officeVM.OfficeCode.ToLower()).Any())
+                {
+                    return new ResponseVM("created", false, "Office", ResponseVM.ALREADY_EXIST);
+=======
                 if (context.Offices.Where(x => x.OfficeCode == officeVM.OfficeCode && x.OfficeDesc == officeVM.OfficeDesc).Any())
                 {
+<<<<<<< HEAD
                     return new ResponseVM("updated", false, "Office", ResponseVM.ALREADY_EXIST);
+=======
+                    return new ResponseVM("updated", false, "Office", ResponseVM.NO_NEW_DATA);
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
                 }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {

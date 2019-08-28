@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="content-wrapper">
         <section class="content">
           <div class="row">
@@ -45,4 +46,39 @@
           </div>
         </section>
     </div>
+=======
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><app-employeetype-add-form></app-employeetype-add-form>
+
+
+<h1>Employee Type</h1>
+<table class="table table-hover table-dark">
+<thead>
+    <tr>
+        <td style="width: 70%;">Name</td>
+        <td style="width: 30%;"></td>
+    </tr>
+</thead>
+<tbody> 
+    <tr *ngFor="let employeeType of employeeTypes"> 
+        <td style="width: 70%;">{{employeeType.employeeTypeName}}</td>
+        <td style="width: 30%;">
+           <div class="row">
+               <button class="col-md-5 btn btn-success m-1"(click)="update(employeeType)" data-toggle="tooltip" data-placement="bottom" title="Edit office">
+                    <i class="material-icons">update</i>
+               </button>
+               <button class="col-md-5 btn btn-danger m-1"(click)="delete(employeeType.employeeTypeid)" data-toggle="tooltip" data-placement="bottom" title="Delete office">
+                    <i class="material-icons">delete </i>
+               </button>
+           </div> 
+        </td>
+    </tr>
+</tbody>
+</table>
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 

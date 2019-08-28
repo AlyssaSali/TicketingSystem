@@ -86,6 +86,14 @@ namespace Ticketing_System
             services.AddScoped<CategoryService>();
             services.AddScoped<SeverityService>();
             services.AddScoped<CategoryListService>();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            services.AddScoped<ITGroupService>();
+            services.AddScoped<EmployeeTypeService>();
+=======
+            services.AddScoped<OfficeService>();
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
             services.AddScoped<ITGroupService>();
             services.AddScoped<EmployeeTypeService>();
             services.AddScoped<ITGroupMemberService>();
