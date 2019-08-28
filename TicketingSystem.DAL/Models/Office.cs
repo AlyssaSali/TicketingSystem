@@ -14,10 +14,17 @@ namespace TicketingSystem.DAL.Models
 
         public virtual ICollection<Employee> Employees { get; set; }
 <<<<<<< HEAD
+
+        public virtual ICollection<Ticket> Tickets { get; set; }
+
+=======
+<<<<<<< HEAD
         public virtual ICollection<Ticket> Tickets { get; set; }
 =======
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
         public virtual ICollection<TicketMinor> TicketMinors { get; set; }
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+
 
     }
 }

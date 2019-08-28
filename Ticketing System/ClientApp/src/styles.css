@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~material-design-icons/iconfont/material-icons.css";
 html, body { height: 100%; }
@@ -21,16 +24,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */ 
 >>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 
-.error-msg {
-    color:  red;
-    font-size: 10pt;
-    margin: 0;
-}
+@import"~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import'~material-design-icons/iconfont/material-icons.css';
 
-.rounded-btn{
-  border-radius: 10px;
-}
+
+
 .no-data-available{
   text-align: center;
 }
@@ -40,47 +40,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 .dataTables_empty{
   display: none;
 }
-.error-msge{
-  color: red;
-  font-size: 10pt;
-}
-<<<<<<< HEAD
-.f3 {
-  font-size: 10px;
-}
-
-.f1
-{
-    font-size: 12px;
-    font-style: inherit;
-}
-
-.f2
-{
-    font-size: 15px;
-    font-style: inherit;
-}
-
-.mm {
-    margin-left:10px;
-    margin-top:10px;
-    margin-right: 10px;
-    margin-bottom: 20px;
-    width: 100%;
-=======
-=======
-@import"~@angular/material/prebuilt-themes/deeppurple-amber.css";
-@import'~material-design-icons/iconfont/material-icons.css';
->>>>>>> ridz
 
 .custom-modalbox >  mat-dialog-container {
     padding: 0px;
     margin: 0px;
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 }
 
 .error-msg {
-<<<<<<< HEAD
     color:  red;
     font-size: 10pt;
     margin: 0;
@@ -89,6 +55,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 =======
 
 
+<<<<<<< HEAD
+=======
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 /* Main content */
 .main {
@@ -124,16 +92,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
     height: 55px; 
     margin-top: 10px;
   }
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 
-  .ico2{
-    width:65px; 
-    height: 60px;
-  }
+ 
 
-  .mg {
-      margin-left: 50px;
-  }
+ 
 
+<<<<<<< HEAD
+=======
   .mt {
     margin-top: 30px;
 }
@@ -154,3 +120,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 }
 >>>>>>> ridz
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4

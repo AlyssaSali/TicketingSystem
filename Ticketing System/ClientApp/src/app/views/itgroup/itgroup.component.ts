@@ -4,12 +4,9 @@ import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { ItgroupDataService } from 'src/app/dataservices/itgroup.dataservice';
 import { ItgroupUpdateFormComponent } from './itgroup-update-form/itgroup-update-form.component';
 import { Itgroup } from 'src/app/models/itgroup.model';
-<<<<<<< HEAD
 import { Subject } from 'rxjs';
 import { DataTableDirective } from 'angular-datatables';
-=======
 import { ItgroupAddFormComponent } from './itgroup-add-form/itgroup-add-form.component';
->>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 
 @Component({
   selector: 'app-itgroup',
@@ -89,8 +86,6 @@ export class ItgroupComponent implements OnInit {
         this.dtTrigger.next();
       });
     }
-
-    
   close(){
       this.dialogRef.close();
     }

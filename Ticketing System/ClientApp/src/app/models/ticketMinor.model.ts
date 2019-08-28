@@ -5,8 +5,13 @@ import { CategoryList } from './categoryList.model';
 
 export interface TicketMinor {
 <<<<<<< HEAD
+
+    assistByid: number
+=======
+<<<<<<< HEAD
     ticketMinorid: number,
     assistByid: number,
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
     categoryid: number,
     requestDesc: string,
     dateRequested: Date,
@@ -14,8 +19,11 @@ export interface TicketMinor {
     isOpen: boolean,
     //dummyinputs
     requestedBy: string,
+<<<<<<< HEAD
+=======
     office: string,
 =======
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
     ticketMinorid: string;
     agentid: number,
     description: string,

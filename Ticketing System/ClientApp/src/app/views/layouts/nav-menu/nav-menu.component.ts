@@ -7,8 +7,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
   styleUrls: ['./nav-menu.component.css']
 })
 export class NavMenuComponent implements OnInit{
-  isExpanded = false;
-  isLogin: boolean;
+ 
   
   options: FormGroup;
 
@@ -24,31 +23,14 @@ export class NavMenuComponent implements OnInit{
 
 
   ngOnInit(){
-    this.checkLogin();
+  
   }
-
-  collapse() {
-    this.isExpanded = false;
-  }
-
-  toggle() {
-    this.isExpanded = !this.isExpanded;
-  }
-
-  checkLogin(){
-    let token = localStorage.getItem("token")
-    if(token){
-      this.isLogin = true
-    } else
-      this.isLogin = false
-  }
-
   logout(){
     let answer = confirm('Are you sure you want to logout')
     if(answer){
       localStorage.removeItem('token')
-      this.isLogin = false;
       window.location.replace('/')
     }
   }
+  
 }

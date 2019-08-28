@@ -2,6 +2,8 @@
   "format": 1,
   "restore": {
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
     "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj": {}
   },
@@ -15,6 +17,7 @@
         "packagesPath": "C:\\Users\\Moore\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\obj\\",
 =======
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
     "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj": {}
   },
   "projects": {
@@ -26,6 +29,8 @@
         "projectPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj",
         "packagesPath": "C:\\Users\\Dis Moore\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Dis Moore\\source\\repos\\TicketingSystem\\TicketingSystem.DAL\\obj\\",
+<<<<<<< HEAD
+=======
 >>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 =======
     "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.DAL\\TicketingSystem.DAL.csproj": {}
@@ -40,11 +45,15 @@
         "packagesPath": "C:\\Users\\ridz\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ridz\\Desktop\\ITS\\TicketingSystem\\TicketingSystem.DAL\\obj\\",
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
+          "C:\\Users\\Dis Moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
           "C:\\Users\\Moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -56,6 +65,7 @@
 =======
           "C:\\Users\\ridz\\AppData\\Roaming\\NuGet\\NuGet.Config",
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
         ],
@@ -80,6 +90,14 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "Microsoft.AspNet.Identity.AspNetCoreCompat": {
+              "target": "Package",
+              "version": "[0.3.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[2.2.6, )"
