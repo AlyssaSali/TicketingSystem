@@ -19,9 +19,15 @@ import { EmployeeType } from 'src/app/models/employeetype.model';
 import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.dataservice';
 import { EmployeeTypeService } from 'src/app/services/employeetype.service';
 =======
+<<<<<<< HEAD
+import { EmployeeType } from 'src/app/models/employeetype.model';
+import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.dataservice';
+import { EmployeeTypeService } from 'src/app/services/employeetype.service';
+=======
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 
 @Component({
   selector: 'app-employee-add-form',
@@ -31,6 +37,12 @@ import { EmployeeTypeService } from 'src/app/services/employeetype.service';
 export class EmployeeAddFormComponent implements OnInit {
   employeeCreateForm: FormGroup;
   isSubmit = false;
+<<<<<<< HEAD
+//added during employee-office relationship
+  officesList : Office[];
+  employeeTypesList : EmployeeType[];
+
+=======
 <<<<<<< HEAD
 //added during employee-office relationship
   officesList : Office[];
@@ -53,6 +65,7 @@ export class EmployeeAddFormComponent implements OnInit {
   
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
   dialogOpen = false;
   router: any;
 //added during employee-office relationship
@@ -63,9 +76,14 @@ export class EmployeeAddFormComponent implements OnInit {
     private employeeTypeService: EmployeeTypeService,
     private employeeTypeDataService: EmployeeTypeDataService,
 =======
+<<<<<<< HEAD
+    private employeeTypeService: EmployeeTypeService,
+    private employeeTypeDataService: EmployeeTypeDataService,
+=======
     // private employeeTypeService: EmployeeTypeService,
     // private employeeTypeDataService: EmployeeTypeDataService,
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
     private officeService: OfficeService,//added during employee-office relationship
     private officeDataService: OfficeDataService,//added during employee-office relationship
     private dialog: MatDialog,//added during employee-office relationship,
@@ -99,6 +117,10 @@ export class EmployeeAddFormComponent implements OnInit {
 =======
 <<<<<<< HEAD
     this.officeDataService.officeSource.subscribe( data => { this.getOfficeLists(); });
+    this.employeeTypeDataService.employeeTypeSource.subscribe( data => { this.getEmployeeTypeLists(); });  
+=======
+<<<<<<< HEAD
+    this.officeDataService.officeSource.subscribe( data => { this.getOfficeLists(); });
     // this.employeeTypeDataService.employeeTypeSource.subscribe( data => { this.getEmployeeTypeLists(); });  
     // //added during employee-office relationship
 =======
@@ -108,6 +130,7 @@ export class EmployeeAddFormComponent implements OnInit {
     });
     
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
     //added during employee-office relationship
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
   }
@@ -131,12 +154,15 @@ export class EmployeeAddFormComponent implements OnInit {
 =======
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
       this.firstNameBackEndErrors = null;
       this.lastNameBackEndErrors = null;
       this.formOfCommuBackEndErrors = null;
       this.contactInfoBackEndErrors = null;
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
       let result = await this.employeeService.CreateEmployee(this.employeeCreateForm.value).toPromise();
       if(result.isSuccess){
         alert(result.message);
@@ -161,6 +187,8 @@ export class EmployeeAddFormComponent implements OnInit {
 =======
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
       if(errs.errors) {
         if('firstname' in errs.errors){
           this.firstNameBackEndErrors = errs.errors.firstname;//shows data annotations error message
@@ -179,6 +207,7 @@ export class EmployeeAddFormComponent implements OnInit {
 
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
       this.isSubmit = false;//enables button
     }
     finally{
@@ -257,6 +286,8 @@ export class EmployeeAddFormComponent implements OnInit {
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
   // close(){
   //   this.dialogRef.close();
   // }
@@ -270,6 +301,7 @@ export class EmployeeAddFormComponent implements OnInit {
   }
 =======
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
   close(){
     this.dialogRef.close();
   }

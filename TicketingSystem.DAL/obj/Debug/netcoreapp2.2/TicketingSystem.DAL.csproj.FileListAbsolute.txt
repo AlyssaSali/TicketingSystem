@@ -1,4 +1,6 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.csproj.CoreCompileInputs.cache
 C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.AssemblyInfoInputs.cache
 C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.AssemblyInfo.cs
@@ -11,6 +13,7 @@ C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\ne
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.deps.json
 C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.runtimeconfig.json
 C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.runtimeconfig.dev.json
@@ -22,6 +25,8 @@ C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcor
 C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.dll
 C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.pdb
 C:\Users\Moore\source\repos\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcoreapp2.2\TicketingSystem.DAL.csprojAssemblyReference.cache
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 C:\Users\Dis Moore\source\repos\TicketingSystem\TicketingSystem.DAL\bin\Debug\netcoreapp2.2\TicketingSystem.DAL.deps.json
@@ -50,3 +55,4 @@ C:\Users\ridz\Desktop\ITS\TicketingSystem\TicketingSystem.DAL\obj\Debug\netcorea
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2

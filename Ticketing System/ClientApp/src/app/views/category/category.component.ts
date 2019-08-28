@@ -6,10 +6,13 @@ import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { CategoryUpdateFormComponent } from './category-update-form/category-update-form.component';
 import { CategoryAddFormComponent } from './category-add-form/category-add-form.component';
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
 =======
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 
 @Component({
   selector: 'app-category',
@@ -18,6 +21,8 @@ import { Subject } from 'rxjs';
 })
 export class CategoryComponent implements OnInit {
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
   @ViewChild(DataTableDirective, {static: false})
   dtElement: DataTableDirective;
   dtOptions: DataTables.Settings = {};
@@ -25,6 +30,7 @@ export class CategoryComponent implements OnInit {
   
 =======
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
   categories:Category[];
 
   constructor(
@@ -75,6 +81,8 @@ export class CategoryComponent implements OnInit {
       this.dialog.open(CategoryUpdateFormComponent,dialogConfig)
     }
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 
     ngAfterViewInit(): void {
       this.dtTrigger.next();
@@ -95,6 +103,7 @@ export class CategoryComponent implements OnInit {
     }
 =======
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 
     close(){
       this.dialogRef.close();

@@ -19,11 +19,17 @@ import { EmployeetypeComponent } from '../../employeetype/employeetype.component
 import { EmployeeTypeService } from 'src/app/services/employeetype.service';
 import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.dataservice';
 =======
+<<<<<<< HEAD
+import { EmployeetypeComponent } from '../../employeetype/employeetype.component';
+import { EmployeeTypeService } from 'src/app/services/employeetype.service';
+import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.dataservice';
+=======
 import { EmployeeTypeService } from 'src/app/services/employeetype.service';
 import { EmployeeTypeDataService } from 'src/app/dataservices/employeetype.dataservice';
 import { EmployeetypeComponent } from '../../employeetype/employeetype.component';
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 
 @Component({
   selector: 'app-employee-update-form',
@@ -44,11 +50,17 @@ export class EmployeeUpdateFormComponent implements OnInit {
   officeBackEndErrors: string[];
   //added during employee-office relationship
 =======
+<<<<<<< HEAD
+  emailAddressBackEndErrors: string[];
+  officeBackEndErrors: string[];
+  //added during employee-office relationship
+=======
   formOfCommuBackEndErrors: string[];
   contactInfoBackEndErrors: string[];
 
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
   employeeContext: any;
   employeeUpdateForm: FormGroup;
   employeeToBeEdited: Employee;
@@ -73,11 +85,15 @@ export class EmployeeUpdateFormComponent implements OnInit {
 =======
 <<<<<<< HEAD
     private officeDataService: OfficeDataService,//added during employee-office relationship\
+=======
+<<<<<<< HEAD
+    private officeDataService: OfficeDataService,//added during employee-office relationship\
     // private employeeTypeService: EmployeeTypeService,//added during employee-employeetype relationship
     // private employeeTypeDataService: EmployeeTypeDataService,//added during employee-employeetype relationship
 =======
     private officeDataService: OfficeDataService,//added during employee-office relationship
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
     private employeeTypeService: EmployeeTypeService,//added during employee-employeetype relationship
     private employeeTypeDataService: EmployeeTypeDataService,//added during employee-employeetype relationship
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
@@ -110,13 +126,18 @@ export class EmployeeUpdateFormComponent implements OnInit {
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
     this.employeeDataService.employeeSource.subscribe(async data => {
       await this.getEmployeeLists();
       if(!this.initialized){
         this.change()
         this.initialized = true;
       }
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 =======
 =======
@@ -127,6 +148,7 @@ export class EmployeeUpdateFormComponent implements OnInit {
       this.getOfficeEmployeeTypeLists();//added during employee-employeetype relationship
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
     });
   }
 
@@ -232,6 +254,12 @@ export class EmployeeUpdateFormComponent implements OnInit {
   async getEmployeeLists(){
     try {
       this.officesList = await this.officeService.getAll().toPromise();
+      this.employeeTypesList = await this.employeeTypeService.getAll().toPromise();
+=======
+<<<<<<< HEAD
+  async getEmployeeLists(){
+    try {
+      this.officesList = await this.officeService.getAll().toPromise();
       // this.employeeTypesList = await this.employeeTypeService.getAll().toPromise();
 =======
   async getOfficeEmployeeTypeLists(){
@@ -244,6 +272,7 @@ export class EmployeeUpdateFormComponent implements OnInit {
       }
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
     } catch (error) {
       console.log(error);
     }
@@ -264,6 +293,8 @@ export class EmployeeUpdateFormComponent implements OnInit {
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
   // selectEmployeeType($event){//added during employee-employeetype relationship
   //   let emptype = this.employeeUpdateForm.value.employeetypeSelect;
   //   if (emptype.length > 2) {
@@ -278,6 +309,7 @@ export class EmployeeUpdateFormComponent implements OnInit {
 =======
 
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
   selectEmployeeType($event){//added during employee-employeetype relationship
     let emptype = this.employeeUpdateForm.value.employeetypeSelect;
     if (emptype.length > 2) {

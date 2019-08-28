@@ -207,6 +207,7 @@ namespace TicketingSystem.BLL.Contracts
                 {
                     // search based from the search value
                     query = context.Employees.Include(x => x.Office)
+                        .Include(x=>x.EmployeeType)
                           .Where(v => v.Office.ToString().ToLower().Contains(paging.Search.Value.ToLower()) || v.FirstName.ToString().ToLower().Contains(paging.Search.Value.ToLower()) ||
                     v.LastName.ToString().ToLower().Contains(paging.Search.Value.ToLower()));
                 }

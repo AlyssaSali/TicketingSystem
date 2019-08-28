@@ -46,6 +46,8 @@ namespace Ticketing_System
                  options.UseSqlServer
                   (Configuration.GetConnectionString
                   ("TicketingSystemContext")));
+<<<<<<< HEAD
+=======
 
 <<<<<<< HEAD
 =======
@@ -83,12 +85,16 @@ namespace Ticketing_System
                 };
             });
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
             services.AddScoped<OfficeService>();
             services.AddScoped<EmployeeService>();
             services.AddScoped<TicketService>();
             services.AddScoped<CategoryService>();
             services.AddScoped<SeverityService>();
             services.AddScoped<CategoryListService>();
+<<<<<<< HEAD
+            services.AddScoped<EmployeeTypeService>();
+=======
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -99,9 +105,12 @@ namespace Ticketing_System
             services.AddScoped<EmployeeTypeService>();
             services.AddScoped<OfficeService>();
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
             services.AddScoped<ITGroupService>();
-<<<<<<< HEAD
             services.AddScoped<ITGroupMemberService>();
+<<<<<<< HEAD
+            services.AddScoped<TicketMinorService>();
+=======
             services.AddScoped<TicketMinorService>();
 =======
             services.AddScoped<EmployeeTypeService>();
@@ -110,6 +119,7 @@ namespace Ticketing_System
             services.AddScoped<TicketMinorService>();
             services.AddScoped<UserService>();
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

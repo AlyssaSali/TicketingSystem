@@ -70,10 +70,15 @@ export class EmployeetypeComponent implements OnInit {
     dialogConfig.width = '400px';
     dialogConfig.panelClass = 'custom-modalbox';
 =======
+<<<<<<< HEAD
+    dialogConfig.width = '400px';
+    dialogConfig.panelClass = 'custom-modalbox';
+=======
     dialogConfig.width='600px';
     //dialogConfig.height='600px';
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
     this.dialog.open(EmployeetypeUpdateFormComponent,dialogConfig)
   }
 

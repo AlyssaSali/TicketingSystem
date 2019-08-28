@@ -7,6 +7,8 @@ export interface TicketMinor {
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 
     assistByid: number
 =======
@@ -27,6 +29,7 @@ export interface TicketMinor {
 =======
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
     ticketMinorid: string;
     agentid: number,
     description: string,
@@ -41,5 +44,8 @@ export interface TicketMinor {
     employee: Employee;
     categoryListid: string;
     categoryList: CategoryList;
+<<<<<<< HEAD
+=======
     dateAccomplished: string;
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 }

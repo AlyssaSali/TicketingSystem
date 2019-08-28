@@ -13,8 +13,12 @@ export class ModalsComponent implements OnInit {
 <<<<<<< HEAD
     public dialogRef: MatDialogRef<ModalsComponent>,
 =======
+<<<<<<< HEAD
+    public dialogRef: MatDialogRef<ModalsComponent>,
+=======
     // public dialogRef: MatDialogRef<ModalsComponent>,
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
     private router: Router
   ) { }
 
@@ -24,6 +28,10 @@ export class ModalsComponent implements OnInit {
   // close(){
   //   this.dialogRef.close();
   // }
+
+  loadEmployeeType(){
+    this.router.navigate(["/employeeType"]);
+  }
 
   loadEmployeeType(){
     this.router.navigate(["/employeeType"]);

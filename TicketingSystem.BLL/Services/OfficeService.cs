@@ -30,6 +30,9 @@ namespace TicketingSystem.BLL.Services
                 if (context.Offices.Where(x => x.OfficeCode == officeVM.OfficeCode || x.OfficeDesc == officeVM.OfficeDesc).Any())
 =======
 <<<<<<< HEAD
+                if (context.Offices.Where(x => x.OfficeCode == officeVM.OfficeCode || x.OfficeDesc == officeVM.OfficeDesc).Any())
+=======
+<<<<<<< HEAD
 
 
                 if (context.Offices.Where(x => x.OfficeCode == officeVM.OfficeCode || x.OfficeDesc == officeVM.OfficeDesc).Any())
@@ -43,6 +46,7 @@ namespace TicketingSystem.BLL.Services
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
                 {
                     return new ResponseVM("created", false, "Office", ResponseVM.ALREADY_EXIST);
                 }
@@ -70,6 +74,11 @@ namespace TicketingSystem.BLL.Services
             using (context)
             {
 <<<<<<< HEAD
+                if (context.Employees.Where(x => x.Officeid == id).Any())
+                {
+                    return new ResponseVM("deleted", false, "Office", ResponseVM.DONT_DELETE);
+=======
+<<<<<<< HEAD
                 if (context.Employees.Where(x => x.Officeid == id).Any() || context.TicketMinors.Where(x => x.Officeid == id).Any())
                 {
                     return new ResponseVM("deleted", false, "Office", ResponseVM.DONT_DELETE);
@@ -90,6 +99,7 @@ namespace TicketingSystem.BLL.Services
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
                 }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
@@ -161,9 +171,12 @@ namespace TicketingSystem.BLL.Services
                     return new ResponseVM("updated", false, "Office", ResponseVM.NO_NEW_DATA);
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 >>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
                 }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {

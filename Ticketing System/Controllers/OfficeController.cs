@@ -34,11 +34,15 @@ namespace Ticketing_System.Controllers
         }
         [HttpDelete("[action]/{id}")]
 <<<<<<< HEAD
+        public ActionResult<ResponseVM> Delete(Guid id)
+=======
+<<<<<<< HEAD
         public ActionResult<ResponseVM> Delete (Guid id)
 =======
         public ActionResult<ResponseVM> Delete
             (Guid id)
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
         {
             if (!ModelState.IsValid)
             {

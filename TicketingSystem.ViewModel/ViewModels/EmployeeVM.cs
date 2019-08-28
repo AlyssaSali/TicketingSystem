@@ -20,8 +20,11 @@ namespace TicketingSystem.ViewModel.ViewModels
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
         public string FormOfCommu { get; set; }
         [Required]
         public string ContactInfo { get; set; }
@@ -36,6 +39,8 @@ namespace TicketingSystem.ViewModel.ViewModels
         [Required]
         public Guid EmployeeTypeid { get; set; }
         public EmployeeTypeVM EmployeeType { get; set; }
+<<<<<<< HEAD
+=======
 
 <<<<<<< HEAD
 =======
@@ -45,6 +50,7 @@ namespace TicketingSystem.ViewModel.ViewModels
 >>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
         [Required]
         public string Officeid { get; set; }
         public OfficeVM Office { get; set; }

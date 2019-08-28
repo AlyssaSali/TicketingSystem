@@ -17,8 +17,11 @@ namespace TicketingSystem.DAL.Models
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
         public string FormOfCommu { get; set; }
         public string ContactInfo { get; set; }
 
@@ -35,6 +38,14 @@ namespace TicketingSystem.DAL.Models
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
+        [ForeignKey("Office")]
+        public Guid Officeid { get; set; }
+        public Office Office { get; set; }
+        public virtual ICollection<Ticket> Tickets { get; set; }
+        public List<GroupEmployee> GroupEmployees { get; set; }
+        public virtual ICollection<TicketMinor> TicketMinors { get; set; }
+=======
 =======
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
@@ -67,5 +78,6 @@ namespace TicketingSystem.DAL.Models
         public virtual ICollection<TicketMinor> TicketMinors { get; set; }
 
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
     }
 }

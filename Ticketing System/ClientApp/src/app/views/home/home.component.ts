@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
     private userService: UserService,
     private toastrService: ToastrService
   ){  }
@@ -35,6 +37,7 @@ export class HomeComponent implements OnInit {
     //private toastServcie: ToastrService
 =======
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
    // private toastServcie: ToastrService
   ) {
 >>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4

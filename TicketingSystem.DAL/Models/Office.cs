@@ -13,8 +13,10 @@ namespace TicketingSystem.DAL.Models
         public string OfficeDesc { get; set; }
 
         public virtual ICollection<Employee> Employees { get; set; }
-<<<<<<< HEAD
         public virtual ICollection<Ticket> Tickets { get; set; }
+<<<<<<< HEAD
+        public virtual ICollection<TicketMinor> TicketMinors { get; set; }
+=======
 =======
 <<<<<<< HEAD
 
@@ -28,6 +30,7 @@ namespace TicketingSystem.DAL.Models
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
         public virtual ICollection<TicketMinor> TicketMinors { get; set; }
 
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 
     }
 }

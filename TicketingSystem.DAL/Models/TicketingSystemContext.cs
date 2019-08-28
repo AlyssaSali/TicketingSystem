@@ -34,6 +34,9 @@ namespace TicketingSystem.DAL.Models
         public DbSet<Office> Offices { get; set; }
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
         public DbSet<Employee> Employees { get; set; }
@@ -52,6 +55,10 @@ namespace TicketingSystem.DAL.Models
 
         public DbSet<TypeEmployee> TypeEmployees { get; set; }
 
+<<<<<<< HEAD
+        public DbSet<EmployeeType> EmployeeTypes { get; set; }
+        public DbSet<TicketMinor> TicketMinors { get; set; }
+=======
         public DbSet<EmployeeType> EmployeeTypes { get; set; }
 
 <<<<<<< HEAD
@@ -72,5 +79,6 @@ namespace TicketingSystem.DAL.Models
         public DbSet<User> Users { get; set; }
 
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
     }
 }

@@ -152,6 +152,9 @@ namespace TicketingSystem.BLL.Services
         public DatatableVM.PagingResponse<TicketMinorVM> GetDataServerSide(DatatableVM.PagingRequest paging)
         {
 <<<<<<< HEAD
+            throw new NotImplementedException();
+=======
+<<<<<<< HEAD
             using (context)
             {
 
@@ -210,6 +213,7 @@ namespace TicketingSystem.BLL.Services
 =======
             throw new NotImplementedException();
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
         }
     }
 }

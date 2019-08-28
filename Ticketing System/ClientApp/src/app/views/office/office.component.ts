@@ -5,10 +5,13 @@ import { Office } from 'src/app/models/office.model';
 import { OfficeService } from 'src/app/services/office.service';
 import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 import { Subject } from 'rxjs';
 import { DataTableDirective } from 'angular-datatables';
 =======
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 
 @Component({
   selector: 'app-office',
@@ -17,6 +20,8 @@ import { DataTableDirective } from 'angular-datatables';
 })
 export class OfficeComponent implements OnInit {
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
   @ViewChild(DataTableDirective, {static: false})
   dtElement: DataTableDirective;
   dtOptions: DataTables.Settings = {};
@@ -24,6 +29,7 @@ export class OfficeComponent implements OnInit {
   
 =======
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
   offices:Office[];
 
   constructor(
@@ -71,6 +77,8 @@ export class OfficeComponent implements OnInit {
       this.dialog.open(OfficeUpdateFormComponent,dialogConfig)
     }
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 
     ngAfterViewInit(): void {
       this.dtTrigger.next();
@@ -91,5 +99,6 @@ export class OfficeComponent implements OnInit {
     }
 =======
 >>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 
 }
