@@ -1,0 +1,35 @@
+
+<div class="main">
+
+    <app-employee-employee-type-add-form></app-employee-employee-type-add-form>
+    
+    <h1>Employee EmployeeTypes</h1>
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-striped">
+                         
+       <thead>
+            <tr>
+                <td style="width: 30%;">EmployeeTypes</td>
+                <td style="width: 30%;">Employees</td>
+                <td style="width: 20%;">Action</td>
+            </tr>
+        </thead>
+        <tbody  *ngIf="employeeEmployeeTypes != null || employeeEmployeeTypes?.length != 0">
+            <tr *ngFor="let employeeEmployeeType of employeeEmployeeTypes">
+                
+                <td style="width: 30%;"><div *ngIf="employeeEmployeeType.employeeType">{{employeeEmployeeType.employeeType.employeeTypeName}}</div></td>
+                <td style="width: 20%;"><div *ngFor="let employee of employeeEmployeeType.employees">{{employee.fullName}}</div></td>
+                <td >
+                    <div class="row">
+                        <button class="col-md-3 btn btn-success m-1" (click)="update(employeeEmployeeType)" data-toggle="tooltip" data-placement="bottom" title="Update employeeEmployeeType" >
+                            <i class="material-icons">update</i>
+                        </button>
+                        <button class="col-md-3 btn btn-danger m-1" (click)="delete(employeeEmployeeType.employeeEmployeeTypeid)" data-toggle="tooltip" data-placement="bottom" title="Delete employeeEmployeeType">
+                            <i class="material-icons">delete</i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    
+    </div>

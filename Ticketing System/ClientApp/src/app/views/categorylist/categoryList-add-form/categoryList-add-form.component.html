@@ -35,9 +35,10 @@
                     </span>
                 </div>
             </div><br>
+        <!-- <div *ngIf="f.categoryType.value == 'Major'"> -->
             <div class="col-md-3" for="SLAResponseTime"><br>
                 <label for="SLAResponseTime" style="font-size: 12px">Response Time</label>
-                    <input type="number" class="form-control form-control-sm" id="SLAResponseTime" formControlName="slaResponseTime"/>
+                    <input type="number" class="form-control form-control-sm" id="SLAResponseTime" formControlName="slaResponseTime" (click)="clearExt1()"/>
                     <div *ngIf="f.slaResponseTime.touched && f.slaResponseTime.errors" class="invalid-feedback">
                         <div *ngIf="f.slaResponseTime.errors.required">
                             <span style="color: red; font-size: 10pt;">This field is required</span>
@@ -46,12 +47,15 @@
             </div>
             <div class="col-md-3" for="slaResponseTimeExt"><br>
                     <label><span style="color: red;">*</span></label>
-                    <select class="form-control form-control-sm" formControlName="slaResponseTimeExt">
-                            <option>Minute</option>
-                            <option>Hour</option>
-                            <option>Day</option>
-                            <option>Month</option>
-                    </select>
+                    <input type="text" class="form-control form-control-sm" formControlName="slaResponseTimeExt" (keyup)="convertToMinute1($event)" (click)="$event.target.select()" list="extension1">
+                    <datalist class="ui-datalist-data" height="100px" id="extension1" >
+                        <option [ngValue]="null" disabled="true" [selected]="true">
+                                <option>Minute</option>
+                                <option>Hour</option>
+                                <option>Day</option>
+                                <option>Week</option>
+                                <option>Month</option>
+                    </datalist>
                     <div *ngIf="f.slaResponseTime.touched && f.slaResponseTime.errors" class="invalid-feedback">
                         <div *ngIf="f.slaResponseTime.errors.required">
                             <span style="color: red; font-size: 10pt;">This field is required</span>
@@ -60,7 +64,7 @@
             </div><br>
             <div class="col-md-3" for="SLAResolvedTime"><br>
                 <label for="SLAResolvedTime" style="font-size: 12px">Resolved Time:</label>
-                <input type="number" class="form-control form-control-sm" id="SLAResolvedTime" formControlName="slaResolvedTime"/>
+                <input type="number" class="form-control form-control-sm" id="SLAResolvedTime" formControlName="slaResolvedTime" (click)="clearExt2()"/>
                 <div *ngIf="f.slaResolvedTime.touched && f.slaResolvedTime.errors" class="invalid-feedback">
                     <div *ngIf="f.slaResolvedTime.errors.required">
                         <span style="color: red; font-size: 10pt;">This field is required</span>
@@ -69,18 +73,24 @@
             </div>
             <div class="col-md-3" for="slaResolvedTimeExt"><br>
                         <label><span style="color: red;">*</span></label>
-                        <select class="form-control form-control-sm" formControlName="slaResolvedTimeExt">
-                                <option>Minute</option>
-                                <option>Hour</option>
-                                <option>Day</option>
-                                <option>Month</option>
-                        </select>
+                        <input type="text" class="form-control form-control-sm" formControlName="slaResolvedTimeExt" (keyup)="convertToMinute2($event)" (click)="$event.target.select()" list="extension1">
+                            <datalist class="ui-datalist-data" height="100px" id="extension1" >
+                                <option [ngValue]="null" disabled="true" [selected]="true">
+                                        <option>Minute</option>
+                                        <option>Hour</option>
+                                        <option>Day</option>
+                                        <option>Week</option>
+                                        <option>Month</option>
+                            </datalist>
                             <div *ngIf="f.slaResponseTime.touched && f.slaResponseTime.errors" class="invalid-feedback">
                                 <div *ngIf="f.slaResponseTime.errors.required">
                                     <span style="color: red; font-size: 10pt;">This field is required</span>
                                 </div>
                             </div>
             </div><br>
+            <div *ngIf="isValid" class="invalid-feedback">
+                <span style="color: red; font-size: 10pt; margin-left: 15px"> * Response Time cannot be greater or equal than Resolved Time!</span>
+            </div>
             <div class="col-md-6" for="Severity"><br>
                 <label>Severity: <span style="color: red">*</span></label>
                 <input type="text" id="severityid" formControlName="severityid" hidden/>
@@ -121,11 +131,12 @@
                                 </span>
                             </div>
             </div>
+        <!-- </div> -->
         </div>
       </div>
       <div class="box-footer">
         <button type="submit" [disabled]="!categoryListCreateForm.valid || isSubmit" class="btn btn-primary m-1">Save</button>
         <button type="button" (click)="reset()" class="btn btn-default">Reset</button>
-    </div>
+      </div>
     </form>
 

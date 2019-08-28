@@ -5,6 +5,7 @@ import { MatDialogRef, MatDialog, MatDialogConfig, MAT_DIALOG_DATA } from '@angu
 import { TicketEditFormComponent } from '../ticket-edit-form/ticket-edit-form.component';
 import { TicketService } from 'src/app/services/ticket.service';
 import { TicketDataService } from 'src/app/dataservices/ticket.dataservice';
+<<<<<<< HEAD
 import { Office } from 'src/app/models/office.model';
 import { Employee } from 'src/app/models/employee.model';
 import { OfficeService } from 'src/app/services/office.service';
@@ -13,6 +14,8 @@ import { EmployeeService } from 'src/app/services/employee.service';
 import { EmployeeDataService } from 'src/app/dataservices/employee.dataservice';
 import { OfficeAddFormComponent } from '../../office/office-add-form/office-add-form.component';
 import { Router } from '@angular/router';
+=======
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 
 
 @Component({
@@ -24,6 +27,7 @@ export class TicketAddFormComponent implements OnInit {
   ticketCreateForm: FormGroup;
   isSubmit = false;
 
+<<<<<<< HEAD
   officesList : Office[];
   employeesList : Employee[];
   constructor(
@@ -36,10 +40,16 @@ export class TicketAddFormComponent implements OnInit {
     private dialog: MatDialog,//added during employee-office relationship,
     public dialogRef:MatDialogRef<OfficeAddFormComponent>,
     private router: Router
+=======
+  constructor(
+    private ticketService: TicketService,
+    private ticketDataService: TicketDataService
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
   ) { 
     this.ticketCreateForm = new FormGroup({
       date: new FormControl(),
       time: new FormControl(),
+<<<<<<< HEAD
       
       requestTitle: new FormControl('', [Validators.required]),
       requestDesc: new FormControl('', [Validators.required]),
@@ -52,6 +62,21 @@ export class TicketAddFormComponent implements OnInit {
       employeeSelect: new FormControl('', Validators.required)
 
 
+=======
+      contactInfo: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      contactVia: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      requestedBy: new FormControl('', [Validators.maxLength(50)]),
+      office: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      requestCategory: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      requestSubCategory: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      requestTitle: new FormControl('', [Validators.required]),
+      requestDesc: new FormControl('', [Validators.required]),
+      severity: new FormControl('', [Validators.required]),
+      responseTime: new FormControl('', [Validators.required]),
+      resolveTime: new FormControl('', [Validators.required]),
+      technician: new FormControl('', [Validators.required]),
+      isUrgent: new FormControl()
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
     })
   }
 

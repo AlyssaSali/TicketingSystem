@@ -5,10 +5,15 @@
       <h1>Dashboard
         <small></small>
       </h1>
+      <ol class="breadcrumb">
+        <li><a [routerLink]="['']"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Minor Request</li>
+      </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
+
       <div class="row">
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
@@ -16,7 +21,7 @@
   
               <div class="info-box-content">
                 <span class="info-box-text">Minor <br>Request</span>
-                <a href="#ticketMinor"><span class="info-box-number">10</span></a>
+                <a [routerLink]="['/ticketMinor']"><span class="info-box-number">{{ticketMinorList ? ticketMinorList.length : ''}}</span></a>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -66,6 +71,7 @@
             <!-- /.info-box-content -->
           </div>
         </div>
+
       </div>
     
 
@@ -73,16 +79,45 @@
 <div class="box box-info">
     <div class="box-header with-border">
       <h3 class="box-title">Ongoing Tickets</h3>
-      <div class="col-md-3 pull-right">
-          <form>
-              <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            </form>
-      </div>
     </div>
     <!-- /.box-header -->
+<<<<<<< HEAD
     <div class="box-body">
-      <app-ticket></app-ticket>
+      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th style="width: 15%"><strong>TicketNo.</strong></th>
+            <th style="width: 5%"><strong>Office</strong></th>
+            <th style="width: 10%"><strong>Request Category</strong></th>
+            <th style="width: 15%"><strong>RequestedBy</strong></th>
+            <th style="width: 15%"><strong>TaskedTo</strong></th>
+            <th style="width: 10%"><strong>Date</strong></th>
+            <th style="width: 10%"><strong>Time</strong></th>
+            <th style="width: 5%"><strong>Status</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ticketMinor of ticketMinorList">
+            <th style="font-weight: lighter; width: 15%"><a (click)="viewDetails(ticketMinor)" data-toggle="tooltip" data-placement="bottom">{{ticketMinor.ticketMinorid}}</a></th>
+            <th style="font-weight: lighter; width: 5%">{{ticketMinor.office.officeCode}}</th>
+            <th style="font-weight: lighter; width: 10%">{{ticketMinor.categoryList.categoryListName}}</th>
+            <th style="font-weight: lighter; width: 15%"><span *ngFor="let employee of employeeList">{{employee.employeeID === ticketMinor.requesterid ? employee.fullName : ''}}</span></th>
+            <th style="font-weight: lighter; width: 15%"><span *ngFor="let employee of employeeList">{{employee.employeeID === ticketMinor.workByid ? employee.fullName : ''}}</span></th>
+            <th style="font-weight: lighter; width: 10%">{{ticketMinor.dateOfRequest | date:'MM/dd/yyyy'}}</th>
+            <th style="font-weight: lighter; width: 10%">{{ticketMinor.timeOfRequest | date:'h:mm a'}}</th>
+            <th style="font-weight: lighter; width: 5%">
+              <span class="label label-default" *ngIf="ticketMinor.status === 'Close'">{{ticketMinor.status}}</span>
+              <span class="label label-success" *ngIf="ticketMinor.status === 'Open'">{{ticketMinor.status}}</span>
+             </th>
+          </tr>
+        </tbody>
+    </table> 
     </div>
+=======
+    <!-- <div class="box-body">
+      <app-ticket></app-ticket>
+    </div> -->
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
     <!-- /.box-body -->
     <div class="box-footer clearfix">
       <a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">View All Tickets</a>

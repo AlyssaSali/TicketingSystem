@@ -56,12 +56,6 @@ namespace TicketingSystem.BLL.Contracts
         public ResponseVM Update(EmployeeVM employeeVM) {
             using (context)
             {
-                //check if record already exists
-                if (context.Employees.Where(b => b.FirstName.ToLower() == employeeVM.FirstName.ToLower()).Any() &&
-                    context.Employees.Where(b => b.LastName.ToLower() == employeeVM.LastName.ToLower()).Any())
-                {
-                    return new ResponseVM("created", false, "Employee", ResponseVM.ALREADY_EXIST);
-                }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
                     try
@@ -80,7 +74,11 @@ namespace TicketingSystem.BLL.Contracts
                         employeeToBeUpdated.LastName = employeeVM.LastName;
                         employeeToBeUpdated.FormOfCommu = employeeVM.FormOfCommu;
                         employeeToBeUpdated.ContactInfo = employeeVM.ContactInfo;
+<<<<<<< HEAD
+                        //employeeToBeUpdated.EmployeeTypeid = employeeVM.EmployeeTypeid;
+=======
                         employeeToBeUpdated.EmployeeTypeid = employeeVM.EmployeeTypeid;
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
                         employeeToBeUpdated.Officeid = Guid.Parse(employeeVM.Officeid);
                         context.SaveChanges();
 
@@ -100,10 +98,9 @@ namespace TicketingSystem.BLL.Contracts
         {
             using (context)
             {
-                //check if employee exists in ticket
-                if (context.Tickets.Where(b => b.EmployeeID == id).Any())
+                if (context.TicketMinors.Where(b => b.Requesterid == id || b.WorkByid == id).Any())
                 {
-                    return new ResponseVM("deleted", false, "Employee", "Can't delete record. It is used in a transaction");
+                    return new ResponseVM("deleted", false, "Employee", ResponseVM.DONT_DELETE);
                 }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
@@ -143,7 +140,11 @@ namespace TicketingSystem.BLL.Contracts
                         //gets all employees and order the from last to first
                         var employees = context.Employees
                             .Include(x => x.Office)
+<<<<<<< HEAD
+                            //.Include(x => x.EmployeeType)
+=======
                             .Include(x => x.EmployeeType)
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
                             .ToList()
                             .OrderByDescending(x => x.EmployeeID);
                         var employeesVm = employees.Select(x=>toViewModel.Employee(x));
@@ -166,7 +167,11 @@ namespace TicketingSystem.BLL.Contracts
                     {
                         var employee = context.Employees
                             .Include(x=>x.Office)
+<<<<<<< HEAD
+                            //.Include(x => x.EmployeeType)
+=======
                             .Include(x => x.EmployeeType)
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
                             .Where(x => x.EmployeeID == id)
                             .FirstOrDefault();
                         EmployeeVM employeeVm = null;
@@ -219,7 +224,7 @@ namespace TicketingSystem.BLL.Contracts
                 switch (colOrder.Column)
                 {
                     case 0:
-                        query = colOrder.Dir == "asc" ? query.OrderBy(v => v.FirstName) : query.OrderByDescending(v => v.FirstName);
+                        query = colOrder.Dir == "asc" ? query.OrderBy(v => v.EmployeeID) : query.OrderByDescending(v => v.EmployeeID);
                         break;
 
                 }

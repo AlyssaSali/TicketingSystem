@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 <div class="content-wrapper">
         <section class="content">
           <div class="row">
@@ -16,17 +23,41 @@
                 <div class="box box-default">
                     <div class="box-header with-border"><h3 class="box-title">List of Employees Type</h3></div>
                       <div class="box-body margin">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <td style="width: 90%;"><strong>Name</strong></td>
+                                <td style="width: 10%;"><strong>Action</strong></td>
+=======
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
                         <table class="table table-hover table-striped">
                         <thead>
                             <tr>
                                 <td style="width: 70%;"><strong>Name</strong></td>
                                 <td style="width: 30%;"><strong>Action</strong></td>
+<<<<<<< HEAD
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
                             </tr>
                         </thead>
                         <tbody> 
                             <tr *ngFor="let employeeType of employeeTypes"> 
+<<<<<<< HEAD
                                 <td style="width: 70%;">{{employeeType.employeeTypeName}}</td>
                                 <td style="width: 30%;">
+=======
+<<<<<<< HEAD
+                                <td style="width: 90%;">{{employeeType.employeeTypeName}}</td>
+                                <td style="width: 10%;">
+=======
+                                <td style="width: 70%;">{{employeeType.employeeTypeName}}</td>
+                                <td style="width: 30%;">
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
                                 <div class="row">
                                     <button class="btn-success m-1"(click)="update(employeeType)" data-toggle="tooltip" data-placement="bottom" title="Edit office">
                                             <i class="material-icons">update</i>
@@ -45,4 +76,45 @@
           </div>
         </section>
     </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><app-employeetype-add-form></app-employeetype-add-form>
+
+
+<h1>Employee Type</h1>
+<table class="table table-hover table-dark">
+<thead>
+    <tr>
+        <td style="width: 70%;">Name</td>
+        <td style="width: 30%;"></td>
+    </tr>
+</thead>
+<tbody> 
+    <tr *ngFor="let employeeType of employeeTypes"> 
+        <td style="width: 70%;">{{employeeType.employeeTypeName}}</td>
+        <td style="width: 30%;">
+           <div class="row">
+               <button class="col-md-5 btn btn-success m-1"(click)="update(employeeType)" data-toggle="tooltip" data-placement="bottom" title="Edit office">
+                    <i class="material-icons">update</i>
+               </button>
+               <button class="col-md-5 btn btn-danger m-1"(click)="delete(employeeType.employeeTypeid)" data-toggle="tooltip" data-placement="bottom" title="Delete office">
+                    <i class="material-icons">delete </i>
+               </button>
+           </div> 
+        </td>
+    </tr>
+</tbody>
+</table>
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 

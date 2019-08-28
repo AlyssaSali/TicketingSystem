@@ -28,7 +28,24 @@
     "hammerjs": "^2.0.8",
     "jquery": "^3.4.1",
     "material-design-icons": "^3.0.1",
+<<<<<<< HEAD
     "ngx-toastr": "^10.1.0",
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    "ngx-material-timepicker": "^4.0.2",
+    "ngx-toastr": "^10.1.0",
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+    "ngx-material-timepicker": "^4.0.2",
+    "ngx-toastr": "^10.0.4",
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"

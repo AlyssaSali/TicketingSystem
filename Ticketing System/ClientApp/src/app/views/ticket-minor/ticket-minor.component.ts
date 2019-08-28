@@ -1,23 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ThrowStmt } from '@angular/compiler';
-import { MatDialogRef, MatDialog, MatDialogConfig } from '@angular/material';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { TicketService } from 'src/app/services/ticket.service';
+import { Ticket } from 'src/app/models/ticket.model';
+import { MatDialogConfig, MatDialog, MAT_DIALOG_DATA } from '@angular/material';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { TicketDataService } from 'src/app/dataservices/ticket.dataservice';
-import { OfficeComponent } from '../office/office.component';
-import { OfficeAddFormComponent } from '../office/office-add-form/office-add-form.component';
-import { Employee } from 'src/app/models/employee.model';
-import { Office } from 'src/app/models/office.model';
-import { CategoryList } from 'src/app/models/categoryList.model';
-import { OfficeDataService } from 'src/app/dataservices/office.dataservice';
-import { OfficeService } from 'src/app/services/office.service';
-import { EmployeeDataService } from 'src/app/dataservices/employee.dataservice';
-import { EmployeeService } from 'src/app/services/employee.service';
-import { CategoryListService } from 'src/app/services/categoryList.service';
-import { CategoryListDataService } from 'src/app/dataservices/categoryList.dataservice';
+import { TicketMinor } from 'src/app/models/ticketMinor.model';
 import { TicketMinorDataService } from 'src/app/dataservices/ticketMinor.dataservice';
 import { TicketMinorService } from 'src/app/services/ticketMinor.service';
+import { DataTableDirective } from 'angular-datatables';
+import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
+import { TicketMinorUpdateFormComponent } from './ticket-minor-update-form/ticket-minor-update-form.component';
+import { Employee } from 'src/app/models/employee.model';
+import { EmployeeService } from 'src/app/services/employee.service';
+import { EmployeeDataService } from 'src/app/dataservices/employee.dataservice';
+import { TicketMinorDetailsComponent } from './ticket-minor-details/ticket-minor-details.component';
 
 @Component({
   selector: 'app-ticket-minor',
@@ -25,168 +22,125 @@ import { Router } from '@angular/router';
   styleUrls: ['./ticket-minor.component.css']
 })
 export class TicketMinorComponent implements OnInit {
-  ticketMinorCreateForm: FormGroup;
-  isSubmit = false;
+  @ViewChild(DataTableDirective, {static: false})
+  dtElement: DataTableDirective;
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<TicketMinor> = new Subject();
 
-  officeList: Office[];
+  ticketMinorList: TicketMinor[];
+  dialogOpen = false;
+  ticketTableForm: FormGroup;
+
+  search:any = {};
+  filter :string = "All";
+  statBar: boolean;
+
+  ticketMinorContext:any;
+  ticketMinorToBeViewed:TicketMinor;
   employeeList: Employee[];
-  categoryList: CategoryList[];
+  employeeid: string;
 
   constructor(
+    private ticketService: TicketService,
+    private ticketDataService: TicketDataService,
     private ticketMinorService: TicketMinorService,
     private ticketMinorDataService: TicketMinorDataService,
-    private officeService: OfficeService,
-    private officeDataService: OfficeDataService,
     private employeeService: EmployeeService,
-    private employeeDataService: EmployeeDataService,
-    private categoryListService: CategoryListService,
-    private categoryListDataService: CategoryListDataService,
-    private dialog: MatDialog,
-    public dialogRef:MatDialogRef<OfficeComponent>,
-
-    private router: Router
-    // public dialogRef: MatDialogRef<TicketEditFormComponent>
-  ) { 
-    this.ticketMinorCreateForm = new FormGroup({
-      agentid: new FormControl(),
-      description: new FormControl('', [Validators.required, Validators.maxLength(50)]),
-      status: new FormControl('', [Validators.required, Validators.maxLength(50)]),
-      workDone: new FormControl('', [Validators.required, Validators.maxLength(50)]),
-      dateOfRequest: new FormControl('', [Validators.required, Validators.maxLength(50)]),
-      timeOfRequest: new FormControl('', [Validators.required, Validators.maxLength(50)]),
-      officeid: new FormControl(),
-      officeSelect: new FormControl(),
-      requesterid: new FormControl(),
-      requesterSelect: new FormControl(),
-      workByid: new FormControl(),
-      workBySelect: new FormControl(),
-      categoryListid: new FormControl(),
-      categoryListSelect: new FormControl(),
-    })
-  }
+    private employeeDataServvice: EmployeeDataService,
+    public dialog: MatDialog,
+    private router: Router,
+    // private toasterService: ToasterService
+   ) {
+     this.ticketTableForm = new FormGroup({
+       txtSearch: new FormControl ('',[Validators.required]),
+       btnApprove: new FormControl (''),
+       txtStatus: new FormControl ('')
+     })
+   }
 
   ngOnInit() {
-    this.officeDataService.officeSource.subscribe( data => { this.getOfficeLists(); });
-      this.employeeDataService.employeeSource.subscribe( data => { this.getEmployeeLists(); });
-      this.categoryListDataService.categoryListSource.subscribe( data => { this.getCategoryLists(); });
+    this.ticketMinorDataService.ticketMinors.subscribe(data =>{
+    this.getTicketMinorLists();
+    this.getEmployeeLists();
+    })
   }
+  get f() {return this.ticketTableForm.controls;}
 
-  get f() { return this.ticketMinorCreateForm.controls; }
-
-  async onFormSubmit(){
-    let ok = confirm ("Are you sure you want to submit?");
-
-    if (!ok){
-      return
-    }
-
-    if (!this.ticketMinorCreateForm.valid)
-     return;
-
-     try {
-       this.isSubmit = true;
-       let result = await this.ticketMinorService.create(this.ticketMinorCreateForm.value).toPromise();
-      if (result.isSuccess) {
-        alert(result.message);
-        this.ticketMinorCreateForm.reset();
-        this.router.navigate(["/dashboard"]);
-      }
-      else {
-        alert(result.message);
-      }
-     } catch (error) {
-       console.error(error)
-       let errs = error.error
-
-       if(errs.isSuccess === false){
-        alert(errs.message);
-        return;   
-      }
-        this.isSubmit = false;
-     }  finally{
-        this.isSubmit = false;
-     }
-  }
-
-  // openOfficeDialog(){//added during employee-office relationship
-  //   const dialogConfig = new MatDialogConfig();
-  //   dialogConfig.panelClass = 'custom-modalbox';
-  //   this.dialog.open(OfficeAddFormComponent, dialogConfig);
-  // }
-  async getOfficeLists(){
+  async getTicketMinorLists(){
     try {
-      this.officeList = await this.officeService.getAll().toPromise();
+      this.ticketMinorList = await this.ticketMinorService.getAll().toPromise()
+      this.ticketMinorList = this.ticketMinorList.filter(x => x.status == 'Open');
+      this.rerender();
+      // this.toasterService.popAsync('success', 'Product has been deleted Successfully!');
     } catch (error) {
-      console.log(error);
+      alert('something went wrong!');
+      console.error(error);
     }
   }
 
-  async getEmployeeLists(){
-    try {
+  async getEmployeeLists() {
+    try{
       this.employeeList = await this.employeeService.ListEmployees().toPromise();
-    } catch (error) {
-      console.log(error);
+    }catch(error){
+      alert('Something went wrong!');
+      console.error(error);
     }
   }
-
-
-  async getCategoryLists(){
-    try {
-      this.categoryList = await this.categoryListService.getAll().toPromise();
-    } catch (error) {
-      console.log(error);
-    }
+  
+  ngAfterViewInit(): void {
+    this.dtTrigger.next();
   }
 
-  selectOffice($event){
-    let office = this.ticketMinorCreateForm.value.officeSelect;
-    if (office.length > 2) {
-      if ($event.timeStamp > 200) {
-        let selectedOffice = this.officeList.find(data => data.officeDesc == office);
-        if (selectedOffice) {
-          this.ticketMinorCreateForm.controls['officeid'].setValue(selectedOffice.officeid);
+  ngOnDestroy(): void {
+    // Do not forget to unsubscribe the event
+    this.dtTrigger.unsubscribe();
+  }
+  
+  rerender(): void {
+    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+      // Destroy the table first
+      dtInstance.destroy();
+      // Call the dtTrigger to rerender again
+      this.dtTrigger.next();
+    });
+  }
+
+    loadPage(){
+      this.router.navigate(["/ticketAddMinor"]);
+    }
+
+    viewDetails(ticketMinor){
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.data={
+        ticketMinorContext:ticketMinor
+      };
+      dialogConfig.panelClass = 'custom-modalbox';
+      this.dialog.open(TicketMinorDetailsComponent,dialogConfig)
+    }
+
+    update(ticketMinor){
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.data={
+        ticketMinorContext:ticketMinor
+      };
+      dialogConfig.panelClass = 'custom-modalbox';
+      this.dialog.open(TicketMinorUpdateFormComponent,dialogConfig)
+    }
+
+    async delete(ticketMinorid){
+      if(confirm('Are you sure you want to delete?')){
+        try{
+          let result= await this.ticketMinorService.delete(ticketMinorid).toPromise()
+          if(result.isSuccess){
+            alert(result.message)
+            this.ticketMinorDataService.refreshTicketMinors();
+          }else{
+            alert(result.message)
+          }
+          }catch(error){
+            alert('Something went wrong');
+            console.log(error)
+          }
         }
-      }      
     }
   }
-
-  selectRequester($event){
-    let employee = this.ticketMinorCreateForm.value.requesterSelect;
-    if (employee.length > 2) {
-      if ($event.timeStamp > 200) {
-        let selectedEmployee = this.employeeList.find(data => data.fullName == employee);
-        if (selectedEmployee) {
-          this.ticketMinorCreateForm.controls['requesterid'].setValue(selectedEmployee.employeeID);
-        }
-      }      
-    }
-  }
-
-  selectWorker($event){
-    let employee = this.ticketMinorCreateForm.value.workBySelect;
-    if (employee.length > 2) {
-      if ($event.timeStamp > 200) {
-        let selectedEmployee = this.employeeList.find(data => data.fullName == employee);
-        if (selectedEmployee) {
-          this.ticketMinorCreateForm.controls['workByid'].setValue(selectedEmployee.employeeID);
-        }
-      }      
-    }
-  }
-
-  selectCategoryList($event){
-    let categoryList = this.ticketMinorCreateForm.value.categoryListSelect;
-    if (categoryList.length > 2) {
-      if ($event.timeStamp > 200) {
-        let selectedCategoryList = this.categoryList.find(data => data.categoryListName == categoryList);
-        if (selectedCategoryList) {
-          this.ticketMinorCreateForm.controls['categoryListid'].setValue(selectedCategoryList.categoryListid);
-        }
-      }      
-    }
-  }
-
-  reset(){
-    this.ticketMinorCreateForm.reset();
-  }
-}

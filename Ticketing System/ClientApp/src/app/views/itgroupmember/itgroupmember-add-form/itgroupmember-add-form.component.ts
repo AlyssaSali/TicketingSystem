@@ -121,7 +121,6 @@ export class ItgroupmemberAddFormComponent implements OnInit {
     if (itgroup.length >= 2) {
       if ($event.timeStamp > 200) {
         let selectedItgroup = this.itgroupsList.find(data => data.itGroupName == itgroup);
-        
         if(selectedItgroup){
           this.itgroupmemberCreateForm.controls['itGroupid'].setValue(selectedItgroup.itGroupid);
         }

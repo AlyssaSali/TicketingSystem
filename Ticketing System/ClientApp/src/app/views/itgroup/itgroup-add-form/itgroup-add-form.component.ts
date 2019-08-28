@@ -3,8 +3,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ItgroupService } from 'src/app/services/itgroup.service';
 import { ItgroupDataService } from 'src/app/dataservices/itgroup.dataservice';
 
-
-
 @Component({
   selector: 'app-itgroup-add-form',
   templateUrl: './itgroup-add-form.component.html',

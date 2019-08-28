@@ -6,6 +6,14 @@ import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { SeverityUpdateFormComponent } from './severity-update-form/severity-update-form.component';
 import { CategoryAddFormComponent } from '../category/category-add-form/category-add-form.component';
 import { SeverityAddFormComponent } from './severity-add-form/severity-add-form.component';
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import { DataTableDirective } from 'angular-datatables';
+import { Subject } from 'rxjs';
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 
 @Component({
   selector: 'app-severity',
@@ -13,6 +21,17 @@ import { SeverityAddFormComponent } from './severity-add-form/severity-add-form.
   styleUrls: ['./severity.component.css']
 })
 export class SeverityComponent implements OnInit {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  @ViewChild(DataTableDirective, {static: false})
+  dtElement: DataTableDirective;
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<Severity> = new Subject();
+  
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
   severities:Severity[];
 
   constructor(
@@ -52,8 +71,8 @@ export class SeverityComponent implements OnInit {
             console.log(error)
           }
         }
-      
     }
+    
     update(severity){
       const dialogConfig = new MatDialogConfig();
       dialogConfig.data={
@@ -62,10 +81,37 @@ export class SeverityComponent implements OnInit {
       dialogConfig.panelClass = 'custom-modalbox';
       this.dialog.open(SeverityUpdateFormComponent,dialogConfig)
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 
     
   close(){
       this.dialogRef.close();
     }
+<<<<<<< HEAD
+=======
+
+    ngAfterViewInit(): void {
+      this.dtTrigger.next();
+    }
+  
+    ngOnDestroy(): void {
+      // Do not forget to unsubscribe the event
+      this.dtTrigger.unsubscribe();
+    }
+    
+    rerender(): void {
+      this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+        // Destroy the table first
+        dtInstance.destroy();
+        // Call the dtTrigger to rerender again
+        this.dtTrigger.next();
+      });
+    }
+=======
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 
 }

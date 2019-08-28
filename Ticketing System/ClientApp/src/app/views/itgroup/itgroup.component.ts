@@ -4,7 +4,19 @@ import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { ItgroupDataService } from 'src/app/dataservices/itgroup.dataservice';
 import { ItgroupUpdateFormComponent } from './itgroup-update-form/itgroup-update-form.component';
 import { Itgroup } from 'src/app/models/itgroup.model';
+<<<<<<< HEAD
 import { ItgroupAddFormComponent } from './itgroup-add-form/itgroup-add-form.component';
+=======
+<<<<<<< HEAD
+import { ItgroupAddFormComponent } from './itgroup-add-form/itgroup-add-form.component';
+import { DataTableDirective } from 'angular-datatables';
+import { Subject } from 'rxjs';
+=======
+import { Subject } from 'rxjs';
+import { DataTableDirective } from 'angular-datatables';
+import { ItgroupAddFormComponent } from './itgroup-add-form/itgroup-add-form.component';
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 
 @Component({
   selector: 'app-itgroup',
@@ -12,6 +24,13 @@ import { ItgroupAddFormComponent } from './itgroup-add-form/itgroup-add-form.com
   styleUrls: ['./itgroup.component.css']
 })
 export class ItgroupComponent implements OnInit {
+<<<<<<< HEAD
+=======
+  @ViewChild(DataTableDirective, {static: false})
+  dtElement: DataTableDirective;
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<Itgroup> = new Subject();
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 
   itgroups:Itgroup[];
 
@@ -62,9 +81,33 @@ export class ItgroupComponent implements OnInit {
       dialogConfig.panelClass = 'custom-modalbox';
       this.dialog.open(ItgroupUpdateFormComponent,dialogConfig)
     }
+<<<<<<< HEAD
+=======
 
+    ngAfterViewInit(): void {
+      this.dtTrigger.next();
+    }
+  
+    ngOnDestroy(): void {
+      // Do not forget to unsubscribe the event
+      this.dtTrigger.unsubscribe();
+    }
     
+    rerender(): void {
+      this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+        // Destroy the table first
+        dtInstance.destroy();
+        // Call the dtTrigger to rerender again
+        this.dtTrigger.next();
+      });
+    }
+<<<<<<< HEAD
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
+
+    close(){
+=======
   close(){
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
       this.dialogRef.close();
     }
 

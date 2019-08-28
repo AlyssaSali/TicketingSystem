@@ -14,7 +14,9 @@
         </div>
       </form>
       <!-- /.search form -->
-
+<!-- shows only when user is logged in -->
+<div *ngIf="isLogin" class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngClass]='{"show": isExpanded}'>
+  <ul class="navbar-nav flex-grow">
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <!-- Optionally, you can add icons to the links -->
@@ -26,11 +28,11 @@
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a [routerLink]="['/ticketMinor']"><i class="fa fa-circle-o"></i> Minor Request</a></li>
+            <li><a [routerLink]="['/ticketAddMinor']"><i class="fa fa-circle-o"></i> Minor Request</a></li>
             <li><a [routerLink]="['/ticketAdd']"><i class="fa fa-circle-o"></i> Major Request</a></li>
           </ul>
         </li>
-        <li><a [routerLink]="['/']"><i class="fa fa-files-o"></i> <span>Ticket History</span></a></li>
+        <li><a [routerLink]="['/ticketHistory']"><i class="fa fa-files-o"></i> <span>Ticket History</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-gears"></i> <span>Settings</span>
             <span class="pull-right-container">
@@ -39,14 +41,27 @@
           </a>
           <ul class="treeview-menu">
             <li><a [routerLink]="['/employee']"><i class="fa fa-circle-o"></i> Employee List</a></li>
+            <li><a [routerLink]="['/employeeEmployeeType']"><i class="fa fa-circle-o"></i> Employee EmployeeType</a></li>
+            <li><a [routerLink]="['/employeetype']"><i class="fa fa-circle-o"></i> Employee Type List</a></li>
             <li><a [routerLink]="['/office']"><i class="fa fa-circle-o"></i> Office List</a></li>
             <li><a [routerLink]="['/categoryList']"><i class="fa fa-circle-o"></i> Category List</a></li>
             <li><a [routerLink]="['/severity']"><i class="fa fa-circle-o"></i> Severity List</a></li>
             <li><a [routerLink]="['/itgroup']"><i class="fa fa-circle-o"></i> IT Group List</a></li>
             <li><a [routerLink]="['/itgroupmember']"><i class="fa fa-circle-o"></i> IT Group Member</a></li>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+            <li *ngIf="role === 'Admin'" class="nav-item" [routerLinkActive]='["link-active"]'>
+              <a class="nav-link text-dark" routerLink='/register'>Register</a>
+            </li>
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
           </ul>
         </li>
       </ul>
+      </ul>
+      </div>
       <!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

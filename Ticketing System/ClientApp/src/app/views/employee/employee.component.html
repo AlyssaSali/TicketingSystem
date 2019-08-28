@@ -1,3 +1,86 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<app-employee-add-form></app-employee-add-form>
+
+<h1></h1>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Contact Information</td>
+            <td>Employee Type</td>
+            <td>Office</td>
+            <td></td>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td style="width: 15%;">{{employee.firstName}}</td>
+            <td style="width: 15%;">{{employee.lastName}}</td>
+            <td style="width: 15%;">[{{employee.formOfCommu}}] - {{employee.contactInfo}}</td>
+            <td style="width: 15%;">{{employee.employeeType.employeeTypeName}}</td>
+            <td style="width: 15%;">{{employee.office.officeCode}}</td>
+           
+            <td style="width: 25%;">
+                <div class="row">
+                    <button class="col-md-5 btn-success m-1" (click)="update(employee)" data-toggle="tooltip" data-placement="bottom" title="Update Employee">
+                        <i class="material-icons">update</i>
+                    </button>
+                    <button class="col-md-5 btn-danger m-1" (click)="delete(employee.employeeID)" data-toggle="tooltip" data-placement="bottom" title="DeleteEmployee">
+                        <i class="material-icons">delete</i>
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+=======
+<<<<<<< HEAD
+<div class="main">
+<app-employee-add-form></app-employee-add-form>
+    <h1>List of Employee</h1>
+    
+    <table class="table table-hover table-dark" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-striped">
+ 
+        <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email Address</td>
+                <td>Office</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.emailAddress}}</td>
+                <td>{{employee.office.officeCode}}</td>
+           
+                <div class="row">
+                    <button class="col-md-10 btn btn-success m-1"(click)="update(employee)" data-toggle="tooltip" data-placement="bottom" title="Edit employee">
+                         <i class="material-icons">update</i>
+                    </button>
+                    <button class="col-md-10 btn btn-danger m-1"(click)="delete(employee.employeeID)" data-toggle="tooltip" data-placement="bottom" title="Delete employee">
+                         <i class="material-icons">delete </i>
+                    </button>
+                </div>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+=======
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 <div class="content-wrapper">
     <section class="content">
       <div class="row">
@@ -16,28 +99,44 @@
           <div class="box box-default">
             <div class="box-header with-border"><h3 class="box-title">List of Employees</h3></div>
             <div class="box-body margin">
-                <table class="table table-hover table-striped">
+              <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-striped">
                   <thead>
                     <tr>
                         <td style="width: 20%"><strong>First Name</strong></td>
                         <td style="width: 20%"><strong>Last Name</strong></td>
+<<<<<<< HEAD
                         <td style="width: 20%"><strong>Employee Type</strong></td>
+=======
+<<<<<<< HEAD
+                        <td style="width: 30%"><strong>Employee Type</strong></td>
+=======
+                        <!-- <td style="width: 20%"><strong>Employee Type</strong></td> -->
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
                         <td style="width: 20%"><strong>Office</strong></td>
-                        <td style="width: 20%"><strong>Action</strong></td>
+                        <td style="width: 10%"><strong>Action</strong></td>
                     </tr>
                   </thead>
                   <tbody>
                     <tr *ngFor="let employee of employees">
                         <td style="width: 20%">{{employee.firstName}}</td>
                         <td style="width: 20%">{{employee.lastName}}</td>
+<<<<<<< HEAD
                         <td style="width: 20%">{{employee.employeeType.employeeTypeName}}</td>
+=======
+<<<<<<< HEAD
+                        <td style="width: 30%">{{employee.employeeType.employeeTypeName}}</td>
+=======
+                        <!-- <td style="width: 20%">{{employee.employeeType.employeeTypeName}}</td> -->
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
                         <td style="width: 20%">{{employee.office.officeCode}}</td>
-                        <td style="width: 20%">
+                        <td style="width: 10%">
                           <div class="row">
-                            <button class="col-md-5 btn-success m-1" (click)="update(employee)" data-toggle="modal" data-target="#modal-updateEmp" title="Update Employee">
+                            <button class="btn-success m-1" (click)="update(employee)" data-toggle="modal" data-target="#modal-updateEmp" title="Update Employee">
                               <i class="material-icons">update</i>
                             </button>
-                            <button class="col-md-5 btn-danger m-1" (click)="delete(employee.employeeID)" data-toggle="tooltip" data-placement="bottom" title="DeleteEmployee">
+                            <button class="btn-danger m-1" (click)="delete(employee.employeeID)" data-toggle="tooltip" data-placement="bottom" title="DeleteEmployee">
                               <i class="material-icons">delete</i>
                             </button>
                           </div>
@@ -52,3 +151,14 @@
     </section>
     
 </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> ridz
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2

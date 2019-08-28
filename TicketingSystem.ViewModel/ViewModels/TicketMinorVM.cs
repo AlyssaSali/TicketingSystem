@@ -12,6 +12,7 @@ namespace TicketingSystem.ViewModel.ViewModels
         public string Description { get; set; }
         public string Status { get; set; }
         public string WorkDone { get; set; }
+        public DateTime DateAccomplished { get; set; }
 
         [Display(Name = "Date")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
@@ -26,6 +27,7 @@ namespace TicketingSystem.ViewModel.ViewModels
         public string Officeid { get; set; }
         public OfficeVM Office { get; set; }
 
+        [Required]
         public string Requesterid { get; set; }
         public string WorkByid { get; set; }
         public EmployeeVM Employee { get; set; }

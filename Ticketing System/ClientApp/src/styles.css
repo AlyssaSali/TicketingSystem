@@ -1,6 +1,48 @@
+<<<<<<< HEAD
 @import"~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import'~material-design-icons/iconfont/material-icons.css';
 
+=======
+<<<<<<< HEAD
+@import"~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import'~material-design-icons/iconfont/material-icons.css';
+
+=======
+/* You can add global styles to this file, and also import other style files */
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~material-design-icons/iconfont/material-icons.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+=======
+<<<<<<< HEAD
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+<<<<<<< HEAD
+@import"~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import'~material-design-icons/iconfont/material-icons.css';
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+=======
+@import"~@angular/material/prebuilt-themes/indigo-pink.css"; 
+@import'~material-design-icons/iconfont/material-icons.css'; 
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */ 
+>>>>>>> 63171424717892a87f2f85c43afeee8014c441ad
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+
+@import"~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import'~material-design-icons/iconfont/material-icons.css';
+
+
+
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2
 .no-data-available{
   text-align: center;
 }
@@ -21,3 +63,79 @@
     font-size: 10pt;
     margin: 0;
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+
+<<<<<<< HEAD
+=======
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+/* Main content */
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 80px 0px;
+  }
+
+  .tbl-hr {
+    width:10%; 
+    font-weight:normal; 
+    font-size: 15px;
+  }
+
+  .tbl-bd {
+    font-weight:lighter; 
+    font-size: 15px
+  }
+  
+  .rw-tbl  {
+    margin-top: 10px;
+    margin-left:10px; 
+    width:100%;
+  }
+
+  .ico-s {
+    width: 100%; 
+    height: 100px;
+  }
+
+  .ico1 {
+    width:53px; 
+    height: 55px; 
+    margin-top: 10px;
+  }
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+
+ 
+
+ 
+
+<<<<<<< HEAD
+=======
+  .mt {
+    margin-top: 30px;
+}
+
+.mt1 {
+  margin-top:10px;
+}
+
+.mt2 {
+  margin-top:20px;
+}
+<<<<<<< HEAD
+=======
+
+=======
+    color: #ff0000;
+    font-size: 10px;
+}
+>>>>>>> ridz
+>>>>>>> 2fb85b2afa0a42a16fcb96d7ab04b103ede54f15
+>>>>>>> 89bb63c04e1ad5424f19b0fd116240805a791ee4
+>>>>>>> 00d9a0867d956b23e7a3c0e36fce9ae308d939f7
+>>>>>>> b91f36f85f748ef16088c8249afe1aa938eb57c2

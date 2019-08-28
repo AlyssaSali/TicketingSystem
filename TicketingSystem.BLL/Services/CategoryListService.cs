@@ -53,6 +53,10 @@ namespace TicketingSystem.BLL.Services
         {
             using (context)
             {
+                if(context.TicketMinors.Where(x => x.CategoryListid == id).Any())
+                {
+                    return new ResponseVM("deleted", false, "CategoryList", ResponseVM.DONT_DELETE);
+                }
                 using (var dbTransaction = context.Database.BeginTransaction())
                 {
                     try
